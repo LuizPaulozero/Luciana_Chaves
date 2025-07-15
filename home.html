@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Ana Silva - Psicóloga Clínica | Terapia Cognitivo-Comportamental</title>
+    <meta name="description" content="Psicóloga clínica especializada em TCC. Atendimento presencial e online. Agende sua consulta e inicie sua jornada de autoconhecimento.">
+    <meta name="keywords" content="psicóloga, terapia, TCC, psicologia clínica, São Paulo">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'terracota': '#D98C6A',
+                        'terracota-light': '#E5A584',
+                        'terracota-dark': '#C67A56',
+                        'rosa-claro': '#EBD5CE',
+                        'rosa-claro-light': '#F2E4DD',
+                        'off-white': '#FAF8F6',
+                        'cinza-escuro': '#5C5C5C',
+                        'cinza-medio': '#8A8A8A',
+                        'cinza-claro': '#F5F5F5'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                        'script': ['Dancing Script', 'cursive']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 1s ease-out forwards',
+                        'slide-in-right': 'slideInRight 1s ease-out forwards',
+                        'bounce-gentle': 'bounceGentle 3s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'wave': 'wave 8s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'typewriter': 'typewriter 4s steps(40) 1s forwards',
+                        'blink': 'blink 1s infinite',
+                        'morph': 'morph 8s ease-in-out infinite',
+                        'gradient-shift': 'gradientShift 6s ease-in-out infinite',
+                        'text-reveal': 'textReveal 1.5s ease-out forwards',
+                        'line-expand': 'lineExpand 1s ease-out forwards',
+                        'word-slide': 'wordSlide 0.8s ease-out forwards'
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.08)',
+                        'medium': '0 8px 30px rgba(0, 0, 0, 0.12)',
+                        'strong': '0 15px 40px rgba(0, 0, 0, 0.15)',
+                        'terracota': '0 8px 25px rgba(217, 140, 106, 0.3)',
+                        'glow': '0 0 30px rgba(217, 140, 106, 0.4)',
+                        'inner-glow': 'inset 0 0 20px rgba(217, 140, 106, 0.2)',
+                        'dreamy': '0 20px 60px rgba(217, 140, 106, 0.2), 0 8px 25px rgba(235, 213, 206, 0.3)',
+                        'text-shadow': '0 4px 15px rgba(0, 0, 0, 0.1)',
+                        'luxury': '0 25px 80px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(217, 140, 106, 0.1)'
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                        'mesh-gradient': 'linear-gradient(45deg, #FAF8F6 25%, transparent 25%), linear-gradient(-45deg, #FAF8F6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #EBD5CE 75%), linear-gradient(-45deg, transparent 75%, #EBD5CE 75%)',
+                        'text-pattern': 'linear-gradient(135deg, rgba(217, 140, 106, 0.05) 0%, rgba(235, 213, 206, 0.05) 50%, rgba(217, 140, 106, 0.05) 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Advanced Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px) rotateY(-10deg); }
+            to { opacity: 1; transform: translateX(0) rotateY(0deg); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px) rotateY(10deg); }
+            to { opacity: 1; transform: translateX(0) rotateY(0deg); }
+        }
+        
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+            50% { transform: scale(1.1) rotate(1deg); opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(-10px) rotate(-1deg); }
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(217, 140, 106, 0.3); }
+            to { box-shadow: 0 0 40px rgba(217, 140, 106, 0.6), 0 0 60px rgba(217, 140, 106, 0.3); }
+        }
+        
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes textReveal {
+            0% { 
+                opacity: 0; 
+                transform: translateY(30px) rotateX(90deg);
+                filter: blur(10px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0) rotateX(0deg);
+                filter: blur(0px);
+            }
+        }
+        
+        @keyframes lineExpand {
+            0% { width: 0; opacity: 0; }
+            100% { width: 100%; opacity: 1; }
+        }
+        
+        @keyframes wordSlide {
+            0% { 
+                opacity: 0; 
+                transform: translateX(-20px) scale(0.8);
+                filter: blur(5px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateX(0) scale(1);
+                filter: blur(0px);
+            }
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(to bottom, #FAF8F6, #EBD5CE);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #D98C6A, #C67A56);
+            border-radius: 6px;
+            border: 2px solid #FAF8F6;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #C67A56, #B86A4A);
+        }
+        
+        /* Wave Header */
+        .wave-header {
+            position: relative;
+            background: linear-gradient(135deg, #FAF8F6 0%, #F2E4DD 50%, #EBD5CE 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(217, 140, 106, 0.1);
+        }
+        
+        .wave-header::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23D98C6A'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23D98C6A'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23D98C6A'/%3E%3C/svg%3E") repeat-x;
+            background-size: 1200px 20px;
+            animation: wave 8s ease-in-out infinite;
+        }
+        
+        /* Wave Footer */
+        .wave-footer {
+            position: relative;
+            background: linear-gradient(135deg, #5C5C5C 0%, #4A4A4A 50%, #3A3A3A 100%);
+        }
+        
+        .wave-footer::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M1200,0H0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23D98C6A'/%3E%3Cpath d='M1200,0H0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23D98C6A'/%3E%3Cpath d='M1200,0H0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23D98C6A'/%3E%3C/svg%3E") repeat-x;
+            background-size: 1200px 20px;
+            animation: wave 10s ease-in-out infinite reverse;
+            transform: rotate(180deg);
+        }
+        
+        /* Enhanced Text Containers */
+        .text-container {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 246, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1), 
+                        0 0 0 1px rgba(217, 140, 106, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .text-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(217, 140, 106, 0.03) 0%, 
+                rgba(235, 213, 206, 0.05) 25%,
+                rgba(250, 248, 246, 0.02) 50%,
+                rgba(235, 213, 206, 0.05) 75%,
+                rgba(217, 140, 106, 0.03) 100%);
+            border-radius: 28px;
+            z-index: -1;
+        }
+        
+        .text-container::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, 
+                rgba(217, 140, 106, 0.2) 0%, 
+                rgba(235, 213, 206, 0.3) 25%,
+                rgba(217, 140, 106, 0.1) 50%,
+                rgba(235, 213, 206, 0.3) 75%,
+                rgba(217, 140, 106, 0.2) 100%);
+            border-radius: 32px;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .text-container:hover::after {
+            opacity: 1;
+        }
+        
+        .text-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15), 
+                        0 0 0 1px rgba(217, 140, 106, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Luxury Text Styling */
+        .luxury-text {
+            position: relative;
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            color: #5C5C5C;
+        }
+        
+        .luxury-text::first-letter {
+            font-size: 4em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            float: left;
+            line-height: 0.8;
+            margin: 0.1em 0.1em 0 0;
+            background: linear-gradient(135deg, #D98C6A, #E5A584);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 15px rgba(217, 140, 106, 0.3);
+        }
+        
+        .luxury-paragraph {
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .luxury-paragraph::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 4px;
+            height: 60%;
+            background: linear-gradient(to bottom, #D98C6A, #E5A584);
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+        
+        .luxury-paragraph:hover::before {
+            opacity: 1;
+            width: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Quote Styling */
+        .luxury-quote {
+            position: relative;
+            font-style: italic;
+            font-size: 1.3em;
+            text-align: center;
+            padding: 40px 60px;
+            margin: 40px 0;
+            background: linear-gradient(135deg, rgba(217, 140, 106, 0.05), rgba(235, 213, 206, 0.1));
+            border-radius: 20px;
+            border-left: 5px solid #D98C6A;
+        }
+        
+        .luxury-quote::before,
+        .luxury-quote::after {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            color: rgba(217, 140, 106, 0.3);
+            position: absolute;
+        }
+        
+        .luxury-quote::before {
+            content: '"';
+            top: -10px;
+            left: 20px;
+        }
+        
+        .luxury-quote::after {
+            content: '"';
+            bottom: -40px;
+            right: 20px;
+        }
+        
+        /* Enhanced Typography */
+        .enhanced-heading {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .enhanced-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D98C6A, #E5A584);
+            border-radius: 2px;
+            animation: lineExpand 1s ease-out 0.5s forwards;
+        }
+        
+        /* Text Reveal Animation */
+        .text-reveal {
+            opacity: 0;
+            animation: textReveal 1.5s ease-out forwards;
+        }
+        
+        .text-reveal.delay-1 { animation-delay: 0.2s; }
+        .text-reveal.delay-2 { animation-delay: 0.4s; }
+        .text-reveal.delay-3 { animation-delay: 0.6s; }
+        .text-reveal.delay-4 { animation-delay: 0.8s; }
+        
+        /* Word by Word Animation */
+        .word-animate {
+            display: inline-block;
+            opacity: 0;
+            animation: wordSlide 0.8s ease-out forwards;
+        }
+        
+        /* Enhanced Carousel */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(217, 140, 106, 0.1);
+            background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
+        }
+        
+        .carousel-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #D98C6A, #E5A584, #D98C6A);
+            border-radius: 32px;
+            z-index: -1;
+            animation: gradient-shift 6s ease-in-out infinite;
+            background-size: 400% 400%;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide:hover img {
+            transform: scale(1.05);
+        }
+        
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 40px;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .carousel-slide:hover .carousel-overlay {
+            transform: translateY(0);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .carousel-nav:hover {
+            background: linear-gradient(135deg, #D98C6A, #E5A584);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
+        }
+        
+        .carousel-nav.prev {
+            left: 30px;
+        }
+        
+        .carousel-nav.next {
+            right: 30px;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+        
+        .carousel-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .carousel-dot::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #D98C6A, #E5A584);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background: #D98C6A;
+            transform: scale(1.3);
+        }
+        
+        .carousel-dot.active::before {
+            opacity: 0.3;
+        }
+        
+        /* Enhanced Accordion */
+        .accordion-item {
+            border: 2px solid transparent;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: white;
+            position: relative;
+        }
+        
+        .accordion-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 18px;
+        }
+        
+        .accordion-item:hover {
+            border-color: rgba(217, 140, 106, 0.3);
+            box-shadow: 0 15px 40px rgba(217, 140, 106, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .accordion-item:hover::before {
+            opacity: 1;
+        }
+        
+        .accordion-header {
+            padding: 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, #FAF8F6 0%, #F2E4DD 100%);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .accordion-header:hover {
+            background: linear-gradient(135deg, #F2E4DD 0%, #EBD5CE 100%);
+        }
+        
+        .accordion-header.active {
+            background: linear-gradient(135deg, #D98C6A 0%, #E5A584 100%);
+            color: white;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: white;
+        }
+        
+        .accordion-content.active {
+            max-height: 400px;
+        }
+        
+        .accordion-body {
+            padding: 30px;
+            border-top: 1px solid rgba(217, 140, 106, 0.1);
+        }
+        
+        /* Enhanced Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #D98C6A 0%, #E5A584 100%);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(217, 140, 106, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(217, 140, 106, 0.5);
+            background: linear-gradient(135deg, #C67A56 0%, #D98C6A 100%);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #D98C6A;
+            padding: 18px 36px;
+            border: 2px solid #D98C6A;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #D98C6A, #E5A584);
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-secondary:hover::before {
+            width: 100%;
+        }
+        
+        .btn-secondary:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(217, 140, 106, 0.4);
+        }
+        
+        /* Enhanced Cards */
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(217, 140, 106, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D98C6A, #E5A584, #D98C6A);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(217, 140, 106, 0.2);
+            border-color: rgba(217, 140, 106, 0.3);
+        }
+        
+        /* Navigation Enhancements */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #D98C6A, #E5A584);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::before {
+            width: 80%;
+        }
+        
+        .nav-link:hover {
+            background: rgba(217, 140, 106, 0.1);
+            color: #D98C6A;
+        }
+        
+        /* Text Effects */
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #D98C6A;
+            white-space: nowrap;
+            animation: typewriter 4s steps(40) 1s forwards, blink 1s infinite;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #D98C6A, #E5A584, #C67A56);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 4s ease-in-out infinite;
+        }
+        
+        .shimmer-text {
+            background: linear-gradient(90deg, #5C5C5C 25%, #D98C6A 50%, #5C5C5C 75%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 2s linear infinite;
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) { animation-delay: 0s; }
+        .floating-element:nth-child(2) { animation-delay: 2s; }
+        .floating-element:nth-child(3) { animation-delay: 4s; }
+        
+        /* Morphing Shapes */
+        .morph-shape {
+            background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
+            animation: morph 8s ease-in-out infinite;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .text-container {
+                padding: 40px 30px;
+                border-radius: 20px;
+            }
+            
+            .luxury-text::first-letter {
+                font-size: 3em;
+            }
+            
+            .luxury-quote {
+                padding: 30px 40px;
+                font-size: 1.1em;
+            }
+            
+            .carousel-slide img {
+                height: 400px;
+            }
+            
+            .carousel-nav {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .carousel-nav.prev {
+                left: 15px;
+            }
+            
+            .carousel-nav.next {
+                right: 15px;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            .wave-header::before,
+            .wave-footer::before {
+                height: 15px;
+                background-size: 800px 15px;
+            }
+        }
+        
+        /* Fade animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-60px) rotateY(-10deg);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0) rotateY(0deg);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(60px) rotateY(10deg);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0) rotateY(0deg);
+        }
+        
+        /* Parallax Effect */
+        .parallax {
+            transform: translateZ(0);
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Neon Glow */
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(217, 140, 106, 0.5),
+                         0 0 20px rgba(217, 140, 106, 0.3),
+                         0 0 30px rgba(217, 140, 106, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans overflow-x-hidden">
+    <!-- Floating Background Elements -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="floating-element w-32 h-32 top-20 right-20 animate-float"></div>
+        <div class="floating-element w-24 h-24 bottom-32 left-16 animate-bounce-gentle"></div>
+        <div class="floating-element w-40 h-40 top-1/2 left-1/4 animate-pulse-soft"></div>
+        <div class="morph-shape w-64 h-64 top-1/3 right-1/4 animate-morph opacity-30"></div>
+    </div>
+
+    <!-- Header with Wave -->
+    <header class="wave-header sticky top-0 z-50 transition-all duration-500" id="header">
+        <nav class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="text-3xl font-serif font-bold gradient-text flex items-center">
+                    <i class="fas fa-brain mr-3 text-terracota animate-pulse-soft"></i>
+                    <span class="font-script">Dra.Luciana Chaves</span>
+                </div>
+                <div class="hidden lg:flex space-x-2">
+                    <a href="#inicio" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Início</a>
+                    <a href="#historia" class="nav-link text-cinza-escuro hover:text-terracota font-medium">História</a>
+                    <a href="#acredito" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Filosofia</a>
+                    <a href="#quem-sou" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Sobre Mim</a>
+                    <a href="#terapia" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Terapia</a>
+                    <a href="#consultorio" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Consultório</a>
+                    <a href="#duvidas" class="nav-link text-cinza-escuro hover:text-terracota font-medium">FAQ</a>
+                    <a href="#contato" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Contato</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-cinza-escuro hover:text-terracota transition-colors p-2 rounded-full hover:bg-rosa-claro">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-8 space-y-2 glass rounded-2xl p-6">
+                <a href="#inicio" class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Início</a>
+                <a href="#historia" class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">História</a>
+                <a href="#acredito" class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Filosofia</a>
+                <a href="#quem-sou" class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Sobre Mim</a>
+                <a href="#terapia" class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Terapia</a>
+                <a href="#consultorio" class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Consultório</a>
+                <a href="#duvidas" class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">FAQ</a>
+                <a href="#contato" class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-off-white via-rosa-claro-light to-rosa-claro"></div>
+        <div class="absolute inset-0 bg-mesh-gradient opacity-30"></div>
+        
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="lg:w-1/2 space-y-10">
+                    <div class="fade-in">
+                        <h1 class="text-6xl lg:text-8xl font-serif font-bold text-cinza-escuro leading-tight">
+                            Bem-vindo ao seu espaço de 
+                            <span class="gradient-text neon-glow font-script text-7xl lg:text-9xl block mt-4">
+                                cuidado
+                            </span>
+                        </h1>
+                    </div>
+                    <div class="slide-in-left">
+                        <p class="text-2xl lg:text-3xl text-cinza-medio leading-relaxed font-light">
+                            Psicóloga clínica especializada em terapia cognitivo-comportamental, 
+                            oferecendo um ambiente seguro e acolhedor para seu crescimento pessoal e bem-estar emocional.
+                        </p>
+                    </div>
+                    <div class="slide-in-left flex flex-col sm:flex-row gap-6">
+                        <a href="#contato" class="btn-primary text-lg">
+                            <i class="fas fa-calendar-plus"></i>
+                            Agendar Consulta
+                        </a>
+                        <a href="#historia" class="btn-secondary text-lg">
+                            <i class="fas fa-arrow-down"></i>
+                            Conheça Minha História
+                        </a>
+                    </div>
+                    <div class="slide-in-left flex items-center gap-8 pt-10">
+                        <div class="text-center group">
+                            <div class="text-4xl font-bold gradient-text group-hover:scale-110 transition-transform">10+</div>
+                            <div class="text-sm text-cinza-medio font-medium">Anos de Experiência</div>
+                        </div>
+                        <div class="w-px h-16 bg-gradient-to-b from-transparent via-cinza-claro to-transparent"></div>
+                        <div class="text-center group">
+                            <div class="text-4xl font-bold gradient-text group-hover:scale-110 transition-transform">500+</div>
+                            <div class="text-sm text-cinza-medio font-medium">Pacientes Atendidos</div>
+                        </div>
+                        <div class="w-px h-16 bg-gradient-to-b from-transparent via-cinza-claro to-transparent"></div>
+                        <div class="text-center group">
+                            <div class="text-4xl font-bold gradient-text group-hover:scale-110 transition-transform">95%</div>
+                            <div class="text-sm text-cinza-medio font-medium">Satisfação</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 slide-in-right">
+                    <div class="relative">
+                        <div class="absolute -inset-8 bg-gradient-to-r from-terracota via-terracota-light to-terracota rounded-full blur-2xl opacity-30 animate-pulse-soft"></div>
+                        <div class="relative">
+                            <img src="./imagens/IMG_6705.jpg" alt="Dra. Ana Silva - Psicóloga" 
+                                 class="relative rounded-3xl shadow-dreamy w-full max-w-lg mx-auto transform hover:scale-105 transition-transform duration-500">
+                            <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center animate-bounce-gentle">
+                                <i class="fas fa-heart text-white text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minha História -->
+    <section id="historia" class="py-32 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="fade-in mb-20 text-center">
+                    <h2 class="text-6xl lg:text-7xl font-serif font-bold gradient-text mb-8 enhanced-heading">
+                        Minha História
+                    </h2>
+                    <div class="w-32 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="slide-in-left">
+                    <div class="text-container transition-all duration-500">
+                        <div class="luxury-text text-2xl">
+                            <div class="luxury-paragraph text-reveal">
+                                Minha jornada na psicologia começou há mais de uma década, movida por uma paixão profunda em compreender a mente humana e ajudar pessoas a descobrirem seu verdadeiro potencial. Formada pela renomada Universidade de São Paulo (USP), dediquei anos ao estudo e aperfeiçoamento das técnicas mais eficazes da psicologia moderna.
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-1">
+                                Durante minha especialização em Terapia Cognitivo-Comportamental e Mestrado em Psicologia Clínica, mergulhei profundamente no entendimento de como nossos pensamentos, emoções e comportamentos se interconectam de maneiras complexas e fascinantes. Esta jornada acadêmica me proporcionou não apenas conhecimento técnico, mas também uma compreensão humanizada dos desafios que enfrentamos em nossa vida cotidiana.
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-2">
+                                Ao longo dos anos, tive o privilégio de acompanhar centenas de pessoas em suas jornadas de autoconhecimento e transformação. Cada história, cada conquista, cada momento de insight compartilhado reforçou minha convicção de que todos possuímos recursos internos únicos e poderosos para promover mudanças positivas e duradouras em nossas vidas.
+                            </div>
+                            
+                            <div class="luxury-quote text-reveal delay-3">
+                                "Acredito que nossas experiências pessoais enriquecem nossa prática profissional, trazendo autenticidade, humanidade e uma compreensão mais profunda para o processo terapêutico."
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-4">
+                                Hoje, minha prática se concentra no atendimento de adolescentes e adultos, sempre com uma abordagem personalizada que respeita a individualidade e o ritmo único de cada pessoa. Acredito firmemente que a terapia é um espaço sagrado de cura, crescimento e descoberta, onde cada indivíduo pode florescer em sua versão mais autêntica e plena.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minha Filosofia -->
+    <section id="acredito" class="py-32 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="fade-in mb-20 text-center">
+                    <h2 class="text-6xl lg:text-7xl font-serif font-bold text-cinza-escuro mb-8 enhanced-heading">
+                        Minha <span class="gradient-text">Filosofia</span>
+                    </h2>
+                    <div class="w-32 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-8"></div>
+                    <p class="text-2xl text-cinza-medio font-light">
+                        Acredito profundamente no potencial humano de transformação e crescimento
+                    </p>
+                </div>
+                
+                <div class="slide-in-left">
+                    <div class="text-container transition-all duration-500">
+                        <div class="luxury-text text-2xl">
+                            <div class="luxury-paragraph text-reveal">
+                                Minha filosofia de trabalho está fundamentada na crença inabalável de que cada ser humano possui uma capacidade extraordinária de cura, crescimento e transformação. Acredito que dentro de cada pessoa existe uma sabedoria interna que, quando acessada e nutrida adequadamente, pode guiá-la em direção ao bem-estar e à realização pessoal.
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-1">
+                                O acolhimento genuíno é o alicerce de todo o meu trabalho. Cada pessoa que chega ao meu consultório merece ser recebida com total aceitação, compreensão e respeito, independentemente de sua história, suas lutas ou seus desafios. Acredito que é neste ambiente de segurança emocional que a verdadeira cura pode florescer.
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-2">
+                                Vejo a terapia como uma parceria colaborativa, onde terapeuta e paciente caminham lado a lado em uma jornada de descoberta e crescimento. Meu papel não é fornecer respostas prontas, mas sim facilitar o processo de autoconhecimento, oferecendo ferramentas, insights e suporte para que cada pessoa possa encontrar suas próprias soluções e caminhos.
+                            </div>
+                            
+                            <div class="luxury-quote text-reveal delay-3">
+                                "A verdadeira transformação acontece quando criamos um espaço onde a vulnerabilidade se encontra com a compaixão, e onde cada pessoa pode se reconectar com sua essência mais autêntica."
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-4">
+                                Acredito firmemente que a saúde mental é um direito fundamental e que todos merecem ter acesso a um espaço onde possam explorar suas emoções, processar suas experiências e desenvolver estratégias saudáveis para lidar com os desafios da vida. É com esta convicção que dedico minha carreira a criar um ambiente terapêutico onde a transformação genuína pode acontecer.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="quem-sou" class="py-32 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="fade-in mb-20 text-center">
+                    <h2 class="text-6xl lg:text-7xl font-serif font-bold gradient-text mb-8 enhanced-heading">
+                        Além da Psicóloga
+                    </h2>
+                    <div class="w-32 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-8"></div>
+                    <p class="text-2xl text-cinza-medio font-light">
+                        Conheça um pouco mais sobre meus interesses e paixões pessoais
+                    </p>
+                </div>
+                
+                <div class="slide-in-left">
+                    <div class="text-container transition-all duration-500">
+                        <div class="luxury-text text-2xl">
+                            <div class="luxury-paragraph text-reveal">
+                                Além da minha paixão pela psicologia, sou uma pessoa que acredita profundamente na importância de cultivar interesses diversos e experiências enriquecedoras que nutrem tanto a alma quanto a mente. Estas paixões pessoais não apenas me trazem alegria e equilíbrio, mas também enriquecem significativamente minha prática profissional.
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-1">
+                                Sou uma leitora voraz e apaixonada, especialmente atraída por livros de desenvolvimento pessoal, psicologia positiva e ficção contemporânea que explora a complexidade e a beleza da experiência humana. Acredito que cada livro é uma janela para novas perspectivas e insights que podem enriquecer nossa compreensão do mundo e de nós mesmos.
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-2">
+                                A natureza é minha fonte constante de inspiração e renovação. Encontro paz profunda em caminhadas contemplativas, trilhas desafiadoras e momentos silenciosos de conexão com o mundo natural. Estes momentos ao ar livre me proporcionam clareza mental, equilíbrio emocional e uma perspectiva renovada que levo para todos os aspectos da minha vida.
+                            </div>
+                            
+                            <div class="luxury-quote text-reveal delay-3">
+                                "Acredito que quando nutrimos nossa própria alma através de paixões pessoais, nos tornamos terapeutas mais presentes, empáticos e autênticos."
+                            </div>
+                            
+                            <div class="luxury-paragraph text-reveal delay-4">
+                                Nas horas vagas, dedico-me à arte como forma de expressão criativa e meditação ativa. Pratico aquarela e cerâmica, atividades que me conectam com minha essência criativa e me proporcionam um espaço de liberdade e experimentação. Acredito que essas experiências pessoais enriquecem profundamente minha prática profissional, trazendo autenticidade, humanidade e uma compreensão mais profunda para cada encontro terapêutico.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que esperar da terapia -->
+    <section id="terapia" class="py-32 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-20 fade-in">
+                    <h2 class="text-6xl lg:text-7xl font-serif font-bold text-cinza-escuro mb-8 enhanced-heading">
+                        O que Esperar da <span class="gradient-text">Terapia</span>
+                    </h2>
+                    <div class="w-32 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-8"></div>
+                    <p class="text-2xl text-cinza-medio font-light max-w-4xl mx-auto">
+                        Um processo cuidadoso e personalizado para seu crescimento pessoal
+                    </p>
+                </div>
+                
+                <div class="space-y-12">
+                    <div class="card fade-in">
+                        <div class="flex flex-col lg:flex-row items-start gap-8">
+                            <div class="w-20 h-20 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                <i class="fas fa-comments text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-3xl font-serif font-semibold text-cinza-escuro mb-6">Primeira Sessão - Acolhimento</h3>
+                                <p class="text-xl text-cinza-medio leading-relaxed">
+                                    Nossa primeira conversa é um momento especial e sagrado de conhecimento mútuo e acolhimento profundo. Durante esta sessão inicial, criaremos um espaço seguro onde você poderá compartilhar sua história pessoal, suas preocupações atuais e os objetivos que gostaria de alcançar através da terapia. É também o momento em que esclarecemos todas as suas dúvidas sobre o processo terapêutico, estabelecemos acordos de trabalho claros e criamos um plano de tratamento completamente personalizado para suas necessidades únicas. Este primeiro encontro é fundamental para estabelecermos um vínculo sólido de confiança, segurança e compreensão mútua.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card fade-in">
+                        <div class="flex flex-col lg:flex-row items-start gap-8">
+                            <div class="w-20 h-20 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                <i class="fas fa-route text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-3xl font-serif font-semibold text-cinza-escuro mb-6">Processo Terapêutico - Descoberta</h3>
+                                <p class="text-xl text-cinza-medio leading-relaxed">
+                                    Trabalharemos juntos em uma jornada colaborativa para identificar padrões de pensamento e comportamento que podem estar limitando seu bem-estar, desenvolver estratégias de enfrentamento eficazes e personalizadas, e promover mudanças positivas e duradouras em sua vida. Cada sessão é cuidadosamente planejada e adaptada ao seu progresso único, sempre respeitando seu ritmo pessoal e suas necessidades específicas. Utilizaremos técnicas comprovadas e baseadas em evidências científicas para facilitar insights profundos e transformações genuínas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card fade-in">
+                        <div class="flex flex-col lg:flex-row items-start gap-8">
+                            <div class="w-20 h-20 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                <i class="fas fa-tools text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-3xl font-serif font-semibold text-cinza-escuro mb-6">Ferramentas e Técnicas - Transformação</h3>
+                                <p class="text-xl text-cinza-medio leading-relaxed">
+                                    Utilizamos uma abordagem integrativa que combina técnicas comprovadas da Terapia Cognitivo-Comportamental, práticas de mindfulness e atenção plena, técnicas de relaxamento e regulação emocional, e outras abordagens terapêuticas baseadas em sólidas evidências científicas. Todas as técnicas são cuidadosamente selecionadas e adaptadas às suas necessidades específicas, personalidade e objetivos terapêuticos, garantindo que você receba o suporte mais eficaz e apropriado para sua jornada de crescimento pessoal.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card fade-in">
+                        <div class="flex flex-col lg:flex-row items-start gap-8">
+                            <div class="w-20 h-20 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                <i class="fas fa-chart-line text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-3xl font-serif font-semibold text-cinza-escuro mb-6">Acompanhamento - Evolução</h3>
+                                <p class="text-xl text-cinza-medio leading-relaxed">
+                                    Regularmente avaliaremos seu progresso de forma colaborativa e ajustaremos as estratégias conforme necessário, sempre respeitando seu ritmo único e suas necessidades individuais em constante evolução. Celebramos cada conquista, por menor que possa parecer, e aprendemos com cada desafio, construindo juntos um caminho sólido e sustentável para seu bem-estar duradouro. Este processo contínuo de avaliação e ajuste garante que a terapia permaneça sempre relevante, eficaz e alinhada com seus objetivos pessoais.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrossel do Consultório -->
+    <section id="consultorio" class="py-32 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-20 fade-in">
+                    <h2 class="text-6xl lg:text-7xl font-serif font-bold gradient-text mb-8 enhanced-heading">
+                        Meu Consultório
+                    </h2>
+                    <div class="w-32 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-8"></div>
+                    <p class="text-2xl text-cinza-medio max-w-4xl mx-auto mb-6 font-light">
+                        Um espaço cuidadosamente projetado para seu conforto e bem-estar
+                    </p>
+                    <div class="text-2xl font-medium gradient-text font-script">
+                        <i class="fas fa-building mr-3"></i>
+                        Edifício Wellness Center - Jardins
+                    </div>
+                </div>
+                
+                <div class="carousel-container fade-in mb-16">
+                    <div class="carousel-track" id="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="./imagens/Consultorio1.jpeg" alt="Sala de espera aconchegante">
+                            <div class="carousel-overlay">
+                                <h3 class="text-3xl font-serif font-semibold mb-4">Sala de Espera</h3>
+                                <p class="text-lg">Um ambiente acolhedor e tranquilo para você se preparar para nossa sessão, com decoração cuidadosa que promove relaxamento e bem-estar.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./imagens/Consultorio2.jpeg" alt="Consultório principal">
+                            <div class="carousel-overlay">
+                                <h3 class="text-3xl font-serif font-semibold mb-4">Consultório Principal</h3>
+                                <p class="text-lg">Espaço privativo e confortável, projetado para facilitar o diálogo profundo e a reflexão, com iluminação natural e ambiente acolhedor.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./imagens/Consultorio3.jpeg" alt="Área de relaxamento">
+                            <div class="carousel-overlay">
+                                <h3 class="text-3xl font-serif font-semibold mb-4">Área de Relaxamento</h3>
+                                <p class="text-lg">No coração dos Jardins, com fácil acesso, estacionamento disponível e proximidade ao transporte público.</p>
+                            </div>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-nav prev" id="prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav next" id="next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <div class="carousel-indicators" id="carousel-indicators">
+                        <div class="carousel-dot active" data-slide="0"></div>
+                        <div class="carousel-dot" data-slide="1"></div>
+                        <div class="carousel-dot" data-slide="2"></div>
+                        <div class="carousel-dot" data-slide="3"></div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="card text-center fade-in group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-parking text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-cinza-escuro mb-4">Estacionamento</h3>
+                        <p class="text-cinza-medio">Vagas disponíveis no edifício para sua comodidade e tranquilidade</p>
+                    </div>
+                    <div class="card text-center fade-in group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-wheelchair text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-cinza-escuro mb-4">Acessibilidade</h3>
+                        <p class="text-cinza-medio">Espaço totalmente acessível para pessoas com mobilidade reduzida</p>
+                    </div>
+                    <div class="card text-center fade-in group">
+                        <div class="w-16 h-16 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-subway text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-cinza-escuro mb-4">Transporte</h3>
+                        <p class="text-cinza-medio">Próximo ao metrô e principais linhas de ônibus da cidade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dúvidas Frequentes -->
+    <section id="duvidas" class="py-32 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20 fade-in">
+                    <h2 class="text-6xl lg:text-7xl font-serif font-bold text-cinza-escuro mb-8 enhanced-heading">
+                        Dúvidas <span class="gradient-text">Frequentes</span>
+                    </h2>
+                    <div class="w-32 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-8"></div>
+                    <p class="text-2xl text-cinza-medio font-light">
+                        Esclarecimentos sobre o processo terapêutico
+                    </p>
+                </div>
+                
+                <div class="space-y-8" id="accordion">
+                    <div class="accordion-item fade-in">
+                        <div class="accordion-header" data-target="faq-1">
+                            <h3 class="text-xl lg:text-2xl font-semibold">Como funciona a primeira consulta?</h3>
+                            <i class="fas fa-chevron-down text-2xl transition-transform duration-300"></i>
+                        </div>
+                        <div class="accordion-content" id="faq-1">
+                            <div class="accordion-body">
+                                <p class="text-lg text-cinza-medio leading-relaxed">
+                                    A primeira consulta é um momento especial de conhecimento mútuo e acolhimento profundo. Durante esta sessão inicial, 
+                                    conversaremos sobre sua história pessoal, suas preocupações atuais e os objetivos que você gostaria 
+                                    de alcançar com a terapia. É também quando esclarecemos todas as suas dúvidas sobre o processo 
+                                    terapêutico, estabelecemos acordos de trabalho e criamos um plano de tratamento personalizado. 
+                                    Este primeiro encontro é fundamental para estabelecermos um vínculo sólido de confiança e segurança.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item fade-in">
+                        <div class="accordion-header" data-target="faq-2">
+                            <h3 class="text-xl lg:text-2xl font-semibold">Qual a duração de cada sessão?</h3>
+                            <i class="fas fa-chevron-down text-2xl transition-transform duration-300"></i>
+                        </div>
+                        <div class="accordion-content" id="faq-2">
+                            <div class="accordion-body">
+                                <p class="text-lg text-cinza-medio leading-relaxed">
+                                    Cada sessão tem duração de 50 minutos, seguindo os padrões éticos da psicologia. Este tempo é 
+                                    cuidadosamente planejado para permitir um trabalho profundo e efetivo, respeitando os limites 
+                                    terapêuticos necessários para um processo saudável. Os 50 minutos proporcionam tempo suficiente 
+                                    para explorarmos questões importantes, desenvolvermos insights e trabalharmos estratégias práticas, 
+                                    sempre mantendo o foco e a qualidade do atendimento.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item fade-in">
+                        <div class="accordion-header" data-target="faq-3">
+                            <h3 class="text-xl lg:text-2xl font-semibold">Com que frequência devo vir às sessões?</h3>
+                            <i class="fas fa-chevron-down text-2xl transition-transform duration-300"></i>
+                        </div>
+                        <div class="accordion-content" id="faq-3">
+                            <div class="accordion-body">
+                                <p class="text-lg text-cinza-medio leading-relaxed">
+                                    Geralmente recomendo sessões semanais, especialmente no início do processo terapêutico, pois esta 
+                                    frequência permite um acompanhamento mais próximo e um desenvolvimento consistente do trabalho. 
+                                    Conforme seu progresso e estabilização, podemos ajustar a frequência para quinzenal ou mensal. 
+                                    Cada caso é único e será avaliado individualmente, considerando suas necessidades específicas, 
+                                    disponibilidade e objetivos terapêuticos para determinar o que funciona melhor para você.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item fade-in">
+                        <div class="accordion-header" data-target="faq-4">
+                            <h3 class="text-xl lg:text-2xl font-semibold">Quanto tempo dura o processo terapêutico?</h3>
+                            <i class="fas fa-chevron-down text-2xl transition-transform duration-300"></i>
+                        </div>
+                        <div class="accordion-content" id="faq-4">
+                            <div class="accordion-body">
+                                <p class="text-lg text-cinza-medio leading-relaxed">
+                                    A duração do processo terapêutico varia significativamente de pessoa para pessoa e depende dos 
+                                    objetivos estabelecidos, da complexidade das questões trabalhadas e do seu ritmo pessoal de 
+                                    desenvolvimento. Algumas questões específicas podem ser trabalhadas em alguns meses, enquanto 
+                                    processos mais profundos de autoconhecimento podem requerer um tempo maior. O importante é 
+                                    respeitar seu ritmo único e necessidades individuais, sempre reavaliando nossos objetivos juntos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item fade-in">
+                        <div class="accordion-header" data-target="faq-5">
+                            <h3 class="text-xl lg:text-2xl font-semibold">Atende online ou apenas presencial?</h3>
+                            <i class="fas fa-chevron-down text-2xl transition-transform duration-300"></i>
+                        </div>
+                        <div class="accordion-content" id="faq-5">
+                            <div class="accordion-body">
+                                <p class="text-lg text-cinza-medio leading-relaxed">
+                                    Ofereço tanto atendimento presencial quanto online, ambas as modalidades devidamente regulamentadas 
+                                    pelo Conselho Federal de Psicologia. O atendimento online é uma excelente opção para quem tem 
+                                    dificuldades de locomoção, mora em outras cidades, tem agenda muito corrida ou simplesmente prefere 
+                                    a comodidade e privacidade de casa. Ambas as modalidades são igualmente eficazes quando há 
+                                    comprometimento mútuo com o processo terapêutico.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item fade-in">
+                        <div class="accordion-header" data-target="faq-6">
+                            <h3 class="text-xl lg:text-2xl font-semibold">Como sei se preciso de terapia?</h3>
+                            <i class="fas fa-chevron-down text-2xl transition-transform duration-300"></i>
+                        </div>
+                        <div class="accordion-content" id="faq-6">
+                            <div class="accordion-body">
+                                <p class="text-lg text-cinza-medio leading-relaxed">
+                                    A terapia pode ser benéfica em diversos momentos da vida: quando enfrentamos dificuldades emocionais, 
+                                    relacionamentos conflituosos, momentos de transição, ansiedade, depressão, ou simplesmente quando 
+                                    buscamos autoconhecimento e crescimento pessoal. Não é necessário estar em crise para buscar ajuda 
+                                    psicológica. A terapia é um investimento em seu bem-estar e qualidade de vida, proporcionando 
+                                    ferramentas valiosas para lidar com os desafios cotidianos de forma mais saudável e equilibrada.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização e Contato -->
+    <section id="contato" class="py-32 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-20 fade-in">
+                    <h2 class="text-6xl lg:text-7xl font-serif font-bold gradient-text mb-8 enhanced-heading">
+                        Vamos Conversar?
+                    </h2>
+                    <div class="w-32 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-8"></div>
+                    <p class="text-2xl text-cinza-medio font-light">
+                        Entre em contato e dê o primeiro passo para seu bem-estar
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-20">
+                    <div class="slide-in-left">
+                        <div class="card">
+                            <h3 class="text-3xl font-serif font-bold gradient-text mb-10">Informações de Contato</h3>
+                            
+                            <div class="space-y-8">
+                                <div class="flex items-start gap-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                        <i class="fas fa-phone text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-cinza-escuro mb-2 text-xl">Telefone</h4>
+                                        <p class="text-cinza-medio text-lg">(11) 99999-9999</p>
+                                        <p class="text-sm text-cinza-medio">Atendimento de segunda a sexta, 8h às 18h</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                        <i class="fas fa-envelope text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-cinza-escuro mb-2 text-xl">E-mail</h4>
+                                        <p class="text-cinza-medio text-lg">contato@draanasilva.com.br</p>
+                                        <p class="text-sm text-cinza-medio">Resposta em até 24 horas</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-cinza-escuro mb-2 text-xl">Endereço</h4>
+                                        <p class="text-cinza-medio text-lg">Rua das Flores, 123 - Sala 456</p>
+                                        <p class="text-cinza-medio text-lg">Jardins - São Paulo - SP</p>
+                                        <p class="text-cinza-medio text-lg">CEP: 01234-567</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                        <i class="fas fa-clock text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-cinza-escuro mb-2 text-xl">Horários</h4>
+                                        <p class="text-cinza-medio text-lg">Segunda a Sexta: 8h às 18h</p>
+                                        <p class="text-cinza-medio text-lg">Sábado: 8h às 12h</p>
+                                        <p class="text-sm text-cinza-medio">Atendimento online disponível</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-12 pt-8 border-t border-cinza-claro">
+                                <h4 class="font-semibold text-cinza-escuro mb-6 text-xl">Agende Agora</h4>
+                                <div class="flex flex-col sm:flex-row gap-6">
+                                    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma consulta." 
+                                       class="btn-primary flex-1 justify-center text-lg">
+                                        <i class="fab fa-whatsapp"></i>
+                                        WhatsApp
+                                    </a>
+                                    <a href="tel:+5511999999999" class="btn-secondary flex-1 justify-center text-lg">
+                                        <i class="fas fa-phone"></i>
+                                        Ligar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-in-right">
+                        <div class="card">
+                            <h3 class="text-3xl font-serif font-bold gradient-text mb-10">Localização</h3>
+                            
+                            <div class="bg-gradient-to-br from-cinza-claro to-rosa-claro-light h-96 rounded-3xl flex items-center justify-center mb-8 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-mesh-gradient opacity-30"></div>
+                                <div class="text-center text-cinza-medio relative z-10">
+                                    <i class="fas fa-map text-6xl mb-6 text-terracota animate-pulse-soft"></i>
+                                    <p class="text-xl font-medium">Mapa da Localização</p>
+                                    <p class="text-lg">Rua das Flores, 123 - Jardins</p>
+                                    <p class="text-sm mt-4 opacity-75">[Integração com Google Maps]</p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-cinza-medio text-center text-lg">
+                                Estamos ansiosos para recebê-lo em nosso consultório acolhedor!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Wave -->
+    <footer class="wave-footer py-16 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-12 mb-12">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-brain text-terracota text-3xl mr-4 animate-pulse-soft"></i>
+                            <h3 class="text-3xl font-serif font-bold text-off-white">Dra. Ana Silva</h3>
+                        </div>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            Psicóloga clínica dedicada ao seu bem-estar emocional e crescimento pessoal. 
+                            Oferecendo um espaço seguro e acolhedor para sua jornada de autoconhecimento e transformação.
+                        </p>
+                        <p class="text-gray-400 text-sm">CRP: 06/123456</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-off-white mb-6">Links Rápidos</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#historia" class="text-gray-300 hover:text-terracota transition-colors text-lg">Minha História</a></li>
+                            <li><a href="#acredito" class="text-gray-300 hover:text-terracota transition-colors text-lg">Filosofia</a></li>
+                            <li><a href="#terapia" class="text-gray-300 hover:text-terracota transition-colors text-lg">Sobre a Terapia</a></li>
+                            <li><a href="#duvidas" class="text-gray-300 hover:text-terracota transition-colors text-lg">Dúvidas Frequentes</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-off-white mb-6">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h5 class="text-lg font-semibold text-off-white mb-4">Contato Rápido</h5>
+                            <p class="text-gray-300 text-sm mb-2">(11) 99999-9999</p>
+                            <p class="text-gray-300 text-sm">contato@draanasilva.com.br</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-600 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-300 text-sm mb-4 md:mb-0">
+                            &copy; 2024 Dra. Ana Silva - Todos os direitos reservados.
+                        </p>
+                        <div class="flex items-center space-x-6 text-sm text-gray-400">
+                            <a href="#" class="hover:text-terracota transition-colors">Política de Privacidade</a>
+                            <a href="#" class="hover:text-terracota transition-colors">Termos de Uso</a>
+                            <a href="#" class="hover:text-terracota transition-colors">Código de Ética</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Enhanced Carousel Functionality
+        const carouselTrack = document.getElementById('carousel-track');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const carouselIndicators = document.getElementById('carousel-indicators');
+        const slides = Array.from(carouselTrack.children);
+        let currentSlide = 0;
+        let isTransitioning = false;
+
+        function updateCarousel() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            const slideWidth = slides[0].offsetWidth;
+            carouselTrack.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+            
+            // Update indicators
+            const dots = Array.from(carouselIndicators.children);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 800);
+        }
+
+        function moveToSlide(slideIndex) {
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            moveToSlide(currentSlide - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            moveToSlide(currentSlide + 1);
+        });
+
+        carouselIndicators.addEventListener('click', (e) => {
+            if (e.target.classList.contains('carousel-dot')) {
+                const slide = parseInt(e.target.dataset.slide);
+                moveToSlide(slide);
+            }
+        });
+
+        // Auto-play carousel
+        setInterval(() => {
+            if (!isTransitioning) {
+                moveToSlide(currentSlide + 1);
+            }
+        }, 6000);
+
+        // Enhanced Accordion Functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentNode;
+                const content = item.querySelector('.accordion-content');
+                const icon = header.querySelector('i');
+                const isActive = content.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.accordion-content').classList.remove('active');
+                        otherItem.querySelector('.accordion-header i').classList.remove('rotate-180');
+                        otherItem.querySelector('.accordion-header').classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    content.classList.add('active');
+                    header.classList.add('active');
+                    icon.classList.add('rotate-180');
+                } else {
+                    content.classList.remove('active');
+                    header.classList.remove('active');
+                    icon.classList.remove('rotate-180');
+                }
+            });
+        });
+
+        // Enhanced Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -100px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Add staggered animation for multiple elements
+                    const siblings = Array.from(entry.target.parentNode.children);
+                    const index = siblings.indexOf(entry.target);
+                    entry.target.style.animationDelay = `${index * 0.1}s`;
+                    
+                    // Animate text reveals
+                    const textReveals = entry.target.querySelectorAll('.text-reveal');
+                    textReveals.forEach((element, i) => {
+                        setTimeout(() => {
+                            element.style.opacity = '1';
+                            element.style.animation = 'textReveal 1.5s ease-out forwards';
+                        }, i * 200);
+                    });
+                    
+                    // Animate words
+                    const words = entry.target.querySelectorAll('.word-animate');
+                    words.forEach((word, i) => {
+                        setTimeout(() => {
+                            word.style.animation = `wordSlide 0.8s ease-out ${i * 0.1}s forwards`;
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            appearOnScroll.observe(el);
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Enhanced Header Behavior
+        const header = document.getElementById('header');
+        let lastScrollTop = 0;
+        let ticking = false;
+
+        function updateHeader() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.classList.add('shadow-strong');
+            } else {
+                header.classList.remove('shadow-strong');
+            }
+            
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Initialize carousel
+        updateCarousel();
+
+        // Text animation on scroll
+        function animateTextOnScroll() {
+            const textContainers = document.querySelectorAll('.text-container');
+            
+            textContainers.forEach(container => {
+                const rect = container.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible && !container.classList.contains('animated')) {
+                    container.classList.add('animated');
+                    
+                    // Animate paragraphs
+                    const paragraphs = container.querySelectorAll('.luxury-paragraph');
+                    paragraphs.forEach((p, index) => {
+                        setTimeout(() => {
+                            p.style.opacity = '1';
+                            p.style.transform = 'translateY(0)';
+                        }, index * 300);
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateTextOnScroll);
+        window.addEventListener('load', animateTextOnScroll);
+    </script>
+</body>
+</html>
