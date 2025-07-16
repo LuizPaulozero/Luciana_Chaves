@@ -943,6 +943,31 @@
             animation: morph 8s ease-in-out infinite;
         }
 
+        /* Logo responsive adjustments */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container img {
+                max-height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container img {
+                max-height: 35px;
+            }
+        }
+
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .text-container {
@@ -1056,9 +1081,8 @@
     <header class="wave-header sticky top-0 z-50 transition-all duration-500" id="header">
         <nav class="container mx-auto px-4 py-6">
             <div class="flex justify-between items-center">
-                <div class="text-3xl font-serif font-bold gradient-text flex items-center">
-                    <i class="fas fa-brain mr-3 text-terracota animate-pulse-soft"></i>
-                    <span class="font-script"><img src="./imagens/Logo.png" alt=""></span>
+                <div class="logo-container">
+                    <img src="../Luciana_Chaves/imagens/Logo.png" alt="Luciana Magalhães - Logo" class="transition-all duration-300" style="max-height:150px; width:auto;">
                 </div>
                 <div class="hidden lg:flex space-x-2">
                     <a href="#inicio" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Início</a>
@@ -1068,6 +1092,7 @@
                     <a href="#quem-sou" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Sobre
                         Mim</a>
                     <a href="#terapia" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Terapia</a>
+                    <a href="#empresas" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Para Empresas</a>
                     <a href="#consultorio"
                         class="nav-link text-cinza-escuro hover:text-terracota font-medium">Consultório</a>
                     <a href="#duvidas" class="nav-link text-cinza-escuro hover:text-terracota font-medium">FAQ</a>
@@ -1091,6 +1116,8 @@
                     Mim</a>
                 <a href="#terapia"
                     class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Terapia</a>
+                <a href="#empresas"
+                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Para Empresas</a>
                 <a href="#consultorio"
                     class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Consultório</a>
                 <a href="#duvidas"
@@ -1139,13 +1166,9 @@
                 </div>
                 <div class="lg:w-1/2 slide-in-right">
                     <div class="relative">
-                        <div
-                            class="absolute -inset-8 bg-gradient-to-r from-terracota via-terracota-light to-terracota rounded-full blur-2xl opacity-30 animate-pulse-soft">
-                        </div>
                         <div class="relative">
-                            <img src="./imagens/IMG_6705.jpg" alt="Dra. Ana Silva - Psicóloga"
+                            <img src="./imagens/IMG_6705.jpg" alt="Luciana Magalhães - Psicóloga"
                                 class="relative rounded-3xl shadow-dreamy w-full max-w-lg mx-auto transform hover:scale-105 transition-transform duration-500">
-
                         </div>
                     </div>
                 </div>
@@ -1182,8 +1205,6 @@
                                 desenvolvi minha maior ferramenta de trabalho: a escuta sensível, acolhedora e afetuosa,
                                 que hoje é o coração da minha prática como psicóloga.
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -1237,8 +1258,6 @@
                                 desesperança. Meu papel ali é ajudar essas pessoas a encontrar — ou reencontrar — o
                                 sentido da vida, com escuta, cuidado e reconstrução de vínculos consigo mesmas.
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -1282,7 +1301,6 @@
                                 outro ou consigo mesma(o) —, saiba que aqui é um espaço seguro para se ouvir, se
                                 compreender e, com o tempo, se reconstruir.
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -1367,6 +1385,72 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Para Empresas Section -->
+    <section id="empresas" class="py-32 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="fade-in mb-20 text-center">
+                    <h2 class="text-6xl lg:text-7xl font-serif font-bold gradient-text mb-8 enhanced-heading">
+                        Para <span class="gradient-text">Empresas</span>
+                    </h2>
+                    <div
+                        class="w-32 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-8">
+                    </div>
+                    <p class="text-2xl text-cinza-medio font-light max-w-4xl mx-auto">
+                        Promovendo saúde mental e bem-estar no ambiente corporativo
+                    </p>
+                </div>
+
+                <div class="slide-in-left">
+                    <div class="text-container transition-all duration-500 mb-16">
+                        <div class="luxury-text text-2xl">
+                            <div class="luxury-paragraph text-reveal">
+                                Além dos atendimentos clínicos, ofereço palestras, workshops e rodas de conversa com o
+                                objetivo de abrir espaços de escuta e promover a conscientização sobre a importância da
+                                saúde mental nas diferentes esferas da vida – pessoal, profissional e coletiva.
+                            </div>
+
+                            <div class="luxury-paragraph text-reveal delay-1">
+                                Com 8 anos de experiência em Psicologia Organizacional, atuei em empresas de grande
+                                porte com foco em Atração & Seleção de Talentos, Diversidade e Inclusão, construindo
+                                práticas de psicoeducação e ações afirmativas com foco em raça.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="card fade-in group">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Palestra sobre Saúde Mental"
+                            class="rounded-2xl mb-6 w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-semibold text-cinza-escuro mb-4">Palestras e Workshops</h3>
+                        <p class="text-cinza-medio">Conteúdo personalizado para as necessidades da sua equipe, abordando temas como gestão do estresse, inteligência emocional e bem-estar no trabalho.</p>
+                    </div>
+                    <div class="card fade-in group">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Roda de Conversa sobre Diversidade"
+                            class="rounded-2xl mb-6 w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-semibold text-cinza-escuro mb-4">Rodas de Conversa</h3>
+                        <p class="text-cinza-medio">Espaços seguros para diálogo aberto sobre temas sensíveis, promovendo a empatia e a construção de um ambiente mais inclusivo.</p>
+                    </div>
+                    <div class="card fade-in group">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Consultoria em D&I"
+                            class="rounded-2xl mb-6 w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-semibold text-cinza-escuro mb-4">Psicologia Organizacional</h3>
+                        <p class="text-cinza-medio">Consultoria especializada em atração de talentos, diversidade, inclusão e desenvolvimento de programas de psicoeducação.</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <a href="#contato" class="btn-primary text-lg">
+                        <i class="fas fa-handshake"></i>
+                        Fale Conosco para sua Empresa
+                    </a>
                 </div>
             </div>
         </div>
@@ -1773,6 +1857,8 @@
                             <li><a href="#terapia"
                                     class="text-gray-300 hover:text-terracota transition-colors text-lg">Sobre a
                                     Terapia</a></li>
+                            <li><a href="#empresas"
+                                    class="text-gray-300 hover:text-terracota transition-colors text-lg">Para Empresas</a></li>
                             <li><a href="#duvidas"
                                     class="text-gray-300 hover:text-terracota transition-colors text-lg">Dúvidas
                                     Frequentes</a></li>
