@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,190 +83,238 @@
                 opacity: 0;
                 transform: translateY(40px) scale(0.95);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
         }
+
         @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(60px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         @keyframes slideInLeft {
             from {
                 opacity: 0;
                 transform: translateX(-60px) rotateY(-10deg);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0) rotateY(0deg);
             }
         }
+
         @keyframes slideInRight {
             from {
                 opacity: 0;
                 transform: translateX(60px) rotateY(10deg);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0) rotateY(0deg);
             }
         }
+
         @keyframes bounceGentle {
+
             0%,
             100% {
                 transform: translateY(0) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-15px) rotate(2deg);
             }
         }
+
         @keyframes pulseSoft {
+
             0%,
             100% {
                 transform: scale(1) rotate(0deg);
                 opacity: 0.8;
             }
+
             50% {
                 transform: scale(1.1) rotate(1deg);
                 opacity: 1;
             }
         }
+
         @keyframes float {
+
             0%,
             100% {
                 transform: translateY(0px) rotate(0deg);
             }
+
             33% {
                 transform: translateY(-20px) rotate(1deg);
             }
+
             66% {
                 transform: translateY(-10px) rotate(-1deg);
             }
         }
+
         @keyframes wave {
+
             0%,
             100% {
                 transform: rotate(0deg);
             }
+
             25% {
                 transform: rotate(1deg);
             }
+
             75% {
                 transform: rotate(-1deg);
             }
         }
+
         @keyframes shimmer {
             0% {
                 background-position: -200% 0;
             }
+
             100% {
                 background-position: 200% 0;
             }
         }
+
         @keyframes glow {
             from {
                 box-shadow: 0 0 20px rgba(217, 140, 106, 0.3);
             }
+
             to {
                 box-shadow: 0 0 40px rgba(217, 140, 106, 0.6), 0 0 60px rgba(217, 140, 106, 0.3);
             }
         }
+
         @keyframes typewriter {
             from {
                 width: 0;
             }
+
             to {
                 width: 100%;
             }
         }
+
         @keyframes blink {
+
             0%,
             50% {
                 opacity: 1;
             }
+
             51%,
             100% {
                 opacity: 0;
             }
         }
+
         @keyframes morph {
+
             0%,
             100% {
                 border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             }
+
             50% {
                 border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
             }
         }
+
         @keyframes gradientShift {
+
             0%,
             100% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
         }
+
         @keyframes textReveal {
             0% {
                 opacity: 0;
                 transform: translateY(30px) rotateX(90deg);
                 filter: blur(10px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) rotateX(0deg);
                 filter: blur(0px);
             }
         }
+
         @keyframes lineExpand {
             0% {
                 width: 0;
                 opacity: 0;
             }
+
             100% {
                 width: 100%;
                 opacity: 1;
             }
         }
+
         @keyframes wordSlide {
             0% {
                 opacity: 0;
                 transform: translateX(-20px) scale(0.8);
                 filter: blur(5px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateX(0) scale(1);
                 filter: blur(0px);
             }
         }
+
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 12px;
         }
+
         ::-webkit-scrollbar-track {
             background: linear-gradient(to bottom, #FAF8F6, #EBD5CE);
         }
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, #D98C6A, #C67A56);
             border-radius: 6px;
             border: 2px solid #FAF8F6;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(to bottom, #C67A56, #B86A4A);
         }
+
         /* Wave Header */
         .wave-header {
             position: relative;
@@ -273,6 +322,7 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(217, 140, 106, 0.1);
         }
+
         .wave-header::before {
             content: '';
             position: absolute;
@@ -284,11 +334,13 @@
             background-size: 1200px 20px;
             animation: wave 8s ease-in-out infinite;
         }
+
         /* Wave Footer */
         .wave-footer {
             position: relative;
             background: linear-gradient(135deg, #5C5C5C 0%, #4A4A4A 50%, #3A3A3A 100%);
         }
+
         .wave-footer::before {
             content: '';
             position: absolute;
@@ -301,6 +353,7 @@
             animation: wave 10s ease-in-out infinite reverse;
             transform: rotate(180deg);
         }
+
         /* Enhanced Text Containers */
         .text-container {
             position: relative;
@@ -316,6 +369,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .text-container::before {
             content: '';
             position: absolute;
@@ -332,6 +386,7 @@
             border-radius: 28px;
             z-index: -1;
         }
+
         .text-container::after {
             content: '';
             position: absolute;
@@ -350,15 +405,18 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .text-container:hover::after {
             opacity: 1;
         }
+
         .text-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15),
                 0 0 0 1px rgba(217, 140, 106, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
+
         /* Luxury Text Styling */
         .luxury-text {
             position: relative;
@@ -366,10 +424,13 @@
             font-weight: 300;
             letter-spacing: 0.3px;
             color: #5C5C5C;
-            text-align: left; /* Alinhamento do texto */
+            text-align: left;
+            /* Alinhamento do texto */
         }
+
         .luxury-text::first-letter {
-            font-size: 3.5em; /* Reduzido para mais delicadeza */
+            font-size: 3.5em;
+            /* Reduzido para mais delicadeza */
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             float: left;
@@ -381,11 +442,14 @@
             background-clip: text;
             text-shadow: 0 4px 15px rgba(217, 140, 106, 0.3);
         }
+
         .luxury-paragraph {
-            margin-bottom: 1.5rem; /* Reduzido para mais delicadeza */
+            margin-bottom: 1.5rem;
+            /* Reduzido para mais delicadeza */
             position: relative;
             padding-left: 30px;
         }
+
         .luxury-paragraph::before {
             content: '';
             position: absolute;
@@ -397,46 +461,59 @@
             border-radius: 2px;
             opacity: 0.6;
         }
+
         .luxury-paragraph:hover::before {
             opacity: 1;
             width: 6px;
             transition: all 0.3s ease;
         }
+
         /* Quote Styling */
         .luxury-quote {
             position: relative;
             font-style: italic;
-            font-size: 1.1em; /* Reduzido para mais delicadeza */
+            font-size: 1.1em;
+            /* Reduzido para mais delicadeza */
             text-align: center;
-            padding: 30px 50px; /* Reduzido */
-            margin: 30px 0; /* Reduzido */
+            padding: 30px 50px;
+            /* Reduzido */
+            margin: 30px 0;
+            /* Reduzido */
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.05), rgba(235, 213, 206, 0.1));
             border-radius: 20px;
             border-left: 5px solid #D98C6A;
         }
+
         .luxury-quote::before,
         .luxury-quote::after {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5em; /* Reduzido */
+            font-size: 3.5em;
+            /* Reduzido */
             color: rgba(217, 140, 106, 0.3);
             position: absolute;
         }
+
         .luxury-quote::before {
             content: '"';
             top: -10px;
             left: 20px;
         }
+
         .luxury-quote::after {
             content: '"';
-            bottom: -30px; /* Ajustado */
+            bottom: -30px;
+            /* Ajustado */
             right: 20px;
         }
+
         /* Enhanced Typography */
         .enhanced-heading {
             position: relative;
             display: inline-block;
-            margin-bottom: 1.5rem; /* Reduzido */
+            margin-bottom: 1.5rem;
+            /* Reduzido */
         }
+
         .enhanced-heading::after {
             content: '';
             position: absolute;
@@ -448,29 +525,36 @@
             border-radius: 2px;
             animation: lineExpand 1s ease-out 0.5s forwards;
         }
+
         /* Text Reveal Animation */
         .text-reveal {
             opacity: 0;
             animation: textReveal 1.5s ease-out forwards;
         }
+
         .text-reveal.delay-1 {
             animation-delay: 0.2s;
         }
+
         .text-reveal.delay-2 {
             animation-delay: 0.4s;
         }
+
         .text-reveal.delay-3 {
             animation-delay: 0.6s;
         }
+
         .text-reveal.delay-4 {
             animation-delay: 0.8s;
         }
+
         /* Word by Word Animation */
         .word-animate {
             display: inline-block;
             opacity: 0;
             animation: wordSlide 0.8s ease-out forwards;
         }
+
         /* Enhanced Carousel */
         .carousel-container {
             position: relative;
@@ -479,6 +563,7 @@
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(217, 140, 106, 0.1);
             background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
         }
+
         .carousel-container::before {
             content: '';
             position: absolute;
@@ -492,22 +577,27 @@
             animation: gradient-shift 6s ease-in-out infinite;
             background-size: 400% 400%;
         }
+
         .carousel-track {
             display: flex;
             transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .carousel-slide {
             min-width: 100%;
             flex-shrink: 0;
             position: relative;
         }
+
         /* Novo contêiner para manter a proporção da imagem */
         .aspect-ratio-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* Proporção 16:9 (9 / 16 * 100) */
+            padding-bottom: 56.25%;
+            /* Proporção 16:9 (9 / 16 * 100) */
             overflow: hidden;
         }
+
         .aspect-ratio-container img {
             position: absolute;
             top: 0;
@@ -515,12 +605,15 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: none; /* Remover transição de hover */
+            transition: none;
+            /* Remover transição de hover */
         }
+
         /* Remover o hover zoom das imagens do carrossel */
         .carousel-slide:hover img {
             transform: none;
         }
+
         .carousel-overlay {
             position: absolute;
             bottom: 0;
@@ -528,21 +621,26 @@
             right: 0;
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             color: white;
-            padding: 30px; /* Reduzido */
+            padding: 30px;
+            /* Reduzido */
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .carousel-slide:hover .carousel-overlay {
             transform: translateY(0);
         }
+
         .carousel-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             background: rgba(255, 255, 255, 0.95);
             border: none;
-            width: 50px; /* Reduzido */
-            height: 50px; /* Reduzido */
+            width: 50px;
+            /* Reduzido */
+            height: 50px;
+            /* Reduzido */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -552,54 +650,74 @@
             backdrop-filter: blur(20px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
+
         .carousel-nav:hover {
             background: linear-gradient(135deg, #D98C6A, #E5A584);
             color: white;
             transform: translateY(-50%) scale(1.1);
             box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
         }
+
         .carousel-nav.prev {
-            left: 20px; /* Ajustado */
+            left: 20px;
+            /* Ajustado */
         }
+
         .carousel-nav.next {
-            right: 20px; /* Ajustado */
+            right: 20px;
+            /* Ajustado */
         }
+
         .carousel-indicators {
             position: absolute;
-            bottom: 20px; /* Ajustado */
+            bottom: 20px;
+            /* Ajustado */
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 10px; /* Reduzido */
+            gap: 10px;
+            /* Reduzido */
         }
+
         .carousel-dot {
-            width: 12px; /* Reduzido */
-            height: 12px; /* Reduzido */
+            width: 12px;
+            /* Reduzido */
+            height: 12px;
+            /* Reduzido */
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
             transition: all 0.4s ease;
             position: relative;
         }
+
         .carousel-dot::before {
             content: '';
             position: absolute;
-            top: -3px; /* Ajustado */
-            left: -3px; /* Ajustado */
-            right: -3px; /* Ajustado */
-            bottom: -3px; /* Ajustado */
+            top: -3px;
+            /* Ajustado */
+            left: -3px;
+            /* Ajustado */
+            right: -3px;
+            /* Ajustado */
+            bottom: -3px;
+            /* Ajustado */
             border-radius: 50%;
             background: linear-gradient(45deg, #D98C6A, #E5A584);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .carousel-dot.active {
             background: #D98C6A;
-            transform: scale(1.2); /* Reduzido */
+            transform: scale(1.2);
+            /* Reduzido */
         }
+
         .carousel-dot.active::before {
             opacity: 0.3;
         }
+
         /* Enhanced Accordion */
         .accordion-item {
             border: 2px solid transparent;
@@ -609,6 +727,7 @@
             background: white;
             position: relative;
         }
+
         .accordion-item::before {
             content: '';
             position: absolute;
@@ -621,16 +740,20 @@
             transition: opacity 0.3s ease;
             border-radius: 18px;
         }
+
         .accordion-item:hover {
             border-color: rgba(217, 140, 106, 0.3);
             box-shadow: 0 15px 40px rgba(217, 140, 106, 0.2);
             transform: translateY(-5px);
         }
+
         .accordion-item:hover::before {
             opacity: 1;
         }
+
         .accordion-header {
-            padding: 25px; /* Reduzido */
+            padding: 25px;
+            /* Reduzido */
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -640,31 +763,39 @@
             position: relative;
             z-index: 1;
         }
+
         .accordion-header:hover {
             background: linear-gradient(135deg, #F2E4DD 0%, #EBD5CE 100%);
         }
+
         .accordion-header.active {
             background: linear-gradient(135deg, #D98C6A 0%, #E5A584 100%);
             color: white;
         }
+
         .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             background: white;
         }
+
         .accordion-content.active {
             max-height: 400px;
         }
+
         .accordion-body {
-            padding: 25px; /* Reduzido */
+            padding: 25px;
+            /* Reduzido */
             border-top: 1px solid rgba(217, 140, 106, 0.1);
         }
+
         /* Enhanced Buttons */
         .btn-primary {
             background: linear-gradient(135deg, #D98C6A 0%, #E5A584 100%);
             color: white;
-            padding: 16px 32px; /* Reduzido */
+            padding: 16px 32px;
+            /* Reduzido */
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
@@ -678,6 +809,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -688,18 +820,22 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
+
         .btn-primary:hover::before {
             left: 100%;
         }
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(217, 140, 106, 0.5);
             background: linear-gradient(135deg, #C67A56 0%, #D98C6A 100%);
         }
+
         .btn-secondary {
             background: transparent;
             color: #D98C6A;
-            padding: 16px 32px; /* Reduzido */
+            padding: 16px 32px;
+            /* Reduzido */
             border: 2px solid #D98C6A;
             border-radius: 50px;
             font-weight: 600;
@@ -712,6 +848,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .btn-secondary::before {
             content: '';
             position: absolute;
@@ -723,25 +860,30 @@
             transition: width 0.4s ease;
             z-index: -1;
         }
+
         .btn-secondary:hover::before {
             width: 100%;
         }
+
         .btn-secondary:hover {
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(217, 140, 106, 0.4);
         }
+
         /* Enhanced Cards */
         .card {
             background: white;
             border-radius: 25px;
-            padding: 30px; /* Reduzido */
+            padding: 30px;
+            /* Reduzido */
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border: 1px solid rgba(217, 140, 106, 0.1);
             position: relative;
             overflow: hidden;
         }
+
         .card::before {
             content: '';
             position: absolute;
@@ -753,18 +895,22 @@
             background-size: 200% 100%;
             animation: shimmer 3s linear infinite;
         }
+
         .card:hover {
             transform: translateY(-10px) rotateX(5deg);
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(217, 140, 106, 0.2);
             border-color: rgba(217, 140, 106, 0.3);
         }
+
         /* Navigation Enhancements */
         .nav-link {
             position: relative;
             transition: all 0.3s ease;
-            padding: 6px 12px; /* Reduzido */
+            padding: 6px 12px;
+            /* Reduzido */
             border-radius: 20px;
         }
+
         .nav-link::before {
             content: '';
             position: absolute;
@@ -776,13 +922,16 @@
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
+
         .nav-link:hover::before {
             width: 80%;
         }
+
         .nav-link:hover {
             background: rgba(217, 140, 106, 0.1);
             color: #D98C6A;
         }
+
         /* Text Effects */
         .typewriter {
             overflow: hidden;
@@ -790,6 +939,7 @@
             white-space: nowrap;
             animation: typewriter 4s steps(40) 1s forwards, blink 1s infinite;
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #D98C6A, #E5A584, #C67A56);
             background-size: 200% 200%;
@@ -798,6 +948,7 @@
             background-clip: text;
             animation: gradient-shift 4s ease-in-out infinite;
         }
+
         .shimmer-text {
             background: linear-gradient(90deg, #5C5C5C 25%, #D98C6A 50%, #5C5C5C 75%);
             background-size: 200% 100%;
@@ -806,6 +957,7 @@
             background-clip: text;
             animation: shimmer 2s linear infinite;
         }
+
         /* Floating Elements */
         .floating-element {
             position: absolute;
@@ -813,121 +965,171 @@
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.2));
             animation: float 6s ease-in-out infinite;
         }
+
         .floating-element:nth-child(1) {
             animation-delay: 0s;
         }
+
         .floating-element:nth-child(2) {
             animation-delay: 2s;
         }
+
         .floating-element:nth-child(3) {
             animation-delay: 4s;
         }
+
         /* Morphing Shapes */
         .morph-shape {
             background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
             animation: morph 8s ease-in-out infinite;
         }
+
         /* Logo responsive adjustments */
         .logo-container {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .logo-container img {
             max-height: 50px;
             width: auto;
             object-fit: contain;
         }
+
         @media (max-width: 768px) {
             .logo-container img {
                 max-height: 40px;
             }
         }
+
         @media (max-width: 480px) {
             .logo-container img {
                 max-height: 35px;
             }
         }
+
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .text-container {
-                padding: 30px 20px; /* Reduzido */
+                padding: 30px 20px;
+                /* Reduzido */
                 border-radius: 20px;
             }
+
             .luxury-text::first-letter {
                 font-size: 3em;
             }
+
             .luxury-quote {
-                padding: 20px 30px; /* Reduzido */
+                padding: 20px 30px;
+                /* Reduzido */
                 font-size: 1em;
             }
+
             /* Ajuste para imagens do carrossel em mobile */
             .aspect-ratio-container {
-                padding-bottom: 75%; /* Proporção 4:3 para mobile, ou ajuste conforme necessário */
+                padding-bottom: 75%;
+                /* Proporção 4:3 para mobile, ou ajuste conforme necessário */
             }
+
             .carousel-nav {
-                width: 40px; /* Reduzido */
-                height: 40px; /* Reduzido */
+                width: 40px;
+                /* Reduzido */
+                height: 40px;
+                /* Reduzido */
             }
+
             .carousel-nav.prev {
-                left: 10px; /* Ajustado */
+                left: 10px;
+                /* Ajustado */
             }
+
             .carousel-nav.next {
-                right: 10px; /* Ajustado */
+                right: 10px;
+                /* Ajustado */
             }
+
             .card {
-                padding: 20px; /* Reduzido */
+                padding: 20px;
+                /* Reduzido */
             }
+
             .wave-header::before,
             .wave-footer::before {
                 height: 15px;
                 background-size: 800px 15px;
             }
+
             /* Redução de tamanho de fonte geral para mobile */
-            .text-2xl { font-size: 1.25rem; /* 20px */ }
-            .text-xl { font-size: 1.125rem; /* 18px */ }
-            .text-lg { font-size: 1rem; /* 16px */ }
-            .text-base { font-size: 0.875rem; /* 14px */ }
+            .text-2xl {
+                font-size: 1.25rem;
+                /* 20px */
+            }
+
+            .text-xl {
+                font-size: 1.125rem;
+                /* 18px */
+            }
+
+            .text-lg {
+                font-size: 1rem;
+                /* 16px */
+            }
+
+            .text-base {
+                font-size: 0.875rem;
+                /* 14px */
+            }
         }
+
         /* Fade animations */
         .fade-in {
             opacity: 0;
             transform: translateY(40px) scale(0.95);
             transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+
         .slide-in-left {
             opacity: 0;
             transform: translateX(-60px) rotateY(-10deg);
             transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .slide-in-left.visible {
             opacity: 1;
             transform: translateX(0) rotateY(0deg);
         }
+
         .slide-in-right {
             opacity: 0;
             transform: translateX(60px) rotateY(10deg);
             transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .slide-in-right.visible {
             opacity: 1;
             transform: translateX(0) rotateY(0deg);
         }
+
         /* Parallax Effect */
         .parallax {
             transform: translateZ(0);
             transition: transform 0.1s ease-out;
         }
+
         /* Glass Effect */
         .glass {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         /* Neon Glow */
         .neon-glow {
             text-shadow: 0 0 10px rgba(217, 140, 106, 0.5),
@@ -936,6 +1138,7 @@
         }
     </style>
 </head>
+
 <body class="font-sans overflow-x-hidden">
     <!-- Floating Background Elements -->
     <div class="fixed inset-0 pointer-events-none z-0">
@@ -949,8 +1152,8 @@
         <nav class="container mx-auto px-4 py-6">
             <div class="flex justify-between items-center">
                 <div class="logo-container">
-                    <img src="./imagens/Logo.png" alt="Luciana Magalhães - Logo"
-                        class="transition-all duration-300" style="max-height:150px; width:auto;">
+                    <img src="./imagens/Logo.png" alt="Luciana Magalhães - Logo" class="transition-all duration-300"
+                        style="max-height:150px; width:auto;">
                 </div>
                 <div class="hidden lg:flex space-x-2">
                     <a href="#inicio" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Início</a>
@@ -1271,7 +1474,8 @@
                         <img src="./imagens/Consultorio1.jpeg" alt="Palestra sobre Saúde Mental"
                             class="rounded-2xl mb-6 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Palestras e Workshops</h3>
-                        <p class="text-cinza-medio text-base">Conteúdo personalizado para as necessidades da sua equipe, abordando
+                        <p class="text-cinza-medio text-base">Conteúdo personalizado para as necessidades da sua equipe,
+                            abordando
                             temas como gestão do estresse, inteligência emocional e bem-estar no trabalho.</p>
                     </div>
                     <div class="card fade-in group">
@@ -1285,7 +1489,8 @@
                         <img src="./imagens/Consultorio3.jpeg" alt="Consultoria em D&I"
                             class="rounded-2xl mb-6 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Psicologia Organizacional</h3>
-                        <p class="text-cinza-medio text-base">Consultoria especializada em atração de talentos, diversidade,
+                        <p class="text-cinza-medio text-base">Consultoria especializada em atração de talentos,
+                            diversidade,
                             inclusão e desenvolvimento de programas de psicoeducação.</p>
                     </div>
                 </div>
@@ -1346,7 +1551,8 @@
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Área de Relaxamento</h3>
-                                <p class="text-base">No coração dos Jardins, com fácil acesso, estacionamento disponível e
+                                <p class="text-base">No coração dos Jardins, com fácil acesso, estacionamento disponível
+                                    e
                                     proximidade ao transporte público.</p>
                             </div>
                         </div>
@@ -1371,7 +1577,8 @@
                         <i class="fas fa-parking text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-cinza-escuro mb-3">Estacionamento</h3>
-                    <p class="text-cinza-medio text-base">Vagas disponíveis no edifício para sua comodidade e tranquilidade</p>
+                    <p class="text-cinza-medio text-base">Vagas disponíveis no edifício para sua comodidade e
+                        tranquilidade</p>
                 </div>
                 <div class="card text-center fade-in group">
                     <div
@@ -1379,7 +1586,8 @@
                         <i class="fas fa-wheelchair text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-cinza-escuro mb-3">Acessibilidade</h3>
-                    <p class="text-cinza-medio text-base">Espaço totalmente acessível para pessoas com mobilidade reduzida</p>
+                    <p class="text-cinza-medio text-base">Espaço totalmente acessível para pessoas com mobilidade
+                        reduzida</p>
                 </div>
                 <div class="card text-center fade-in group">
                     <div
@@ -1545,118 +1753,113 @@
     </section>
     <!-- Localização e Contato -->
     <section id="contato" class="py-24 bg-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-5xl lg:text-6xl font-serif font-bold gradient-text mb-6 enhanced-heading">
-                    Vamos Conversar?
-                </h2>
-                <div
-                    class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-5xl lg:text-6xl font-serif font-bold gradient-text mb-6 enhanced-heading">
+                        Vamos Conversar?
+                    </h2>
+                    <div
+                        class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
+                    </div>
+                    <p class="text-xl text-cinza-medio font-light">
+                        Entre em contato e dê o primeiro passo para seu bem-estar
+                    </p>
                 </div>
-                <p class="text-xl text-cinza-medio font-light">
-                    Entre em contato e dê o primeiro passo para seu bem-estar
-                </p>
-            </div>
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="slide-in-left">
-                    <div class="card">
-                        <h3 class="text-2xl font-serif font-bold gradient-text mb-8">Informações de Contato</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-5">
-                                <div
-                                    class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
-                                    <i class="fas fa-phone text-white text-xl"></i>
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div class="slide-in-left">
+                        <div class="card">
+                            <h3 class="text-2xl font-serif font-bold gradient-text mb-8">Informações de Contato</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-5">
+                                    <div
+                                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                        <i class="fas fa-phone text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Telefone</h4>
+                                        <p class="text-cinza-medio text-base">(11) 99999-9999</p>
+                                        <p class="text-sm text-cinza-medio">Atendimento de segunda a sexta, 8h às 18h
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Telefone</h4>
-                                    <p class="text-cinza-medio text-base">(11) 99999-9999</p>
-                                    <p class="text-sm text-cinza-medio">Atendimento de segunda a sexta, 8h às 18h</p>
+                                <div class="flex items-start gap-5">
+                                    <div
+                                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                        <i class="fas fa-envelope text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">E-mail</h4>
+                                        <p class="text-cinza-medio text-base">contato@draanasilva.com.br</p>
+                                        <p class="text-sm text-cinza-medio">Resposta em até 24 horas</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="flex items-start gap-5">
-                                <div
-                                    class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
-                                    <i class="fas fa-envelope text-white text-xl"></i>
+                                <div class="flex items-start gap-5">
+                                    <div
+                                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Endereço</h4>
+                                        <p class="text-cinza-medio text-base">Rua das Flores, 123 - Sala 456</p>
+                                        <p class="text-cinza-medio text-base">Jardins - São Paulo - SP</p>
+                                        <p class="text-cinza-medio text-base">CEP: 01234-567</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">E-mail</h4>
-                                    <p class="text-cinza-medio text-base">contato@draanasilva.com.br</p>
-                                    <p class="text-sm text-cinza-medio">Resposta em até 24 horas</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-5">
-                                <div
-                                    class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
-                                    <i class="fas fa-map-marker-alt text-white text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Endereço</h4>
-                                    <p class="text-cinza-medio text-base">Rua das Flores, 123 - Sala 456</p>
-                                    <p class="text-cinza-medio text-base">Jardins - São Paulo - SP</p>
-                                    <p class="text-cinza-medio text-base">CEP: 01234-567</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-5">
-                                <div
-                                    class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
-                                    <i class="fas fa-clock text-white text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Horários</h4>
-                                    <p class="text-cinza-medio text-base">Segunda a Sexta: 8h às 18h</p>
-                                    <p class="text-cinza-medio text-base">Sábado: 8h às 12h</p>
-                                    <p class="text-sm text-cinza-medio">Atendimento online disponível</p>
+                                <div class="flex items-start gap-5">
+                                    <div
+                                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
+                                        <i class="fas fa-clock text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Horários</h4>
+                                        <p class="text-cinza-medio text-base">Segunda a Sexta: 8h às 18h</p>
+                                        <p class="text-cinza-medio text-base">Sábado: 8h às 12h</p>
+                                        <p class="text-sm text-cinza-medio">Atendimento online disponível</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="mt-10 pt-6 border-t border-cinza-claro">
-                            <h4 class="font-semibold text-cinza-escuro mb-5 text-lg">Agende Agora</h4>
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="https://wa.me/5582996027533?text=Olá! Gostaria de agendar uma consulta."
-                                    class="btn-primary flex-1 justify-center text-lg">
-                                    <i class="fab fa-whatsapp"></i>
-                                    WhatsApp
-                                </a>
-                                <a href="tel:+5582996027533" class="btn-secondary flex-1 justify-center text-lg">
-                                    <i class="fas fa-phone"></i>
-                                    Ligar
-                                </a>
+                            <div class="mt-10 pt-6 border-t border-cinza-claro">
+                                <h4 class="font-semibold text-cinza-escuro mb-5 text-lg">Agende Agora</h4>
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <a href="https://wa.me/5582996027533?text=Olá! Gostaria de agendar uma consulta."
+                                        class="btn-primary flex-1 justify-center text-lg">
+                                        <i class="fab fa-whatsapp"></i>
+                                        WhatsApp
+                                    </a>
+                                    <a href="tel:+5582996027533" class="btn-secondary flex-1 justify-center text-lg">
+                                        <i class="fas fa-phone"></i>
+                                        Ligar
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="slide-in-right">
-                    <div class="card">
-                        <h3 class="text-2xl font-serif font-bold gradient-text mb-8">Localização</h3>
-                        <div class="h-80 rounded-3xl relative overflow-hidden mb-6">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.162357952975!2d-36.577254!3d-9.759756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7038dd81e8102f3%3A0x8d87b8be9491e027!2sHotel%20Horizonte%20Jardim!5e0!3m2!1spt-BR!2sbr!4v1721212345678"
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                class="absolute inset-0 w-full h-full z-0"></iframe>
-
-                            <div
-                                class="absolute left-1/2 top-8 z-10 -translate-x-1/2 flex flex-col items-center pointer-events-none">
-                                <div class="bg-white rounded-full shadow-lg p-3 mb-2 animate-pulse-soft">
-                                    <i class="fas fa-map-marker-alt text-terracota text-4xl"></i>
+                    <div class="slide-in-right">
+                        <div class="card">
+                            <h3 class="text-2xl font-serif font-bold gradient-text mb-8">Localização</h3>
+                            <div class="h-80 rounded-3xl relative overflow-hidden mb-6">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.425438196246!2d-35.71164640000001!3d-9.6446413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7014509fa5f240f%3A0x70d87744e9ddea4e!2sEmpresarial%20Premium%20Office!5e0!3m2!1spt-BR!2sbr!4v1752776633321!5m2!1spt-BR!2sbr"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div
+                                    class="absolute left-1/2 top-8 z-10 -translate-x-1/2 flex flex-col items-center pointer-events-none">
+                                    <div class="bg-white rounded-full shadow-lg p-3 mb-2 animate-pulse-soft">
+                                    </div>
+                                    
                                 </div>
-                                <span
-                                    class="bg-white bg-opacity-80 rounded-full px-3 py-1 text-terracota font-semibold text-sm shadow">
-                                    Hotel Horizonte Jardim
-                                </span>
                             </div>
+                            <p class="text-cinza-medio text-center text-base">
+                                Estamos ansiosos para recebê-lo em nosso consultório acolhedor!
+                            </p>
                         </div>
-                        <p class="text-cinza-medio text-center text-base">
-                            Estamos ansiosos para recebê-lo em nosso consultório acolhedor!
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!-- Footer with Wave -->
     <footer class="wave-footer py-14 relative">
         <div class="container mx-auto px-4 relative z-10">
@@ -1701,7 +1904,7 @@
                                 class="w-10 h-10 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300">
                                 <i class="fab fa-instagram text-xl"></i>
                             </a>
-                            
+
                         </div>
                         <div class="mt-7">
                             <h5 class="text-base font-semibold text-off-white mb-3">Contato</h5>
@@ -1920,4 +2123,5 @@
         window.addEventListener('load', animateTextOnScroll);
     </script>
 </body>
+
 </html>
