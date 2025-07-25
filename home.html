@@ -924,6 +924,27 @@
                 0 0 20px rgba(217, 140, 106, 0.3),
                 0 0 30px rgba(217, 140, 106, 0.2);
         }
+        
+        /* Image container styling - versão simplificada */
+        .image-container {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Altura maior para desktop */
+        @media (min-width: 1024px) {
+            .image-container {
+                height: 28rem; /* Aumentado de h-96 (24rem) para 28rem */
+            }
+        }
     </style>
 </head>
 <body class="font-sans overflow-x-hidden">
@@ -997,7 +1018,7 @@
                     <div class="fade-in">
                         <h1 class="text-5xl lg:text-7xl font-serif font-bold text-cinza-escuro leading-tight">
                             Bem-vindo ao seu espaço de
-                            <span class="gradient-text neon-glow font-sans text-7xl lg:text-7xl block mt-4">
+                            <span class="gradient-text neon-glow font-sans text-5xl lg:text-7xl block mt-4">
                                 cuidado
                             </span>
                         </h1>
@@ -1115,7 +1136,7 @@
     <section id="quem-sou" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
         <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 <div class="fade-in mb-16 text-center">
                     <h2 class="text-5xl lg:text-6xl font-serif font-bold gradient-text mb-6 enhanced-heading">
                         Além da Psicologia
@@ -1127,23 +1148,36 @@
                         Conheça um pouco mais sobre meus interesses e paixões pessoais
                     </p>
                 </div>
-                <div class="slide-in-left">
-                    <div class="text-container transition-all duration-500">
-                        <div class="luxury-text text-xl">
-                            <p class="luxury-paragraph text-reveal">
-                                Tenho 52 anos, sou mãe solo de um rapaz que está prestes a completar 20. Amo dançar,
-                                tomar um bom café em cafeterias cheias de charme, ouvir músicas que me tocam e sentir a
-                                paz da natureza.
-                            </p>
-                            <p class="luxury-paragraph text-reveal delay-1">
-                                Acredito em encontros verdadeiros, em conversas que curam e no poder do afeto como
-                                ponte entre as pessoas e suas possibilidades de cura.
-                            </p>
-                            <p class="luxury-paragraph text-reveal delay-2">
-                                Se você está vivendo um momento difícil, se sente perdida(o) em alguma relação — com o
-                                outro ou consigo mesma(o) —, saiba que aqui é um espaço seguro para se ouvir, se
-                                compreender e, com o tempo, se reconstruir.
-                            </p>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Texto -->
+                    <div class="slide-in-left">
+                        <div class="text-container transition-all duration-500">
+                            <div class="luxury-text text-xl">
+                                <p class="luxury-paragraph text-reveal">
+                                    Tenho 52 anos, sou mãe solo de um rapaz que está prestes a completar 20. Amo dançar,
+                                    tomar um bom café em cafeterias cheias de charme, ouvir músicas que me tocam e sentir a
+                                    paz da natureza.
+                                </p>
+                                <p class="luxury-paragraph text-reveal delay-1">
+                                    Acredito em encontros verdadeiros, em conversas que curam e no poder do afeto como
+                                    ponte entre as pessoas e suas possibilidades de cura.
+                                </p>
+                                <p class="luxury-paragraph text-reveal delay-2">
+                                    Se você está vivendo um momento difícil, se sente perdida(o) em alguma relação — com o
+                                    outro ou consigo mesma(o) —, saiba que aqui é um espaço seguro para se ouvir, se
+                                    compreender e, com o tempo, se reconstruir.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Espaço para Imagem -->
+                    <div class="slide-in-right">
+                        <div class="image-container h-96 lg:h-auto">
+                            <img src="./imagens/IMG_6221.jpg" 
+                                 alt="Luciana Magalhães - Momento Pessoal"
+                                 class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
