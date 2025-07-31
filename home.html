@@ -264,9 +264,6 @@
             border-radius: 6px;
             border: 2px solid #FAF8F6;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #C67A56, #B86A4A);
-        }
         /* Wave Header */
         .wave-header {
             position: relative;
@@ -333,34 +330,7 @@
             border-radius: 28px;
             z-index: -1;
         }
-        .text-container::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg,
-                    rgba(217, 140, 106, 0.2) 0%,
-                    rgba(235, 213, 206, 0.3) 25%,
-                    rgba(217, 140, 106, 0.1) 50%,
-                    rgba(235, 213, 206, 0.3) 75%,
-                    rgba(217, 140, 106, 0.2) 100%);
-            border-radius: 32px;
-            z-index: -2;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .text-container:hover::after {
-            opacity: 1;
-        }
-        .text-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15),
-                0 0 0 1px rgba(217, 140, 106, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9);
-        }
-        /* Luxury Text Styling - REMOVIDO O FIRST-LETTER */
+        /* Luxury Text Styling */
         .luxury-text {
             position: relative;
             line-height: 1.8;
@@ -384,11 +354,6 @@
             background: linear-gradient(to bottom, #D98C6A, #E5A584);
             border-radius: 2px;
             opacity: 0.6;
-        }
-        .luxury-paragraph:hover::before {
-            opacity: 1;
-            width: 6px;
-            transition: all 0.3s ease;
         }
         /* Quote Styling */
         .luxury-quote {
@@ -505,9 +470,6 @@
             object-fit: cover;
             transition: none;
         }
-        .carousel-slide:hover img {
-            transform: none;
-        }
         .carousel-overlay {
             position: absolute;
             bottom: 0;
@@ -518,9 +480,6 @@
             padding: 30px;
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .carousel-slide:hover .carousel-overlay {
-            transform: translateY(0);
         }
         .carousel-nav {
             position: absolute;
@@ -540,10 +499,9 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         .carousel-nav:hover {
-            background: linear-gradient(135deg, #D98C6A, #E5A584);
+            background: rgba(217, 140, 106, 0.95);
             color: white;
             transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
         }
         .carousel-nav.prev {
             left: 20px;
@@ -608,14 +566,6 @@
             transition: opacity 0.3s ease;
             border-radius: 18px;
         }
-        .accordion-item:hover {
-            border-color: rgba(217, 140, 106, 0.3);
-            box-shadow: 0 15px 40px rgba(217, 140, 106, 0.2);
-            transform: translateY(-5px);
-        }
-        .accordion-item:hover::before {
-            opacity: 1;
-        }
         .accordion-header {
             padding: 25px;
             cursor: pointer;
@@ -628,7 +578,8 @@
             z-index: 1;
         }
         .accordion-header:hover {
-            background: linear-gradient(135deg, #F2E4DD 0%, #EBD5CE 100%);
+            background: linear-gradient(135deg, #E5A584 0%, #D98C6A 100%);
+            color: white;
         }
         .accordion-header.active {
             background: linear-gradient(135deg, #D98C6A 0%, #E5A584 100%);
@@ -675,13 +626,12 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(217, 140, 106, 0.6);
+        }
         .btn-primary:hover::before {
             left: 100%;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(217, 140, 106, 0.5);
-            background: linear-gradient(135deg, #C67A56 0%, #D98C6A 100%);
         }
         .btn-secondary {
             background: transparent;
@@ -710,13 +660,13 @@
             transition: width 0.4s ease;
             z-index: -1;
         }
-        .btn-secondary:hover::before {
-            width: 100%;
-        }
         .btn-secondary:hover {
             color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(217, 140, 106, 0.4);
+        }
+        .btn-secondary:hover::before {
+            width: 100%;
         }
         /* Enhanced Cards */
         .card {
@@ -741,15 +691,14 @@
             animation: shimmer 3s linear infinite;
         }
         .card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(217, 140, 106, 0.2);
-            border-color: rgba(217, 140, 106, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
         /* Navigation Enhancements */
         .nav-link {
             position: relative;
             transition: all 0.3s ease;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
         }
         .nav-link::before {
@@ -763,12 +712,12 @@
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
+        .nav-link:hover {
+            color: #D98C6A !important;
+            background: rgba(217, 140, 106, 0.1);
+        }
         .nav-link:hover::before {
             width: 80%;
-        }
-        .nav-link:hover {
-            background: rgba(217, 140, 106, 0.1);
-            color: #D98C6A;
         }
         /* Text Effects */
         .typewriter {
@@ -818,7 +767,7 @@
         .logo-container {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
         }
         .logo-container img {
             max-height: 50px;
@@ -931,6 +880,7 @@
             border-radius: 25px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
         }
 
         .image-container img {
@@ -956,54 +906,35 @@
     </div>
     <!-- Header with Wave -->
     <header class="wave-header sticky top-0 z-50 transition-all duration-500" id="header">
-        <nav class="container mx-auto px-4 py-6">
-            <div class="flex justify-between items-center">
+        <nav class="px-8 py-6">
+            <div class="flex justify-between items-center max-w-full">
                 <div class="logo-container">
                     <img src="./imagens/Logo.png" alt="Luciana Magalhães - Logo" class="transition-all duration-300"
                         style="max-height:150px; width:auto;">
                 </div>
-                <div class="hidden lg:flex space-x-2">
-                    <a href="#inicio" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Início</a>
-                    <a href="#historia" class="nav-link text-cinza-escuro hover:text-terracota font-medium">História</a>
-                    <a href="#acredito"
-                        class="nav-link text-cinza-escuro hover:text-terracota font-medium">Filosofia</a>
-                    <a href="#quem-sou" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Sobre
-                        Mim</a>
-                    <a href="#terapia" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Terapia</a>
-                    <a href="#empresas" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Para
-                        Empresas</a>
-                    <a href="#consultorio"
-                        class="nav-link text-cinza-escuro hover:text-terracota font-medium">Consultório</a>
-                    <a href="#duvidas" class="nav-link text-cinza-escuro hover:text-terracota font-medium">FAQ</a>
-                    <a href="#contato" class="nav-link text-cinza-escuro hover:text-terracota font-medium">Contato</a>
+                <div class="hidden lg:flex space-x-1">
+                    <a href="#inicio" class="nav-link text-cinza-escuro font-medium">Início</a>
+                    <a href="#historia" class="nav-link text-cinza-escuro font-medium">Minha História</a>
+                    <a href="#acredito" class="nav-link text-cinza-escuro font-medium">No que eu acredito</a>
+                    <a href="#terapia" class="nav-link text-cinza-escuro font-medium">Terapia</a>
+                    <a href="#empresas" class="nav-link text-cinza-escuro font-medium">Para Empresas</a>
+                    <a href="#consultorio" class="nav-link text-cinza-escuro font-medium">Consultório</a>
+                    <a href="#contato" class="nav-link text-cinza-escuro font-medium">Contato</a>
                 </div>
                 <button id="mobile-menu-btn"
-                    class="lg:hidden text-cinza-escuro hover:text-terracota transition-colors p-2 rounded-full hover:bg-rosa-claro">
+                    class="lg:hidden text-cinza-escuro transition-colors p-2 rounded-full hover:bg-terracota hover:text-white">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden lg:hidden mt-8 space-y-2 glass rounded-2xl p-6">
-                <a href="#inicio"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Início</a>
-                <a href="#historia"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">História</a>
-                <a href="#acredito"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Filosofia</a>
-                <a href="#quem-sou"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Sobre
-                    Mim</a>
-                <a href="#terapia"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Terapia</a>
-                <a href="#empresas"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Para
-                    Empresas</a>
-                <a href="#consultorio"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Consultório</a>
-                <a href="#duvidas"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">FAQ</a>
-                <a href="#contato"
-                    class="block py-3 text-cinza-escuro hover:text-terracota font-medium transition-colors rounded-lg hover:bg-rosa-claro px-4">Contato</a>
+                <a href="#inicio" class="block py-3 text-cinza-escuro font-medium transition-colors rounded-lg px-4 hover:bg-terracota hover:text-white">Início</a>
+                <a href="#historia" class="block py-3 text-cinza-escuro font-medium transition-colors rounded-lg px-4 hover:bg-terracota hover:text-white">Minha História</a>
+                <a href="#acredito" class="block py-3 text-cinza-escuro font-medium transition-colors rounded-lg px-4 hover:bg-terracota hover:text-white">No que eu acredito</a>
+                <a href="#terapia" class="block py-3 text-cinza-escuro font-medium transition-colors rounded-lg px-4 hover:bg-terracota hover:text-white">Terapia</a>
+                <a href="#empresas" class="block py-3 text-cinza-escuro font-medium transition-colors rounded-lg px-4 hover:bg-terracota hover:text-white">Para Empresas</a>
+                <a href="#consultorio" class="block py-3 text-cinza-escuro font-medium transition-colors rounded-lg px-4 hover:bg-terracota hover:text-white">Consultório</a>
+                <a href="#contato" class="block py-3 text-cinza-escuro font-medium transition-colors rounded-lg px-4 hover:bg-terracota hover:text-white">Contato</a>
             </div>
         </nav>
     </header>
@@ -1018,7 +949,7 @@
                     <div class="fade-in">
                         <h1 class="text-5xl lg:text-7xl font-serif font-bold text-cinza-escuro leading-tight">
                             Bem-vindo ao seu espaço de
-                            <span class="gradient-text neon-glow font-sans text-5xl lg:text-7xl block mt-4">
+                            <span class="gradient-text neon-glow font-script text-8xl lg:text-8xl block mt-4">
                                 cuidado
                             </span>
                         </h1>
@@ -1088,7 +1019,7 @@
     <section id="acredito" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
         <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 <div class="fade-in mb-16 text-center">
                     <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
                         No que <span class="gradient-text">Eu acredito</span>
@@ -1100,31 +1031,55 @@
                         Acredito profundamente no potencial humano de transformação e crescimento
                     </p>
                 </div>
+                
                 <div class="slide-in-left">
                     <div class="text-container transition-all duration-500">
                         <div class="luxury-text text-xl">
                             <p class="luxury-paragraph text-reveal">
                                 Acredito que nossos vínculos moldam quem somos — e, muitas vezes, também carregam
                                 as dores que insistimos em repetir. Por isso, ajudo pessoas a enfrentarem conflitos em
-                                suas
-                                relações: afetivas, familiares, profissionais e consigo mesmas.
+                                suas relações: afetivas, familiares, profissionais e consigo mesmas.
                             </p>
+                            
+                            <!-- Primeira imagem dentro do texto -->
+                            <div class="image-container">
+                                <img src="./imagens/IMG_6330.jpg" 
+                                     alt="Terapia Individual"
+                                     class="w-full h-full object-cover">
+                            </div>
+                            
                             <p class="luxury-paragraph text-reveal delay-1">
                                 Atendo adultos que se sentem exaustos de tentarem agradar a todos, que vivem a dor da
                                 rejeição, da sobrecarga ou da solidão dentro dos vínculos. Pessoas que estão buscando
                                 resgatar sua autoestima, aprender a se comunicar com mais clareza e estabelecer limites
                                 saudáveis.
                             </p>
+                            
+                            <!-- Segunda imagem dentro do texto -->
+                            <div class="image-container">
+                                <img src="./imagens/IMG_6530.jpg" 
+                                     alt="Terapia Infantil"
+                                     class="w-full h-full object-cover">
+                            </div>
+                            
                             <p class="luxury-paragraph text-reveal delay-2">
                                 Também atendo crianças e adolescentes, porque acredito que cuidar da infância e da
                                 adolescência é plantar possibilidades para a formação de adultos mais conscientes,
                                 seguros e emocionalmente saudáveis. Esse universo me fascina e me move.
                             </p>
+                            
                             <div class="luxury-quote text-reveal delay-3">
                                 Além do consultório, sou voluntária em uma ONG CAVIDA, que acolhe pessoas em
                                 situação de vulnerabilidade social, muitas vezes mergulhadas em crises profundas de
                                 desesperança. Meu papel ali é ajudar essas pessoas a encontrar — ou reencontrar — o
                                 sentido da vida, com escuta, cuidado e reconstrução de vínculos consigo mesmas.
+                            </div>
+                            
+                            
+                            <div class="image-container">
+                                <img src="./imagens/sorrindo.jpg" 
+                                     alt="Trabalho Voluntário"
+                                     class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -1172,7 +1127,6 @@
                         </div>
                     </div>
                     
-                    <!-- Espaço para Imagem -->
                     <div class="slide-in-right">
                         <div class="image-container h-96 lg:h-auto">
                             <img src="./imagens/IMG_6221.jpg" 
@@ -1266,7 +1220,7 @@
     <section id="empresas" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
         <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 <div class="fade-in mb-16 text-center">
                     <h2 class="text-5xl lg:text-6xl font-serif font-bold gradient-text mb-6 enhanced-heading">
                         Para <span class="gradient-text">Empresas</span>
@@ -1278,40 +1232,52 @@
                         Promovendo saúde mental e bem-estar no ambiente corporativo
                     </p>
                 </div>
-                <div class="slide-in-left">
-                    <div class="text-container transition-all duration-500 mb-12">
-                        <div class="luxury-text text-xl">
-                            <p class="luxury-paragraph text-reveal">
-                                Além dos atendimentos clínicos, ofereço palestras, workshops e rodas de conversa com o
-                                objetivo de abrir espaços de escuta e promover a conscientização sobre a importância da
-                                saúde mental nas diferentes esferas da vida – pessoal, profissional e coletiva.
-                            </p>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-12">
+                    <!-- Texto -->
+                    <div class="slide-in-left">
+                        <div class="text-container transition-all duration-500">
+                            <div class="luxury-text text-xl">
+                                <p class="luxury-paragraph text-reveal">
+                                    Além dos atendimentos clínicos, ofereço palestras, workshops e rodas de conversa com o
+                                    objetivo de abrir espaços de escuta e promover a conscientização sobre a importância da
+                                    saúde mental nas diferentes esferas da vida – pessoal, profissional e coletiva.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Espaço para Imagem -->
+                    <div class="slide-in-right">
+                        <div class="image-container h-96 lg:h-auto">
+                            <img src="/placeholder.svg?height=400&width=400" 
+                                 alt="Palestras Corporativas"
+                                 class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
+                
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="card fade-in group">
+                    <div class="card fade-in">
                         <img src="./imagens/Consultorio1.jpeg" alt="Palestra sobre Saúde Mental"
-                            class="rounded-2xl mb-6 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                            class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Palestras e Workshops</h3>
                         <p class="text-cinza-medio text-base">Conteúdo personalizado para as necessidades da sua equipe,
-                            abordando
-                            temas como gestão do estresse, inteligência emocional e bem-estar no trabalho.</p>
+                            abordando temas como gestão do estresse, inteligência emocional e bem-estar no trabalho.</p>
                     </div>
-                    <div class="card fade-in group">
+                    <div class="card fade-in">
                         <img src="./imagens/Consultorio2.jpeg" alt="Roda de Conversa sobre Diversidade"
-                            class="rounded-2xl mb-6 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                            class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Rodas de Conversa</h3>
                         <p class="text-cinza-medio text-base">Espaços seguros para diálogo aberto sobre temas sensíveis,
                             promovendo a empatia e a construção de um ambiente mais inclusivo.</p>
                     </div>
-                    <div class="card fade-in group">
+                    <div class="card fade-in">
                         <img src="./imagens/Consultorio3.jpeg" alt="Consultoria em D&I"
-                            class="rounded-2xl mb-6 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                            class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Psicologia Organizacional</h3>
                         <p class="text-cinza-medio text-base">Consultoria especializada em atração de talentos,
-                            diversidade,
-                            inclusão e desenvolvimento de programas de psicoeducação.</p>
+                            diversidade, inclusão e desenvolvimento de programas de psicoeducação.</p>
                     </div>
                 </div>
                 <div class="text-center mt-12">
@@ -1372,8 +1338,7 @@
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Área de Relaxamento</h3>
                                 <p class="text-base">No coração dos Jardins, com fácil acesso, estacionamento disponível
-                                    e
-                                    proximidade ao transporte público.</p>
+                                    e proximidade ao transporte público.</p>
                             </div>
                         </div>
                     </div>
@@ -1391,182 +1356,31 @@
                 </div>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="card text-center fade-in group">
+                <div class="card text-center fade-in">
                     <div
-                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300">
+                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 transition-transform duration-300">
                         <i class="fas fa-parking text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-cinza-escuro mb-3">Estacionamento</h3>
                     <p class="text-cinza-medio text-base">Vagas disponíveis no edifício para sua comodidade e
                         tranquilidade</p>
                 </div>
-                <div class="card text-center fade-in group">
+                <div class="card text-center fade-in">
                     <div
-                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300">
+                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 transition-transform duration-300">
                         <i class="fas fa-wheelchair text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-cinza-escuro mb-3">Acessibilidade</h3>
                     <p class="text-cinza-medio text-base">Espaço totalmente acessível para pessoas com mobilidade
                         reduzida</p>
                 </div>
-                <div class="card text-center fade-in group">
+                <div class="card text-center fade-in">
                     <div
-                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300">
+                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 transition-transform duration-300">
                         <i class="fas fa-subway text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-cinza-escuro mb-3">Transporte</h3>
                     <p class="text-cinza-medio text-base">Próximo ao metrô e principais linhas de ônibus da cidade</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Dúvidas Frequentes -->
-    <section id="duvidas" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
-        <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16 fade-in">
-                    <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
-                        Dúvidas <span class="gradient-text">Frequentes</span>
-                    </h2>
-                    <div
-                        class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
-                    </div>
-                    <p class="text-xl text-cinza-medio font-light">
-                        Esclarecimentos sobre o processo terapêutico
-                    </p>
-                </div>
-                <div class="space-y-6" id="accordion">
-                    <div class="accordion-item fade-in">
-                        <div class="accordion-header" data-target="faq-1">
-                            <h3 class="text-lg lg:text-xl font-semibold">Como funciona a primeira consulta?</h3>
-                            <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
-                        </div>
-                        <div class="accordion-content" id="faq-1">
-                            <div class="accordion-body">
-                                <p class="text-base text-cinza-medio leading-relaxed">
-                                    A primeira consulta é um momento especial de conhecimento mútuo e acolhimento
-                                    profundo. Durante esta sessão inicial,
-                                    conversaremos sobre sua história pessoal, suas preocupações atuais e os objetivos
-                                    que você gostaria
-                                    de alcançar com a terapia. É também quando esclarecemos todas as suas dúvidas sobre
-                                    o processo
-                                    terapêutico, estabelecemos acordos de trabalho e criamos um plano de tratamento
-                                    personalizado.
-                                    Este primeiro encontro é fundamental para estabelecermos um vínculo sólido de
-                                    confiança e segurança.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item fade-in">
-                        <div class="accordion-header" data-target="faq-2">
-                            <h3 class="text-lg lg:text-xl font-semibold">Qual a duração de cada sessão?</h3>
-                            <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
-                        </div>
-                        <div class="accordion-content" id="faq-2">
-                            <div class="accordion-body">
-                                <p class="text-base text-cinza-medio leading-relaxed">
-                                    Cada sessão tem duração de 50 minutos, seguindo os padrões éticos da psicologia.
-                                    Este tempo é
-                                    cuidadosamente planejado para permitir um trabalho profundo e efetivo, respeitando
-                                    os limites
-                                    terapêuticos necessários para um processo saudável. Os 50 minutos proporcionam tempo
-                                    suficiente
-                                    para explorarmos questões importantes, desenvolvermos insights e trabalharmos
-                                    estratégias práticas,
-                                    sempre mantendo o foco e a qualidade do atendimento.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item fade-in">
-                        <div class="accordion-header" data-target="faq-3">
-                            <h3 class="text-lg lg:text-xl font-semibold">Com que frequência devo vir às sessões?</h3>
-                            <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
-                        </div>
-                        <div class="accordion-content" id="faq-3">
-                            <div class="accordion-body">
-                                <p class="text-base text-cinza-medio leading-relaxed">
-                                    Geralmente recomendo sessões semanais, especialmente no início do processo
-                                    terapêutico, pois esta
-                                    frequência permite um acompanhamento mais próximo e um desenvolvimento consistente
-                                    do trabalho.
-                                    Conforme seu progresso e estabilização, podemos ajustar a frequência para quinzenal
-                                    ou mensal.
-                                    Cada caso é único e será avaliado individualmente, considerando suas necessidades
-                                    específicas,
-                                    disponibilidade e objetivos terapêuticos para determinar o que funciona melhor para
-                                    você.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item fade-in">
-                        <div class="accordion-header" data-target="faq-4">
-                            <h3 class="text-lg lg:text-xl font-semibold">Quanto tempo dura o processo terapêutico?</h3>
-                            <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
-                        </div>
-                        <div class="accordion-content" id="faq-4">
-                            <div class="accordion-body">
-                                <p class="text-base text-cinza-medio leading-relaxed">
-                                    A duração do processo terapêutico varia significativamente de pessoa para pessoa e
-                                    depende dos
-                                    objetivos estabelecidos, da complexidade das questões trabalhadas e do seu ritmo
-                                    pessoal de
-                                    desenvolvimento. Algumas questões específicas podem ser trabalhadas em alguns meses,
-                                    enquanto
-                                    processos mais profundos de autoconhecimento podem requerer um tempo maior. O
-                                    importante é
-                                    respeitar seu ritmo único e necessidades individuais, sempre reavaliando nossos
-                                    objetivos juntos.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item fade-in">
-                        <div class="accordion-header" data-target="faq-5">
-                            <h3 class="text-lg lg:text-xl font-semibold">Atende online ou apenas presencial?</h3>
-                            <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
-                        </div>
-                        <div class="accordion-content" id="faq-5">
-                            <div class="accordion-body">
-                                <p class="text-base text-cinza-medio leading-relaxed">
-                                    Ofereço tanto atendimento presencial quanto online, ambas as modalidades devidamente
-                                    regulamentadas
-                                    pelo Conselho Federal de Psicologia. O atendimento online é uma excelente opção para
-                                    quem tem
-                                    dificuldades de locomoção, mora em outras cidades, tem agenda muito corrida ou
-                                    simplesmente prefere
-                                    a comodidade e privacidade de casa. Ambas as modalidades são igualmente eficazes
-                                    quando há
-                                    comprometimento mútuo com o processo terapêutico.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item fade-in">
-                        <div class="accordion-header" data-target="faq-6">
-                            <h3 class="text-lg lg:text-xl font-semibold">Como sei se preciso de terapia?</h3>
-                            <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
-                        </div>
-                        <div class="accordion-content" id="faq-6">
-                            <div class="accordion-body">
-                                <p class="text-base text-cinza-medio leading-relaxed">
-                                    A terapia pode ser benéfica em diversos momentos da vida: quando enfrentamos
-                                    dificuldades emocionais,
-                                    relacionamentos conflituosos, momentos de transição, ansiedade, depressão, ou
-                                    simplesmente quando
-                                    buscamos autoconhecimento e crescimento pessoal. Não é necessário estar em crise
-                                    para buscar ajuda
-                                    psicológica. A terapia é um investimento em seu bem-estar e qualidade de vida,
-                                    proporcionando
-                                    ferramentas valiosas para lidar com os desafios cotidianos de forma mais saudável e
-                                    equilibrada.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1668,7 +1482,7 @@
                                     class="absolute left-1/2 top-8 z-10 -translate-x-1/2 flex flex-col items-center pointer-events-none">
                                     <div class="bg-white rounded-full shadow-lg p-3 mb-2 animate-pulse-soft">
                                     </div>
-                                                                    </div>
+                                </div>
                             </div>
                             <p class="text-cinza-medio text-center text-base">
                                 Estamos ansiosos para recebê-lo em nosso consultório acolhedor!
@@ -1711,16 +1525,15 @@
                             <li><a href="#empresas"
                                     class="text-gray-300 hover:text-terracota transition-colors text-base">Para
                                     Empresas</a></li>
-                            <li><a href="#duvidas"
-                                    class="text-gray-300 hover:text-terracota transition-colors text-base">Dúvidas
-                                    Frequentes</a></li>
+                            <li><a href="#contato"
+                                    class="text-gray-300 hover:text-terracota transition-colors text-base">Contato</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-lg font-semibold text-off-white mb-5">Rede Social</h4>
                         <div class="flex space-x-3">
                             <a href="#"
-                                class="w-10 h-10 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300">
+                                class="w-10 h-10 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white transition-transform duration-300 hover:scale-110">
                                 <i class="fab fa-instagram text-xl"></i>
                             </a>
                         </div>
@@ -1736,7 +1549,7 @@
                         <p class="text-gray-300 text-sm mb-3 md:mb-0">
                             &copy; 2025 Luciana Magalhães - Todos os direitos reservados.
                         </p>
-                                          </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1797,34 +1610,6 @@
                 moveToSlide(currentSlide + 1);
             }
         }, 6000);
-        // Enhanced Accordion Functionality
-        const accordionHeaders = document.querySelectorAll('.accordion-header');
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentNode;
-                const content = item.querySelector('.accordion-content');
-                const icon = header.querySelector('i');
-                const isActive = content.classList.contains('active');
-                // Close all other items
-                document.querySelectorAll('.accordion-item').forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.querySelector('.accordion-content').classList.remove('active');
-                        otherItem.querySelector('.accordion-header i').classList.remove('rotate-180');
-                        otherItem.querySelector('.accordion-header').classList.remove('active');
-                    }
-                });
-                // Toggle current item
-                if (!isActive) {
-                    content.classList.add('active');
-                    header.classList.add('active');
-                    icon.classList.add('rotate-180');
-                } else {
-                    content.classList.remove('active');
-                    header.classList.remove('active');
-                    icon.classList.remove('rotate-180');
-                }
-            });
-        });
         // Enhanced Intersection Observer for Animations
         const observerOptions = {
             threshold: 0.1,
