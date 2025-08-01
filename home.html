@@ -248,14 +248,12 @@
                 filter: blur(0px);
             }
         }
-
         /* Enhanced Mobile Menu Styles */
         .hamburger-lines {
             position: relative;
             width: 24px;
             height: 18px;
         }
-
         .hamburger-line {
             position: absolute;
             left: 0;
@@ -266,36 +264,29 @@
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transform-origin: center;
         }
-
         .hamburger-line-1 {
             top: 0;
         }
-
         .hamburger-line-2 {
             top: 50%;
             transform: translateY(-50%);
         }
-
         .hamburger-line-3 {
             bottom: 0;
         }
-
         /* Hamburger Animation */
         .mobile-menu-open .hamburger-line-1 {
             top: 50%;
             transform: translateY(-50%) rotate(45deg);
         }
-
         .mobile-menu-open .hamburger-line-2 {
             opacity: 0;
             transform: translateY(-50%) scale(0);
         }
-
         .mobile-menu-open .hamburger-line-3 {
             bottom: 50%;
             transform: translateY(50%) rotate(-45deg);
         }
-
         /* Mobile Menu Overlay */
         .mobile-menu-overlay {
             position: fixed;
@@ -310,12 +301,10 @@
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             z-index: 998;
         }
-
         .mobile-menu-overlay.active {
             opacity: 1;
             visibility: visible;
         }
-
         /* Enhanced Mobile Menu */
         .mobile-menu {
             position: fixed;
@@ -334,11 +323,9 @@
             flex-direction: column;
             overflow-y: auto;
         }
-
         .mobile-menu.active {
             right: 0;
         }
-
         /* Mobile Menu Header */
         .mobile-menu-header {
             display: flex;
@@ -348,7 +335,6 @@
             border-bottom: 1px solid rgba(217, 140, 106, 0.1);
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.05), rgba(235, 213, 206, 0.1));
         }
-
         .mobile-menu-close-btn {
             width: 40px;
             height: 40px;
@@ -362,19 +348,16 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-
         .mobile-menu-close-btn:hover {
             background: #d98c6a;
             color: white;
             transform: scale(1.1);
         }
-
         /* Mobile Menu Navigation */
         .mobile-menu-nav {
             flex: 1;
             padding: 8px 0;
         }
-
         .mobile-menu-item {
             display: flex;
             align-items: center;
@@ -389,7 +372,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .mobile-menu-item::before {
             content: "";
             position: absolute;
@@ -400,36 +382,30 @@
             background: linear-gradient(90deg, transparent, rgba(217, 140, 106, 0.1), transparent);
             transition: left 0.5s ease;
         }
-
         .mobile-menu-item:hover::before {
             left: 100%;
         }
-
         .mobile-menu-item:hover {
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.15));
             border-left-color: #d98c6a;
             color: #d98c6a;
             transform: translateX(8px);
         }
-
         .mobile-menu-item i {
             width: 20px;
             text-align: center;
             font-size: 18px;
             transition: all 0.3s ease;
         }
-
         .mobile-menu-item:hover i {
             transform: scale(1.2);
         }
-
         /* Mobile Menu Footer */
         .mobile-menu-footer {
             padding: 24px;
             border-top: 1px solid rgba(217, 140, 106, 0.1);
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.05), rgba(235, 213, 206, 0.1));
         }
-
         .mobile-menu-cta {
             display: flex;
             align-items: center;
@@ -447,7 +423,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .mobile-menu-cta::before {
             content: "";
             position: absolute;
@@ -458,23 +433,19 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-
         .mobile-menu-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
         }
-
         .mobile-menu-cta:hover::before {
             left: 100%;
         }
-
         /* Menu Item Animation */
         .mobile-menu.active .mobile-menu-item {
             animation: slideInFromRight 0.5s ease-out forwards;
             opacity: 0;
             transform: translateX(30px);
         }
-
         .mobile-menu.active .mobile-menu-item:nth-child(1) {
             animation-delay: 0.1s;
         }
@@ -496,14 +467,15 @@
         .mobile-menu.active .mobile-menu-item:nth-child(7) {
             animation-delay: 0.4s;
         }
-
+        .mobile-menu.active .mobile-menu-item:nth-child(8) {
+            animation-delay: 0.45s;
+        }
         @keyframes slideInFromRight {
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
@@ -737,70 +709,84 @@
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+        
+        /* BOTÕES DO CARROSSEL MELHORADOS - DENTRO DA IMAGEM */
         .carousel-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            border: none;
-            width: 50px;
-            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         .carousel-nav:hover {
-            background: rgba(217, 140, 106, 0.95);
-            color: white;
-            transform: translateY(-50%) scale(1.1);
+            background: rgba(217, 140, 106, 0.9);
+            border-color: rgba(217, 140, 106, 0.8);
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 12px 40px rgba(217, 140, 106, 0.4);
         }
         .carousel-nav.prev {
-            left: 20px;
+            left: 25px;
         }
         .carousel-nav.next {
-            right: 20px;
+            right: 25px;
         }
+        
         .carousel-indicators {
             position: absolute;
-            bottom: 20px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 10px;
+            gap: 12px;
+            z-index: 10;
         }
         .carousel-dot {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.4);
             cursor: pointer;
             transition: all 0.4s ease;
             position: relative;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
         .carousel-dot::before {
             content: '';
             position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
             border-radius: 50%;
             background: linear-gradient(45deg, #D98C6A, #E5A584);
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: -1;
         }
         .carousel-dot.active {
-            background: #D98C6A;
-            transform: scale(1.2);
+            background: rgba(217, 140, 106, 0.9);
+            border-color: rgba(217, 140, 106, 0.8);
+            transform: scale(1.3);
+            box-shadow: 0 4px 15px rgba(217, 140, 106, 0.4);
         }
         .carousel-dot.active::before {
             opacity: 0.3;
         }
+        
         /* Enhanced Accordion */
         .accordion-item {
             border: 2px solid transparent;
@@ -1019,45 +1005,244 @@
             background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
             animation: morph 8s ease-in-out infinite;
         }
-        /* Logo responsive adjustments */
+        
+        /* LOGO AUMENTADA - TAMANHOS MAIORES */
         .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Sempre à esquerda */
-}
-
-.logo-container img {
-    max-height: 120px; /* Aumentado significativamente de 80px para 120px */
-    width: auto;
-    object-fit: contain;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    image-rendering: pixelated;
-    image-rendering: high-quality;
-    filter: contrast(1.1) brightness(1.05); /* Melhora a qualidade visual */
-}
-
-@media (max-width: 768px) {
-    .logo-container {
-        justify-content: flex-start; /* Garante que fique sempre à esquerda */
-    }
-    
-    .logo-container img {
-        max-height: 90px; /* Aumentado de 65px para 90px - muito maior que antes */
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-container {
-        justify-content: flex-start; /* Garante que fique sempre à esquerda */
-    }
-    
-    .logo-container img {
-        max-height: 75px; /* Aumentado de 55px para 75px - muito maior que antes */
-    }
-}
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .logo-container img {
+            max-height: 150px; /* Aumentado de 120px para 150px */
+            width: auto;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: high-quality;
+            filter: contrast(1.1) brightness(1.05);
+        }
+        
+        /* LOGO NO FOOTER */
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .footer-logo-container img {
+            max-height: 120px; /* Logo no footer um pouco menor que no header */
+            width: auto;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-container {
+                justify-content: flex-start;
+            }
+            .logo-container img {
+                max-height: 110px; /* Aumentado de 90px para 110px */
+            }
+            .footer-logo-container img {
+                max-height: 90px; /* Logo do footer responsivo */
+            }
+        }
+        @media (max-width: 480px) {
+            .logo-container {
+                justify-content: flex-start;
+            }
+            .logo-container img {
+                max-height: 95px; /* Aumentado de 75px para 95px */
+            }
+            .footer-logo-container img {
+                max-height: 75px; /* Logo do footer responsivo */
+            }
+        }
+        
+        /* Testimonials Section Styles */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 25px;
+            padding: 0;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(217, 140, 106, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D98C6A, #E5A584, #D98C6A);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+        .testimonial-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 25px 25px 0 0;
+            transition: transform 0.4s ease;
+        }
+        .testimonial-card:hover .testimonial-image {
+            transform: scale(1.05);
+        }
+        .testimonial-content {
+            padding: 25px;
+            position: relative;
+        }
+        .testimonial-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #5C5C5C;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            padding: 0 20px;
+        }
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: rgba(217, 140, 106, 0.3);
+            position: absolute;
+        }
+        .testimonial-quote::before {
+            content: '"';
+            top: -15px;
+            left: -5px;
+        }
+        .testimonial-quote::after {
+            content: '"';
+            bottom: -25px;
+            right: -5px;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(217, 140, 106, 0.1);
+        }
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D98C6A, #E5A584);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .testimonial-info h4 {
+            font-weight: 600;
+            color: #5C5C5C;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .testimonial-info p {
+            color: #8A8A8A;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .testimonial-rating {
+            display: flex;
+            gap: 3px;
+            margin-top: 8px;
+        }
+        .star {
+            color: #FFD700;
+            font-size: 1rem;
+        }
+        /* Modal Styles for Testimonial Images */
+        .testimonial-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .testimonial-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .testimonial-modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+        .testimonial-modal img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .testimonial-modal-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 40px;
+            height: 40px;
+            background: #D98C6A;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .testimonial-modal-close:hover {
+            background: #C67A56;
+            transform: scale(1.1);
+        }
         /* Mobile Optimizations */
         @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .testimonial-card {
+                margin: 0 10px;
+            }
+            .testimonial-image {
+                height: 250px;
+            }
+            .testimonial-content {
+                padding: 20px;
+            }
+            .testimonial-quote {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
             .text-container {
                 padding: 30px 20px;
                 border-radius: 20px;
@@ -1070,14 +1255,22 @@
                 padding-bottom: 75%;
             }
             .carousel-nav {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
             }
             .carousel-nav.prev {
-                left: 10px;
+                left: 15px;
             }
             .carousel-nav.next {
-                right: 10px;
+                right: 15px;
+            }
+            .carousel-indicators {
+                bottom: 20px;
+            }
+            .carousel-dot {
+                width: 12px;
+                height: 12px;
             }
             .card {
                 padding: 20px;
@@ -1166,7 +1359,6 @@
         }
     </style>
 </head>
-
 <body class="font-sans overflow-x-hidden">
     <!-- Floating Background Elements -->
     <div class="fixed inset-0 pointer-events-none z-0">
@@ -1174,14 +1366,12 @@
         <div class="floating-element w-24 h-24 bottom-32 left-16 animate-bounce-gentle"></div>
         <div class="floating-element w-40 h-40 top-1/2 left-1/4 animate-pulse-soft"></div>
     </div>
-
     <!-- Header with Wave -->
     <header class="wave-header sticky top-0 z-50 transition-all duration-500" id="header">
         <nav class="px-8 py-6">
             <div class="flex justify-between items-center max-w-full">
                 <div class="logo-container">
-                    <img src="./imagens/Logo.png" alt="Luciana Magalhães - Logo" class="transition-all duration-300"
-                        style="max-height:120px; width:auto;">
+                    <img src="./imagens/Logo.png" alt="Luciana Magalhães - Logo" class="transition-all duration-300">
                 </div>
                 <div class="hidden lg:flex space-x-1">
                     <a href="#inicio" class="nav-link text-cinza-escuro font-medium">Início</a>
@@ -1189,10 +1379,10 @@
                     <a href="#acredito" class="nav-link text-cinza-escuro font-medium">No que eu acredito</a>
                     <a href="#terapia" class="nav-link text-cinza-escuro font-medium">Terapia</a>
                     <a href="#empresas" class="nav-link text-cinza-escuro font-medium">Para Empresas</a>
+                    <a href="#depoimentos" class="nav-link text-cinza-escuro font-medium">Depoimentos</a>
                     <a href="#consultorio" class="nav-link text-cinza-escuro font-medium">Consultório</a>
                     <a href="#contato" class="nav-link text-cinza-escuro font-medium">Contato</a>
                 </div>
-
                 <!-- Enhanced Mobile Menu Button -->
                 <button id="mobile-menu-btn"
                     class="lg:hidden relative w-12 h-12 text-cinza-escuro transition-all duration-300 p-2 rounded-full hover:bg-terracota hover:text-white focus:outline-none focus:ring-2 focus:ring-terracota focus:ring-opacity-50">
@@ -1203,7 +1393,6 @@
                     </div>
                 </button>
             </div>
-
             <!-- Enhanced Mobile Menu -->
             <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
             <div id="mobile-menu" class="mobile-menu">
@@ -1213,7 +1402,6 @@
                         <i class="fas fa-times text-xl"></i>
                     </button>
                 </div>
-
                 <nav class="mobile-menu-nav">
                     <a href="#inicio" class="mobile-menu-item">
                         <i class="fas fa-home"></i>
@@ -1235,6 +1423,10 @@
                         <i class="fas fa-building"></i>
                         <span>Para Empresas</span>
                     </a>
+                    <a href="#depoimentos" class="mobile-menu-item">
+                        <i class="fas fa-star"></i>
+                        <span>Depoimentos</span>
+                    </a>
                     <a href="#consultorio" class="mobile-menu-item">
                         <i class="fas fa-clinic-medical"></i>
                         <span>Consultório</span>
@@ -1244,17 +1436,15 @@
                         <span>Contato</span>
                     </a>
                 </nav>
-
                 <div class="mobile-menu-footer">
                     <a href="https://wa.me/5582996027533" class="mobile-menu-cta">
                         <i class="fab fa-whatsapp"></i>
-                        <span>Marque sua Consulta</span>
+                        <span>Agende sua sessão</span>
                     </a>
                 </div>
             </div>
         </nav>
     </header>
-
     <!-- Hero Section -->
     <section id="inicio" class="min-h-screen flex items-center relative overflow-hidden">
         <!-- Animated Background -->
@@ -1280,7 +1470,7 @@
                     <div class="slide-in-left flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a href="#contato" class="btn-primary text-lg">
                             <i class="fas fa-calendar-plus"></i>
-                            Agendar Consulta
+                            Agende sua sessão
                         </a>
                         <a href="#historia" class="btn-secondary text-lg">
                             <i class="fas fa-arrow-down"></i>
@@ -1299,7 +1489,6 @@
             </div>
         </div>
     </section>
-
     <!-- Minha História -->
     <section id="historia" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-50"></div>
@@ -1333,7 +1522,6 @@
             </div>
         </div>
     </section>
-
     <!-- Minha Filosofia -->
     <section id="acredito" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
@@ -1350,7 +1538,6 @@
                         Acredito profundamente no potencial humano de transformação e crescimento
                     </p>
                 </div>
-
                 <div class="slide-in-left">
                     <div class="text-container transition-all duration-500">
                         <div class="luxury-text text-xl">
@@ -1359,41 +1546,35 @@
                                 as dores que insistimos em repetir. Por isso, ajudo pessoas a enfrentarem conflitos em
                                 suas relações: afetivas, familiares, profissionais e consigo mesmas.
                             </p>
-
                             <!-- Primeira imagem dentro do texto -->
                             <div class="image-container">
                                 <img src="./imagens/IMG_6330.jpg" alt="Terapia Individual"
                                     class="w-full h-full object-cover">
                             </div>
-
                             <p class="luxury-paragraph text-reveal delay-1">
                                 Atendo adultos que se sentem exaustos de tentarem agradar a todos, que vivem a dor da
                                 rejeição, da sobrecarga ou da solidão dentro dos vínculos. Pessoas que estão buscando
                                 resgatar sua autoestima, aprender a se comunicar com mais clareza e estabelecer limites
                                 saudáveis.
                             </p>
-
                             <!-- Segunda imagem dentro do texto -->
                             <div class="image-container">
-                                <img src="./imagens/IMG_6530.jpg" alt="Terapia Infantil"
+                                <img src="./imagens/sorrindo.jpg" alt="Terapia Infantil"
                                     class="w-full h-full object-cover">
                             </div>
-
                             <p class="luxury-paragraph text-reveal delay-2">
                                 Também atendo crianças e adolescentes, porque acredito que cuidar da infância e da
                                 adolescência é plantar possibilidades para a formação de adultos mais conscientes,
                                 seguros e emocionalmente saudáveis. Esse universo me fascina e me move.
                             </p>
-
                             <div class="luxury-quote text-reveal delay-3">
                                 Além do consultório, sou voluntária em uma ONG CAVIDA, que acolhe pessoas em
                                 situação de vulnerabilidade social, muitas vezes mergulhadas em crises profundas de
                                 desesperança. Meu papel ali é ajudar essas pessoas a encontrar — ou reencontrar — o
                                 sentido da vida, com escuta, cuidado e reconstrução de vínculos consigo mesmas.
                             </div>
-
                             <div class="image-container">
-                                <img src="./imagens/sorrindo.jpg" alt="Trabalho Voluntário"
+                                <img src="./imagens/IMG_6530.jpg" alt="Trabalho Voluntário"
                                     class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -1402,7 +1583,6 @@
             </div>
         </div>
     </section>
-
     <!-- Sobre Mim -->
     <section id="quem-sou" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
@@ -1419,7 +1599,6 @@
                         Conheça um pouco mais sobre meus interesses e paixões pessoais
                     </p>
                 </div>
-
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <!-- Texto -->
                     <div class="slide-in-left">
@@ -1442,10 +1621,9 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="slide-in-right">
                         <div class="image-container h-96 lg:h-auto">
-                            <img src="./imagens/IMG_6221.jpg" alt="Luciana Magalhães - Momento Pessoal"
+                            <img src="/placeholder.svg?height=500&width=400&text=Luciana+Momento+Pessoal" alt="Luciana Magalhães - Momento Pessoal"
                                 class="w-full h-full object-cover">
                         </div>
                     </div>
@@ -1453,7 +1631,6 @@
             </div>
         </div>
     </section>
-
     <!-- O que esperar da terapia -->
     <section id="terapia" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
@@ -1532,7 +1709,6 @@
             </div>
         </div>
     </section>
-
     <!-- Para Empresas Section -->
     <section id="empresas" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
@@ -1549,7 +1725,6 @@
                         Promovendo saúde mental e bem-estar no ambiente corporativo
                     </p>
                 </div>
-
                 <div class="grid lg:grid-cols-2 gap-16 items-center mb-12">
                     <!-- Texto -->
                     <div class="slide-in-left">
@@ -1563,33 +1738,31 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Espaço para Imagem -->
                     <div class="slide-in-right">
                         <div class="image-container h-96 lg:h-auto">
-                            <img src="/placeholder.svg?height=400&width=400" alt="Palestras Corporativas"
+                            <img src="/placeholder.svg?height=400&width=400&text=Palestras+Corporativas" alt="Palestras Corporativas"
                                 class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
-
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card fade-in">
-                        <img src="./imagens/Consultorio1.jpeg" alt="Palestra sobre Saúde Mental"
+                        <img src="/placeholder.svg?height=200&width=400&text=Palestra+Saúde+Mental" alt="Palestra sobre Saúde Mental"
                             class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Palestras e Workshops</h3>
                         <p class="text-cinza-medio text-base">Conteúdo personalizado para as necessidades da sua equipe,
                             abordando temas como gestão do estresse, inteligência emocional e bem-estar no trabalho.</p>
                     </div>
                     <div class="card fade-in">
-                        <img src="./imagens/Consultorio2.jpeg" alt="Roda de Conversa sobre Diversidade"
+                        <img src="/placeholder.svg?height=200&width=400&text=Roda+de+Conversa" alt="Roda de Conversa sobre Diversidade"
                             class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Rodas de Conversa</h3>
                         <p class="text-cinza-medio text-base">Espaços seguros para diálogo aberto sobre temas sensíveis,
                             promovendo a empatia e a construção de um ambiente mais inclusivo.</p>
                     </div>
                     <div class="card fade-in">
-                        <img src="./imagens/Consultorio3.jpeg" alt="Consultoria em D&I"
+                        <img src="/placeholder.svg?height=200&width=400&text=Consultoria+Organizacional" alt="Consultoria em D&I"
                             class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Psicologia Organizacional</h3>
                         <p class="text-cinza-medio text-base">Consultoria especializada em atração de talentos,
@@ -1605,7 +1778,107 @@
             </div>
         </div>
     </section>
-
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="fade-in mb-16 text-center">
+                    <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
+                        <span class="gradient-text">Depoimentos</span> dos Pacientes
+                    </h2>
+                    <div
+                        class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
+                    </div>
+                    <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
+                        Veja o que nossos pacientes dizem sobre sua experiência transformadora
+                    </p>
+                </div>
+                <div class="testimonials-grid">
+                    <!-- Depoimento 1 -->
+                    <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+1')">
+                        <img src="/placeholder.svg?height=300&width=400&text=Depoimento+1" alt="Depoimento de paciente" class="testimonial-image">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                A terapia com a Luciana mudou completamente minha perspectiva sobre relacionamentos. Aprendi a estabelecer limites saudáveis e a me valorizar.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">M</div>
+                                <div class="testimonial-info">
+                                    <h4>Maria Silva</h4>
+                                    <p>Paciente há 8 meses</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Depoimento 2 -->
+                    <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+2')">
+                        <img src="/placeholder.svg?height=300&width=400&text=Depoimento+2" alt="Depoimento de paciente" class="testimonial-image">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                Encontrei na Luciana não apenas uma profissional competente, mas alguém que realmente se importa. Sua escuta acolhedora fez toda a diferença.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">J</div>
+                                <div class="testimonial-info">
+                                    <h4>João Santos</h4>
+                                    <p>Paciente há 1 ano</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Depoimento 3 -->
+                    <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+3')">
+                        <img src="/placeholder.svg?height=300&width=400&text=Depoimento+3" alt="Depoimento de paciente" class="testimonial-image">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                Minha filha adolescente estava passando por um momento difícil. A Luciana conseguiu criar uma conexão especial com ela e os resultados foram incríveis.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">A</div>
+                                <div class="testimonial-info">
+                                    <h4>Ana Costa</h4>
+                                    <p>Mãe de paciente</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Modal para Depoimentos -->
+    <div id="testimonial-modal" class="testimonial-modal">
+        <div class="testimonial-modal-content">
+            <img id="testimonial-modal-image" src="/placeholder.svg" alt="Depoimento ampliado">
+            <button class="testimonial-modal-close" onclick="closeTestimonialModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
     <!-- Carrossel do Consultório -->
     <section id="consultorio" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
@@ -1630,7 +1903,7 @@
                     <div class="carousel-track" id="carousel-track">
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="./imagens/Consultorio3.jpeg" alt="Sala de espera aconchegante">
+                                <img src="./imagens/Consultorio1.jpeg" alt="Sala de espera aconchegante">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Sala de Espera</h3>
@@ -1640,7 +1913,7 @@
                         </div>
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="./imagens/Consultorio1.jpeg" alt="Consultório principal">
+                                <img src="./imagens/Consultorio2.jpeg" alt="Consultório principal">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Consultório Principal</h3>
@@ -1650,7 +1923,7 @@
                         </div>
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="./imagens/Consultorio2.jpeg" alt="Área de relaxamento">
+                                <img src="./imagens/Consultorio3.jpeg" alt="Área de relaxamento">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Área de Relaxamento</h3>
@@ -1659,17 +1932,17 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <button class="carousel-nav prev" id="prev-btn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-nav next" id="next-btn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="carousel-indicators" id="carousel-indicators">
-                    <div class="carousel-dot active" data-slide="0"></div>
-                    <div class="carousel-dot" data-slide="1"></div>
-                    <div class="carousel-dot" data-slide="2"></div>
+                    <button class="carousel-nav prev" id="prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav next" id="next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="carousel-indicators" id="carousel-indicators">
+                        <div class="carousel-dot active" data-slide="0"></div>
+                        <div class="carousel-dot" data-slide="1"></div>
+                        <div class="carousel-dot" data-slide="2"></div>
+                    </div>
                 </div>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
@@ -1702,7 +1975,6 @@
             </div>
         </div>
     </section>
-
     <!-- Localização e Contato -->
     <section id="contato" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
@@ -1807,15 +2079,14 @@
             </div>
         </div>
     </section>
-
     <!-- Footer with Wave -->
     <footer class="wave-footer py-14 relative">
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-5xl mx-auto">
                 <div class="grid md:grid-cols-4 gap-10 mb-10">
                     <div class="md:col-span-2">
-                        <div class="flex items-center mb-5">
-                            <i class="fas fa-brain text-terracota text-3xl mr-3 animate-pulse-soft"></i>
+                        <div class="footer-logo-container">
+                            <img src="/placeholder.svg?height=120&width=240&text=Luciana+Magalhães+Logo" alt="Luciana Magalhães - Logo">
                             <h3 class="text-2xl font-serif font-bold text-off-white">Luciana Magalhães</h3>
                         </div>
                         <p class="text-gray-300 text-base leading-relaxed mb-5">
@@ -1840,6 +2111,8 @@
                             <li><a href="#empresas"
                                     class="text-gray-300 hover:text-terracota transition-colors text-base">Para
                                     Empresas</a></li>
+                            <li><a href="#depoimentos"
+                                    class="text-gray-300 hover:text-terracota transition-colors text-base">Depoimentos</a></li>
                             <li><a href="#contato"
                                     class="text-gray-300 hover:text-terracota transition-colors text-base">Contato</a></li>
                         </ul>
@@ -1869,7 +2142,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // Enhanced Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1877,40 +2149,59 @@
         const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
         const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
-
         function openMobileMenu() {
             document.body.classList.add('mobile-menu-open');
             mobileMenu.classList.add('active');
             mobileMenuOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
         function closeMobileMenu() {
             document.body.classList.remove('mobile-menu-open');
             mobileMenu.classList.remove('active');
             mobileMenuOverlay.classList.remove('active');
             document.body.style.overflow = '';
         }
-
         // Event listeners
         mobileMenuBtn.addEventListener('click', openMobileMenu);
         mobileMenuClose.addEventListener('click', closeMobileMenu);
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-
         // Close menu when clicking on menu items
         mobileMenuItems.forEach(item => {
             item.addEventListener('click', () => {
                 setTimeout(closeMobileMenu, 300); // Small delay for smooth transition
             });
         });
-
         // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeMobileMenu();
             }
         });
-
+        // Testimonial Modal Functions
+        function openTestimonialModal(imageSrc) {
+            const modal = document.getElementById('testimonial-modal');
+            const modalImage = document.getElementById('testimonial-modal-image');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeTestimonialModal() {
+            const modal = document.getElementById('testimonial-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        // Close modal when clicking outside the image
+        document.getElementById('testimonial-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeTestimonialModal();
+            }
+        });
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeTestimonialModal();
+            }
+        });
         // Enhanced Carousel Functionality
         const carouselTrack = document.getElementById('carousel-track');
         const prevBtn = document.getElementById('prev-btn');
@@ -1919,24 +2210,20 @@
         const slides = Array.from(carouselTrack.children);
         let currentSlide = 0;
         let isTransitioning = false;
-
         function updateCarousel() {
             if (isTransitioning) return;
             isTransitioning = true;
             const slideWidth = slides[0].offsetWidth;
             carouselTrack.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
-
             // Update indicators
             const dots = Array.from(carouselIndicators.children);
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
-
             setTimeout(() => {
                 isTransitioning = false;
             }, 800);
         }
-
         function moveToSlide(slideIndex) {
             if (slideIndex >= slides.length) {
                 slideIndex = 0;
@@ -1946,35 +2233,29 @@
             currentSlide = slideIndex;
             updateCarousel();
         }
-
         prevBtn.addEventListener('click', () => {
             moveToSlide(currentSlide - 1);
         });
-
         nextBtn.addEventListener('click', () => {
             moveToSlide(currentSlide + 1);
         });
-
         carouselIndicators.addEventListener('click', (e) => {
             if (e.target.classList.contains('carousel-dot')) {
                 const slide = parseInt(e.target.dataset.slide);
                 moveToSlide(slide);
             }
         });
-
         // Auto-play carousel
         setInterval(() => {
             if (!isTransitioning) {
                 moveToSlide(currentSlide + 1);
             }
         }, 6000);
-
         // Enhanced Intersection Observer for Animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -100px 0px"
         };
-
         const appearOnScroll = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2001,12 +2282,10 @@
                 }
             });
         }, observerOptions);
-
         // Observe all animated elements
         document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
             appearOnScroll.observe(el);
         });
-
         // Parallax Effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -2016,12 +2295,10 @@
                 element.style.transform = `translateY(${scrolled * speed}px)`;
             });
         });
-
         // Enhanced Header Behavior
         const header = document.getElementById('header');
         let lastScrollTop = 0;
         let ticking = false;
-
         function updateHeader() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > 100) {
@@ -2037,14 +2314,12 @@
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             ticking = false;
         }
-
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(updateHeader);
                 ticking = true;
             }
         });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -2062,10 +2337,8 @@
                 }
             });
         });
-
         // Initialize carousel
         updateCarousel();
-
         // Text animation on scroll
         function animateTextOnScroll() {
             const textContainers = document.querySelectorAll('.text-container');
@@ -2085,10 +2358,8 @@
                 }
             });
         }
-
         window.addEventListener('scroll', animateTextOnScroll);
         window.addEventListener('load', animateTextOnScroll);
     </script>
 </body>
-
 </html>
