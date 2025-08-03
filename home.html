@@ -708,9 +708,7 @@
             padding: 30px;
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        /* BOTÕES DO CARROSSEL MELHORADOS - DENTRO DA IMAGEM */
+        }                /* BOTÕES DO CARROSSEL MELHORADOS - DENTRO DA IMAGEM */
         .carousel-nav {
             position: absolute;
             top: 50%;
@@ -742,9 +740,7 @@
         }
         .carousel-nav.next {
             right: 25px;
-        }
-        
-        .carousel-indicators {
+        }                .carousel-indicators {
             position: absolute;
             bottom: 25px;
             left: 50%;
@@ -785,9 +781,7 @@
         }
         .carousel-dot.active::before {
             opacity: 0.3;
-        }
-        
-        /* Enhanced Accordion */
+        }                /* Enhanced Accordion */
         .accordion-item {
             border: 2px solid transparent;
             border-radius: 20px;
@@ -1004,9 +998,7 @@
         .morph-shape {
             background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
             animation: morph 8s ease-in-out infinite;
-        }
-        
-        /* LOGO AUMENTADA - TAMANHOS MAIORES */
+        }                /* LOGO AUMENTADA - TAMANHOS MAIORES */
         .logo-container {
             display: flex;
             align-items: center;
@@ -1021,9 +1013,7 @@
             image-rendering: pixelated;
             image-rendering: high-quality;
             filter: contrast(1.1) brightness(1.05);
-        }
-        
-        /* LOGO NO FOOTER */
+        }                /* LOGO NO FOOTER */
         .footer-logo-container {
             display: flex;
             align-items: center;
@@ -1034,9 +1024,7 @@
             width: auto;
             object-fit: contain;
             margin-right: 15px;
-        }
-        
-        @media (max-width: 768px) {
+        }                @media (max-width: 768px) {
             .logo-container {
                 justify-content: flex-start;
             }
@@ -1057,26 +1045,37 @@
             .footer-logo-container img {
                 max-height: 75px; /* Logo do footer responsivo */
             }
+        }                
+        /* UPDATED TESTIMONIALS SECTION STYLES */
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
-        
-        /* Testimonials Section Styles */
+
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 3rem;
         }
+
         .testimonial-card {
-            background: white;
-            border-radius: 25px;
-            padding: 0;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 246, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 
+                        0 0 0 1px rgba(217, 140, 106, 0.05),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(217, 140, 106, 0.1);
+            border: 2px solid transparent;
+            background-clip: padding-box;
             position: relative;
             overflow: hidden;
             cursor: pointer;
         }
+
         .testimonial-card::before {
             content: '';
             position: absolute;
@@ -1087,91 +1086,39 @@
             background: linear-gradient(90deg, #D98C6A, #E5A584, #D98C6A);
             background-size: 200% 100%;
             animation: shimmer 3s linear infinite;
+            border-radius: 30px 30px 0 0;
         }
+
         .testimonial-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 
+                        0 0 0 1px rgba(217, 140, 106, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
-        .testimonial-image {
+
+        .testimonial-image-container {
+            position: relative;
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 25px 25px 0 0;
-            transition: transform 0.4s ease;
-        }
-        .testimonial-card:hover .testimonial-image {
-            transform: scale(1.05);
-        }
-        .testimonial-content {
-            padding: 25px;
-            position: relative;
-        }
-        .testimonial-quote {
-            font-size: 1.1rem;
-            font-style: italic;
-            color: #5C5C5C;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            position: relative;
-            padding: 0 20px;
-        }
-        .testimonial-quote::before,
-        .testimonial-quote::after {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            color: rgba(217, 140, 106, 0.3);
-            position: absolute;
-        }
-        .testimonial-quote::before {
-            content: '"';
-            top: -15px;
-            left: -5px;
-        }
-        .testimonial-quote::after {
-            content: '"';
-            bottom: -25px;
-            right: -5px;
-        }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(217, 140, 106, 0.1);
-        }
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #D98C6A, #E5A584);
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #FAF8F6 0%, #F2E4DD 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
+            padding: 15px;
         }
-        .testimonial-info h4 {
-            font-weight: 600;
-            color: #5C5C5C;
-            margin: 0;
-            font-size: 1.1rem;
+
+        .testimonial-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-        .testimonial-info p {
-            color: #8A8A8A;
-            margin: 0;
-            font-size: 0.9rem;
-        }
-        .testimonial-rating {
-            display: flex;
-            gap: 3px;
-            margin-top: 8px;
-        }
-        .star {
-            color: #FFD700;
-            font-size: 1rem;
-        }
+
         /* Modal Styles for Testimonial Images */
         .testimonial-modal {
             position: fixed;
@@ -1179,37 +1126,52 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(92, 92, 92, 0.95);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(10px);
+            padding: 20px;
         }
+
         .testimonial-modal.active {
             opacity: 1;
             visibility: visible;
         }
+
         .testimonial-modal-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             max-width: 90vw;
             max-height: 90vh;
-            position: relative;
+            background: linear-gradient(135deg, #FAF8F6 0%, #F2E4DD 100%);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(217, 140, 106, 0.1);
         }
+
         .testimonial-modal img {
-            width: 100%;
-            height: auto;
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
             border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
+
         .testimonial-modal-close {
             position: absolute;
             top: -15px;
             right: -15px;
-            width: 40px;
-            height: 40px;
-            background: #D98C6A;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #D98C6A, #E5A584);
             color: white;
             border: none;
             border-radius: 50%;
@@ -1217,80 +1179,101 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(217, 140, 106, 0.4);
+            z-index: 10;
         }
+
         .testimonial-modal-close:hover {
-            background: #C67A56;
+            background: linear-gradient(135deg, #C67A56, #D98C6A);
             transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(217, 140, 106, 0.6);
         }
-        /* Mobile Optimizations */
+
+        /* Mobile Optimizations for Testimonials */
         @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .testimonial-card {
+                margin: 0 10px;
+                border-radius: 25px;
+                padding: 15px;
+            }
+
+            .testimonial-image-container {
+                height: 350px;
+                padding: 12px;
+                border-radius: 18px;
+            }
+
+            .testimonial-modal-content {
+                padding: 20px;
+                border-radius: 20px;
+                max-width: 95vw;
+                max-height: 95vh;
+            }
+
+            .testimonial-modal img {
+                max-height: 75vh;
+            }
+
+            .testimonial-modal-close {
+                top: -12px;
+                right: -12px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
             .testimonials-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
+            .testimonial-image-container {
+                height: 320px;
+                padding: 10px;
+            }
+
             .testimonial-card {
-                margin: 0 10px;
+                padding: 12px;
             }
-            .testimonial-image {
-                height: 250px;
+
+            .testimonial-modal-content {
+                padding: 15px;
+                max-width: 98vw;
+                max-height: 98vh;
             }
-            .testimonial-content {
-                padding: 20px;
+
+            .testimonial-modal img {
+                max-height: 70vh;
             }
-            .testimonial-quote {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-            .text-container {
-                padding: 30px 20px;
-                border-radius: 20px;
-            }
-            .luxury-quote {
-                padding: 20px 30px;
-                font-size: 1em;
-            }
-            .aspect-ratio-container {
-                padding-bottom: 75%;
-            }
-            .carousel-nav {
-                width: 50px;
-                height: 50px;
-                font-size: 18px;
-            }
-            .carousel-nav.prev {
-                left: 15px;
-            }
-            .carousel-nav.next {
-                right: 15px;
-            }
-            .carousel-indicators {
-                bottom: 20px;
-            }
-            .carousel-dot {
-                width: 12px;
-                height: 12px;
-            }
-            .card {
-                padding: 20px;
-            }
-            .wave-header::before,
-            .wave-footer::before {
-                height: 15px;
-                background-size: 800px 15px;
-            }
-            .text-2xl {
-                font-size: 1.25rem;
-            }
-            .text-xl {
-                font-size: 1.125rem;
-            }
-            .text-lg {
-                font-size: 1rem;
-            }
-            .text-base {
-                font-size: 0.875rem;
+        }
+
+        /* Image container styling - versão simplificada */
+        .image-container {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Altura maior para desktop */
+        @media (min-width: 1024px) {
+            .image-container {
+                height: 28rem; /* Aumentado de h-96 (24rem) para 28rem */
             }
         }
         /* Fade animations */
@@ -1337,25 +1320,6 @@
             text-shadow: 0 0 10px rgba(217, 140, 106, 0.5),
                 0 0 20px rgba(217, 140, 106, 0.3),
                 0 0 30px rgba(217, 140, 106, 0.2);
-        }
-        /* Image container styling - versão simplificada */
-        .image-container {
-            position: relative;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
-        }
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        /* Altura maior para desktop */
-        @media (min-width: 1024px) {
-            .image-container {
-                height: 28rem; /* Aumentado de h-96 (24rem) para 28rem */
-            }
         }
     </style>
 </head>
@@ -1781,95 +1745,64 @@
     <!-- Depoimentos -->
     <section id="depoimentos" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-6xl mx-auto">
-                <div class="fade-in mb-16 text-center">
-                    <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
-                        <span class="gradient-text">Depoimentos</span> dos Pacientes
-                    </h2>
-                    <div
-                        class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
-                    </div>
-                    <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
-                        Veja o que nossos pacientes dizem sobre sua experiência transformadora
-                    </p>
+        <div class="testimonials-container relative z-10">
+            <div class="fade-in mb-16 text-center">
+                <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
+                    <span class="gradient-text">Depoimentos</span> dos Pacientes
+                </h2>
+                <div class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
                 </div>
-                <div class="testimonials-grid">
-                    <!-- Depoimento 1 -->
-                    <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+1')">
-                        <img src="/placeholder.svg?height=300&width=400&text=Depoimento+1" alt="Depoimento de paciente" class="testimonial-image">
-                        <div class="testimonial-content">
-                            <div class="testimonial-quote">
-                                A terapia com a Luciana mudou completamente minha perspectiva sobre relacionamentos. Aprendi a estabelecer limites saudáveis e a me valorizar.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">M</div>
-                                <div class="testimonial-info">
-                                    <h4>Maria Silva</h4>
-                                    <p>Paciente há 8 meses</p>
-                                    <div class="testimonial-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
+                    Veja o que nossos pacientes dizem sobre sua experiência transformadora
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card fade-in" onclick="openTestimonialModal('./imagens/image1.png')">
+                    <div class="testimonial-image-container">
+                        <img src="./imagens/image1.png" alt="Depoimento de paciente" class="testimonial-image">
                     </div>
-                    <!-- Depoimento 2 -->
-                    <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+2')">
-                        <img src="/placeholder.svg?height=300&width=400&text=Depoimento+2" alt="Depoimento de paciente" class="testimonial-image">
-                        <div class="testimonial-content">
-                            <div class="testimonial-quote">
-                                Encontrei na Luciana não apenas uma profissional competente, mas alguém que realmente se importa. Sua escuta acolhedora fez toda a diferença.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">J</div>
-                                <div class="testimonial-info">
-                                    <h4>João Santos</h4>
-                                    <p>Paciente há 1 ano</p>
-                                    <div class="testimonial-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Depoimento 3 -->
-                    <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+3')">
-                        <img src="/placeholder.svg?height=300&width=400&text=Depoimento+3" alt="Depoimento de paciente" class="testimonial-image">
-                        <div class="testimonial-content">
-                            <div class="testimonial-quote">
-                                Minha filha adolescente estava passando por um momento difícil. A Luciana conseguiu criar uma conexão especial com ela e os resultados foram incríveis.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">A</div>
-                                <div class="testimonial-info">
-                                    <h4>Ana Costa</h4>
-                                    <p>Mãe de paciente</p>
-                                    <div class="testimonial-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
-                
+
+                <!-- Depoimento 2 -->
+                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+2')">
+                    <div class="testimonial-image-container">
+                        <img src="./imagens/image2.png" alt="Depoimento de paciente" class="testimonial-image">
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+3')">
+                    <div class="testimonial-image-container">
+                        <img src="./imagens/image3.png" alt="Depoimento de paciente" class="testimonial-image">
+                    </div>
+                </div>
+
+                <!-- Depoimento 4 -->
+                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+4')">
+                    <div class="testimonial-image-container">
+                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+4" alt="Depoimento de paciente" class="testimonial-image">
+                    </div>
+                </div>
+
+                <!-- Depoimento 5 -->
+                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+5')">
+                    <div class="testimonial-image-container">
+                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+5" alt="Depoimento de paciente" class="testimonial-image">
+                    </div>
+                </div>
+
+                <!-- Depoimento 6 -->
+                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+6')">
+                    <div class="testimonial-image-container">
+                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+6" alt="Depoimento de paciente" class="testimonial-image">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
     <!-- Modal para Depoimentos -->
     <div id="testimonial-modal" class="testimonial-modal">
         <div class="testimonial-modal-content">
