@@ -248,7 +248,9 @@
                 filter: blur(0px);
             }
         }
-        /* Enhanced Mobile Menu Styles */
+
+        /* CORREÇÃO DO BUG DO MENU MOBILE */
+        /* Enhanced Mobile Menu Styles - VERSÃO CORRIGIDA */
         .hamburger-lines {
             position: relative;
             width: 24px;
@@ -274,6 +276,7 @@
         .hamburger-line-3 {
             bottom: 0;
         }
+
         /* Hamburger Animation */
         .mobile-menu-open .hamburger-line-1 {
             top: 50%;
@@ -287,7 +290,8 @@
             bottom: 50%;
             transform: translateY(50%) rotate(-45deg);
         }
-        /* Mobile Menu Overlay */
+
+        /* Mobile Menu Overlay - CORRIGIDO */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
@@ -300,16 +304,19 @@
             visibility: hidden;
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             z-index: 998;
+            pointer-events: none;
         }
         .mobile-menu-overlay.active {
             opacity: 1;
             visibility: visible;
+            pointer-events: auto;
         }
-        /* Enhanced Mobile Menu */
+
+        /* Enhanced Mobile Menu - VERSÃO CORRIGIDA */
         .mobile-menu {
             position: fixed;
             top: 0;
-            right: -100%;
+            right: 0;
             width: 320px;
             max-width: 85vw;
             height: 100vh;
@@ -322,10 +329,19 @@
             display: flex;
             flex-direction: column;
             overflow-y: auto;
+            /* CORREÇÃO PRINCIPAL - GARANTIR QUE ESTEJA SEMPRE FORA DA TELA QUANDO INATIVO */
+            transform: translateX(100%);
+            visibility: hidden;
+            opacity: 0;
         }
+        
+        /* ESTADO ATIVO DO MENU - CORRIGIDO */
         .mobile-menu.active {
-            right: 0;
+            transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
         }
+
         /* Mobile Menu Header */
         .mobile-menu-header {
             display: flex;
@@ -353,6 +369,7 @@
             color: white;
             transform: scale(1.1);
         }
+
         /* Mobile Menu Navigation */
         .mobile-menu-nav {
             flex: 1;
@@ -400,6 +417,7 @@
         .mobile-menu-item:hover i {
             transform: scale(1.2);
         }
+
         /* Mobile Menu Footer */
         .mobile-menu-footer {
             padding: 24px;
@@ -440,6 +458,7 @@
         .mobile-menu-cta:hover::before {
             left: 100%;
         }
+
         /* Menu Item Animation */
         .mobile-menu.active .mobile-menu-item {
             animation: slideInFromRight 0.5s ease-out forwards;
@@ -476,10 +495,30 @@
                 transform: translateX(0);
             }
         }
+
+        /* PREVENÇÃO CONTRA GESTOS INDESEJADOS */
+        @media (max-width: 1023px) {
+            body {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-touch-callout: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+            
+            /* Prevenir scroll horizontal indesejado */
+            html, body {
+                overflow-x: hidden;
+                position: relative;
+            }
+        }
+
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 12px;
@@ -492,6 +531,7 @@
             border-radius: 6px;
             border: 2px solid #FAF8F6;
         }
+
         /* Wave Header */
         .wave-header {
             position: relative;
@@ -510,6 +550,7 @@
             background-size: 1200px 20px;
             animation: wave 8s ease-in-out infinite;
         }
+
         /* Wave Footer */
         .wave-footer {
             position: relative;
@@ -527,6 +568,7 @@
             animation: wave 10s ease-in-out infinite reverse;
             transform: rotate(180deg);
         }
+
         /* Enhanced Text Containers */
         .text-container {
             position: relative;
@@ -558,6 +600,7 @@
             border-radius: 28px;
             z-index: -1;
         }
+
         /* Luxury Text Styling */
         .luxury-text {
             position: relative;
@@ -583,6 +626,7 @@
             border-radius: 2px;
             opacity: 0.6;
         }
+
         /* Quote Styling */
         .luxury-quote {
             position: relative;
@@ -612,6 +656,7 @@
             bottom: -30px;
             right: 20px;
         }
+
         /* Enhanced Typography */
         .enhanced-heading {
             position: relative;
@@ -629,6 +674,7 @@
             border-radius: 2px;
             animation: lineExpand 1s ease-out 0.5s forwards;
         }
+
         /* Text Reveal Animation */
         .text-reveal {
             opacity: 0;
@@ -646,12 +692,14 @@
         .text-reveal.delay-4 {
             animation-delay: 0.8s;
         }
+
         /* Word by Word Animation */
         .word-animate {
             display: inline-block;
             opacity: 0;
             animation: wordSlide 0.8s ease-out forwards;
         }
+
         /* Enhanced Carousel */
         .carousel-container {
             position: relative;
@@ -682,6 +730,7 @@
             flex-shrink: 0;
             position: relative;
         }
+
         /* Novo contêiner para manter a proporção da imagem */
         .aspect-ratio-container {
             position: relative;
@@ -708,7 +757,9 @@
             padding: 30px;
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }                /* BOTÕES DO CARROSSEL MELHORADOS - DENTRO DA IMAGEM */
+        }
+        
+        /* BOTÕES DO CARROSSEL MELHORADOS - DENTRO DA IMAGEM */
         .carousel-nav {
             position: absolute;
             top: 50%;
@@ -740,7 +791,9 @@
         }
         .carousel-nav.next {
             right: 25px;
-        }                .carousel-indicators {
+        }
+        
+        .carousel-indicators {
             position: absolute;
             bottom: 25px;
             left: 50%;
@@ -781,7 +834,9 @@
         }
         .carousel-dot.active::before {
             opacity: 0.3;
-        }                /* Enhanced Accordion */
+        }
+        
+        /* Enhanced Accordion */
         .accordion-item {
             border: 2px solid transparent;
             border-radius: 20px;
@@ -834,6 +889,7 @@
             padding: 25px;
             border-top: 1px solid rgba(217, 140, 106, 0.1);
         }
+
         /* Enhanced Buttons */
         .btn-primary {
             background: linear-gradient(135deg, #D98C6A 0%, #E5A584 100%);
@@ -904,6 +960,7 @@
         .btn-secondary:hover::before {
             width: 100%;
         }
+
         /* Enhanced Cards */
         .card {
             background: white;
@@ -930,6 +987,7 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
+
         /* Navigation Enhancements */
         .nav-link {
             position: relative;
@@ -955,6 +1013,7 @@
         .nav-link:hover::before {
             width: 80%;
         }
+
         /* Text Effects */
         .typewriter {
             overflow: hidden;
@@ -978,6 +1037,7 @@
             background-clip: text;
             animation: shimmer 2s linear infinite;
         }
+
         /* Floating Elements */
         .floating-element {
             position: absolute;
@@ -994,11 +1054,14 @@
         .floating-element:nth-child(3) {
             animation-delay: 4s;
         }
+
         /* Morphing Shapes */
         .morph-shape {
             background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
             animation: morph 8s ease-in-out infinite;
-        }                /* LOGO AUMENTADA - TAMANHOS MAIORES */
+        }
+        
+        /* LOGO AUMENTADA - TAMANHOS MAIORES */
         .logo-container {
             display: flex;
             align-items: center;
@@ -1013,7 +1076,9 @@
             image-rendering: pixelated;
             image-rendering: high-quality;
             filter: contrast(1.1) brightness(1.05);
-        }                /* LOGO NO FOOTER */
+        }
+        
+        /* LOGO NO FOOTER */
         .footer-logo-container {
             display: flex;
             align-items: center;
@@ -1024,7 +1089,9 @@
             width: auto;
             object-fit: contain;
             margin-right: 15px;
-        }                @media (max-width: 768px) {
+        }
+        
+        @media (max-width: 768px) {
             .logo-container {
                 justify-content: flex-start;
             }
@@ -1045,28 +1112,27 @@
             .footer-logo-container img {
                 max-height: 75px; /* Logo do footer responsivo */
             }
-        }                
+        }
+                
         /* UPDATED TESTIMONIALS SECTION STYLES */
         .testimonials-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 1rem;
         }
-
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
-
         .testimonial-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 246, 0.98) 100%);
             backdrop-filter: blur(20px);
             border-radius: 30px;
             padding: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 
-                        0 0 0 1px rgba(217, 140, 106, 0.05),
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08),
+                         0 0 0 1px rgba(217, 140, 106, 0.05),
                         inset 0 1px 0 rgba(255, 255, 255, 0.8);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border: 2px solid transparent;
@@ -1075,7 +1141,6 @@
             overflow: hidden;
             cursor: pointer;
         }
-
         .testimonial-card::before {
             content: '';
             position: absolute;
@@ -1088,14 +1153,12 @@
             animation: shimmer 3s linear infinite;
             border-radius: 30px 30px 0 0;
         }
-
         .testimonial-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 
-                        0 0 0 1px rgba(217, 140, 106, 0.1),
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12),
+                         0 0 0 1px rgba(217, 140, 106, 0.1),
                         inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
-
         .testimonial-image-container {
             position: relative;
             width: 100%;
@@ -1108,7 +1171,6 @@
             justify-content: center;
             padding: 15px;
         }
-
         .testimonial-image {
             width: 100%;
             height: 100%;
@@ -1137,12 +1199,10 @@
             backdrop-filter: blur(10px);
             padding: 20px;
         }
-
         .testimonial-modal.active {
             opacity: 1;
             visibility: visible;
         }
-
         .testimonial-modal-content {
             position: relative;
             display: flex;
@@ -1156,7 +1216,6 @@
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
             border: 2px solid rgba(217, 140, 106, 0.1);
         }
-
         .testimonial-modal img {
             max-width: 100%;
             max-height: 80vh;
@@ -1164,7 +1223,6 @@
             border-radius: 15px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
-
         .testimonial-modal-close {
             position: absolute;
             top: -15px;
@@ -1184,7 +1242,6 @@
             box-shadow: 0 8px 25px rgba(217, 140, 106, 0.4);
             z-index: 10;
         }
-
         .testimonial-modal-close:hover {
             background: linear-gradient(135deg, #C67A56, #D98C6A);
             transform: scale(1.1);
@@ -1198,30 +1255,25 @@
                 gap: 2rem;
                 margin-top: 2rem;
             }
-
             .testimonial-card {
                 margin: 0 10px;
                 border-radius: 25px;
                 padding: 15px;
             }
-
             .testimonial-image-container {
                 height: 350px;
                 padding: 12px;
                 border-radius: 18px;
             }
-
             .testimonial-modal-content {
                 padding: 20px;
                 border-radius: 20px;
                 max-width: 95vw;
                 max-height: 95vh;
             }
-
             .testimonial-modal img {
                 max-height: 75vh;
             }
-
             .testimonial-modal-close {
                 top: -12px;
                 right: -12px;
@@ -1230,28 +1282,23 @@
                 font-size: 1.2rem;
             }
         }
-
         @media (max-width: 480px) {
             .testimonials-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-
             .testimonial-image-container {
                 height: 320px;
                 padding: 10px;
             }
-
             .testimonial-card {
                 padding: 12px;
             }
-
             .testimonial-modal-content {
                 padding: 15px;
                 max-width: 98vw;
                 max-height: 98vh;
             }
-
             .testimonial-modal img {
                 max-height: 70vh;
             }
@@ -1270,12 +1317,14 @@
             height: 100%;
             object-fit: cover;
         }
+
         /* Altura maior para desktop */
         @media (min-width: 1024px) {
             .image-container {
                 height: 28rem; /* Aumentado de h-96 (24rem) para 28rem */
             }
         }
+
         /* Fade animations */
         .fade-in {
             opacity: 0;
@@ -1304,17 +1353,20 @@
             opacity: 1;
             transform: translateX(0) rotateY(0deg);
         }
+
         /* Parallax Effect */
         .parallax {
             transform: translateZ(0);
             transition: transform 0.1s ease-out;
         }
+
         /* Glass Effect */
         .glass {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         /* Neon Glow */
         .neon-glow {
             text-shadow: 0 0 10px rgba(217, 140, 106, 0.5),
@@ -1330,12 +1382,13 @@
         <div class="floating-element w-24 h-24 bottom-32 left-16 animate-bounce-gentle"></div>
         <div class="floating-element w-40 h-40 top-1/2 left-1/4 animate-pulse-soft"></div>
     </div>
+
     <!-- Header with Wave -->
     <header class="wave-header sticky top-0 z-50 transition-all duration-500" id="header">
         <nav class="px-8 py-6">
             <div class="flex justify-between items-center max-w-full">
                 <div class="logo-container">
-                    <img src="./imagens/Logo.png" alt="Luciana Magalhães - Logo" class="transition-all duration-300">
+                    <img src="/placeholder.svg?height=150&width=300&text=Luciana+Magalhães+Logo" alt="Luciana Magalhães - Logo" class="transition-all duration-300">
                 </div>
                 <div class="hidden lg:flex space-x-1">
                     <a href="#inicio" class="nav-link text-cinza-escuro font-medium">Início</a>
@@ -1357,6 +1410,7 @@
                     </div>
                 </button>
             </div>
+
             <!-- Enhanced Mobile Menu -->
             <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
             <div id="mobile-menu" class="mobile-menu">
@@ -1409,6 +1463,7 @@
             </div>
         </nav>
     </header>
+
     <!-- Hero Section -->
     <section id="inicio" class="min-h-screen flex items-center relative overflow-hidden">
         <!-- Animated Background -->
@@ -1445,7 +1500,7 @@
                 <div class="lg:w-1/2 slide-in-right">
                     <div class="relative">
                         <div class="relative">
-                            <img src="./imagens/IMG_6705.jpg" alt="Luciana Magalhães - Psicóloga"
+                            <img src="/placeholder.svg?height=600&width=500&text=Luciana+Magalhães+Psicóloga" alt="Luciana Magalhães - Psicóloga"
                                 class="relative rounded-3xl shadow-dreamy w-full max-w-lg mx-auto">
                         </div>
                     </div>
@@ -1453,6 +1508,7 @@
             </div>
         </div>
     </section>
+
     <!-- Minha História -->
     <section id="historia" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-50"></div>
@@ -1486,6 +1542,7 @@
             </div>
         </div>
     </section>
+
     <!-- Minha Filosofia -->
     <section id="acredito" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
@@ -1512,7 +1569,7 @@
                             </p>
                             <!-- Primeira imagem dentro do texto -->
                             <div class="image-container">
-                                <img src="./imagens/IMG_6330.jpg" alt="Terapia Individual"
+                                <img src="/placeholder.svg?height=400&width=600&text=Terapia+Individual" alt="Terapia Individual"
                                     class="w-full h-full object-cover">
                             </div>
                             <p class="luxury-paragraph text-reveal delay-1">
@@ -1523,7 +1580,7 @@
                             </p>
                             <!-- Segunda imagem dentro do texto -->
                             <div class="image-container">
-                                <img src="./imagens/sorrindo.jpg" alt="Terapia Infantil"
+                                <img src="/placeholder.svg?height=400&width=600&text=Terapia+Infantil" alt="Terapia Infantil"
                                     class="w-full h-full object-cover">
                             </div>
                             <p class="luxury-paragraph text-reveal delay-2">
@@ -1538,7 +1595,7 @@
                                 sentido da vida, com escuta, cuidado e reconstrução de vínculos consigo mesmas.
                             </div>
                             <div class="image-container">
-                                <img src="./imagens/IMG_6530.jpg" alt="Trabalho Voluntário"
+                                <img src="/placeholder.svg?height=400&width=600&text=Trabalho+Voluntário" alt="Trabalho Voluntário"
                                     class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -1547,6 +1604,7 @@
             </div>
         </div>
     </section>
+
     <!-- Sobre Mim -->
     <section id="quem-sou" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
@@ -1595,6 +1653,7 @@
             </div>
         </div>
     </section>
+
     <!-- O que esperar da terapia -->
     <section id="terapia" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
@@ -1673,6 +1732,7 @@
             </div>
         </div>
     </section>
+
     <!-- Para Empresas Section -->
     <section id="empresas" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
@@ -1742,6 +1802,7 @@
             </div>
         </div>
     </section>
+
     <!-- Depoimentos -->
     <section id="depoimentos" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
@@ -1756,43 +1817,38 @@
                     Veja o que nossos pacientes dizem sobre sua experiência transformadora
                 </p>
             </div>
-            
+                        
             <div class="testimonials-grid">
                 <!-- Depoimento 1 -->
-                <div class="testimonial-card fade-in" onclick="openTestimonialModal('./imagens/image1.png')">
+                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+1')">
                     <div class="testimonial-image-container">
-                        <img src="./imagens/image1.png" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+1" alt="Depoimento de paciente" class="testimonial-image">
                     </div>
                 </div>
-
                 <!-- Depoimento 2 -->
                 <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+2')">
                     <div class="testimonial-image-container">
-                        <img src="./imagens/image2.png" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+2" alt="Depoimento de paciente" class="testimonial-image">
                     </div>
                 </div>
-
                 <!-- Depoimento 3 -->
                 <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+3')">
                     <div class="testimonial-image-container">
-                        <img src="./imagens/image3.png" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+3" alt="Depoimento de paciente" class="testimonial-image">
                     </div>
                 </div>
-
                 <!-- Depoimento 4 -->
                 <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+4')">
                     <div class="testimonial-image-container">
                         <img src="/placeholder.svg?height=400&width=600&text=Depoimento+4" alt="Depoimento de paciente" class="testimonial-image">
                     </div>
                 </div>
-
                 <!-- Depoimento 5 -->
                 <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+5')">
                     <div class="testimonial-image-container">
                         <img src="/placeholder.svg?height=400&width=600&text=Depoimento+5" alt="Depoimento de paciente" class="testimonial-image">
                     </div>
                 </div>
-
                 <!-- Depoimento 6 -->
                 <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+6')">
                     <div class="testimonial-image-container">
@@ -1812,6 +1868,7 @@
             </button>
         </div>
     </div>
+
     <!-- Carrossel do Consultório -->
     <section id="consultorio" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
@@ -1836,7 +1893,7 @@
                     <div class="carousel-track" id="carousel-track">
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="./imagens/Consultorio1.jpeg" alt="Sala de espera aconchegante">
+                                <img src="/placeholder.svg?height=400&width=700&text=Sala+de+Espera" alt="Sala de espera aconchegante">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Sala de Espera</h3>
@@ -1846,7 +1903,7 @@
                         </div>
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="./imagens/Consultorio2.jpeg" alt="Consultório principal">
+                                <img src="/placeholder.svg?height=400&width=700&text=Consultório+Principal" alt="Consultório principal">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Consultório Principal</h3>
@@ -1856,7 +1913,7 @@
                         </div>
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="./imagens/Consultorio3.jpeg" alt="Área de relaxamento">
+                                <img src="/placeholder.svg?height=400&width=700&text=Área+de+Relaxamento" alt="Área de relaxamento">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Área de Relaxamento</h3>
@@ -1908,6 +1965,7 @@
             </div>
         </div>
     </section>
+
     <!-- Localização e Contato -->
     <section id="contato" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
@@ -1936,7 +1994,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Telefone</h4>
-                                        <p class="text-cinza-medio text-base">(11) 99999-9999</p>
+                                        <p class="text-cinza-medio text-base">(82) 99602-7533</p>
                                         <p class="text-sm text-cinza-medio">Atendimento de segunda a sexta, 8h às 18h
                                         </p>
                                     </div>
@@ -1948,7 +2006,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">E-mail</h4>
-                                        <p class="text-cinza-medio text-base">contato@draanasilva.com.br</p>
+                                        <p class="text-cinza-medio text-base">contato@lucianamagalhaes.com.br</p>
                                         <p class="text-sm text-cinza-medio">Resposta em até 24 horas</p>
                                     </div>
                                 </div>
@@ -1957,18 +2015,7 @@
                                         class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
                                         <i class="fas fa-map-marker-alt text-white text-xl"></i>
                                     </div>
-                                    <div>
-                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Endereço</h4>
-                                        <p class="text-cinza-medio text-base">Rua das Flores, 123 - Sala 456</p>
-                                        <p class="text-cinza-medio text-base">Jardins - São Paulo - SP</p>
-                                        <p class="text-cinza-medio text-base">CEP: 01234-567</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-5">
-                                    <div
-                                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
-                                        <i class="fas fa-clock text-white text-xl"></i>
-                                    </div>
+                                    
                                     <div>
                                         <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Horários</h4>
                                         <p class="text-cinza-medio text-base">Segunda a Sexta: 8h às 18h</p>
@@ -2012,6 +2059,7 @@
             </div>
         </div>
     </section>
+
     <!-- Footer with Wave -->
     <footer class="wave-footer py-14 relative">
         <div class="container mx-auto px-4 relative z-10">
@@ -2027,7 +2075,7 @@
                             Oferecendo um espaço seguro e acolhedor para sua jornada de autoconhecimento e
                             transformação.
                         </p>
-                        <p class="text-gray-400 text-sm">CRP: 06/123456</p>
+                        <p class="text-gray-400 text-sm">CRP: 15/7791</p>
                     </div>
                     <div>
                         <h4 class="text-lg font-semibold text-off-white mb-5">Links Rápidos</h4>
@@ -2060,8 +2108,8 @@
                         </div>
                         <div class="mt-7">
                             <h5 class="text-base font-semibold text-off-white mb-3">Contato</h5>
-                            <p class="text-gray-300 text-sm mb-1">(11) 99999-9999</p>
-                            <p class="text-gray-300 text-sm">contato@draanasilva.com.br</p>
+                            <p class="text-gray-300 text-sm mb-1">(82) 99602-7533</p>
+                            <p class="text-gray-300 text-sm">contato@lucianamagalhaes.com.br</p>
                         </div>
                     </div>
                 </div>
@@ -2075,41 +2123,132 @@
             </div>
         </div>
     </footer>
+
     <script>
-        // Enhanced Mobile Menu Toggle
+        // CORREÇÃO PRINCIPAL DO BUG DO MENU MOBILE
+        // Enhanced Mobile Menu Toggle - VERSÃO CORRIGIDA
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
         const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+        // Estado do menu
+        let isMenuOpen = false;
+
         function openMobileMenu() {
+            if (isMenuOpen) return; // Prevenir múltiplas ativações
+            
+            isMenuOpen = true;
             document.body.classList.add('mobile-menu-open');
             mobileMenu.classList.add('active');
             mobileMenuOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Prevenir scroll e gestos indesejados
+            document.addEventListener('touchmove', preventScroll, { passive: false });
+            document.addEventListener('wheel', preventScroll, { passive: false });
         }
+
         function closeMobileMenu() {
+            if (!isMenuOpen) return; // Prevenir múltiplas desativações
+            
+            isMenuOpen = false;
             document.body.classList.remove('mobile-menu-open');
             mobileMenu.classList.remove('active');
             mobileMenuOverlay.classList.remove('active');
             document.body.style.overflow = '';
+            
+            // Remover prevenção de scroll
+            document.removeEventListener('touchmove', preventScroll);
+            document.removeEventListener('wheel', preventScroll);
         }
-        // Event listeners
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Função para prevenir scroll quando menu está aberto
+        function preventScroll(e) {
+            if (isMenuOpen) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        }
+
+        // Event listeners - CORRIGIDOS
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (isMenuOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+
+        mobileMenuClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeMobileMenu();
+        });
+
+        mobileMenuOverlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMobileMenu();
+            }
+        });
+
         // Close menu when clicking on menu items
         mobileMenuItems.forEach(item => {
             item.addEventListener('click', () => {
                 setTimeout(closeMobileMenu, 300); // Small delay for smooth transition
             });
         });
+
         // Close menu on escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' && isMenuOpen) {
                 closeMobileMenu();
             }
         });
+
+        // PREVENÇÃO CONTRA GESTOS DE SWIPE INDESEJADOS
+        let startX = 0;
+        let startY = 0;
+
+        // Prevenir gestos de swipe que possam interferir com o menu
+        document.addEventListener('touchstart', function(e) {
+            if (!isMenuOpen) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }
+        }, { passive: true });
+
+        document.addEventListener('touchmove', function(e) {
+            if (!isMenuOpen) {
+                const currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+                const diffX = startX - currentX;
+                const diffY = startY - currentY;
+
+                // Se for um swipe horizontal da direita para esquerda próximo à borda
+                if (Math.abs(diffX) > Math.abs(diffY) && diffX > 50 && startX > window.innerWidth - 50) {
+                    // Não fazer nada - prevenir ativação acidental do menu
+                    e.preventDefault();
+                }
+            }
+        }, { passive: false });
+
+        // Garantir que o menu esteja sempre fechado no carregamento da página
+        document.addEventListener('DOMContentLoaded', function() {
+            closeMobileMenu();
+        });
+
+        // Fechar menu ao redimensionar a tela
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 1024 && isMenuOpen) {
+                closeMobileMenu();
+            }
+        });
+
         // Testimonial Modal Functions
         function openTestimonialModal(imageSrc) {
             const modal = document.getElementById('testimonial-modal');
@@ -2118,23 +2257,27 @@
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
+
         function closeTestimonialModal() {
             const modal = document.getElementById('testimonial-modal');
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
+
         // Close modal when clicking outside the image
         document.getElementById('testimonial-modal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeTestimonialModal();
             }
         });
+
         // Close modal on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeTestimonialModal();
             }
         });
+
         // Enhanced Carousel Functionality
         const carouselTrack = document.getElementById('carousel-track');
         const prevBtn = document.getElementById('prev-btn');
@@ -2143,20 +2286,24 @@
         const slides = Array.from(carouselTrack.children);
         let currentSlide = 0;
         let isTransitioning = false;
+
         function updateCarousel() {
             if (isTransitioning) return;
             isTransitioning = true;
             const slideWidth = slides[0].offsetWidth;
             carouselTrack.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+
             // Update indicators
             const dots = Array.from(carouselIndicators.children);
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
+
             setTimeout(() => {
                 isTransitioning = false;
             }, 800);
         }
+
         function moveToSlide(slideIndex) {
             if (slideIndex >= slides.length) {
                 slideIndex = 0;
@@ -2166,29 +2313,35 @@
             currentSlide = slideIndex;
             updateCarousel();
         }
+
         prevBtn.addEventListener('click', () => {
             moveToSlide(currentSlide - 1);
         });
+
         nextBtn.addEventListener('click', () => {
             moveToSlide(currentSlide + 1);
         });
+
         carouselIndicators.addEventListener('click', (e) => {
             if (e.target.classList.contains('carousel-dot')) {
                 const slide = parseInt(e.target.dataset.slide);
                 moveToSlide(slide);
             }
         });
+
         // Auto-play carousel
         setInterval(() => {
             if (!isTransitioning) {
                 moveToSlide(currentSlide + 1);
             }
         }, 6000);
+
         // Enhanced Intersection Observer for Animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -100px 0px"
         };
+
         const appearOnScroll = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2197,6 +2350,7 @@
                     const siblings = Array.from(entry.target.parentNode.children);
                     const index = siblings.indexOf(entry.target);
                     entry.target.style.animationDelay = `${index * 0.1}s`;
+
                     // Animate text reveals
                     const textReveals = entry.target.querySelectorAll('.text-reveal');
                     textReveals.forEach((element, i) => {
@@ -2205,6 +2359,7 @@
                             element.style.animation = 'textReveal 1.5s ease-out forwards';
                         }, i * 200);
                     });
+
                     // Animate words
                     const words = entry.target.querySelectorAll('.word-animate');
                     words.forEach((word, i) => {
@@ -2215,10 +2370,12 @@
                 }
             });
         }, observerOptions);
+
         // Observe all animated elements
         document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
             appearOnScroll.observe(el);
         });
+
         // Parallax Effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -2228,10 +2385,12 @@
                 element.style.transform = `translateY(${scrolled * speed}px)`;
             });
         });
+
         // Enhanced Header Behavior
         const header = document.getElementById('header');
         let lastScrollTop = 0;
         let ticking = false;
+
         function updateHeader() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > 100) {
@@ -2239,20 +2398,24 @@
             } else {
                 header.classList.remove('shadow-strong');
             }
+
             if (scrollTop > lastScrollTop && scrollTop > 200) {
                 header.style.transform = 'translateY(-100%)';
             } else {
                 header.style.transform = 'translateY(0)';
             }
+
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             ticking = false;
         }
+
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(updateHeader);
                 ticking = true;
             }
         });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -2270,8 +2433,10 @@
                 }
             });
         });
+
         // Initialize carousel
         updateCarousel();
+
         // Text animation on scroll
         function animateTextOnScroll() {
             const textContainers = document.querySelectorAll('.text-container');
@@ -2291,6 +2456,7 @@
                 }
             });
         }
+
         window.addEventListener('scroll', animateTextOnScroll);
         window.addEventListener('load', animateTextOnScroll);
     </script>
