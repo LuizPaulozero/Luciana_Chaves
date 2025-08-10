@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +76,8 @@
         }
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23D98C6A'/%3E%3Cpath d='M32 12v40M20 24c0 8 4 16 12 16s12-8 12-16' stroke='%23fff' stroke-width='3' fill='none'/%3E%3Cpath d='M24 20a8 8 0 1 1 16 0' stroke='%23fff' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23D98C6A'/%3E%3Cpath d='M32 12v40M20 24c0 8 4 16 12 16s12-8 12-16' stroke='%23fff' stroke-width='3' fill='none'/%3E%3Cpath d='M24 20a8 8 0 1 1 16 0' stroke='%23fff' stroke-width='3' fill='none'/%3E%3C/svg%3E">
     <style>
         /* Advanced Animations */
         @keyframes fadeIn {
@@ -83,165 +85,207 @@
                 opacity: 0;
                 transform: translateY(40px) scale(0.95);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
         }
+
         @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(60px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         @keyframes slideInLeft {
             from {
                 opacity: 0;
                 transform: translateX(-60px) rotateY(-10deg);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0) rotateY(0deg);
             }
         }
+
         @keyframes slideInRight {
             from {
                 opacity: 0;
                 transform: translateX(60px) rotateY(10deg);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0) rotateY(0deg);
             }
         }
+
         @keyframes bounceGentle {
+
             0%,
             100% {
                 transform: translateY(0) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-15px) rotate(2deg);
             }
         }
+
         @keyframes pulseSoft {
+
             0%,
             100% {
                 transform: scale(1) rotate(0deg);
                 opacity: 0.8;
             }
+
             50% {
                 transform: scale(1.1) rotate(1deg);
                 opacity: 1;
             }
         }
+
         @keyframes float {
+
             0%,
             100% {
                 transform: translateY(0px) rotate(0deg);
             }
+
             33% {
                 transform: translateY(-20px) rotate(1deg);
             }
+
             66% {
                 transform: translateY(-10px) rotate(-1deg);
             }
         }
+
         @keyframes wave {
+
             0%,
             100% {
                 transform: rotate(0deg);
             }
+
             25% {
                 transform: rotate(1deg);
             }
+
             75% {
                 transform: rotate(-1deg);
             }
         }
+
         @keyframes shimmer {
             0% {
                 background-position: -200% 0;
             }
+
             100% {
                 background-position: 200% 0;
             }
         }
+
         @keyframes glow {
             from {
                 box-shadow: 0 0 20px rgba(217, 140, 106, 0.3);
             }
+
             to {
                 box-shadow: 0 0 40px rgba(217, 140, 106, 0.6), 0 0 60px rgba(217, 140, 106, 0.3);
             }
         }
+
         @keyframes typewriter {
             from {
                 width: 0;
             }
+
             to {
                 width: 100%;
             }
         }
+
         @keyframes blink {
+
             0%,
             50% {
                 opacity: 1;
             }
+
             51%,
             100% {
                 opacity: 0;
             }
         }
+
         @keyframes morph {
+
             0%,
             100% {
                 border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             }
+
             50% {
                 border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
             }
         }
+
         @keyframes gradientShift {
+
             0%,
             100% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
         }
+
         @keyframes textReveal {
             0% {
                 opacity: 0;
                 transform: translateY(30px) rotateX(90deg);
                 filter: blur(10px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) rotateX(0deg);
                 filter: blur(0px);
             }
         }
+
         @keyframes lineExpand {
             0% {
                 width: 0;
                 opacity: 0;
             }
+
             100% {
                 width: 100%;
                 opacity: 1;
             }
         }
+
         @keyframes wordSlide {
             0% {
                 opacity: 0;
                 transform: translateX(-20px) scale(0.8);
                 filter: blur(5px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateX(0) scale(1);
@@ -256,6 +300,7 @@
             width: 24px;
             height: 18px;
         }
+
         .hamburger-line {
             position: absolute;
             left: 0;
@@ -266,13 +311,16 @@
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transform-origin: center;
         }
+
         .hamburger-line-1 {
             top: 0;
         }
+
         .hamburger-line-2 {
             top: 50%;
             transform: translateY(-50%);
         }
+
         .hamburger-line-3 {
             bottom: 0;
         }
@@ -282,10 +330,12 @@
             top: 50%;
             transform: translateY(-50%) rotate(45deg);
         }
+
         .mobile-menu-open .hamburger-line-2 {
             opacity: 0;
             transform: translateY(-50%) scale(0);
         }
+
         .mobile-menu-open .hamburger-line-3 {
             bottom: 50%;
             transform: translateY(50%) rotate(-45deg);
@@ -306,6 +356,7 @@
             z-index: 998;
             pointer-events: none;
         }
+
         .mobile-menu-overlay.active {
             opacity: 1;
             visibility: visible;
@@ -334,7 +385,7 @@
             visibility: hidden;
             opacity: 0;
         }
-        
+
         /* ESTADO ATIVO DO MENU - CORRIGIDO */
         .mobile-menu.active {
             transform: translateX(0);
@@ -351,6 +402,7 @@
             border-bottom: 1px solid rgba(217, 140, 106, 0.1);
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.05), rgba(235, 213, 206, 0.1));
         }
+
         .mobile-menu-close-btn {
             width: 40px;
             height: 40px;
@@ -364,6 +416,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
+
         .mobile-menu-close-btn:hover {
             background: #d98c6a;
             color: white;
@@ -375,6 +428,7 @@
             flex: 1;
             padding: 8px 0;
         }
+
         .mobile-menu-item {
             display: flex;
             align-items: center;
@@ -389,6 +443,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .mobile-menu-item::before {
             content: "";
             position: absolute;
@@ -399,21 +454,25 @@
             background: linear-gradient(90deg, transparent, rgba(217, 140, 106, 0.1), transparent);
             transition: left 0.5s ease;
         }
+
         .mobile-menu-item:hover::before {
             left: 100%;
         }
+
         .mobile-menu-item:hover {
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.15));
             border-left-color: #d98c6a;
             color: #d98c6a;
             transform: translateX(8px);
         }
+
         .mobile-menu-item i {
             width: 20px;
             text-align: center;
             font-size: 18px;
             transition: all 0.3s ease;
         }
+
         .mobile-menu-item:hover i {
             transform: scale(1.2);
         }
@@ -424,6 +483,7 @@
             border-top: 1px solid rgba(217, 140, 106, 0.1);
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.05), rgba(235, 213, 206, 0.1));
         }
+
         .mobile-menu-cta {
             display: flex;
             align-items: center;
@@ -441,6 +501,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .mobile-menu-cta::before {
             content: "";
             position: absolute;
@@ -451,10 +512,12 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
+
         .mobile-menu-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
         }
+
         .mobile-menu-cta:hover::before {
             left: 100%;
         }
@@ -465,30 +528,39 @@
             opacity: 0;
             transform: translateX(30px);
         }
+
         .mobile-menu.active .mobile-menu-item:nth-child(1) {
             animation-delay: 0.1s;
         }
+
         .mobile-menu.active .mobile-menu-item:nth-child(2) {
             animation-delay: 0.15s;
         }
+
         .mobile-menu.active .mobile-menu-item:nth-child(3) {
             animation-delay: 0.2s;
         }
+
         .mobile-menu.active .mobile-menu-item:nth-child(4) {
             animation-delay: 0.25s;
         }
+
         .mobile-menu.active .mobile-menu-item:nth-child(5) {
             animation-delay: 0.3s;
         }
+
         .mobile-menu.active .mobile-menu-item:nth-child(6) {
             animation-delay: 0.35s;
         }
+
         .mobile-menu.active .mobile-menu-item:nth-child(7) {
             animation-delay: 0.4s;
         }
+
         .mobile-menu.active .mobile-menu-item:nth-child(8) {
             animation-delay: 0.45s;
         }
+
         @keyframes slideInFromRight {
             to {
                 opacity: 1;
@@ -506,9 +578,10 @@
                 -webkit-touch-callout: none;
                 -webkit-tap-highlight-color: transparent;
             }
-            
+
             /* Prevenir scroll horizontal indesejado */
-            html, body {
+            html,
+            body {
                 overflow-x: hidden;
                 position: relative;
             }
@@ -523,9 +596,11 @@
         ::-webkit-scrollbar {
             width: 12px;
         }
+
         ::-webkit-scrollbar-track {
             background: linear-gradient(to bottom, #FAF8F6, #EBD5CE);
         }
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, #D98C6A, #C67A56);
             border-radius: 6px;
@@ -539,6 +614,7 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(217, 140, 106, 0.1);
         }
+
         .wave-header::before {
             content: '';
             position: absolute;
@@ -556,6 +632,7 @@
             position: relative;
             background: linear-gradient(135deg, #5C5C5C 0%, #4A4A4A 50%, #3A3A3A 100%);
         }
+
         .wave-footer::before {
             content: '';
             position: absolute;
@@ -584,6 +661,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .text-container::before {
             content: '';
             position: absolute;
@@ -610,11 +688,13 @@
             color: #5C5C5C;
             text-align: left;
         }
+
         .luxury-paragraph {
             margin-bottom: 1.5rem;
             position: relative;
             padding-left: 30px;
         }
+
         .luxury-paragraph::before {
             content: '';
             position: absolute;
@@ -639,6 +719,7 @@
             border-radius: 20px;
             border-left: 5px solid #D98C6A;
         }
+
         .luxury-quote::before,
         .luxury-quote::after {
             font-family: 'Playfair Display', serif;
@@ -646,11 +727,13 @@
             color: rgba(217, 140, 106, 0.3);
             position: absolute;
         }
+
         .luxury-quote::before {
             content: '"';
             top: -10px;
             left: 20px;
         }
+
         .luxury-quote::after {
             content: '"';
             bottom: -30px;
@@ -663,6 +746,7 @@
             display: inline-block;
             margin-bottom: 1.5rem;
         }
+
         .enhanced-heading::after {
             content: '';
             position: absolute;
@@ -680,15 +764,19 @@
             opacity: 0;
             animation: textReveal 1.5s ease-out forwards;
         }
+
         .text-reveal.delay-1 {
             animation-delay: 0.2s;
         }
+
         .text-reveal.delay-2 {
             animation-delay: 0.4s;
         }
+
         .text-reveal.delay-3 {
             animation-delay: 0.6s;
         }
+
         .text-reveal.delay-4 {
             animation-delay: 0.8s;
         }
@@ -708,6 +796,7 @@
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(217, 140, 106, 0.1);
             background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
         }
+
         .carousel-container::before {
             content: '';
             position: absolute;
@@ -721,10 +810,12 @@
             animation: gradient-shift 6s ease-in-out infinite;
             background-size: 400% 400%;
         }
+
         .carousel-track {
             display: flex;
             transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .carousel-slide {
             min-width: 100%;
             flex-shrink: 0;
@@ -738,6 +829,7 @@
             padding-bottom: 56.25%;
             overflow: hidden;
         }
+
         .aspect-ratio-container img {
             position: absolute;
             top: 0;
@@ -747,6 +839,7 @@
             object-fit: cover;
             transition: none;
         }
+
         .carousel-overlay {
             position: absolute;
             bottom: 0;
@@ -758,7 +851,7 @@
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        
+
         /* BOTÕES DO CARROSSEL MELHORADOS - DENTRO DA IMAGEM */
         .carousel-nav {
             position: absolute;
@@ -780,19 +873,22 @@
             font-size: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
+
         .carousel-nav:hover {
             background: rgba(217, 140, 106, 0.9);
             border-color: rgba(217, 140, 106, 0.8);
             transform: translateY(-50%) scale(1.15);
             box-shadow: 0 12px 40px rgba(217, 140, 106, 0.4);
         }
+
         .carousel-nav.prev {
             left: 25px;
         }
+
         .carousel-nav.next {
             right: 25px;
         }
-        
+
         .carousel-indicators {
             position: absolute;
             bottom: 25px;
@@ -802,6 +898,7 @@
             gap: 12px;
             z-index: 10;
         }
+
         .carousel-dot {
             width: 14px;
             height: 14px;
@@ -813,6 +910,7 @@
             backdrop-filter: blur(5px);
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
+
         .carousel-dot::before {
             content: '';
             position: absolute;
@@ -826,16 +924,18 @@
             transition: opacity 0.3s ease;
             z-index: -1;
         }
+
         .carousel-dot.active {
             background: rgba(217, 140, 106, 0.9);
             border-color: rgba(217, 140, 106, 0.8);
             transform: scale(1.3);
             box-shadow: 0 4px 15px rgba(217, 140, 106, 0.4);
         }
+
         .carousel-dot.active::before {
             opacity: 0.3;
         }
-        
+
         /* Enhanced Accordion */
         .accordion-item {
             border: 2px solid transparent;
@@ -845,6 +945,7 @@
             background: white;
             position: relative;
         }
+
         .accordion-item::before {
             content: '';
             position: absolute;
@@ -857,6 +958,7 @@
             transition: opacity 0.3s ease;
             border-radius: 18px;
         }
+
         .accordion-header {
             padding: 25px;
             cursor: pointer;
@@ -868,23 +970,28 @@
             position: relative;
             z-index: 1;
         }
+
         .accordion-header:hover {
             background: linear-gradient(135deg, #E5A584 0%, #D98C6A 100%);
             color: white;
         }
+
         .accordion-header.active {
             background: linear-gradient(135deg, #D98C6A 0%, #E5A584 100%);
             color: white;
         }
+
         .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             background: white;
         }
+
         .accordion-content.active {
             max-height: 400px;
         }
+
         .accordion-body {
             padding: 25px;
             border-top: 1px solid rgba(217, 140, 106, 0.1);
@@ -908,6 +1015,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -918,13 +1026,16 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 40px rgba(217, 140, 106, 0.6);
         }
+
         .btn-primary:hover::before {
             left: 100%;
         }
+
         .btn-secondary {
             background: transparent;
             color: #D98C6A;
@@ -941,6 +1052,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .btn-secondary::before {
             content: '';
             position: absolute;
@@ -952,11 +1064,13 @@
             transition: width 0.4s ease;
             z-index: -1;
         }
+
         .btn-secondary:hover {
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(217, 140, 106, 0.4);
         }
+
         .btn-secondary:hover::before {
             width: 100%;
         }
@@ -972,6 +1086,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .card::before {
             content: '';
             position: absolute;
@@ -983,6 +1098,7 @@
             background-size: 200% 100%;
             animation: shimmer 3s linear infinite;
         }
+
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -995,6 +1111,7 @@
             padding: 8px 16px;
             border-radius: 20px;
         }
+
         .nav-link::before {
             content: '';
             position: absolute;
@@ -1006,10 +1123,12 @@
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
+
         .nav-link:hover {
             color: #D98C6A !important;
             background: rgba(217, 140, 106, 0.1);
         }
+
         .nav-link:hover::before {
             width: 80%;
         }
@@ -1021,6 +1140,7 @@
             white-space: nowrap;
             animation: typewriter 4s steps(40) 1s forwards, blink 1s infinite;
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #D98C6A, #E5A584, #C67A56);
             background-size: 200% 200%;
@@ -1029,6 +1149,7 @@
             background-clip: text;
             animation: gradient-shift 4s ease-in-out infinite;
         }
+
         .shimmer-text {
             background: linear-gradient(90deg, #5C5C5C 25%, #D98C6A 50%, #5C5C5C 75%);
             background-size: 200% 100%;
@@ -1045,12 +1166,15 @@
             background: linear-gradient(135deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.2));
             animation: float 6s ease-in-out infinite;
         }
+
         .floating-element:nth-child(1) {
             animation-delay: 0s;
         }
+
         .floating-element:nth-child(2) {
             animation-delay: 2s;
         }
+
         .floating-element:nth-child(3) {
             animation-delay: 4s;
         }
@@ -1060,15 +1184,17 @@
             background: linear-gradient(45deg, rgba(217, 140, 106, 0.1), rgba(235, 213, 206, 0.1));
             animation: morph 8s ease-in-out infinite;
         }
-        
+
         /* LOGO AUMENTADA - TAMANHOS MAIORES */
         .logo-container {
             display: flex;
             align-items: center;
             justify-content: flex-start;
         }
+
         .logo-container img {
-            max-height: 150px; /* Aumentado de 120px para 150px */
+            max-height: 150px;
+            /* Aumentado de 120px para 150px */
             width: auto;
             object-fit: contain;
             image-rendering: -webkit-optimize-contrast;
@@ -1077,63 +1203,76 @@
             image-rendering: high-quality;
             filter: contrast(1.1) brightness(1.05);
         }
-        
+
         /* LOGO NO FOOTER */
         .footer-logo-container {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
+
         .footer-logo-container img {
-            max-height: 120px; /* Logo no footer um pouco menor que no header */
+            max-height: 120px;
+            /* Logo no footer um pouco menor que no header */
             width: auto;
             object-fit: contain;
             margin-right: 15px;
         }
-        
+
         @media (max-width: 768px) {
             .logo-container {
                 justify-content: flex-start;
             }
+
             .logo-container img {
-                max-height: 110px; /* Aumentado de 90px para 110px */
+                max-height: 110px;
+                /* Aumentado de 90px para 110px */
             }
+
             .footer-logo-container img {
-                max-height: 90px; /* Logo do footer responsivo */
+                max-height: 90px;
+                /* Logo do footer responsivo */
             }
         }
+
         @media (max-width: 480px) {
             .logo-container {
                 justify-content: flex-start;
             }
+
             .logo-container img {
-                max-height: 95px; /* Aumentado de 75px para 95px */
+                max-height: 95px;
+                /* Aumentado de 75px para 95px */
             }
+
             .footer-logo-container img {
-                max-height: 75px; /* Logo do footer responsivo */
+                max-height: 75px;
+                /* Logo do footer responsivo */
             }
         }
-                
+
         /* UPDATED TESTIMONIALS SECTION STYLES */
         .testimonials-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 1rem;
         }
+
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
+
         .testimonial-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 246, 0.98) 100%);
             backdrop-filter: blur(20px);
             border-radius: 30px;
             padding: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08),
-                         0 0 0 1px rgba(217, 140, 106, 0.05),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+                0 0 0 1px rgba(217, 140, 106, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border: 2px solid transparent;
             background-clip: padding-box;
@@ -1141,6 +1280,7 @@
             overflow: hidden;
             cursor: pointer;
         }
+
         .testimonial-card::before {
             content: '';
             position: absolute;
@@ -1153,12 +1293,14 @@
             animation: shimmer 3s linear infinite;
             border-radius: 30px 30px 0 0;
         }
+
         .testimonial-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12),
-                         0 0 0 1px rgba(217, 140, 106, 0.1),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+                0 0 0 1px rgba(217, 140, 106, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
+
         .testimonial-image-container {
             position: relative;
             width: 100%;
@@ -1171,6 +1313,7 @@
             justify-content: center;
             padding: 15px;
         }
+
         .testimonial-image {
             width: 100%;
             height: 100%;
@@ -1199,10 +1342,12 @@
             backdrop-filter: blur(10px);
             padding: 20px;
         }
+
         .testimonial-modal.active {
             opacity: 1;
             visibility: visible;
         }
+
         .testimonial-modal-content {
             position: relative;
             display: flex;
@@ -1216,6 +1361,7 @@
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
             border: 2px solid rgba(217, 140, 106, 0.1);
         }
+
         .testimonial-modal img {
             max-width: 100%;
             max-height: 80vh;
@@ -1223,6 +1369,7 @@
             border-radius: 15px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
+
         .testimonial-modal-close {
             position: absolute;
             top: -15px;
@@ -1242,6 +1389,7 @@
             box-shadow: 0 8px 25px rgba(217, 140, 106, 0.4);
             z-index: 10;
         }
+
         .testimonial-modal-close:hover {
             background: linear-gradient(135deg, #C67A56, #D98C6A);
             transform: scale(1.1);
@@ -1255,25 +1403,30 @@
                 gap: 2rem;
                 margin-top: 2rem;
             }
+
             .testimonial-card {
                 margin: 0 10px;
                 border-radius: 25px;
                 padding: 15px;
             }
+
             .testimonial-image-container {
                 height: 350px;
                 padding: 12px;
                 border-radius: 18px;
             }
+
             .testimonial-modal-content {
                 padding: 20px;
                 border-radius: 20px;
                 max-width: 95vw;
                 max-height: 95vh;
             }
+
             .testimonial-modal img {
                 max-height: 75vh;
             }
+
             .testimonial-modal-close {
                 top: -12px;
                 right: -12px;
@@ -1282,23 +1435,28 @@
                 font-size: 1.2rem;
             }
         }
+
         @media (max-width: 480px) {
             .testimonials-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
             .testimonial-image-container {
                 height: 320px;
                 padding: 10px;
             }
+
             .testimonial-card {
                 padding: 12px;
             }
+
             .testimonial-modal-content {
                 padding: 15px;
                 max-width: 98vw;
                 max-height: 98vh;
             }
+
             .testimonial-modal img {
                 max-height: 70vh;
             }
@@ -1312,6 +1470,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             margin-bottom: 1rem;
         }
+
         .image-container img {
             width: 100%;
             height: 100%;
@@ -1321,7 +1480,8 @@
         /* Altura maior para desktop */
         @media (min-width: 1024px) {
             .image-container {
-                height: 28rem; /* Aumentado de h-96 (24rem) para 28rem */
+                height: 34rem;
+                /* Aumentado de h-96 (24rem) para 28rem */
             }
         }
 
@@ -1331,24 +1491,29 @@
             transform: translateY(40px) scale(0.95);
             transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+
         .slide-in-left {
             opacity: 0;
             transform: translateX(-60px) rotateY(-10deg);
             transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .slide-in-left.visible {
             opacity: 1;
             transform: translateX(0) rotateY(0deg);
         }
+
         .slide-in-right {
             opacity: 0;
             transform: translateX(60px) rotateY(10deg);
             transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .slide-in-right.visible {
             opacity: 1;
             transform: translateX(0) rotateY(0deg);
@@ -1375,6 +1540,7 @@
         }
     </style>
 </head>
+
 <body class="font-sans overflow-x-hidden">
     <!-- Floating Background Elements -->
     <div class="fixed inset-0 pointer-events-none z-0">
@@ -1388,7 +1554,7 @@
         <nav class="px-8 py-6">
             <div class="flex justify-between items-center max-w-full">
                 <div class="logo-container">
-                    <img src="/placeholder.svg?height=150&width=300&text=Luciana+Magalhães+Logo" alt="Luciana Magalhães - Logo" class="transition-all duration-300">
+                    <img src="" alt="Luciana Magalhães - Logo" class="transition-all duration-300">
                 </div>
                 <div class="hidden lg:flex space-x-1">
                     <a href="#inicio" class="nav-link text-cinza-escuro font-medium">Início</a>
@@ -1500,7 +1666,7 @@
                 <div class="lg:w-1/2 slide-in-right">
                     <div class="relative">
                         <div class="relative">
-                            <img src="/placeholder.svg?height=600&width=500&text=Luciana+Magalhães+Psicóloga" alt="Luciana Magalhães - Psicóloga"
+                            <img src="./imagens/IMG_6705.jpg" alt="Luciana Magalhães - Psicóloga"
                                 class="relative rounded-3xl shadow-dreamy w-full max-w-lg mx-auto">
                         </div>
                     </div>
@@ -1543,7 +1709,7 @@
         </div>
     </section>
 
-    <!-- Minha Filosofia -->
+
     <section id="acredito" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -1569,7 +1735,7 @@
                             </p>
                             <!-- Primeira imagem dentro do texto -->
                             <div class="image-container">
-                                <img src="/placeholder.svg?height=400&width=600&text=Terapia+Individual" alt="Terapia Individual"
+                                <img src="./imagens/IMG_6330.jpg" alt="Terapia Individual"
                                     class="w-full h-full object-cover">
                             </div>
                             <p class="luxury-paragraph text-reveal delay-1">
@@ -1578,10 +1744,9 @@
                                 resgatar sua autoestima, aprender a se comunicar com mais clareza e estabelecer limites
                                 saudáveis.
                             </p>
-                            <!-- Segunda imagem dentro do texto -->
                             <div class="image-container">
-                                <img src="/placeholder.svg?height=400&width=600&text=Terapia+Infantil" alt="Terapia Infantil"
-                                    class="w-full h-full object-cover">
+                                <img src="./imagens/sorrindo.jpg"
+                                    alt="Terapia Infantil" class="w-full h-full object-cover">
                             </div>
                             <p class="luxury-paragraph text-reveal delay-2">
                                 Também atendo crianças e adolescentes, porque acredito que cuidar da infância e da
@@ -1595,8 +1760,8 @@
                                 sentido da vida, com escuta, cuidado e reconstrução de vínculos consigo mesmas.
                             </div>
                             <div class="image-container">
-                                <img src="/placeholder.svg?height=400&width=600&text=Trabalho+Voluntário" alt="Trabalho Voluntário"
-                                    class="w-full h-full object-cover">
+                                <img src="./imagens/IMG_6530.jpg"
+                                    alt="Trabalho Voluntário" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -1628,7 +1793,8 @@
                             <div class="luxury-text text-xl">
                                 <p class="luxury-paragraph text-reveal">
                                     Tenho 52 anos, sou mãe solo de um rapaz que está prestes a completar 20. Amo dançar,
-                                    tomar um bom café em cafeterias cheias de charme, ouvir músicas que me tocam e sentir a
+                                    tomar um bom café em cafeterias cheias de charme, ouvir músicas que me tocam e
+                                    sentir a
                                     paz da natureza.
                                 </p>
                                 <p class="luxury-paragraph text-reveal delay-1">
@@ -1636,7 +1802,8 @@
                                     ponte entre as pessoas e suas possibilidades de cura.
                                 </p>
                                 <p class="luxury-paragraph text-reveal delay-2">
-                                    Se você está vivendo um momento difícil, se sente perdida(o) em alguma relação — com o
+                                    Se você está vivendo um momento difícil, se sente perdida(o) em alguma relação — com
+                                    o
                                     outro ou consigo mesma(o) —, saiba que aqui é um espaço seguro para se ouvir, se
                                     compreender e, com o tempo, se reconstruir.
                                 </p>
@@ -1645,8 +1812,8 @@
                     </div>
                     <div class="slide-in-right">
                         <div class="image-container h-96 lg:h-auto">
-                            <img src="/placeholder.svg?height=500&width=400&text=Luciana+Momento+Pessoal" alt="Luciana Magalhães - Momento Pessoal"
-                                class="w-full h-full object-cover">
+                            <img src="./imagens/IMG_6221.jpg"
+                                alt="Luciana Magalhães - Momento Pessoal" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -1755,8 +1922,10 @@
                         <div class="text-container transition-all duration-500">
                             <div class="luxury-text text-xl">
                                 <p class="luxury-paragraph text-reveal">
-                                    Além dos atendimentos clínicos, ofereço palestras, workshops e rodas de conversa com o
-                                    objetivo de abrir espaços de escuta e promover a conscientização sobre a importância da
+                                    Além dos atendimentos clínicos, ofereço palestras, workshops e rodas de conversa com
+                                    o
+                                    objetivo de abrir espaços de escuta e promover a conscientização sobre a importância
+                                    da
                                     saúde mental nas diferentes esferas da vida – pessoal, profissional e coletiva.
                                 </p>
                             </div>
@@ -1765,28 +1934,31 @@
                     <!-- Espaço para Imagem -->
                     <div class="slide-in-right">
                         <div class="image-container h-96 lg:h-auto">
-                            <img src="/placeholder.svg?height=400&width=400&text=Palestras+Corporativas" alt="Palestras Corporativas"
-                                class="w-full h-full object-cover">
+                            <img src="/placeholder.svg?height=400&width=400&text=Palestras+Corporativas"
+                                alt="Palestras Corporativas" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card fade-in">
-                        <img src="/placeholder.svg?height=200&width=400&text=Palestra+Saúde+Mental" alt="Palestra sobre Saúde Mental"
+                        <img src="/placeholder.svg?height=200&width=400&text=Palestra+Saúde+Mental"
+                            alt="Palestra sobre Saúde Mental"
                             class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Palestras e Workshops</h3>
                         <p class="text-cinza-medio text-base">Conteúdo personalizado para as necessidades da sua equipe,
                             abordando temas como gestão do estresse, inteligência emocional e bem-estar no trabalho.</p>
                     </div>
                     <div class="card fade-in">
-                        <img src="/placeholder.svg?height=200&width=400&text=Roda+de+Conversa" alt="Roda de Conversa sobre Diversidade"
+                        <img src="/placeholder.svg?height=200&width=400&text=Roda+de+Conversa"
+                            alt="Roda de Conversa sobre Diversidade"
                             class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Rodas de Conversa</h3>
                         <p class="text-cinza-medio text-base">Espaços seguros para diálogo aberto sobre temas sensíveis,
                             promovendo a empatia e a construção de um ambiente mais inclusivo.</p>
                     </div>
                     <div class="card fade-in">
-                        <img src="/placeholder.svg?height=200&width=400&text=Consultoria+Organizacional" alt="Consultoria em D&I"
+                        <img src="/placeholder.svg?height=200&width=400&text=Consultoria+Organizacional"
+                            alt="Consultoria em D&I"
                             class="rounded-2xl mb-6 w-full h-48 object-cover transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-cinza-escuro mb-4">Psicologia Organizacional</h3>
                         <p class="text-cinza-medio text-base">Consultoria especializada em atração de talentos,
@@ -1804,55 +1976,69 @@
     </section>
 
     <!-- Depoimentos -->
-    <section id="depoimentos" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
+    <section id="depoimentos"
+        class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
         <div class="testimonials-container relative z-10">
             <div class="fade-in mb-16 text-center">
                 <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
                     <span class="gradient-text">Depoimentos</span> dos Pacientes
                 </h2>
-                <div class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
+                <div
+                    class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
                 </div>
                 <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
                     Veja o que nossos pacientes dizem sobre sua experiência transformadora
                 </p>
             </div>
-                        
+
             <div class="testimonials-grid">
                 <!-- Depoimento 1 -->
-                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+1')">
+                <div class="testimonial-card fade-in"
+                    onclick="openTestimonialModal('./imagens/Depoimento1.jpeg')">
                     <div class="testimonial-image-container">
-                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+1" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="./imagens/Depoimento1.jpeg" alt="Depoimento de paciente"
+                            class="testimonial-image">
                     </div>
                 </div>
                 <!-- Depoimento 2 -->
-                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+2')">
+                <div class="testimonial-card fade-in"
+                    onclick="openTestimonialModal('./imagens/Depoimento2.jpeg')">
                     <div class="testimonial-image-container">
-                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+2" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="./imagens/Depoimento2.jpeg" alt="Depoimento de paciente"
+                            class="testimonial-image">
                     </div>
                 </div>
                 <!-- Depoimento 3 -->
-                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+3')">
+                <div class="testimonial-card fade-in"
+                    onclick="openTestimonialModal('./imagens/Depoimento3.jpeg')">
                     <div class="testimonial-image-container">
-                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+3" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="./imagens/Depoimento3.jpeg" alt="Depoimento de paciente"
+                            class="testimonial-image">
                     </div>
                 </div>
                 <!-- Depoimento 4 -->
-                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+4')">
+                <div class="testimonial-card fade-in"
+                    onclick="openTestimonialModal('./imagens/Depoimento4.jpeg')">
                     <div class="testimonial-image-container">
-                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+4" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="./imagens/Depoimento4.jpeg" alt="Depoimento de paciente"
+                            class="testimonial-image">
                     </div>
                 </div>
                 <!-- Depoimento 5 -->
-                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+5')">
+                <div class="testimonial-card fade-in"
+                    onclick="openTestimonialModal('./imagens/Depoimento5.jpeg')">
                     <div class="testimonial-image-container">
-                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+5" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="./imagens/Depoimento5.jpeg" alt="Depoimento de paciente"
+                            class="testimonial-image">
                     </div>
                 </div>
                 <!-- Depoimento 6 -->
-                <div class="testimonial-card fade-in" onclick="openTestimonialModal('/placeholder.svg?height=400&width=600&text=Depoimento+6')">
+                <div class="testimonial-card fade-in"
+                    onclick="openTestimonialModal('./imagens/Depoimento6.jpeg')">
                     <div class="testimonial-image-container">
-                        <img src="/placeholder.svg?height=400&width=600&text=Depoimento+6" alt="Depoimento de paciente" class="testimonial-image">
+                        <img src="./imagens/Depoimento6.jpeg" alt="Depoimento de paciente"
+                            class="testimonial-image">
                     </div>
                 </div>
             </div>
@@ -1869,7 +2055,6 @@
         </div>
     </div>
 
-    <!-- Carrossel do Consultório -->
     <section id="consultorio" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -1893,7 +2078,8 @@
                     <div class="carousel-track" id="carousel-track">
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="/placeholder.svg?height=400&width=700&text=Sala+de+Espera" alt="Sala de espera aconchegante">
+                                <img src="./imagens/Consultorio1.jpeg"
+                                    alt="Sala de espera aconchegante">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Sala de Espera</h3>
@@ -1903,7 +2089,8 @@
                         </div>
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="/placeholder.svg?height=400&width=700&text=Consultório+Principal" alt="Consultório principal">
+                                <img src="./imagens/Consultorio2.jpeg"
+                                    alt="Consultório principal">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Consultório Principal</h3>
@@ -1913,7 +2100,8 @@
                         </div>
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
-                                <img src="/placeholder.svg?height=400&width=700&text=Área+de+Relaxamento" alt="Área de relaxamento">
+                                <img src="./imagens/Consultorio3.jpeg"
+                                    alt="Área de relaxamento">
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Área de Relaxamento</h3>
@@ -1933,34 +2121,6 @@
                         <div class="carousel-dot" data-slide="1"></div>
                         <div class="carousel-dot" data-slide="2"></div>
                     </div>
-                </div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="card text-center fade-in">
-                    <div
-                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 transition-transform duration-300">
-                        <i class="fas fa-parking text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-cinza-escuro mb-3">Estacionamento</h3>
-                    <p class="text-cinza-medio text-base">Vagas disponíveis no edifício para sua comodidade e
-                        tranquilidade</p>
-                </div>
-                <div class="card text-center fade-in">
-                    <div
-                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 transition-transform duration-300">
-                        <i class="fas fa-wheelchair text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-cinza-escuro mb-3">Acessibilidade</h3>
-                    <p class="text-cinza-medio text-base">Espaço totalmente acessível para pessoas com mobilidade
-                        reduzida</p>
-                </div>
-                <div class="card text-center fade-in">
-                    <div
-                        class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center mx-auto mb-5 transition-transform duration-300">
-                        <i class="fas fa-subway text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-cinza-escuro mb-3">Transporte</h3>
-                    <p class="text-cinza-medio text-base">Próximo ao metrô e principais linhas de ônibus da cidade</p>
                 </div>
             </div>
         </div>
@@ -2015,7 +2175,7 @@
                                         class="w-14 h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
                                         <i class="fas fa-map-marker-alt text-white text-xl"></i>
                                     </div>
-                                    
+
                                     <div>
                                         <h4 class="font-semibold text-cinza-escuro mb-1 text-lg">Horários</h4>
                                         <p class="text-cinza-medio text-base">Segunda a Sexta: 8h às 18h</p>
@@ -2067,7 +2227,8 @@
                 <div class="grid md:grid-cols-4 gap-10 mb-10">
                     <div class="md:col-span-2">
                         <div class="footer-logo-container">
-                            <img src="/placeholder.svg?height=120&width=240&text=Luciana+Magalhães+Logo" alt="Luciana Magalhães - Logo">
+                            <img src="/placeholder.svg?height=120&width=240&text=Luciana+Magalhães+Logo"
+                                alt="Luciana Magalhães - Logo">
                             <h3 class="text-2xl font-serif font-bold text-off-white">Luciana Magalhães</h3>
                         </div>
                         <p class="text-gray-300 text-base leading-relaxed mb-5">
@@ -2093,9 +2254,11 @@
                                     class="text-gray-300 hover:text-terracota transition-colors text-base">Para
                                     Empresas</a></li>
                             <li><a href="#depoimentos"
-                                    class="text-gray-300 hover:text-terracota transition-colors text-base">Depoimentos</a></li>
+                                    class="text-gray-300 hover:text-terracota transition-colors text-base">Depoimentos</a>
+                            </li>
                             <li><a href="#contato"
-                                    class="text-gray-300 hover:text-terracota transition-colors text-base">Contato</a></li>
+                                    class="text-gray-300 hover:text-terracota transition-colors text-base">Contato</a>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -2138,13 +2301,13 @@
 
         function openMobileMenu() {
             if (isMenuOpen) return; // Prevenir múltiplas ativações
-            
+
             isMenuOpen = true;
             document.body.classList.add('mobile-menu-open');
             mobileMenu.classList.add('active');
             mobileMenuOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-            
+
             // Prevenir scroll e gestos indesejados
             document.addEventListener('touchmove', preventScroll, { passive: false });
             document.addEventListener('wheel', preventScroll, { passive: false });
@@ -2152,13 +2315,13 @@
 
         function closeMobileMenu() {
             if (!isMenuOpen) return; // Prevenir múltiplas desativações
-            
+
             isMenuOpen = false;
             document.body.classList.remove('mobile-menu-open');
             mobileMenu.classList.remove('active');
             mobileMenuOverlay.classList.remove('active');
             document.body.style.overflow = '';
-            
+
             // Remover prevenção de scroll
             document.removeEventListener('touchmove', preventScroll);
             document.removeEventListener('wheel', preventScroll);
@@ -2174,7 +2337,7 @@
         }
 
         // Event listeners - CORRIGIDOS
-        mobileMenuBtn.addEventListener('click', function(e) {
+        mobileMenuBtn.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             if (isMenuOpen) {
@@ -2184,13 +2347,13 @@
             }
         });
 
-        mobileMenuClose.addEventListener('click', function(e) {
+        mobileMenuClose.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             closeMobileMenu();
         });
 
-        mobileMenuOverlay.addEventListener('click', function(e) {
+        mobileMenuOverlay.addEventListener('click', function (e) {
             if (e.target === this) {
                 closeMobileMenu();
             }
@@ -2215,14 +2378,14 @@
         let startY = 0;
 
         // Prevenir gestos de swipe que possam interferir com o menu
-        document.addEventListener('touchstart', function(e) {
+        document.addEventListener('touchstart', function (e) {
             if (!isMenuOpen) {
                 startX = e.touches[0].clientX;
                 startY = e.touches[0].clientY;
             }
         }, { passive: true });
 
-        document.addEventListener('touchmove', function(e) {
+        document.addEventListener('touchmove', function (e) {
             if (!isMenuOpen) {
                 const currentX = e.touches[0].clientX;
                 const currentY = e.touches[0].clientY;
@@ -2238,12 +2401,12 @@
         }, { passive: false });
 
         // Garantir que o menu esteja sempre fechado no carregamento da página
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             closeMobileMenu();
         });
 
         // Fechar menu ao redimensionar a tela
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             if (window.innerWidth >= 1024 && isMenuOpen) {
                 closeMobileMenu();
             }
@@ -2265,7 +2428,7 @@
         }
 
         // Close modal when clicking outside the image
-        document.getElementById('testimonial-modal').addEventListener('click', function(e) {
+        document.getElementById('testimonial-modal').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeTestimonialModal();
             }
@@ -2461,4 +2624,5 @@
         window.addEventListener('load', animateTextOnScroll);
     </script>
 </body>
+
 </html>
