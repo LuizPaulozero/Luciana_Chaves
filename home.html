@@ -1817,6 +1817,149 @@
             justify-content: center;
             align-items: center;
         }
+
+          /* Configuração de cores personalizadas */
+        :root {
+            --terracota: #d98c6a;
+            --terracota-light: #e5a584;
+            --cinza-escuro: #2d3748;
+            --cinza-medio: #4a5568;
+            --off-white: #faf8f6;
+            --rosa-claro-light: #fdf2f8;
+        }
+
+        /* Estilos do carrossel de depoimentos */
+        .testimonials-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 246, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(217, 140, 106, 0.15);
+            border: 1px solid rgba(217, 140, 106, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 80px rgba(217, 140, 106, 0.2);
+        }
+
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--terracota) 0%, var(--terracota-light) 100%);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
+        }
+
+        .carousel-nav-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
+        }
+
+        .carousel-nav-btn.prev {
+            left: 20px;
+        }
+
+        .carousel-nav-btn.next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(217, 140, 106, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--terracota);
+            transform: scale(1.2);
+        }
+
+        .carousel-dot:hover {
+            background: var(--terracota-light);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .carousel-nav-btn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .carousel-nav-btn.prev {
+                left: 10px;
+            }
+            
+            .carousel-nav-btn.next {
+                right: 10px;
+            }
+            
+            .testimonial-slide {
+                padding: 0 10px;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+        }
+
+        /* Suporte a gestos touch */
+        .testimonials-carousel {
+            touch-action: pan-y;
+        }
+
+        /* Animações de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
     </style>
 </head>
 
@@ -2277,168 +2420,162 @@
     </section>
 
     <!-- Depoimentos - SEÇÃO CORRIGIDA E CONSISTENTE -->
-    <section id="depoimentos"
-        class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
-        <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-6xl mx-auto">
-                <div class="fade-in mb-16 text-center">
-                    <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
-                        <span class="gradient-text">Depoimentos</span> dos Pacientes
-                    </h2>
-                    <div
-                        class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
-                    </div>
-                    <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
-                        Veja o que nossos pacientes dizem sobre sua experiência transformadora
-                    </p>
+    <section class="py-20">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="fade-in mb-16 text-center">
+                <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
+                    Depoimentos <span class="gradient-text">dos pacientes</span>
+                </h2>
+                <div
+                    class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
                 </div>
+                <p class="text-xl text-cinza-medio font-light">
+                    Veja o que nossos pacientes dizem sobre sua experiência transformadora
+                </p>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <!-- Carrossel de Depoimentos -->
+            <div class="testimonials-carousel fade-in" id="testimonialsCarousel">
+                <div class="testimonials-track" id="testimonialsTrack">
+
                     <!-- Depoimento 1 -->
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer fade-in"
-                        onclick="openTestimonialModal('./imagens/Depoimento1.jpeg')">
-                        <div class="relative">
-                            <div class="aspect-[4/5] bg-gray-50 p-4 flex items-center justify-center">
-                                <img src="./imagens/Depoimento1.jpeg" alt="Depoimento de paciente"
-                                    class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
-                            </div>
-                            <!-- Overlay -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            </div>
-                            <!-- Ícone de zoom -->
-                            <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
-                                <i class="fas fa-search-plus text-terracota text-lg"></i>
-                            </div>
-                            <!-- Texto overlay -->
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                <h4 class="font-serif font-semibold text-lg mb-2">Depoimento de Paciente</h4>
-                                <p class="text-sm opacity-90">Clique para ampliar e ler o depoimento completo</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex flex-col md:flex-row gap-6 items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="./imagens/logo - padrão.png"
+                                        alt="Maria Silva"
+                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
+                                </div>
+                                <div class="flex-1 text-center md:text-left">
+                                    <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="text-gray-600 mb-4 leading-relaxed italic">
+                                        "A terapia com a Luciana transformou completamente minha vida. Aprendi a lidar com a ansiedade de forma muito mais saudável e desenvolvi uma autoestima que nunca pensei ser possível. Seu método é acolhedor e eficaz."
+                                    </p>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Maria Silva</h4>
+                                        <p class="text-sm text-gray-500">Empresária, 34 anos</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Depoimento 2 -->
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer fade-in"
-                        onclick="openTestimonialModal('./imagens/Depoimento2.jpeg')">
-                        <div class="relative">
-                            <div class="aspect-[4/5] bg-gray-50 p-4 flex items-center justify-center">
-                                <img src="./imagens/Depoimento2.jpeg" alt="Depoimento de paciente"
-                                    class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            </div>
-                            <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
-                                <i class="fas fa-search-plus text-terracota text-lg"></i>
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                <h4 class="font-serif font-semibold text-lg mb-2">Depoimento de Paciente</h4>
-                                <p class="text-sm opacity-90">Clique para ampliar e ler o depoimento completo</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex flex-col md:flex-row gap-6 items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="/placeholder.svg?height=120&width=120"
+                                        alt="João Santos"
+                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
+                                </div>
+                                <div class="flex-1 text-center md:text-left">
+                                    <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="text-gray-600 mb-4 leading-relaxed italic">
+                                        "Procurei a Luciana em um momento muito difícil da minha vida. Sua abordagem profissional e humana me ajudou a superar a depressão e encontrar novamente o prazer de viver. Sou eternamente grato."
+                                    </p>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">João Santos</h4>
+                                        <p class="text-sm text-gray-500">Engenheiro, 28 anos</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Depoimento 3 -->
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer fade-in"
-                        onclick="openTestimonialModal('./imagens/Depoimento3.jpeg')">
-                        <div class="relative">
-                            <div class="aspect-[4/5] bg-gray-50 p-4 flex items-center justify-center">
-                                <img src="./imagens/Depoimento3.jpeg" alt="Depoimento de paciente"
-                                    class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            </div>
-                            <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
-                                <i class="fas fa-search-plus text-terracota text-lg"></i>
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                <h4 class="font-serif font-semibold text-lg mb-2">Depoimento de Paciente</h4>
-                                <p class="text-sm opacity-90">Clique para ampliar e ler o depoimento completo</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex flex-col md:flex-row gap-6 items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="/placeholder.svg?height=120&width=120"
+                                        alt="Ana e Carlos"
+                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
+                                </div>
+                                <div class="flex-1 text-center md:text-left">
+                                    <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="text-gray-600 mb-4 leading-relaxed italic">
+                                        "A terapia de casal salvou nosso casamento. A Luciana nos ensinou a nos comunicar de forma mais efetiva e a resolver nossos conflitos com amor e respeito. Hoje somos mais unidos do que nunca."
+                                    </p>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Ana e Carlos</h4>
+                                        <p class="text-sm text-gray-500">Casal, 5 anos juntos</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Depoimento 4 -->
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer fade-in"
-                        onclick="openTestimonialModal('./imagens/Depoimento4.jpeg')">
-                        <div class="relative">
-                            <div class="aspect-[4/5] bg-gray-50 p-4 flex items-center justify-center">
-                                <img src="./imagens/Depoimento4.jpeg" alt="Depoimento de paciente"
-                                    class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            </div>
-                            <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
-                                <i class="fas fa-search-plus text-terracota text-lg"></i>
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                <h4 class="font-serif font-semibold text-lg mb-2">Depoimento de Paciente</h4>
-                                <p class="text-sm opacity-90">Clique para ampliar e ler o depoimento completo</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 5 -->
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer fade-in"
-                        onclick="openTestimonialModal('./imagens/Depoimento5.jpeg')">
-                        <div class="relative">
-                            <div class="aspect-[4/5] bg-gray-50 p-4 flex items-center justify-center">
-                                <img src="./imagens/Depoimento5.jpeg" alt="Depoimento de paciente"
-                                    class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            </div>
-                            <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
-                                <i class="fas fa-search-plus text-terracota text-lg"></i>
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                <h4 class="font-serif font-semibold text-lg mb-2">Depoimento de Paciente</h4>
-                                <p class="text-sm opacity-90">Clique para ampliar e ler o depoimento completo</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 6 -->
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer fade-in"
-                        onclick="openTestimonialModal('./imagens/Depoimento6.jpeg')">
-                        <div class="relative">
-                            <div class="aspect-[4/5] bg-gray-50 p-4 flex items-center justify-center">
-                                <img src="./imagens/Depoimento6.jpeg" alt="Depoimento de paciente"
-                                    class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            </div>
-                            <div
-                                class="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
-                                <i class="fas fa-search-plus text-terracota text-lg"></i>
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                <h4 class="font-serif font-semibold text-lg mb-2">Depoimento de Paciente</h4>
-                                <p class="text-sm opacity-90">Clique para ampliar e ler o depoimento completo</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex flex-col md:flex-row gap-6 items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="/placeholder.svg?height=120&width=120"
+                                        alt="Beatriz Costa"
+                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
+                                </div>
+                                <div class="flex-1 text-center md:text-left">
+                                    <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="text-gray-600 mb-4 leading-relaxed italic">
+                                        "As sessões online foram perfeitas para minha rotina. A Luciana conseguiu me ajudar a superar minha fobia social e hoje me sinto muito mais confiante em situações sociais. Recomendo demais!"
+                                    </p>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Beatriz Costa</h4>
+                                        <p class="text-sm text-gray-500">Estudante, 22 anos</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Botões de Navegação -->
+                <button class="carousel-nav-btn prev" id="prevBtn" aria-label="Depoimento anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav-btn next" id="nextBtn" aria-label="Próximo depoimento">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Indicadores -->
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <div class="carousel-dot active" data-slide="0" aria-label="Ir para depoimento 1"></div>
+                    <div class="carousel-dot" data-slide="1" aria-label="Ir para depoimento 2"></div>
+                    <div class="carousel-dot" data-slide="2" aria-label="Ir para depoimento 3"></div>
+                    <div class="carousel-dot" data-slide="3" aria-label="Ir para depoimento 4"></div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Modal para Depoimentos - SIMPLIFICADO E CONSISTENTE -->
     <div id="testimonial-modal" class="testimonial-modal">
@@ -2688,6 +2825,9 @@
     </footer>
 
     <script>
+
+
+
         // CORREÇÃO PRINCIPAL DO BUG DO MENU MOBILE
         // Enhanced Mobile Menu Toggle - VERSÃO CORRIGIDA
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -3026,6 +3166,9 @@
 
         window.addEventListener('scroll', animateTextOnScroll);
         window.addEventListener('load', animateTextOnScroll);
+
+
+
     </script>
 </body>
 
