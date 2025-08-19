@@ -17,7 +17,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-        tailwind.config = {
+         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
@@ -1832,13 +1832,16 @@
         /* Estilos do carrossel de depoimentos */
         .testimonials-carousel {
             position: relative;
-            overflow: hidden;
+            overflow: visible; /* mudou de hidden para visible para não cortar as setas */
             border-radius: 20px;
+            padding: 0 80px; /* adicionou padding lateral para dar espaço às setas */
         }
 
         .testimonials-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden; /* moveu o overflow hidden para o track */
+            border-radius: 20px;
         }
 
         .testimonial-slide {
@@ -1865,8 +1868,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
+            width: 55px; /* aumentou ligeiramente o tamanho */
+            height: 55px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--terracota) 0%, var(--terracota-light) 100%);
             color: white;
@@ -1878,6 +1881,7 @@
             transition: all 0.3s ease;
             z-index: 10;
             box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
+            font-size: 18px; /* aumentou o tamanho do ícone */
         }
 
         .carousel-nav-btn:hover {
@@ -1886,11 +1890,11 @@
         }
 
         .carousel-nav-btn.prev {
-            left: 20px;
+            left: 10px; /* posicionou mais próximo da borda do container */
         }
 
         .carousel-nav-btn.next {
-            right: 20px;
+            right: 10px; /* posicionou mais próximo da borda do container */
         }
 
         .carousel-indicators {
@@ -1920,47 +1924,31 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
+            .testimonials-carousel {
+                padding: 0 60px; /* reduziu o padding em mobile */
+            }
+            
             .carousel-nav-btn {
-                width: 40px;
-                height: 40px;
+                width: 45px; /* ajustou tamanho para mobile */
+                height: 45px;
+                font-size: 16px;
             }
             
             .carousel-nav-btn.prev {
-                left: 10px;
+                left: 5px;
             }
             
             .carousel-nav-btn.next {
-                right: 10px;
-            }
-            
-            .testimonial-slide {
-                padding: 0 10px;
-            }
-
-            .testimonial-card {
-                padding: 20px;
+                right: 5px;
             }
         }
 
-        /* Suporte a gestos touch */
-        .testimonials-carousel {
-            touch-action: pan-y;
-        }
-
-        /* Animações de entrada */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        @media (max-width: 480px) {
+            .testimonials-carousel {
+                padding: 0 50px; /* ainda menos padding em telas muito pequenas */
             }
         }
-        
+
     </style>
 </head>
 
@@ -2422,162 +2410,163 @@
     </section>
 
     <!-- Depoimentos - SEÇÃO CORRIGIDA E CONSISTENTE -->
-    <section class="py-20">
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-6xl mx-auto">
-            <div class="fade-in mb-16 text-center">
-                <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
-                    Depoimentos <span class="gradient-text">dos pacientes</span>
-                </h2>
-                <div
-                    class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
-                </div>
-                <p class="text-xl text-cinza-medio font-light">
-                    Veja o que meus pacientes dizem sobre suas experiências transformadoras
-                </p>
-            </div>
-
-            <!-- Carrossel de Depoimentos -->
-            <div class="testimonials-carousel fade-in" id="testimonialsCarousel">
-                <div class="testimonials-track" id="testimonialsTrack">
-
-                    <!-- Depoimento 1 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="flex flex-col md:flex-row gap-6 items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="./imagens/logo - padrão.png"
-                                        alt="Maria Silva"
-                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
-                                </div>
-                                <div class="flex-1 text-center md:text-left">
-                                    <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                        "A terapia com a Luciana transformou completamente minha vida. Aprendi a lidar com a ansiedade de forma muito mais saudável e desenvolvi uma autoestima que nunca pensei ser possível. Seu método é acolhedor e eficaz."
-                                    </p>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800">Maria Silva</h4>
-                                        <p class="text-sm text-gray-500">Empresária, 34 anos</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <section id="depoimentos" class="py-24 bg-white relative overflow-hidden">
+        <!-- Adicionado mesmo fundo da seção "Minha História" -->
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="fade-in mb-16 text-center">
+                    <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
+                        Depoimentos <span class="gradient-text">dos pacientes</span>
+                    </h2>
+                    <div
+                        class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
                     </div>
-
-                    <!-- Depoimento 2 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="flex flex-col md:flex-row gap-6 items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="/placeholder.svg?height=120&width=120"
-                                        alt="João Santos"
-                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
-                                </div>
-                                <div class="flex-1 text-center md:text-left">
-                                    <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                        "Procurei a Luciana em um momento muito difícil da minha vida. Sua abordagem profissional e humana me ajudou a superar a depressão e encontrar novamente o prazer de viver. Sou eternamente grato."
-                                    </p>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800">João Santos</h4>
-                                        <p class="text-sm text-gray-500">Engenheiro, 28 anos</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 3 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="flex flex-col md:flex-row gap-6 items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="/placeholder.svg?height=120&width=120"
-                                        alt="Ana e Carlos"
-                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
-                                </div>
-                                <div class="flex-1 text-center md:text-left">
-                                    <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                        "A terapia de casal salvou nosso casamento. A Luciana nos ensinou a nos comunicar de forma mais efetiva e a resolver nossos conflitos com amor e respeito. Hoje somos mais unidos do que nunca."
-                                    </p>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800">Ana e Carlos</h4>
-                                        <p class="text-sm text-gray-500">Casal, 5 anos juntos</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 4 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="flex flex-col md:flex-row gap-6 items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="/placeholder.svg?height=120&width=120"
-                                        alt="Beatriz Costa"
-                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
-                                </div>
-                                <div class="flex-1 text-center md:text-left">
-                                    <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                        "As sessões online foram perfeitas para minha rotina. A Luciana conseguiu me ajudar a superar minha fobia social e hoje me sinto muito mais confiante em situações sociais. Recomendo demais!"
-                                    </p>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800">Beatriz Costa</h4>
-                                        <p class="text-sm text-gray-500">Estudante, 22 anos</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-xl text-cinza-medio font-light">
+                        Veja o que meus pacientes dizem sobre suas experiências transformadoras
+                    </p>
                 </div>
 
-                <!-- Botões de Navegação -->
-                <button class="carousel-nav-btn prev" id="prevBtn" aria-label="Depoimento anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-nav-btn next" id="nextBtn" aria-label="Próximo depoimento">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                <!-- Carrossel de Depoimentos -->
+                <div class="testimonials-carousel fade-in" id="testimonialsCarousel">
+                    <div class="testimonials-track" id="testimonialsTrack">
 
-                <!-- Indicadores -->
-                <div class="carousel-indicators" id="carouselIndicators">
-                    <div class="carousel-dot active" data-slide="0" aria-label="Ir para depoimento 1"></div>
-                    <div class="carousel-dot" data-slide="1" aria-label="Ir para depoimento 2"></div>
-                    <div class="carousel-dot" data-slide="2" aria-label="Ir para depoimento 3"></div>
-                    <div class="carousel-dot" data-slide="3" aria-label="Ir para depoimento 4"></div>
+                        <!-- Depoimento 1 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="flex flex-col md:flex-row gap-6 items-center">
+                                    <div class="flex-shrink-0">
+                                        <img src="./imagens/logo - padrão.png"
+                                            alt="Maria Silva"
+                                            class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
+                                    </div>
+                                    <div class="flex-1 text-center md:text-left">
+                                        <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
+                                            "A terapia com a Luciana transformou completamente minha vida. Aprendi a lidar com a ansiedade de forma muito mais saudável e desenvolvi uma autoestima que nunca pensei ser possível. Seu método é acolhedor e eficaz."
+                                        </p>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Maria Silva</h4>
+                                            <p class="text-sm text-gray-500">Empresária, 34 anos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Depoimento 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="flex flex-col md:flex-row gap-6 items-center">
+                                    <div class="flex-shrink-0">
+                                        <img src="/placeholder.svg?height=120&width=120"
+                                            alt="João Santos"
+                                            class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
+                                    </div>
+                                    <div class="flex-1 text-center md:text-left">
+                                        <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
+                                            "Procurei a Luciana em um momento muito difícil da minha vida. Sua abordagem profissional e humana me ajudou a superar a depressão e encontrar novamente o prazer de viver. Sou eternamente grato."
+                                        </p>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">João Santos</h4>
+                                            <p class="text-sm text-gray-500">Engenheiro, 28 anos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Depoimento 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="flex flex-col md:flex-row gap-6 items-center">
+                                    <div class="flex-shrink-0">
+                                        <img src="/placeholder.svg?height=120&width=120"
+                                            alt="Ana e Carlos"
+                                            class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
+                                    </div>
+                                    <div class="flex-1 text-center md:text-left">
+                                        <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
+                                            "A terapia de casal salvou nosso casamento. A Luciana nos ensinou a nos comunicar de forma mais efetiva e a resolver nossos conflitos com amor e respeito. Hoje somos mais unidos do que nunca."
+                                        </p>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Ana e Carlos</h4>
+                                            <p class="text-sm text-gray-500">Casal, 5 anos juntos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Depoimento 4 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="flex flex-col md:flex-row gap-6 items-center">
+                                    <div class="flex-shrink-0">
+                                        <img src="/placeholder.svg?height=120&width=120"
+                                            alt="Beatriz Costa"
+                                            class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
+                                    </div>
+                                    <div class="flex-1 text-center md:text-left">
+                                        <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
+                                            "As sessões online foram perfeitas para minha rotina. A Luciana conseguiu me ajudar a superar minha fobia social e hoje me sinto muito mais confiante em situações sociais. Recomendo demais!"
+                                        </p>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Beatriz Costa</h4>
+                                            <p class="text-sm text-gray-500">Estudante, 22 anos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botões de navegação reposicionados para não cobrir as imagens -->
+                    <button class="carousel-nav-btn prev" id="prevBtn" aria-label="Depoimento anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav-btn next" id="nextBtn" aria-label="Próximo depoimento">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <!-- Indicadores -->
+                    <div class="carousel-indicators" id="carouselIndicators">
+                        <div class="carousel-dot active" data-slide="0" aria-label="Ir para depoimento 1"></div>
+                        <div class="carousel-dot" data-slide="1" aria-label="Ir para depoimento 2"></div>
+                        <div class="carousel-dot" data-slide="2" aria-label="Ir para depoimento 3"></div>
+                        <div class="carousel-dot" data-slide="3" aria-label="Ir para depoimento 4"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Modal para Depoimentos - SIMPLIFICADO E CONSISTENTE -->
     <div id="testimonial-modal" class="testimonial-modal">
@@ -3169,6 +3158,64 @@
         window.addEventListener('scroll', animateTextOnScroll);
         window.addEventListener('load', animateTextOnScroll);
 
+
+
+
+        
+    document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("testimonialsTrack");
+    const slides = document.querySelectorAll(".testimonial-slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const indicators = document.querySelectorAll("#carouselIndicators .carousel-dot");
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let isTransitioning = false;
+
+    // Aplica a mesma suavidade do primeiro carrossel
+    track.style.transition = "transform 0.8s ease-in-out";
+
+    function updateCarousel(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        track.style.transform = `translateX(-${index * 100}%)`;
+
+        indicators.forEach(dot => dot.classList.remove("active"));
+        indicators[index].classList.add("active");
+        currentIndex = index;
+
+        // Libera transição após 800ms
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 800);
+    }
+
+    nextBtn.addEventListener("click", () => {
+        let newIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel(newIndex);
+    });
+
+    prevBtn.addEventListener("click", () => {
+        let newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel(newIndex);
+    });
+
+    indicators.forEach(dot => {
+        dot.addEventListener("click", () => {
+            updateCarousel(parseInt(dot.dataset.slide));
+        });
+    });
+
+    // Auto-play sincronizado com o primeiro carrossel
+    setInterval(() => {
+        if (!isTransitioning) {
+            let newIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel(newIndex);
+        }
+    }, 6000); // troca a cada 6s
+});
 
 
     </script>
