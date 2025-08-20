@@ -1830,12 +1830,11 @@
 
         /* Estilos do carrossel de depoimentos */
        /* Contêiner do carrossel */
-
 #testimonialsCarousel {
   width: 100%;
-  max-width: 800px; /* opcional: limite máximo */
-  margin: 0 auto;   /* centraliza o carrossel */
-  overflow: hidden; /* esconde as sobras */
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
   position: relative;
 }
 
@@ -1850,61 +1849,56 @@
   width: 100%;
   box-sizing: border-box;
   padding: 1rem;
-
-  /* Novo: centraliza o conteúdo vertical e horizontalmente */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Cartão de depoimento */
 .testimonial-card {
-  width: 100%;
-  max-width: 500px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,246,0.98));
-  border-radius: 20px;
-  padding: 40px 30px;
-  box-shadow: 0 20px 60px rgba(217, 140, 106, 0.15);
-  border: 1px solid rgba(217, 140, 106, 0.1);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 420px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 80px rgba(217, 140, 106, 0.2);
-}
-
-/* Imagem ou avatar no topo */
-.testimonial-card > div.flex-shrink-0 {
-  display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(250,248,246,0.98));
+  border-radius: 20px;
+  padding: 40px 50px;
+  box-shadow: 0 20px 60px rgba(217, 140, 106, 0.12);
+  border: 1px solid rgba(217, 140, 106, 0.08);
+  width: 100%;
+  max-width: 900px;
+  gap: 40px;
+  /* Remover a animação do hover */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
 
-/* Conteúdo do depoimento */
+
+/* Avatar à esquerda */
+.testimonial-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(217, 140, 106, 0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Conteúdo à direita */
 .testimonial-content {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .testimonial-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 25px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
   font-style: italic;
-  text-align: center;
+  font-family: 'Georgia', serif;
 }
 
-/* Autor do depoimento */
 .testimonial-author {
-  text-align: center;
   margin-top: auto;
 }
 
@@ -1920,12 +1914,13 @@
   font-size: 0.9rem;
 }
 
+/* Botões */
 .carousel-nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--terracota), var(--terracota-light));
   color: white;
@@ -1934,12 +1929,14 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 9999; /* bem alto para ficar acima de tudo */
+  carousel-nav-btn 
+  position: absolute; /* já está assim, ótimo */
+  z-index: 10000;     /* ainda mais alto para garantir prioridade */
+}
   box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
   font-size: 18px;
   transition: all 0.3s ease;
 }
-
 
 .carousel-nav-btn:hover {
   transform: translateY(-50%) scale(1.1);
@@ -1954,8 +1951,7 @@
   right: 10px;
 }
 
-
-/* Indicadores (bolinhas) */
+/* Indicadores */
 .carousel-indicators {
   display: flex;
   justify-content: center;
@@ -1977,36 +1973,39 @@
   transform: scale(1.2);
 }
 
-/* Imagem de crença (usado em outro contexto, incluído aqui para manter coesão visual) */
-.belief-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.belief-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* Responsivo */
-@media (max-width: 480px) {
+/* Responsivo: verticaliza no mobile */
+@media (max-width: 768px) {
   .testimonial-card {
-    padding: 20px 15px;
-    min-height: 300px;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 25px;
+    gap: 20px;
+  }
+
+  .testimonial-avatar img {
+    width: 90px;
+    height: 90px;
   }
 
   .testimonial-text {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 20px 15px;
   }
 
   .carousel-nav-btn {
     width: 35px;
     height: 35px;
     font-size: 14px;
+  }
+
+  .testimonial-avatar img {
+    width: 70px;
+    height: 70px;
   }
 }
 
