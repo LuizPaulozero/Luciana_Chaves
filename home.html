@@ -1262,14 +1262,15 @@
         }
 
         .testimonial-card {
-            background: white;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,246,0.98));
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            cursor: pointer;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(217, 140, 106, 0.15);
+            border: 1px solid rgba(217, 140, 106, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
             position: relative;
-            border: 2px solid transparent;
+            overflow: hidden;
         }
 
         .testimonial-card::before {
@@ -1285,9 +1286,8 @@
         }
 
         .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            border-color: rgba(217, 140, 106, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 80px rgba(217, 140, 106, 0.2);
         }
 
         .testimonial-image-container {
@@ -1298,7 +1298,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
         }
 
         .testimonial-image {
@@ -1830,124 +1829,187 @@
         }
 
         /* Estilos do carrossel de depoimentos */
-        .testimonials-carousel {
-            position: relative;
-            overflow: visible; /* mudou de hidden para visible para não cortar as setas */
-            border-radius: 20px;
-            padding: 0 80px; /* adicionou padding lateral para dar espaço às setas */
-        }
+       /* Contêiner do carrossel */
 
-        .testimonials-track {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            overflow: hidden; /* moveu o overflow hidden para o track */
-            border-radius: 20px;
-        }
+#testimonialsCarousel {
+  width: 100%;
+  max-width: 800px; /* opcional: limite máximo */
+  margin: 0 auto;   /* centraliza o carrossel */
+  overflow: hidden; /* esconde as sobras */
+  position: relative;
+}
 
-        .testimonial-slide {
-            min-width: 100%;
-            padding: 0 20px;
-        }
+#testimonialsTrack {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change: transform;
+}
 
-        .testimonial-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 246, 0.98) 100%);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(217, 140, 106, 0.15);
-            border: 1px solid rgba(217, 140, 106, 0.1);
-            transition: all 0.3s ease;
-        }
+.testimonial-slide {
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 80px rgba(217, 140, 106, 0.2);
-        }
+  /* Novo: centraliza o conteúdo vertical e horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .carousel-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 55px; /* aumentou ligeiramente o tamanho */
-            height: 55px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--terracota) 0%, var(--terracota-light) 100%);
-            color: white;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-            box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
-            font-size: 18px; /* aumentou o tamanho do ícone */
-        }
+/* Cartão de depoimento */
+.testimonial-card {
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,246,0.98));
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 60px rgba(217, 140, 106, 0.15);
+  border: 1px solid rgba(217, 140, 106, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .carousel-nav-btn:hover {
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
-        }
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 80px rgba(217, 140, 106, 0.2);
+}
 
-        .carousel-nav-btn.prev {
-            left: 10px; /* posicionou mais próximo da borda do container */
-        }
+/* Imagem ou avatar no topo */
+.testimonial-card > div.flex-shrink-0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .carousel-nav-btn.next {
-            right: 10px; /* posicionou mais próximo da borda do container */
-        }
+/* Conteúdo do depoimento */
+.testimonial-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 30px;
-        }
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 25px;
+  font-style: italic;
+  text-align: center;
+}
 
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(217, 140, 106, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+/* Autor do depoimento */
+.testimonial-author {
+  text-align: center;
+  margin-top: auto;
+}
 
-        .carousel-dot.active {
-            background: var(--terracota);
-            transform: scale(1.2);
-        }
+.testimonial-name {
+  font-weight: 600;
+  color: var(--terracota);
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
 
-        .carousel-dot:hover {
-            background: var(--terracota-light);
-        }
+.testimonial-role {
+  color: #666;
+  font-size: 0.9rem;
+}
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .testimonials-carousel {
-                padding: 0 60px; /* reduziu o padding em mobile */
-            }
-            
-            .carousel-nav-btn {
-                width: 45px; /* ajustou tamanho para mobile */
-                height: 45px;
-                font-size: 16px;
-            }
-            
-            .carousel-nav-btn.prev {
-                left: 5px;
-            }
-            
-            .carousel-nav-btn.next {
-                right: 5px;
-            }
-        }
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--terracota), var(--terracota-light));
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999; /* bem alto para ficar acima de tudo */
+  box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
 
-        @media (max-width: 480px) {
-            .testimonials-carousel {
-                padding: 0 50px; /* ainda menos padding em telas muito pequenas */
-            }
-        }
+
+.carousel-nav-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
+}
+
+.carousel-nav-btn.prev {
+  left: 10px;
+}
+
+.carousel-nav-btn.next {
+  right: 10px;
+}
+
+
+/* Indicadores (bolinhas) */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(217, 140, 106, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: var(--terracota);
+  transform: scale(1.2);
+}
+
+/* Imagem de crença (usado em outro contexto, incluído aqui para manter coesão visual) */
+.belief-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.belief-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 20px 15px;
+    min-height: 300px;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .carousel-nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
 
     </style>
 </head>
@@ -2089,7 +2151,7 @@
 
     <!-- Minha História -->
     <section id="historia" class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-50"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-5xl mx-auto">
                 <div class="fade-in mb-16 text-center">
@@ -2793,7 +2855,7 @@
                         <h4 class="text-lg font-semibold text-off-white mb-5">Rede Social</h4>
                         <div class="flex space-x-3">
                             <a href="#"
-                                class="w-10 h-10 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white transition-transform duration-300 hover:scale-110">
+                                class="w-10 h-10 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-content-center text-white transition-transform duration-300 hover:scale-110">
                                 <i class="fab fa-instagram text-xl"></i>
                             </a>
                         </div>
@@ -3161,61 +3223,141 @@
 
 
 
-        
-    document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById("testimonialsTrack");
-    const slides = document.querySelectorAll(".testimonial-slide");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const indicators = document.querySelectorAll("#carouselIndicators .carousel-dot");
+// DEPOIMENTOS - Carrossel
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('testimonialsCarousel');
+  const track = document.getElementById('testimonialsTrack');
+  const slides = Array.from(track.querySelectorAll('.testimonial-slide'));
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const indicators = Array.from(document.querySelectorAll('#carouselIndicators .carousel-dot'));
 
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    let isTransitioning = false;
+  if (!carousel || !track || slides.length === 0) return;
 
-    // Aplica a mesma suavidade do primeiro carrossel
-    track.style.transition = "transform 0.8s ease-in-out";
+  let currentIndex = 0;
+  let slideWidth = 0;
+  let isTransitioning = false;
+  let autoplayInterval = null;
 
-    function updateCarousel(index) {
-        if (isTransitioning) return;
-        isTransitioning = true;
+  const TRANSITION_TIME = 800; // ms
+  const AUTOPLAY_DELAY = 6000; // ms
+  const TRANSITION_CSS = `transform ${TRANSITION_TIME/1000}s cubic-bezier(0.25,0.46,0.45,0.94)`;
 
-        track.style.transform = `translateX(-${index * 100}%)`;
+  // --- Ajusta tamanhos ---
+  function setSizes() {
+    slideWidth = carousel.offsetWidth;
+    track.style.width = `${slideWidth * slides.length}px`;
+    slides.forEach(slide => {
+      slide.style.width = `${slideWidth}px`;
+    });
+    moveTo(currentIndex, false);
+  }
 
-        indicators.forEach(dot => dot.classList.remove("active"));
-        indicators[index].classList.add("active");
-        currentIndex = index;
+  // --- Indicadores ---
+  function updateIndicators(index) {
+    indicators.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  }
 
-        // Libera transição após 800ms
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 800);
+  // --- Movimento principal ---
+  function moveTo(index, animate = true) {
+    if (isTransitioning) return;
+
+    index = (index + slides.length) % slides.length; // wrap-around
+    isTransitioning = true;
+
+    track.style.transition = animate ? TRANSITION_CSS : 'none';
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+
+    updateIndicators(index);
+    currentIndex = index;
+
+    if (!animate) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          track.style.transition = TRANSITION_CSS;
+          isTransitioning = false;
+        });
+      });
+      return;
     }
 
-    nextBtn.addEventListener("click", () => {
-        let newIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel(newIndex);
-    });
+    const onEnd = () => {
+      isTransitioning = false;
+      track.removeEventListener('transitionend', onEnd);
+    };
+    track.addEventListener('transitionend', onEnd);
 
-    prevBtn.addEventListener("click", () => {
-        let newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel(newIndex);
-    });
+    setTimeout(() => { // fallback
+      if (isTransitioning) {
+        isTransitioning = false;
+        track.removeEventListener('transitionend', onEnd);
+      }
+    }, TRANSITION_TIME + 100);
+  }
 
-    indicators.forEach(dot => {
-        dot.addEventListener("click", () => {
-            updateCarousel(parseInt(dot.dataset.slide));
-        });
-    });
+  // --- Botões ---
+  prevBtn?.addEventListener('click', () => moveTo(currentIndex - 1));
+  nextBtn?.addEventListener('click', () => moveTo(currentIndex + 1));
+  indicators.forEach(dot => {
+    dot.addEventListener('click', () => moveTo(parseInt(dot.dataset.slide, 10)));
+  });
 
-    // Auto-play sincronizado com o primeiro carrossel
-    setInterval(() => {
-        if (!isTransitioning) {
-            let newIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel(newIndex);
-        }
-    }, 6000); // troca a cada 6s
+  // --- Autoplay ---
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayInterval = setInterval(() => {
+      if (!isTransitioning) moveTo(currentIndex + 1);
+    }, AUTOPLAY_DELAY);
+  }
+  function stopAutoplay() {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+    autoplayInterval = null;
+  }
+
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+  carousel.addEventListener('focusin', stopAutoplay);
+  carousel.addEventListener('focusout', startAutoplay);
+
+  // --- Swipe ---
+  let startX = 0, deltaX = 0;
+  carousel.addEventListener('touchstart', (e) => {
+    stopAutoplay();
+    startX = e.touches[0].clientX;
+    deltaX = 0;
+    track.style.transition = 'none';
+  }, { passive: true });
+
+  carousel.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 1) return;
+    deltaX = e.touches[0].clientX - startX;
+    track.style.transform = `translateX(${ -currentIndex * slideWidth + deltaX }px)`;
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', () => {
+    track.style.transition = TRANSITION_CSS;
+    if (Math.abs(deltaX) > 50) {
+      deltaX < 0 ? moveTo(currentIndex + 1) : moveTo(currentIndex - 1);
+    } else {
+      moveTo(currentIndex);
+    }
+    startAutoplay();
+  });
+
+  // --- Resize com debounce ---
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setSizes, 120);
+  });
+
+  // --- Inicialização ---
+  setSizes();
+  updateIndicators(currentIndex);
+  startAutoplay();
 });
+
+
 
 
     </script>
