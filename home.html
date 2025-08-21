@@ -17,7 +17,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-         tailwind.config = {
+        tailwind.config = {
             theme: {
                 extend: {
                     colors: {
@@ -1262,7 +1262,7 @@
         }
 
         .testimonial-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,246,0.98));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(250, 248, 246, 0.98));
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 20px 60px rgba(217, 140, 106, 0.15);
@@ -1522,21 +1522,21 @@
             #acredito {
                 padding: 3rem 0;
             }
-            
+
             #acredito .container {
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
-            
+
             #acredito .max-w-6xl {
                 max-width: 100%;
             }
-            
+
             #acredito h2 {
                 font-size: 2.5rem;
                 line-height: 1.2;
             }
-            
+
             #acredito .luxury-text {
                 font-size: 1.125rem;
             }
@@ -1569,7 +1569,7 @@
                 overflow: hidden;
                 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             }
-            
+
             .my-8.rounded-2xl img {
                 width: 100%;
                 height: auto;
@@ -1818,7 +1818,7 @@
             align-items: center;
         }
 
-          /* Configuração de cores personalizadas */
+        /* Configuração de cores personalizadas */
         :root {
             --terracota: #d98c6a;
             --terracota-light: #e5a584;
@@ -1829,185 +1829,185 @@
         }
 
         /* Estilos do carrossel de depoimentos */
-       /* Contêiner do carrossel */
-#testimonialsCarousel {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}
+        /* Contêiner do carrossel */
+        #testimonialsCarousel {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
 
-#testimonialsTrack {
-  display: flex;
-  transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
-  will-change: transform;
-}
+        #testimonialsTrack {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
 
-.testimonial-slide {
-  flex-shrink: 0;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+        .testimonial-slide {
+            flex-shrink: 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.testimonial-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(250,248,246,0.98));
-  border-radius: 20px;
-  padding: 40px 50px;
-  box-shadow: 0 20px 60px rgba(217, 140, 106, 0.12);
-  border: 1px solid rgba(217, 140, 106, 0.08);
-  width: 100%;
-  max-width: 900px;
-  gap: 40px;
-  /* Remover a animação do hover */
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
-}
-
-
-/* Avatar à esquerda */
-.testimonial-avatar img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(217, 140, 106, 0.3);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-/* Conteúdo à direita */
-.testimonial-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.testimonial-text {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 20px;
-  font-style: italic;
-  font-family: 'Georgia', serif;
-}
-
-.testimonial-author {
-  margin-top: auto;
-}
-
-.testimonial-name {
-  font-weight: 600;
-  color: var(--terracota);
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-}
-
-.testimonial-role {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-/* Botões */
-.carousel-nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--terracota), var(--terracota-light));
-  color: white;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: absolute; /* já está assim, ótimo */
-  z-index: 10000;     /* ainda mais alto para garantir prioridade */
-  box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
-
-.carousel-nav-btn:hover {
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
-}
-
-.carousel-nav-btn.prev {
-  left: 10px;
-}
-
-.carousel-nav-btn.next {
-  right: 10px;
-}
-
-/* Indicadores */
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 30px;
-}
-
-.carousel-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(217, 140, 106, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.carousel-dot.active {
-  background: var(--terracota);
-  transform: scale(1.2);
-}
-
-/* Responsivo: verticaliza no mobile */
-@media (max-width: 768px) {
-  .testimonial-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 25px;
-    gap: 20px;
-  }
-
-  .testimonial-avatar img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .testimonial-text {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .testimonial-card {
-    padding: 20px 15px;
-  }
-
-  .carousel-nav-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
-  }
-
-  .testimonial-avatar img {
-    width: 70px;
-    height: 70px;
-  }
-}
+        .testimonial-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 246, 0.98));
+            border-radius: 20px;
+            padding: 40px 50px;
+            box-shadow: 0 20px 60px rgba(217, 140, 106, 0.12);
+            border: 1px solid rgba(217, 140, 106, 0.08);
+            width: 100%;
+            max-width: 900px;
+            gap: 40px;
+            /* Remover a animação do hover */
+            /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+        }
 
 
+        /* Avatar à esquerda */
+        .testimonial-avatar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(217, 140, 106, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Conteúdo à direita */
+        .testimonial-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 20px;
+            font-style: italic;
+            font-family: 'Georgia', serif;
+        }
+
+        .testimonial-author {
+            margin-top: auto;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--terracota);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Botões */
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--terracota), var(--terracota-light));
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            /* já está assim, ótimo */
+            z-index: 10000;
+            /* ainda mais alto para garantir prioridade */
+            box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-nav-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
+        }
+
+        .carousel-nav-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-nav-btn.next {
+            right: 10px;
+        }
+
+        /* Indicadores */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(217, 140, 106, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--terracota);
+            transform: scale(1.2);
+        }
+
+        /* Responsivo: verticaliza no mobile */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 25px;
+                gap: 20px;
+            }
+
+            .testimonial-avatar img {
+                width: 90px;
+                height: 90px;
+            }
+
+            .testimonial-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card {
+                padding: 20px 15px;
+            }
+
+            .carousel-nav-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+
+            .testimonial-avatar img {
+                width: 70px;
+                height: 70px;
+            }
+        }
     </style>
 </head>
 
@@ -2024,7 +2024,7 @@
         <nav class="px-8 py-6">
             <div class="flex justify-between items-center max-w-full">
                 <div class="logo-container">
-                    
+
                     <img src="./imagens/logo.svg" alt="Luciana Magalhães - Logo" class="transition-all duration-300">
                 </div>
                 <div class="hidden lg:flex space-x-1">
@@ -2164,11 +2164,13 @@
                         <div class="luxury-text text-xl">
                             <p class="luxury-paragraph text-reveal">
                                 Sou Luciana Magalhães, psicóloga (CRP 15/7791), com formação em Terapia
-                                Cognitivo-Comportamental e atualmente pós-graduanda em Neuropsicologia e em Terapia
-                                de Casal, Relacionamento e Família.
+                                Cognitivo-Comportamental, pós-graduação em Neuropsicologia e em Terapia de Casal,
+                                Relacionamento e Família.
+
                             </p>
                             <p class="luxury-paragraph text-reveal delay-1">
-                                Antes de atuar na clínica, fui jornalista e comunicadora por mais de 25 anos — uma
+                                Eu também tenho graduação em Comunicação Social e, antes de atuar na clínica, atuei como
+                                jornalista por mais de 25 anos - uma
                                 trajetória marcada pelo encontro com histórias reais e profundas. Foi nesse tempo que
                                 desenvolvi minha maior ferramenta de trabalho: a escuta sensível, acolhedora e afetuosa,
                                 que hoje é o coração da minha prática como psicóloga.
@@ -2206,7 +2208,8 @@
                             </p>
 
                             <!-- Fixed image container to remove white borders on mobile -->
-                            <div class="my-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div
+                                class="my-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                                 <img src="./imagens/IMG_6330.jpg" alt="Terapia Individual"
                                     class="w-full h-auto object-cover">
                             </div>
@@ -2219,7 +2222,8 @@
                             </p>
 
                             <!-- Fixed image container to remove white borders on mobile -->
-                            <div class="my-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div
+                                class="my-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                                 <img src="./imagens/sorrindo.jpg" alt="Bem-estar Emocional"
                                     class="w-full h-auto object-cover">
                             </div>
@@ -2235,8 +2239,10 @@
                                 Além do consultório, sou voluntária na ONG CAVIDA, que acolhe pessoas em
                                 situação de vulnerabilidade social, muitas vezes mergulhadas em crises profundas de
                                 desesperança. Meu papel ali é ajudar essas pessoas a encontrarem — ou reencontrarem — o
-                                sentido da vida, oferecendo escuta atenta, cuidado genuíno e apoio na reconstrução de vínculos consigo mesmas.
-                                Este trabalho voluntário enriquece profundamente minha prática clínica e reafirma minha crença no potencial de transformação humana.
+                                sentido da vida, oferecendo escuta atenta, cuidado genuíno e apoio na reconstrução de
+                                vínculos consigo mesmas.
+                                Este trabalho voluntário enriquece profundamente minha prática clínica e reafirma minha
+                                crença no potencial de transformação humana.
                             </div>
 
                         </div>
@@ -2495,12 +2501,12 @@
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
                                     <div class="flex-shrink-0">
-                                        <img src="./imagens/logo - padrão.png"
-                                            alt="Maria Silva"
+                                        <img src="./imagens/logo - padrão.png" alt="Maria Silva"
                                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
                                     </div>
                                     <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                        <div class="flex justify-center md:justify-start mb-4"
+                                            style="color: var(--terracota)">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -2508,7 +2514,9 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "A terapia com a Luciana transformou completamente minha vida. Aprendi a lidar com a ansiedade de forma muito mais saudável e desenvolvi uma autoestima que nunca pensei ser possível. Seu método é acolhedor e eficaz."
+                                            "A terapia com a Luciana transformou completamente minha vida. Aprendi a
+                                            lidar com a ansiedade de forma muito mais saudável e desenvolvi uma
+                                            autoestima que nunca pensei ser possível. Seu método é acolhedor e eficaz."
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">Maria Silva</h4>
@@ -2524,12 +2532,12 @@
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
                                     <div class="flex-shrink-0">
-                                        <img src="/placeholder.svg?height=120&width=120"
-                                            alt="João Santos"
+                                        <img src="/placeholder.svg?height=120&width=120" alt="João Santos"
                                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
                                     </div>
                                     <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                        <div class="flex justify-center md:justify-start mb-4"
+                                            style="color: var(--terracota)">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -2537,7 +2545,9 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Procurei a Luciana em um momento muito difícil da minha vida. Sua abordagem profissional e humana me ajudou a superar a depressão e encontrar novamente o prazer de viver. Sou eternamente grato."
+                                            "Procurei a Luciana em um momento muito difícil da minha vida. Sua abordagem
+                                            profissional e humana me ajudou a superar a depressão e encontrar novamente
+                                            o prazer de viver. Sou eternamente grato."
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">João Santos</h4>
@@ -2553,12 +2563,12 @@
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
                                     <div class="flex-shrink-0">
-                                        <img src="/placeholder.svg?height=120&width=120"
-                                            alt="Ana e Carlos"
+                                        <img src="/placeholder.svg?height=120&width=120" alt="Ana e Carlos"
                                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
                                     </div>
                                     <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                        <div class="flex justify-center md:justify-start mb-4"
+                                            style="color: var(--terracota)">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -2566,7 +2576,9 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "A terapia de casal salvou nosso casamento. A Luciana nos ensinou a nos comunicar de forma mais efetiva e a resolver nossos conflitos com amor e respeito. Hoje somos mais unidos do que nunca."
+                                            "A terapia de casal salvou nosso casamento. A Luciana nos ensinou a nos
+                                            comunicar de forma mais efetiva e a resolver nossos conflitos com amor e
+                                            respeito. Hoje somos mais unidos do que nunca."
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">Ana e Carlos</h4>
@@ -2582,12 +2594,12 @@
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
                                     <div class="flex-shrink-0">
-                                        <img src="/placeholder.svg?height=120&width=120"
-                                            alt="Beatriz Costa"
+                                        <img src="/placeholder.svg?height=120&width=120" alt="Beatriz Costa"
                                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-contain shadow-lg">
                                     </div>
                                     <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4" style="color: var(--terracota)">
+                                        <div class="flex justify-center md:justify-start mb-4"
+                                            style="color: var(--terracota)">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -2595,7 +2607,9 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "As sessões online foram perfeitas para minha rotina. A Luciana conseguiu me ajudar a superar minha fobia social e hoje me sinto muito mais confiante em situações sociais. Recomendo demais!"
+                                            "As sessões online foram perfeitas para minha rotina. A Luciana conseguiu me
+                                            ajudar a superar minha fobia social e hoje me sinto muito mais confiante em
+                                            situações sociais. Recomendo demais!"
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">Beatriz Costa</h4>
@@ -2712,7 +2726,8 @@
             <div class="max-w-5xl mx-auto">
                 <div class="text-center mb-16 fade-in">
                     <!-- Melhorando responsividade do título -->
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold gradient-text mb-6 enhanced-heading">
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold gradient-text mb-6 enhanced-heading">
                         Vamos Conversar?
                     </h2>
                     <div
@@ -2728,20 +2743,12 @@
                     <div class="slide-in-left">
                         <div class="card">
                             <!-- Melhorando responsividade do título da seção -->
-                            <h3 class="text-xl sm:text-2xl font-serif font-bold gradient-text mb-6 sm:mb-8">Informações de Contato</h3>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold gradient-text mb-6 sm:mb-8">Informações
+                                de Contato</h3>
                             <div class="space-y-6">
                                 <div class="flex items-start gap-4 sm:gap-5">
                                     <!-- Ajustando tamanho dos ícones para mobile -->
-                                    <div
-                                        class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
-                                        <i class="fas fa-phone text-white text-lg sm:text-xl"></i>
-                                    </div>
-                                    <div class="min-w-0 flex-1">
-                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-base sm:text-lg">Telefone</h4>
-                                        <!-- Melhorando quebra de linha do telefone -->
-                                        <p class="text-cinza-medio text-sm sm:text-base break-all sm:break-normal">(82) 99602-7533</p>
-                                        <p class="text-xs sm:text-sm text-cinza-medio">Atendimento de segunda a sexta, 8h às 18h</p>
-                                    </div>
+
                                 </div>
                                 <div class="flex items-start gap-4 sm:gap-5">
                                     <div
@@ -2749,9 +2756,11 @@
                                         <i class="fas fa-envelope text-white text-lg sm:text-xl"></i>
                                     </div>
                                     <div class="min-w-0 flex-1">
-                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-base sm:text-lg">E-mail</h4>
+                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-base sm:text-lg">E-mail
+                                        </h4>
                                         <!-- Melhorando quebra de linha do email -->
-                                        <p class="text-cinza-medio text-sm sm:text-base break-all sm:break-normal">contato@lucianamagalhaes.com.br</p>
+                                        <p class="text-cinza-medio text-sm sm:text-base break-all sm:break-normal">
+                                            contato@lucianamagalhaes.com.br</p>
                                         <p class="text-xs sm:text-sm text-cinza-medio">Resposta em até 24 horas</p>
                                     </div>
                                 </div>
@@ -2761,7 +2770,8 @@
                                         <i class="fas fa-map-marker-alt text-white text-lg sm:text-xl"></i>
                                     </div>
                                     <div class="min-w-0 flex-1">
-                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-base sm:text-lg">Horários</h4>
+                                        <h4 class="font-semibold text-cinza-escuro mb-1 text-base sm:text-lg">Horários
+                                        </h4>
                                         <p class="text-cinza-medio text-sm sm:text-base">Segunda a Sexta: 8h às 18h</p>
                                         <p class="text-cinza-medio text-sm sm:text-base">Sábado: 8h às 12h</p>
                                         <p class="text-xs sm:text-sm text-cinza-medio">Atendimento online disponível</p>
@@ -2770,7 +2780,8 @@
                             </div>
                             <!-- Melhorando responsividade da seção de agendamento -->
                             <div class="mt-8 sm:mt-10 pt-6 border-t border-cinza-claro">
-                                <h4 class="font-semibold text-cinza-escuro mb-4 sm:mb-5 text-base sm:text-lg">Agende Agora</h4>
+                                <h4 class="font-semibold text-cinza-escuro mb-4 sm:mb-5 text-base sm:text-lg">Agende
+                                    Agora</h4>
                                 <div class="flex flex-col gap-4">
                                     <a href="https://wa.me/5582996027533?text=Olá! Gostaria de agendar uma consulta."
                                         class="btn-primary flex-1 justify-center text-base sm:text-lg w-full">
@@ -2784,7 +2795,8 @@
                     <div class="slide-in-right">
                         <div class="card">
                             <!-- Melhorando responsividade do título da localização -->
-                            <h3 class="text-xl sm:text-2xl font-serif font-bold gradient-text mb-6 sm:mb-8">Localização</h3>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold gradient-text mb-6 sm:mb-8">Localização
+                            </h3>
                             <!-- Ajustando altura do mapa para diferentes telas -->
                             <div class="h-64 sm:h-80 rounded-3xl relative overflow-hidden mb-6">
                                 <iframe
@@ -2814,8 +2826,7 @@
                 <div class="grid md:grid-cols-4 gap-10 mb-10">
                     <div class="md:col-span-2">
                         <div class="footer-logo-container">
-                            <img src="./imagens/logo.svg"
-                                alt="Luciana Magalhães - Logo">
+                            <img src="./imagens/logo.svg" alt="Luciana Magalhães - Logo">
                             <h3 class="text-2xl font-serif font-bold text-off-white">Luciana Magalhães</h3>
                         </div>
                         <p class="text-gray-300 text-base leading-relaxed mb-5">
@@ -3220,139 +3231,139 @@
 
 
 
-// DEPOIMENTOS - Carrossel
-document.addEventListener('DOMContentLoaded', () => {
-  const carousel = document.getElementById('testimonialsCarousel');
-  const track = document.getElementById('testimonialsTrack');
-  const slides = Array.from(track.querySelectorAll('.testimonial-slide'));
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const indicators = Array.from(document.querySelectorAll('#carouselIndicators .carousel-dot'));
+        // DEPOIMENTOS - Carrossel
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('testimonialsCarousel');
+            const track = document.getElementById('testimonialsTrack');
+            const slides = Array.from(track.querySelectorAll('.testimonial-slide'));
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicators = Array.from(document.querySelectorAll('#carouselIndicators .carousel-dot'));
 
-  if (!carousel || !track || slides.length === 0) return;
+            if (!carousel || !track || slides.length === 0) return;
 
-  let currentIndex = 0;
-  let slideWidth = 0;
-  let isTransitioning = false;
-  let autoplayInterval = null;
+            let currentIndex = 0;
+            let slideWidth = 0;
+            let isTransitioning = false;
+            let autoplayInterval = null;
 
-  const TRANSITION_TIME = 800; // ms
-  const AUTOPLAY_DELAY = 6000; // ms
-  const TRANSITION_CSS = `transform ${TRANSITION_TIME/1000}s cubic-bezier(0.25,0.46,0.45,0.94)`;
+            const TRANSITION_TIME = 800; // ms
+            const AUTOPLAY_DELAY = 6000; // ms
+            const TRANSITION_CSS = `transform ${TRANSITION_TIME / 1000}s cubic-bezier(0.25,0.46,0.45,0.94)`;
 
-  // --- Ajusta tamanhos ---
-  function setSizes() {
-    slideWidth = carousel.offsetWidth;
-    track.style.width = `${slideWidth * slides.length}px`;
-    slides.forEach(slide => {
-      slide.style.width = `${slideWidth}px`;
-    });
-    moveTo(currentIndex, false);
-  }
+            // --- Ajusta tamanhos ---
+            function setSizes() {
+                slideWidth = carousel.offsetWidth;
+                track.style.width = `${slideWidth * slides.length}px`;
+                slides.forEach(slide => {
+                    slide.style.width = `${slideWidth}px`;
+                });
+                moveTo(currentIndex, false);
+            }
 
-  // --- Indicadores ---
-  function updateIndicators(index) {
-    indicators.forEach((dot, i) => dot.classList.toggle('active', i === index));
-  }
+            // --- Indicadores ---
+            function updateIndicators(index) {
+                indicators.forEach((dot, i) => dot.classList.toggle('active', i === index));
+            }
 
-  // --- Movimento principal ---
-  function moveTo(index, animate = true) {
-    if (isTransitioning) return;
+            // --- Movimento principal ---
+            function moveTo(index, animate = true) {
+                if (isTransitioning) return;
 
-    index = (index + slides.length) % slides.length; // wrap-around
-    isTransitioning = true;
+                index = (index + slides.length) % slides.length; // wrap-around
+                isTransitioning = true;
 
-    track.style.transition = animate ? TRANSITION_CSS : 'none';
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
+                track.style.transition = animate ? TRANSITION_CSS : 'none';
+                track.style.transform = `translateX(-${index * slideWidth}px)`;
 
-    updateIndicators(index);
-    currentIndex = index;
+                updateIndicators(index);
+                currentIndex = index;
 
-    if (!animate) {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          track.style.transition = TRANSITION_CSS;
-          isTransitioning = false;
+                if (!animate) {
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            track.style.transition = TRANSITION_CSS;
+                            isTransitioning = false;
+                        });
+                    });
+                    return;
+                }
+
+                const onEnd = () => {
+                    isTransitioning = false;
+                    track.removeEventListener('transitionend', onEnd);
+                };
+                track.addEventListener('transitionend', onEnd);
+
+                setTimeout(() => { // fallback
+                    if (isTransitioning) {
+                        isTransitioning = false;
+                        track.removeEventListener('transitionend', onEnd);
+                    }
+                }, TRANSITION_TIME + 100);
+            }
+
+            // --- Botões ---
+            prevBtn?.addEventListener('click', () => moveTo(currentIndex - 1));
+            nextBtn?.addEventListener('click', () => moveTo(currentIndex + 1));
+            indicators.forEach(dot => {
+                dot.addEventListener('click', () => moveTo(parseInt(dot.dataset.slide, 10)));
+            });
+
+            // --- Autoplay ---
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayInterval = setInterval(() => {
+                    if (!isTransitioning) moveTo(currentIndex + 1);
+                }, AUTOPLAY_DELAY);
+            }
+            function stopAutoplay() {
+                if (autoplayInterval) clearInterval(autoplayInterval);
+                autoplayInterval = null;
+            }
+
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+            carousel.addEventListener('focusin', stopAutoplay);
+            carousel.addEventListener('focusout', startAutoplay);
+
+            // --- Swipe ---
+            let startX = 0, deltaX = 0;
+            carousel.addEventListener('touchstart', (e) => {
+                stopAutoplay();
+                startX = e.touches[0].clientX;
+                deltaX = 0;
+                track.style.transition = 'none';
+            }, { passive: true });
+
+            carousel.addEventListener('touchmove', (e) => {
+                if (e.touches.length > 1) return;
+                deltaX = e.touches[0].clientX - startX;
+                track.style.transform = `translateX(${-currentIndex * slideWidth + deltaX}px)`;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', () => {
+                track.style.transition = TRANSITION_CSS;
+                if (Math.abs(deltaX) > 50) {
+                    deltaX < 0 ? moveTo(currentIndex + 1) : moveTo(currentIndex - 1);
+                } else {
+                    moveTo(currentIndex);
+                }
+                startAutoplay();
+            });
+
+            // --- Resize com debounce ---
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(setSizes, 120);
+            });
+
+            // --- Inicialização ---
+            setSizes();
+            updateIndicators(currentIndex);
+            startAutoplay();
         });
-      });
-      return;
-    }
-
-    const onEnd = () => {
-      isTransitioning = false;
-      track.removeEventListener('transitionend', onEnd);
-    };
-    track.addEventListener('transitionend', onEnd);
-
-    setTimeout(() => { // fallback
-      if (isTransitioning) {
-        isTransitioning = false;
-        track.removeEventListener('transitionend', onEnd);
-      }
-    }, TRANSITION_TIME + 100);
-  }
-
-  // --- Botões ---
-  prevBtn?.addEventListener('click', () => moveTo(currentIndex - 1));
-  nextBtn?.addEventListener('click', () => moveTo(currentIndex + 1));
-  indicators.forEach(dot => {
-    dot.addEventListener('click', () => moveTo(parseInt(dot.dataset.slide, 10)));
-  });
-
-  // --- Autoplay ---
-  function startAutoplay() {
-    stopAutoplay();
-    autoplayInterval = setInterval(() => {
-      if (!isTransitioning) moveTo(currentIndex + 1);
-    }, AUTOPLAY_DELAY);
-  }
-  function stopAutoplay() {
-    if (autoplayInterval) clearInterval(autoplayInterval);
-    autoplayInterval = null;
-  }
-
-  carousel.addEventListener('mouseenter', stopAutoplay);
-  carousel.addEventListener('mouseleave', startAutoplay);
-  carousel.addEventListener('focusin', stopAutoplay);
-  carousel.addEventListener('focusout', startAutoplay);
-
-  // --- Swipe ---
-  let startX = 0, deltaX = 0;
-  carousel.addEventListener('touchstart', (e) => {
-    stopAutoplay();
-    startX = e.touches[0].clientX;
-    deltaX = 0;
-    track.style.transition = 'none';
-  }, { passive: true });
-
-  carousel.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 1) return;
-    deltaX = e.touches[0].clientX - startX;
-    track.style.transform = `translateX(${ -currentIndex * slideWidth + deltaX }px)`;
-  }, { passive: true });
-
-  carousel.addEventListener('touchend', () => {
-    track.style.transition = TRANSITION_CSS;
-    if (Math.abs(deltaX) > 50) {
-      deltaX < 0 ? moveTo(currentIndex + 1) : moveTo(currentIndex - 1);
-    } else {
-      moveTo(currentIndex);
-    }
-    startAutoplay();
-  });
-
-  // --- Resize com debounce ---
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(setSizes, 120);
-  });
-
-  // --- Inicialização ---
-  setSizes();
-  updateIndicators(currentIndex);
-  startAutoplay();
-});
 
 
 
