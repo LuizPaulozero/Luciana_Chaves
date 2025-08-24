@@ -1828,186 +1828,257 @@
             --rosa-claro-light: #fdf2f8;
         }
 
-        /* Estilos do carrossel de depoimentos */
-        /* Contêiner do carrossel */
-        #testimonialsCarousel {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-        }
+ /* Estilos do carrossel de depoimentos */
+/* Contêiner do carrossel */
+#testimonialsCarousel {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
 
-        #testimonialsTrack {
-            display: flex;
-            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            will-change: transform;
-        }
+#testimonialsTrack {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
 
-        .testimonial-slide {
-            flex-shrink: 0;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.testimonial-slide {
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .testimonial-card {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 246, 0.98));
-            border-radius: 20px;
-            padding: 40px 50px;
-            box-shadow: 0 20px 60px rgba(217, 140, 106, 0.12);
-            border: 1px solid rgba(217, 140, 106, 0.08);
-            width: 100%;
-            max-width: 900px;
-            gap: 40px;
-            /* Remover a animação do hover */
-            /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
-        }
+.testimonial-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 246, 0.98));
+  border-radius: 20px;
+  padding: 40px 50px;
+  box-shadow: 0 20px 60px rgba(217, 140, 106, 0.12);
+  border: 1px solid rgba(217, 140, 106, 0.08);
+  width: 100%;
+  max-width: 900px;
+  /* Altura padrão fixa para todos os cards */
+  min-height: 350px;
+  max-height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Avatar à esquerda */
+.testimonial-avatar {
+  flex-shrink: 0;
+  margin-right: 30px;
+}
+
+.testimonial-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(217, 140, 106, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Conteúdo à direita */
+.testimonial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  /* Removido overflow-y auto para melhor controle do layout */
+  overflow: hidden;
+}
+
+.testimonial-text {
+  /* Ajustado tamanho da fonte e altura da linha para melhor legibilidade */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family: "Georgia", serif;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  /* Limitando altura do texto para manter consistência */
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimonial-author {
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: var(--terracota);
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.testimonial-role {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Botões */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--terracota), var(--terracota-light));
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.carousel-nav-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
+}
+
+.carousel-nav-btn.prev {
+  left: 10px;
+}
+
+.carousel-nav-btn.next {
+  right: 10px;
+}
+
+/* Indicadores */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(217, 140, 106, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: var(--terracota);
+  transform: scale(1.2);
+}
+
+/* Responsivo: verticaliza no mobile */
+@media (max-width: 768px) {
+  .testimonial-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 20px;
+    gap: 15px;
+    /* Aumentando altura significativamente para mostrar todo o texto */
+    min-height: 550px;
+    max-height: 550px;
+  }
+
+  .testimonial-avatar {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-content {
+    height: auto;
+    /* Aumentando altura máxima do conteúdo */
+    max-height: 400px;
+    overflow: hidden;
+  }
+
+  .testimonial-avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonial-text {
+    /* Fonte otimizada para mobile */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    /* Aumentando para 12 linhas para mostrar mais conteúdo */
+    -webkit-line-clamp: 12;
+  }
+
+  .testimonial-name {
+    font-size: 1rem;
+  }
+
+  .testimonial-role {
+    font-size: 0.85rem;
+  }
+
+  /* Ajustando indicadores para não sobrepor os cards */
+  .carousel-indicators {
+    /* Aumentando margem superior para dar mais espaço */
+    margin-top: 60px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 20px 15px;
+    /* Altura ainda maior para telas muito pequenas */
+    min-height: 520px;
+    max-height: 520px;
+  }
+
+  .testimonial-avatar img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+    /* Aumentando para 11 linhas em telas pequenas */
+    -webkit-line-clamp: 11;
+  }
+
+  .testimonial-content {
+    /* Aumentando altura máxima do conteúdo */
+    max-height: 360px;
+  }
+
+  /* Mais espaço para os indicadores em telas pequenas */
+  .carousel-indicators {
+    /* Aumentando margem superior */
+    margin-top: 55px;
+    padding-bottom: 15px;
+  }
+}
 
 
-        /* Avatar à esquerda */
-        .testimonial-avatar img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(217, 140, 106, 0.3);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
 
-        /* Conteúdo à direita */
-        .testimonial-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
 
-        .testimonial-text {
-            font-size: 1.15rem;
-            line-height: 1.7;
-            color: #444;
-            margin-bottom: 20px;
-            font-style: italic;
-            font-family: 'Georgia', serif;
-        }
 
-        .testimonial-author {
-            margin-top: auto;
-        }
-
-        .testimonial-name {
-            font-weight: 600;
-            color: var(--terracota);
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .testimonial-role {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Botões */
-        .carousel-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--terracota), var(--terracota-light));
-            color: white;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: absolute;
-            /* já está assim, ótimo */
-            z-index: 10000;
-            /* ainda mais alto para garantir prioridade */
-            box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-nav-btn:hover {
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
-        }
-
-        .carousel-nav-btn.prev {
-            left: 10px;
-        }
-
-        .carousel-nav-btn.next {
-            right: 10px;
-        }
-
-        /* Indicadores */
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(217, 140, 106, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-dot.active {
-            background: var(--terracota);
-            transform: scale(1.2);
-        }
-
-        /* Responsivo: verticaliza no mobile */
-        @media (max-width: 768px) {
-            .testimonial-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 25px;
-                gap: 20px;
-            }
-
-            .testimonial-avatar img {
-                width: 90px;
-                height: 90px;
-            }
-
-            .testimonial-text {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .testimonial-card {
-                padding: 20px 15px;
-            }
-
-            .carousel-nav-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 14px;
-            }
-
-            .testimonial-avatar img {
-                width: 70px;
-                height: 70px;
-            }
-        }
     </style>
 </head>
 
@@ -2614,7 +2685,7 @@
                                 </div>
                             </div>
                         </div>
-<!-- Depoimento 5 -->
+                        <!-- Depoimento 5 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
@@ -2642,7 +2713,7 @@
                                 </div>
                             </div>
                         </div>
-<!-- Depoimento 6 -->
+                        <!-- Depoimento 6 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
@@ -2660,7 +2731,10 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "A Luciana com muita sabedoria e gentileza me ouviu por mais de uma hora, nesse momento de total desespero e dificuldade de vida.. me ajudou a compreender melhor minhas atitudes e trabalhou questões que precisam de atenção. Muito feliz mesmo em ter a encontrado. Só tenho gratidão."
+                                            "A Luciana com muita sabedoria e gentileza me ouviu por mais de uma hora,
+                                            nesse momento de total desespero e dificuldade de vida.. me ajudou a
+                                            compreender melhor minhas atitudes e trabalhou questões que precisam de
+                                            atenção. Muito feliz mesmo em ter a encontrado. Só tenho gratidão."
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">Marina</h4>
@@ -2670,7 +2744,7 @@
                                 </div>
                             </div>
                         </div>
-<!-- Depoimento 7 -->
+                        <!-- Depoimento 7 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
@@ -2688,7 +2762,9 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Estava querendo evitar uma coisa ruim, e com forma como ela conduziu a conversa me deu segurança e confiança para falar sobre o que estou sentindo."
+                                            "Estava querendo evitar uma coisa ruim, e com forma como ela conduziu a
+                                            conversa me deu segurança e confiança para falar sobre o que estou
+                                            sentindo."
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">Juliana</h4>
@@ -2698,7 +2774,7 @@
                                 </div>
                             </div>
                         </div>
-<!-- Depoimento 8 -->
+                        <!-- Depoimento 8 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
@@ -2716,7 +2792,7 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Foi bom  ter falado com Luciana para ver as coisas de outra forma ...."
+                                            "Foi bom ter falado com Luciana para ver as coisas de outra forma ...."
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">Carlos</h4>
@@ -2726,8 +2802,8 @@
                                 </div>
                             </div>
                         </div>
-<!-- Depoimento 9 -->
-                              <div class="testimonial-slide">
+                        <!-- Depoimento 9 -->
+                        <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
                                     <div class="flex-shrink-0">
@@ -2744,7 +2820,9 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Amei a sessão com Luciana, profissional muito competente, sai outra pessoa., conseguindo enxergar soluções onde só haviam problemas. Muito empática e atenciosa, excelente profissional."
+                                            "Amei a sessão com Luciana, profissional muito competente, sai outra
+                                            pessoa., conseguindo enxergar soluções onde só haviam problemas. Muito
+                                            empática e atenciosa, excelente profissional."
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">Adriana</h4>
@@ -2754,8 +2832,8 @@
                                 </div>
                             </div>
                         </div>
-<!-- Depoimento 10 -->
-                              <div class="testimonial-slide">
+                        <!-- Depoimento 10 -->
+                        <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="flex flex-col md:flex-row gap-6 items-center">
                                     <div class="flex-shrink-0">
@@ -2772,7 +2850,9 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Estava procurando uma terapeuta de casais e Luciana, com muita sabedoria me direcionou para detalhes essências, tanto para a vida pessoal quanto conjugal. Recomendo demais!"
+                                            "Estava procurando uma terapeuta de casais e Luciana, com muita sabedoria me
+                                            direcionou para detalhes essências, tanto para a vida pessoal quanto
+                                            conjugal. Recomendo demais!"
                                         </p>
                                         <div>
                                             <h4 class="font-semibold text-gray-800">Maila</h4>
@@ -3383,110 +3463,213 @@
         window.addEventListener('load', animateTextOnScroll);
 
         // DEPOIMENTOS - Carrossel (SEM AUTOPLAY)
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.getElementById('testimonialsCarousel');
-            const track = document.getElementById('testimonialsTrack');
-            const slides = Array.from(track.querySelectorAll('.testimonial-slide'));
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const indicators = Array.from(document.querySelectorAll('#carouselIndicators .carousel-dot'));
+        document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById("testimonialsCarousel")
+  const track = document.getElementById("testimonialsTrack")
+  const slides = Array.from(track.querySelectorAll(".testimonial-slide"))
+  const prevBtn = document.getElementById("prevBtn")
+  const nextBtn = document.getElementById("nextBtn")
+  const indicators = Array.from(document.querySelectorAll("#carouselIndicators .carousel-dot"))
 
-            if (!carousel || !track || slides.length === 0) return;
+  if (!carousel || !track || slides.length === 0) return
 
-            let currentIndex = 0;
-            let slideWidth = 0;
-            let isTransitioning = false;
+  let currentIndex = 0
+  let slideWidth = 0
+  let isTransitioning = false
+  let isTouching = false
+  let touchStartTime = 0
 
-            const TRANSITION_TIME = 800; // ms
-            const TRANSITION_CSS = `transform ${TRANSITION_TIME / 1000}s cubic-bezier(0.25,0.46,0.45,0.94)`;
+  const TRANSITION_TIME = 800 // ms
+  const TRANSITION_CSS = `transform ${TRANSITION_TIME / 1000}s cubic-bezier(0.25,0.46,0.45,0.94)`
 
-            function setSizes() {
-                slideWidth = carousel.offsetWidth;
-                track.style.width = `${slideWidth * slides.length}px`;
-                slides.forEach(slide => {
-                    slide.style.width = `${slideWidth}px`;
-                });
-                moveTo(currentIndex, false);
-            }
+  function setSizes() {
+    slideWidth = carousel.offsetWidth
+    track.style.width = `${slideWidth * slides.length}px`
+    slides.forEach((slide) => {
+      slide.style.width = `${slideWidth}px`
+    })
+    moveTo(currentIndex, false)
+  }
 
-            function updateIndicators(index) {
-                indicators.forEach((dot, i) => dot.classList.toggle('active', i === index));
-            }
+  function updateIndicators(index) {
+    indicators.forEach((dot, i) => dot.classList.toggle("active", i === index))
+  }
 
-            function moveTo(index, animate = true) {
-                if (isTransitioning) return;
-                index = (index + slides.length) % slides.length;
-                isTransitioning = true;
+  function moveTo(index, animate = true) {
+    if (isTransitioning) return
+    index = (index + slides.length) % slides.length
+    isTransitioning = true
 
-                track.style.transition = animate ? TRANSITION_CSS : 'none';
-                track.style.transform = `translateX(-${index * slideWidth}px)`;
+    track.style.transition = animate ? TRANSITION_CSS : "none"
+    track.style.transform = `translateX(-${index * slideWidth}px)`
 
-                updateIndicators(index);
-                currentIndex = index;
+    updateIndicators(index)
+    currentIndex = index
 
-                if (!animate) {
-                    requestAnimationFrame(() => {
-                        requestAnimationFrame(() => {
-                            track.style.transition = TRANSITION_CSS;
-                            isTransitioning = false;
-                        });
-                    });
-                    return;
-                }
+    if (!animate) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          track.style.transition = TRANSITION_CSS
+          isTransitioning = false
+        })
+      })
+      return
+    }
 
-                const onEnd = () => {
-                    isTransitioning = false;
-                    track.removeEventListener('transitionend', onEnd);
-                };
-                track.addEventListener('transitionend', onEnd);
+    const onEnd = () => {
+      isTransitioning = false
+      track.removeEventListener("transitionend", onEnd)
+    }
+    track.addEventListener("transitionend", onEnd)
 
-                setTimeout(() => {
-                    if (isTransitioning) {
-                        isTransitioning = false;
-                        track.removeEventListener('transitionend', onEnd);
-                    }
-                }, TRANSITION_TIME + 100);
-            }
+    setTimeout(() => {
+      if (isTransitioning) {
+        isTransitioning = false
+        track.removeEventListener("transitionend", onEnd)
+      }
+    }, TRANSITION_TIME + 100)
+  }
 
-            prevBtn?.addEventListener('click', () => moveTo(currentIndex - 1));
-            nextBtn?.addEventListener('click', () => moveTo(currentIndex + 1));
-            indicators.forEach(dot => {
-                dot.addEventListener('click', () => moveTo(parseInt(dot.dataset.slide, 10)));
-            });
+  function addButtonListeners() {
+    // Prevent default touch behavior on buttons
+    ;[prevBtn, nextBtn].forEach((btn) => {
+      if (!btn) return
 
-            // --- Swipe ---
-            let startX = 0, deltaX = 0;
-            carousel.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                deltaX = 0;
-                track.style.transition = 'none';
-            }, { passive: true });
+      // Add touch-action CSS property
+      btn.style.touchAction = "manipulation"
+      btn.style.userSelect = "none"
 
-            carousel.addEventListener('touchmove', (e) => {
-                if (e.touches.length > 1) return;
-                deltaX = e.touches[0].clientX - startX;
-                track.style.transform = `translateX(${-currentIndex * slideWidth + deltaX}px)`;
-            }, { passive: true });
+      // Handle both click and touch events
+      btn.addEventListener("click", (e) => {
+        e.preventDefault()
+        e.stopPropagation()
 
-            carousel.addEventListener('touchend', () => {
-                track.style.transition = TRANSITION_CSS;
-                if (Math.abs(deltaX) > 50) {
-                    deltaX < 0 ? moveTo(currentIndex + 1) : moveTo(currentIndex - 1);
-                } else {
-                    moveTo(currentIndex);
-                }
-            });
+        // Don't trigger if we're in the middle of a swipe
+        if (isTouching || isTransitioning) return
 
-            // Resize com debounce
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(setSizes, 120);
-            });
+        const direction = btn === prevBtn ? -1 : 1
+        moveTo(currentIndex + direction)
+      })
 
-            setSizes();
-            updateIndicators(currentIndex);
-        });
+      // Add touch events for better mobile responsiveness
+      btn.addEventListener(
+        "touchstart",
+        (e) => {
+          e.stopPropagation()
+          btn.style.opacity = "0.7"
+        },
+        { passive: false },
+      )
+
+      btn.addEventListener(
+        "touchend",
+        (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          btn.style.opacity = "1"
+
+          // Don't trigger if we're swiping
+          if (isTouching) return
+
+          const direction = btn === prevBtn ? -1 : 1
+          moveTo(currentIndex + direction)
+        },
+        { passive: false },
+      )
+    })
+  }
+
+  function addIndicatorListeners() {
+    indicators.forEach((dot) => {
+      dot.style.touchAction = "manipulation"
+      dot.style.userSelect = "none"
+
+      dot.addEventListener("click", (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        if (isTouching || isTransitioning) return
+        moveTo(Number.parseInt(dot.dataset.slide, 10))
+      })
+
+      dot.addEventListener(
+        "touchend",
+        (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          if (isTouching) return
+          moveTo(Number.parseInt(dot.dataset.slide, 10))
+        },
+        { passive: false },
+      )
+    })
+  }
+
+  let startX = 0,
+    deltaX = 0
+
+  carousel.addEventListener(
+    "touchstart",
+    (e) => {
+      // Check if touch started on a button or indicator
+      const target = e.target.closest("button, .carousel-dot")
+      if (target) {
+        isTouching = false
+        return
+      }
+
+      isTouching = true
+      touchStartTime = Date.now()
+      startX = e.touches[0].clientX
+      deltaX = 0
+      track.style.transition = "none"
+    },
+    { passive: true },
+  )
+
+  carousel.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!isTouching || e.touches.length > 1) return
+
+      deltaX = e.touches[0].clientX - startX
+
+      // Only start moving if we've moved more than 10px (prevents accidental swipes)
+      if (Math.abs(deltaX) > 10) {
+        track.style.transform = `translateX(${-currentIndex * slideWidth + deltaX}px)`
+      }
+    },
+    { passive: true },
+  )
+
+  carousel.addEventListener("touchend", (e) => {
+    if (!isTouching) return
+
+    const touchDuration = Date.now() - touchStartTime
+    isTouching = false
+
+    track.style.transition = TRANSITION_CSS
+
+    // Only swipe if touch was long enough and moved far enough
+    if (touchDuration > 100 && Math.abs(deltaX) > 50) {
+      deltaX < 0 ? moveTo(currentIndex + 1) : moveTo(currentIndex - 1)
+    } else {
+      moveTo(currentIndex)
+    }
+  })
+
+  addButtonListeners()
+  addIndicatorListeners()
+
+  // Resize com debounce
+  let resizeTimer
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer)
+    resizeTimer = setTimeout(setSizes, 120)
+  })
+
+  setSizes()
+  updateIndicators(currentIndex)
+})
 
     </script>
 </body>
