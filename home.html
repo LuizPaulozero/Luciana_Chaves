@@ -1551,16 +1551,42 @@
             padding-left: 30px;
         }
 
-        .luxury-quote {
-            text-align: justify;
-            line-height: 1.7;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            border-left: 4px solid #C67A56;
-        }
+/* Estilo base para a citação - mantido para consistência */
+.luxury-quote {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    margin: 3rem 0;
+    position: relative;
+    font-style: italic;
+    line-height: 1.8;
+}
 
+/* Pseudo-elemento para a aspa de abertura (menor) */
+.luxury-quote::before {
+    content: '“';
+    position: absolute;
+    top: 0.5rem; /* Posição ajustada */
+    left: 1rem;
+    font-family: 'serif';
+    font-size: 3rem; /* Tamanho da fonte reduzido */
+    color: #C67A56;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+/* Pseudo-elemento para a aspa de fechamento (menor) */
+.luxury-quote::after {
+    content: '”';
+    position: absolute;
+    bottom: 0.5rem; /* Posição ajustada */
+    right: 1rem;
+    font-family: 'serif';
+    font-size: 3rem; /* Tamanho da fonte reduzido */
+    color: #C67A56;
+    line-height: 1;
+    opacity: 0.8;
+}
         /* Enhanced mobile responsiveness for images in belief section */
         @media (max-width: 767px) {
             .my-8.rounded-2xl {
@@ -1828,8 +1854,7 @@
             --rosa-claro-light: #fdf2f8;
         }
 
- /* Estilos do carrossel de depoimentos */
-/* Contêiner do carrossel */
+/* Estilos do carrossel de depoimentos */
 #testimonialsCarousel {
   width: 100%;
   max-width: 1000px;
@@ -1865,11 +1890,11 @@
   border: 1px solid rgba(217, 140, 106, 0.08);
   width: 100%;
   max-width: 900px;
-  /* Altura padrão fixa para todos os cards */
-  min-height: 350px;
-  max-height: 350px;
+  min-height: 340px;
+  max-height: 340px;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
 /* Avatar à esquerda */
@@ -1894,12 +1919,10 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  /* Removido overflow-y auto para melhor controle do layout */
   overflow: hidden;
 }
 
 .testimonial-text {
-  /* Ajustado tamanho da fonte e altura da linha para melhor legibilidade */
   font-size: 1rem;
   line-height: 1.6;
   color: #444;
@@ -1908,7 +1931,6 @@
   font-family: "Georgia", serif;
   word-break: break-word;
   overflow-wrap: break-word;
-  /* Limitando altura do texto para manter consistência */
   display: -webkit-box;
   -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
@@ -1933,13 +1955,13 @@
   font-size: 0.9rem;
 }
 
-/* Botões */
+/* Botões de navegação */
 .carousel-nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--terracota), var(--terracota-light));
   color: white;
@@ -1948,9 +1970,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10000;
+  z-index: 10;
   box-shadow: 0 8px 25px rgba(217, 140, 106, 0.3);
-  font-size: 18px;
+  font-size: 16px;
   transition: all 0.3s ease;
 }
 
@@ -1960,11 +1982,11 @@
 }
 
 .carousel-nav-btn.prev {
-  left: 10px;
+  left: 8px; /* mais para dentro */
 }
 
 .carousel-nav-btn.next {
-  right: 10px;
+  right: 8px; /* mais para dentro */
 }
 
 /* Indicadores */
@@ -1995,9 +2017,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 25px 20px;
+    padding: 30px 25px;
     gap: 15px;
-    /* Aumentando altura significativamente para mostrar todo o texto */
     min-height: 550px;
     max-height: 550px;
   }
@@ -2007,23 +2028,20 @@
     margin-bottom: 10px;
   }
 
-  .testimonial-content {
-    height: auto;
-    /* Aumentando altura máxima do conteúdo */
-    max-height: 400px;
-    overflow: hidden;
-  }
-
   .testimonial-avatar img {
     width: 80px;
     height: 80px;
   }
 
+  .testimonial-content {
+    height: auto;
+    max-height: 400px;
+    overflow: hidden;
+  }
+
   .testimonial-text {
-    /* Fonte otimizada para mobile */
     font-size: 0.95rem;
     line-height: 1.5;
-    /* Aumentando para 12 linhas para mostrar mais conteúdo */
     -webkit-line-clamp: 12;
   }
 
@@ -2035,48 +2053,44 @@
     font-size: 0.85rem;
   }
 
-  /* Ajustando indicadores para não sobrepor os cards */
   .carousel-indicators {
-    /* Aumentando margem superior para dar mais espaço */
     margin-top: 60px;
     padding-bottom: 20px;
+  }
+
+  .carousel-nav-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .carousel-nav-btn.prev {
+    left: 6px; /* mais para dentro */
+  }
+
+  .carousel-nav-btn.next {
+    right: 6px; /* mais para dentro */
   }
 }
 
 @media (max-width: 480px) {
   .testimonial-card {
-    padding: 20px 15px;
-    /* Altura ainda maior para telas muito pequenas */
-    min-height: 520px;
-    max-height: 520px;
+    min-height: 580px;
+    max-height: 580px;
+    padding: 25px 20px;
   }
 
-  .testimonial-avatar img {
-    width: 70px;
-    height: 70px;
+  .carousel-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
   }
 
-  .testimonial-text {
-    font-size: 0.9rem;
-    /* Aumentando para 11 linhas em telas pequenas */
-    -webkit-line-clamp: 11;
+  .carousel-nav-btn.prev {
+    left: 5px; /* mais para dentro */
   }
 
-  .testimonial-content {
-    /* Aumentando altura máxima do conteúdo */
-    max-height: 360px;
-  }
-
-  /* Mais espaço para os indicadores em telas pequenas */
-  .carousel-indicators {
-    /* Aumentando margem superior */
-    margin-top: 55px;
-    padding-bottom: 15px;
-  }
-}
-
-
-
+  .carousel-nav-bt
 
 
     </style>
