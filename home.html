@@ -711,36 +711,6 @@
             opacity: 0.6;
         }
 
-        /* Improved text justification and spacing */
-        .luxury-quote {
-            text-align: left;
-            line-height: 1.7;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            border-left: 4px solid #C67A56;
-        }
-
-        .luxury-quote::before,
-        .luxury-quote::after {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5em;
-            color: rgba(217, 140, 106, 0.3);
-            position: absolute;
-        }
-
-        .luxury-quote::before {
-            content: '"';
-            top: -10px;
-            left: 20px;
-        }
-
-        .luxury-quote::after {
-            content: '"';
-            bottom: -30px;
-            right: 20px;
-        }
 
         /* Enhanced Typography */
         .enhanced-heading {
@@ -1551,46 +1521,6 @@
             padding-left: 30px;
         }
 
-        /* Estilo base para a citação - mantido para consistência */
-        .luxury-quote {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 2.5rem 3rem;
-            margin: 3rem 0;
-            position: relative;
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        /* Pseudo-elemento para a aspa de abertura (menor) */
-        .luxury-quote::before {
-            content: '“';
-            position: absolute;
-            top: 0.5rem;
-            /* Posição ajustada */
-            left: 1rem;
-            font-family: 'serif';
-            font-size: 3rem;
-            /* Tamanho da fonte reduzido */
-            color: #C67A56;
-            line-height: 1;
-            opacity: 0.8;
-        }
-
-        /* Pseudo-elemento para a aspa de fechamento (menor) */
-        .luxury-quote::after {
-            content: '”';
-            position: absolute;
-            bottom: 0.5rem;
-            /* Posição ajustada */
-            right: 1rem;
-            font-family: 'serif';
-            font-size: 3rem;
-            /* Tamanho da fonte reduzido */
-            color: #C67A56;
-            line-height: 1;
-            opacity: 0.8;
-        }
 
         /* Enhanced mobile responsiveness for images in belief section */
         @media (max-width: 767px) {
@@ -2105,74 +2035,73 @@
         }
 
         /* Estrutura principal */
-#entrevistas {
-  position: relative;
-}
+        #entrevistas {
+            position: relative;
+        }
 
-#entrevistas .entrevista-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+        #entrevistas .entrevista-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-@media (min-width: 1024px) {
-  #entrevistas .entrevista-wrapper {
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: left;
-  }
-}
+        @media (min-width: 1024px) {
+            #entrevistas .entrevista-wrapper {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
 
-/* Vídeo */
-#entrevistas .video-container {
-  flex: 2;
-  width: 100%;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
+        /* Vídeo */
+        #entrevistas .video-container {
+            flex: 2;
+            width: 100%;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
 
-#entrevistas .video-container:hover {
-  transform: scale(1.02);
-}
+        #entrevistas .video-container:hover {
+            transform: scale(1.02);
+        }
 
-#entrevistas .video-player {
-  width: 100%;
-  height: 350px;
-}
+        #entrevistas .video-player {
+            width: 100%;
+            height: 350px;
+        }
 
-@media (min-width: 1024px) {
-  #entrevistas .video-player {
-    height: 420px;
-  }
-}
+        @media (min-width: 1024px) {
+            #entrevistas .video-player {
+                height: 420px;
+            }
+        }
 
-/* Conteúdo da entrevista */
-#entrevistas .entrevista-conteudo {
-  flex: 1;
-  padding: 1rem;
-}
+        /* Conteúdo da entrevista */
+        #entrevistas .entrevista-conteudo {
+            flex: 1;
+            padding: 1rem;
+        }
 
-/* Botão */
-#entrevistas .btn-primary {
-  background: linear-gradient(135deg, #e2725b, #f5a281);
-  color: #fff;
-  padding: 0.9rem 1.5rem;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-align: center;
-}
+        /* Botão */
+        #entrevistas .btn-primary {
+            background: linear-gradient(135deg, #e2725b, #f5a281);
+            color: #fff;
+            padding: 0.9rem 1.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
 
-#entrevistas .btn-primary:hover {
-  background: linear-gradient(135deg, #d65b47, #e68b6d);
-  transform: translateY(-2px);
-}
-
+        #entrevistas .btn-primary:hover {
+            background: linear-gradient(135deg, #d65b47, #e68b6d);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
@@ -2316,8 +2245,9 @@
     <!-- Minha História -->
     <section id="historia" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
+
         <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 <div class="fade-in mb-16 text-center">
                     <h2 class="text-5xl lg:text-6xl font-serif font-bold gradient-text mb-6 enhanced-heading">
                         Minha História
@@ -2326,38 +2256,48 @@
                         class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full">
                     </div>
                 </div>
-                <div class="slide-in-left">
-                    <div class="text-container transition-all duration-500">
-                        <div class="luxury-text text-xl">
-                            <p class="luxury-paragraph text-reveal">
-                                Sou Luciana Magalhães, psicóloga (CRP 15/7791), com formação em Terapia
-                                Cognitivo-Comportamental, pós-graduação em Neuropsicologia e em Terapia de Casal,
-                                Relacionamento e Família.
 
-                            </p>
-                            <p class="luxury-paragraph text-reveal delay-1">
-                                Eu também tenho graduação em Comunicação Social e, antes de atuar na clínica, atuei como
-                                jornalista por mais de 25 anos - uma
-                                trajetória marcada pelo encontro com histórias reais e profundas. Foi nesse tempo que
-                                desenvolvi minha maior ferramenta de trabalho: a escuta sensível, acolhedora e afetuosa,
-                                que hoje é o coração da minha prática como psicóloga.
-                            </p>
-                        </div>
+                <!-- CONTEÚDO COM TEXTO + IMAGEM -->
+                <div class="flex flex-col lg:flex-row items-center gap-10 slide-in-left">
+                    <!-- Texto -->
+                    <div class="flex-1 text-xl luxury-text">
+                        <p class="luxury-paragraph text-reveal">
+                            Sou Luciana Magalhães, psicóloga (CRP 15/7791), com formação em Terapia
+                            Cognitivo-Comportamental, pós-graduação em Neuropsicologia e em Terapia de Casal,
+                            Relacionamento e Família.
+                        </p>
+
+                        <p class="luxury-paragraph text-reveal delay-1 mt-6">
+                            Eu também tenho graduação em Comunicação Social e, antes de atuar na clínica, atuei como
+                            jornalista por mais de 25 anos — uma trajetória marcada pelo encontro com histórias reais e
+                            profundas.
+                            Foi nesse tempo que desenvolvi minha maior ferramenta de trabalho: a escuta sensível,
+                            acolhedora e afetuosa,
+                            que hoje é o coração da minha prática como psicóloga.
+                        </p>
+                    </div>
+
+                    <!-- Imagem à direita -->
+                    <div class="flex-1 flex justify-center">
+                        <img src="./imagens/em_pé.jpg" alt="Foto de Luciana Magalhães"
+                            class="w-full max-w-md h-auto object-contain rounded-2xl shadow-lg transition-transform duration-500" />
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <div class="mt-10 text-center">
-            <a href="#contato" class="btn-primary text-lg">
-                <i class="fas fa-calendar-plus"></i>
-                Agende sua sessão
-            </a>
-        </div>
     </section>
 
 
+
+    <div class="mt-10 text-center">
+        <a href="#contato" class="btn-primary text-lg">
+            <i class="fas fa-calendar-plus"></i>
+            Agende sua sessão
+        </a>
+    </div>
+    </section>
+
+    <!-- No que eu acredito -->
     <section id="acredito" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -2373,6 +2313,7 @@
                         Acredito profundamente no potencial humano de transformação e crescimento
                     </p>
                 </div>
+
                 <div class="slide-in-left">
                     <div class="text-container transition-all duration-500">
                         <div class="luxury-text text-xl">
@@ -2382,11 +2323,10 @@
                                 suas relações: afetivas, familiares, profissionais e consigo mesmas.
                             </p>
 
-
-                            <div
-                                class="my-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                            <!-- IMAGEM 1 -->
+                            <div class="my-8 flex justify-center">
                                 <img src="./imagens/IMG_6330.jpg" alt="Terapia Individual"
-                                    class="w-full h-auto object-cover">
+                                    class="w-full max-w-2xl h-auto rounded-2xl object-contain">
                             </div>
 
                             <p class="luxury-paragraph text-reveal delay-1">
@@ -2396,11 +2336,10 @@
                                 saudáveis.
                             </p>
 
-
-                            <div
-                                class="my-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                                <img src="./imagens/sorrindo.jpg" alt="Bem-estar Emocional"
-                                    class="w-full h-auto object-cover">
+                            <!-- IMAGEM 2 -->
+                            <div class="my-8 flex justify-center">
+                                <img src="./imagens/IMG_6506.jpg" alt="Bem-estar Emocional"
+                                    class="w-full max-w-2xl h-auto rounded-2xl object-contain">
                             </div>
 
                             <p class="luxury-paragraph text-reveal delay-2">
@@ -2409,7 +2348,7 @@
                                 seguros e emocionalmente saudáveis. Esse universo me fascina e me move.
                             </p>
 
-                            <div class="luxury-quote text-reveal delay-3">
+                            <p class="luxury-paragraph text-reveal delay-3">
                                 Além do consultório, sou voluntária na ONG CAVIDA, que acolhe pessoas em
                                 situação de vulnerabilidade social, muitas vezes mergulhadas em crises profundas de
                                 desesperança. Meu papel ali é ajudar essas pessoas a encontrarem — ou reencontrarem — o
@@ -2417,6 +2356,12 @@
                                 vínculos consigo mesmas.
                                 Este trabalho voluntário enriquece profundamente minha prática clínica e reafirma minha
                                 crença no potencial de transformação humana.
+                            </p>
+
+                            <!-- IMAGEM 3 -->
+                            <div class="my-8 flex justify-center">
+                                <img src="./imagens/cubo.jpg" alt="Trabalho voluntário e escuta atenta"
+                                    class="w-full max-w-xs md:max-w-sm h-auto rounded-2xl object-contain">
                             </div>
 
                         </div>
@@ -2449,11 +2394,12 @@
                         Conheça um pouco mais sobre meus interesses e paixões pessoais
                     </p>
                 </div>
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <!-- Texto -->
                     <div class="slide-in-left">
                         <div class="text-container transition-all duration-500">
-                            <div class="luxury-text text-xl">
+                            <div class="luxury-text text-xl leading-relaxed">
                                 <p class="luxury-paragraph text-reveal">
                                     Tenho 52 anos, sou mãe solo de um rapaz que está prestes a completar 20. Amo dançar,
                                     tomar um bom café em cafeterias cheias de charme, ouvir músicas que me tocam e
@@ -2466,30 +2412,51 @@
                                 </p>
                                 <p class="luxury-paragraph text-reveal delay-2">
                                     Se você está vivendo um momento difícil, se sente perdida(o) em alguma relação — com
-                                    o
-                                    outro ou consigo mesma(o) —, saiba que aqui é um espaço seguro para se ouvir, se
+                                    o outro ou consigo mesma(o) —, saiba que aqui é um espaço seguro para se ouvir, se
                                     compreender e, com o tempo, se reconstruir.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="slide-in-right">
-                        <div class="belief-image-container">
-                            <img src="./imagens/IMG_6221.jpg" alt="Luciana Magalhães - Momento Pessoal "
-                                class="belief-image"
-                                style="width: 100%; height: auto; object-fit: contain; object-position: center; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; image-rendering: optimize-quality; -ms-interpolation-mode: bicubic; backface-visibility: hidden; transform: translateZ(0);">
+
+                    <!-- Imagens -->
+                    <div class="slide-in-right flex flex-col items-center justify-center space-y-6 h-full">
+
+                        <!-- Primeira imagem -->
+                        <div class="w-full max-h-[280px] rounded-2xl overflow-hidden">
+                            <img src="./imagens/IMG_6221.jpg" alt="Luciana Magalhães - Momento Pessoal"
+                                class="w-full h-full object-contain object-center"
+                                style="image-rendering: optimize-quality;">
                         </div>
+
+                        <!-- Segunda imagem -->
+                        <div class="w-full max-h-[390px] rounded-2xl overflow-hidden">
+                            <img src="./imagens/IMG_6727.jpg" alt="Luciana Magalhães em momento descontraído"
+                                class="w-full h-full object-contain object-center"
+                                style="image-rendering: optimize-quality;">
+                        </div>
+
+                        <!-- Terceira imagem -->
+                        <div class="w-full max-h-[390px] rounded-2xl overflow-hidden">
+                            <img src="./imagens/IMG_6835.jpg" alt="Luciana Magalhães - Cotidiano"
+                                class="w-full h-full object-contain object-center"
+                                style="image-rendering: optimize-quality;">
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="mt-10 text-center">
-            <a href="#contato" class="btn-primary text-lg">
-                <i class="fas fa-calendar-plus"></i>
-                Agende sua sessão
-            </a>
-        </div>
+
+
+    <div class="mt-10 text-center">
+        <a href="#contato" class="btn-primary text-lg">
+            <i class="fas fa-calendar-plus"></i>
+            Agende sua sessão
+        </a>
+    </div>
     </section>
 
     <!-- O que esperar da terapia -->
@@ -3138,58 +3105,61 @@
     </section>
 
 
-   <section id="entrevistas" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
-  <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-6xl mx-auto">
-      <!-- Título da Seção -->
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
-          Seção de <span class="gradient-text">Entrevistas</span>
-        </h2>
-        <div class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6"></div>
-        <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
-          Momentos de partilha e inspiração com profissionais e convidados especiais
-        </p>
-      </div>
+    <section id="entrevistas"
+        class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <!-- Título da Seção -->
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
+                        Seção de <span class="gradient-text">Entrevistas</span>
+                    </h2>
+                    <div
+                        class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
+                    </div>
+                    <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
+                        Momentos de partilha e inspiração com profissionais e convidados especiais
+                    </p>
+                </div>
 
-      <!-- Entrevista -->
-      <div class="entrevista-wrapper fade-in">
-        <!-- Vídeo -->
-        <div class="video-container">
-          <iframe class="video-player"
-            src="https://www.youtube.com/embed/Id8wWNQ-614"
-            title="Entrevista"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+                <!-- Entrevista -->
+                <div class="entrevista-wrapper fade-in">
+                    <!-- Vídeo -->
+                    <div class="video-container">
+                        <iframe class="video-player" src="https://www.youtube.com/embed/Id8wWNQ-614" title="Entrevista"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- Conteúdo lateral -->
+                    <div class="entrevista-conteudo text-center lg:text-left">
+                        <h3 class="text-2xl font-serif font-semibold text-cinza-escuro mb-4">
+                            Entrevista Exclusiva
+                        </h3>
+                        <p class="text-lg text-cinza-medio leading-relaxed mb-6">
+                            Nesta entrevista especial, exploramos temas essenciais para o crescimento pessoal e
+                            profissional. Uma conversa profunda, que abre espaço para novas perspectivas e reflexões
+                            valiosas.
+                        </p>
+                        <div class="flex justify-center lg:justify-start">
+                            <a href="#contato" class="btn-primary text-lg inline-flex items-center gap-2">
+                                <i class="fas fa-calendar-plus"></i>
+                                Agende sua sessão
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Futuras entrevistas -->
+                <div class="mt-12 text-center text-cinza-medio text-lg">
+                    Em breve, novas entrevistas estarão disponíveis.
+                </div>
+            </div>
         </div>
-
-        <!-- Conteúdo lateral -->
-        <div class="entrevista-conteudo text-center lg:text-left">
-          <h3 class="text-2xl font-serif font-semibold text-cinza-escuro mb-4">
-            Entrevista Exclusiva
-          </h3>
-          <p class="text-lg text-cinza-medio leading-relaxed mb-6">
-            Nesta entrevista especial, exploramos temas essenciais para o crescimento pessoal e profissional. Uma conversa profunda, que abre espaço para novas perspectivas e reflexões valiosas.
-          </p>
-          <div class="flex justify-center lg:justify-start">
-            <a href="#contato" class="btn-primary text-lg inline-flex items-center gap-2">
-              <i class="fas fa-calendar-plus"></i>
-              Agende sua sessão
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Futuras entrevistas -->
-      <div class="mt-12 text-center text-cinza-medio text-lg">
-        Em breve, novas entrevistas estarão disponíveis.
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- Localização e Contato -->
@@ -3350,27 +3320,28 @@
                             </a>
                         </div>
                     </div>
-                    <div class="mt-7">
+                    <div class="mt-1">
                         <h5 class="text-base font-semibold text-off-white mb-3">Contato</h5>
                         <p class="text-gray-300 text-sm">contato@lucianamagalhaes.com.br</p>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-600 pt-7">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-300 text-sm mb-3 md:mb-0">
+                <div class="flex flex-col md:flex-row justify-center items-center">
+                    <p class="text-gray-300 text-sm text-center">
                         &copy; 2025 Luciana Magalhães - Todos os direitos reservados.
                     </p>
                 </div>
             </div>
+
         </div>
         </div>
     </footer>
 
     <script>
 
-        // CORREÇÃO PRINCIPAL DO BUG DO MENU MOBILE
-        // Enhanced Mobile Menu Toggle - VERSÃO CORRIGIDA
+
+        // Enhanced Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
@@ -3415,7 +3386,7 @@
             }
         }
 
-        // Event listeners - CORRIGIDOS
+        // Event listeners
         mobileMenuBtn.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -3490,7 +3461,7 @@
             }
         });
 
-        // Testimonial Modal Functions - ATUALIZADO
+        // Testimonial Modal Functions
         function openTestimonialModal(imageSrc) {
             const modal = document.getElementById('testimonial-modal');
             const modalImage = document.getElementById('testimonial-modal-image');
