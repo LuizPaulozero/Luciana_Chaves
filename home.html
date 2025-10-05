@@ -8,7 +8,6 @@
     <meta name="description"
         content="Psicóloga clínica especializada em TCC. Atendimento presencial e online. Agende sua consulta e inicie sua jornada de autoconhecimento.">
     <meta name="keywords" content="psicóloga, terapia, TCC, psicologia clínica, São Paulo">
-    <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -2034,91 +2033,50 @@
             }
         }
 
-        /* Estrutura principal */
-        #entrevistas {
-            position: relative;
-        }
-
-        #entrevistas .entrevista-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        @media (min-width: 1024px) {
-            #entrevistas .entrevista-wrapper {
-                flex-direction: row;
-                align-items: flex-start;
-                text-align: left;
-            }
-        }
-
-        /* Vídeo */
+        /* NEW STYLES FOR INTERVIEW SECTION */
         #entrevistas .video-container {
-            flex: 2;
-            width: 100%;
-            border-radius: 1.5rem;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            background-color: #f2e4dd;
         }
 
         #entrevistas .video-container:hover {
-            transform: scale(1.02);
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 30px 70px rgba(217, 140, 106, 0.3);
         }
 
         #entrevistas .video-player {
             width: 100%;
-            height: 350px;
+            height: 100%;
+            border: none;
         }
 
         @media (min-width: 1024px) {
-            #entrevistas .video-player {
-                height: 420px;
+            #entrevistas .entrevista-wrapper {
+                display: grid;
+                grid-template-columns: 3fr 2fr;
+                gap: 3rem;
+                align-items: center;
             }
-        }
-
-        /* Conteúdo da entrevista */
-        #entrevistas .entrevista-conteudo {
-            flex: 1;
-            padding: 1rem;
-        }
-
-        /* Botão */
-        #entrevistas .btn-primary {
-            background: linear-gradient(135deg, #e2725b, #f5a281);
-            color: #fff;
-            padding: 0.9rem 1.5rem;
-            border-radius: 999px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        #entrevistas .btn-primary:hover {
-            background: linear-gradient(135deg, #d65b47, #e68b6d);
-            transform: translateY(-2px);
         }
     </style>
 </head>
 
 <body class="font-sans overflow-x-hidden">
-    <!-- Floating Background Elements -->
     <div class="fixed inset-0 pointer-events-none z-0">
         <div class="floating-element w-32 h-32 top-20 right-20 animate-float"></div>
         <div class="floating-element w-24 h-24 bottom-32 left-16 animate-bounce-gentle"></div>
         <div class="floating-element w-40 h-40 top-1/2 left-1/4 animate-pulse-soft"></div>
     </div>
 
-    <!-- Header with Wave -->
     <header class="wave-header sticky top-0 z-50 transition-all duration-500" id="header">
         <nav class="px-8 py-6">
             <div class="flex justify-between items-center max-w-full">
                 <div class="logo-container">
-
                     <img src="./imagens/logo.svg" alt="Luciana Magalhães - Logo" class="transition-all duration-300">
                 </div>
                 <div class="hidden lg:flex space-x-1">
@@ -2131,7 +2089,6 @@
                     <a href="#entrevistas" class="nav-link text-cinza-escuro font-medium">Entrevistas</a>
                     <a href="#contato" class="nav-link text-cinza-escuro font-medium">Contato</a>
                 </div>
-                <!-- Enhanced Mobile Menu Button -->
                 <button id="mobile-menu-btn"
                     class="lg:hidden relative w-12 h-12 text-cinza-escuro transition-all duration-300 p-2 rounded-full hover:bg-terracota hover:text-white focus:outline-none focus:ring-2 focus:ring-terracota focus:ring-opacity-50">
                     <div class="hamburger-lines">
@@ -2141,7 +2098,6 @@
                     </div>
                 </button>
             </div>
-
 
             <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
             <div id="mobile-menu" class="mobile-menu">
@@ -2176,10 +2132,9 @@
                         <i class="fas fa-clinic-medical"></i>
                         <span>Consultório</span>
                     </a>
-
                     <a href="#entrevistas" class="mobile-menu-item">
-                        <i class="fas fa-clinic-medical"></i>
-                        <span>Consultório</span>
+                        <i class="fas fa-video"></i>
+                        <span>Entrevistas</span>
                     </a>
                     <a href="#contato" class="mobile-menu-item">
                         <i class="fas fa-phone"></i>
@@ -2196,9 +2151,7 @@
         </nav>
     </header>
 
-
     <section id="inicio" class="min-h-screen flex items-center relative overflow-hidden">
-
         <div class="absolute inset-0 bg-gradient-to-br from-off-white via-rosa-claro-light to-rosa-claro"></div>
         <div class="absolute inset-0 bg-mesh-gradient opacity-30"></div>
         <div class="container mx-auto px-4 py-20 relative z-10">
@@ -2228,7 +2181,6 @@
                             Conheça Minha História
                         </a>
                     </div>
-
                 </div>
                 <div class="lg:w-1/2 slide-in-right">
                     <div class="relative">
@@ -2242,10 +2194,8 @@
         </div>
     </section>
 
-    <!-- Minha História -->
     <section id="historia" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
-
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-6xl mx-auto">
                 <div class="fade-in mb-16 text-center">
@@ -2256,17 +2206,13 @@
                         class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full">
                     </div>
                 </div>
-
-                <!-- CONTEÚDO COM TEXTO + IMAGEM -->
-                <div class="flex flex-col lg:flex-row items-center gap-10 slide-in-left">
-                    <!-- Texto -->
+                <div class="flex flex-col lg:flex-row items-center gap-10 slide-in-left mb-16">
                     <div class="flex-1 text-xl luxury-text">
                         <p class="luxury-paragraph text-reveal">
                             Sou Luciana Magalhães, psicóloga (CRP 15/7791), com formação em Terapia
                             Cognitivo-Comportamental, pós-graduação em Neuropsicologia e em Terapia de Casal,
                             Relacionamento e Família.
                         </p>
-
                         <p class="luxury-paragraph text-reveal delay-1 mt-6">
                             Eu também tenho graduação em Comunicação Social e, antes de atuar na clínica, atuei como
                             jornalista por mais de 25 anos — uma trajetória marcada pelo encontro com histórias reais e
@@ -2276,28 +2222,21 @@
                             que hoje é o coração da minha prática como psicóloga.
                         </p>
                     </div>
-
-                    <!-- Imagem à direita -->
                     <div class="flex-1 flex justify-center">
                         <img src="./imagens/em_pé.jpg" alt="Foto de Luciana Magalhães"
                             class="w-full max-w-md h-auto object-contain rounded-2xl shadow-lg transition-transform duration-500" />
                     </div>
                 </div>
+                <div class="text-center">
+                    <a href="#contato" class="btn-primary text-lg">
+                        <i class="fas fa-calendar-plus"></i>
+                        Agende sua sessão
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-
-
-    <div class="mt-10 text-center">
-        <a href="#contato" class="btn-primary text-lg">
-            <i class="fas fa-calendar-plus"></i>
-            Agende sua sessão
-        </a>
-    </div>
-    </section>
-
-    <!-- No que eu acredito -->
     <section id="acredito" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -2313,7 +2252,6 @@
                         Acredito profundamente no potencial humano de transformação e crescimento
                     </p>
                 </div>
-
                 <div class="slide-in-left">
                     <div class="text-container transition-all duration-500">
                         <div class="luxury-text text-xl">
@@ -2322,32 +2260,25 @@
                                 as dores que insistimos em repetir. Por isso, ajudo pessoas a enfrentarem conflitos em
                                 suas relações: afetivas, familiares, profissionais e consigo mesmas.
                             </p>
-
-                            <!-- IMAGEM 1 -->
                             <div class="my-8 flex justify-center">
                                 <img src="./imagens/IMG_6330.jpg" alt="Terapia Individual"
                                     class="w-full max-w-2xl h-auto rounded-2xl object-contain">
                             </div>
-
                             <p class="luxury-paragraph text-reveal delay-1">
                                 Atendo adultos que se sentem exaustos de tentarem agradar a todos, que vivem a dor da
                                 rejeição, da sobrecarga ou da solidão dentro dos vínculos. Pessoas que estão buscando
                                 resgatar sua autoestima, aprender a se comunicar com mais clareza e estabelecer limites
                                 saudáveis.
                             </p>
-
-                            <!-- IMAGEM 2 -->
                             <div class="my-8 flex justify-center">
                                 <img src="./imagens/IMG_6506.jpg" alt="Bem-estar Emocional"
                                     class="w-full max-w-2xl h-auto rounded-2xl object-contain">
                             </div>
-
                             <p class="luxury-paragraph text-reveal delay-2">
                                 Também atendo crianças e adolescentes, porque acredito que cuidar da infância e da
                                 adolescência é plantar possibilidades para a formação de adultos mais conscientes,
                                 seguros e emocionalmente saudáveis. Esse universo me fascina e me move.
                             </p>
-
                             <p class="luxury-paragraph text-reveal delay-3">
                                 Além do consultório, sou voluntária na ONG CAVIDA, que acolhe pessoas em
                                 situação de vulnerabilidade social, muitas vezes mergulhadas em crises profundas de
@@ -2357,28 +2288,23 @@
                                 Este trabalho voluntário enriquece profundamente minha prática clínica e reafirma minha
                                 crença no potencial de transformação humana.
                             </p>
-
-                            <!-- IMAGEM 3 -->
                             <div class="my-8 flex justify-center">
                                 <img src="./imagens/cubo.jpg" alt="Trabalho voluntário e escuta atenta"
-                                    class="w-full max-w-xs md:max-w-sm h-auto rounded-2xl object-contain">
-                            </div>
-
+                                     class="w-full max-w-3xl h-auto rounded-2xl object-contain shadow-dreamy">
+                           </div>
                         </div>
                     </div>
                 </div>
+                <div class="mt-16 text-center">
+                    <a href="#contato" class="btn-primary text-lg">
+                        <i class="fas fa-calendar-plus"></i>
+                        Agende sua sessão
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <div class="mt-10 text-center">
-            <a href="#contato" class="btn-primary text-lg">
-                <i class="fas fa-calendar-plus"></i>
-                Agende sua sessão
-            </a>
         </div>
     </section>
 
-    <!-- Sobre Mim -->
     <section id="quem-sou" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -2394,9 +2320,7 @@
                         Conheça um pouco mais sobre meus interesses e paixões pessoais
                     </p>
                 </div>
-
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Texto -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
                     <div class="slide-in-left">
                         <div class="text-container transition-all duration-500">
                             <div class="luxury-text text-xl leading-relaxed">
@@ -2418,48 +2342,36 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Imagens -->
-                    <div class="slide-in-right flex flex-col items-center justify-center space-y-6 h-full">
-
-                        <!-- Primeira imagem -->
-                        <div class="w-full max-h-[280px] rounded-2xl overflow-hidden">
-                            <img src="./imagens/IMG_6221.jpg" alt="Luciana Magalhães - Momento Pessoal"
-                                class="w-full h-full object-contain object-center"
-                                style="image-rendering: optimize-quality;">
+                    <div class="slide-in-right flex items-center justify-center min-h-[500px] lg:min-h-full">
+                        <div class="relative w-full max-w-lg h-full aspect-square">
+                            <div
+                                class="absolute top-5 left-0 w-3/4 transform -rotate-12 transition-transform duration-500 hover:rotate-0 hover:scale-105 hover:z-40">
+                                <img src="./imagens/IMG_6221.jpg" alt="Luciana Magalhães - Momento Pessoal 1"
+                                    class="w-full h-auto object-cover rounded-xl bg-white p-2 shadow-dreamy border-2 border-white">
+                            </div>
+                            <div
+                                class="absolute bottom-5 right-0 w-2/3 transform rotate-12 transition-transform duration-500 hover:rotate-0 hover:scale-105 hover:z-40">
+                                <img src="./imagens/IMG_6835.jpg" alt="Luciana Magalhães - Cotidiano"
+                                    class="w-full h-auto object-cover rounded-xl bg-white p-2 shadow-dreamy border-2 border-white">
+                            </div>
+                            <div
+                                class="absolute top-1/2 left-1/2 w-4/5 transform -translate-x-1/2 -translate-y-1/2 z-30 transition-transform duration-500 hover:scale-110 hover:z-50">
+                                <img src="./imagens/IMG_6727.jpg" alt="Luciana Magalhães em momento descontraído"
+                                    class="w-full h-auto object-cover rounded-xl bg-white p-3 shadow-luxury border-4 border-white">
+                            </div>
                         </div>
-
-                        <!-- Segunda imagem -->
-                        <div class="w-full max-h-[390px] rounded-2xl overflow-hidden">
-                            <img src="./imagens/IMG_6727.jpg" alt="Luciana Magalhães em momento descontraído"
-                                class="w-full h-full object-contain object-center"
-                                style="image-rendering: optimize-quality;">
-                        </div>
-
-                        <!-- Terceira imagem -->
-                        <div class="w-full max-h-[390px] rounded-2xl overflow-hidden">
-                            <img src="./imagens/IMG_6835.jpg" alt="Luciana Magalhães - Cotidiano"
-                                class="w-full h-full object-contain object-center"
-                                style="image-rendering: optimize-quality;">
-                        </div>
-
                     </div>
+                </div>
+                <div class="text-center">
+                    <a href="#contato" class="btn-primary text-lg">
+                        <i class="fas fa-calendar-plus"></i>
+                        Agende sua sessão
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <div class="mt-10 text-center">
-        <a href="#contato" class="btn-primary text-lg">
-            <i class="fas fa-calendar-plus"></i>
-            Agende sua sessão
-        </a>
-    </div>
-    </section>
-
-    <!-- O que esperar da terapia -->
     <section id="terapia" class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
         <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -2534,18 +2446,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-16 text-center">
+                    <a href="#contato" class="btn-primary text-lg">
+                        <i class="fas fa-calendar-plus"></i>
+                        Agende sua sessão
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <div class="mt-10 text-center">
-            <a href="#contato" class="btn-primary text-lg">
-                <i class="fas fa-calendar-plus"></i>
-                Agende sua sessão
-            </a>
         </div>
     </section>
 
-    <!-- Para Empresas Section -->
     <section id="empresas" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
         <div class="container mx-auto px-4 relative z-10">
@@ -2562,7 +2472,6 @@
                     </p>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-rows-3 lg:grid-cols-1 gap-12 mb-12">
-                    <!-- Texto 1 -->
                     <div class="slide-in-left">
                         <div class="text-container transition-all duration-500">
                             <div class="luxury-text text-xl">
@@ -2578,7 +2487,7 @@
                                     workshops são construídos com escuta, sensibilidade e embasamento científico. Falo
                                     sobre temas que atravessam o cotidiano de quem convive com pessoas:
                                 </p>
-                                <ol class="custom-bullets">
+                                <ul class="list-disc pl-5 mt-4 space-y-2">
                                     <li>Assédio moral</li>
                                     <li>Bullying</li>
                                     <li>Autoestima</li>
@@ -2587,12 +2496,10 @@
                                     <li>Motivação</li>
                                     <li>Saúde mental</li>
                                     <li>Habilidades sociais</li>
-                                </ol>
+                                </ul>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Container das duas imagens lado a lado -->
                     <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 items-center">
                         <div class="slide-in-right">
                             <div class="belief-image-container">
@@ -2607,8 +2514,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Texto 2 -->
                     <div class="slide-in-left">
                         <div class="text-container transition-all duration-500">
                             <div class="luxury-text text-xl">
@@ -2624,7 +2529,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="text-center mt-6">
                     <a href="#contato" class="btn-primary text-lg">
                         <i class="fas fa-handshake"></i>
@@ -2633,13 +2537,9 @@
                 </div>
             </div>
         </div>
-
-
     </section>
 
-    <!-- Depoimentos - SEÇÃO CORRIGIDA E CONSISTENTE -->
     <section id="depoimentos" class="py-24 bg-white relative overflow-hidden">
-        <!-- Adicionado mesmo fundo da seção "Minha História" -->
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-50"></div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-6xl mx-auto">
@@ -2654,377 +2554,171 @@
                         Veja o que meus pacientes dizem sobre suas experiências transformadoras
                     </p>
                 </div>
-
-                <!-- Carrossel de Depoimentos -->
                 <div class="testimonials-carousel fade-in" id="testimonialsCarousel">
                     <div class="testimonials-track" id="testimonialsTrack">
-
-                        <!-- Depoimento 1 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Adorei. Foi muito interessante e envolvente a terapia. Obrigada."
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Maressa</h4>
-                                            <p class="text-sm text-gray-500">06 de junho de 2025</p>
-                                        </div>
+                                <div class="testimonial-avatar">
+                                    <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Adorei. Foi muito interessante e envolvente a terapia.
+                                        Obrigada."</p>
+                                    <div class="testimonial-author">
+                                        <h4 class="testimonial-name">Maressa</h4>
+                                        <p class="testimonial-role">06 de junho de 2025</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Depoimento 2 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Muito acolhedora, ouve atentamente faz perguntas precisas dá o
-                                            direcionamento com muito cuidado, nos levar a pensar em outro nível!
-                                            Obrigada DR!! Excelente"
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Tatyanne</h4>
-                                            <p class="text-sm text-gray-500">10 de junho de 2025</p>
-                                        </div>
+                                <div class="testimonial-avatar">
+                                    <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Muito acolhedora, ouve atentamente faz perguntas
+                                        precisas dá o direcionamento com muito cuidado, nos levar a pensar em outro
+                                        nível! Obrigada DR!! Excelente"</p>
+                                    <div class="testimonial-author">
+                                        <h4 class="testimonial-name">Tatyanne</h4>
+                                        <p class="testimonial-role">10 de junho de 2025</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Depoimento 3 -->
                         <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Eu estava em crise de ansiedade, e em 50 minutos ela me escutou e me deu
-                                            melhores direcionamentos, Obrigada!"
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Eduarda</h4>
-                                            <p class="text-sm text-gray-500">19 de junho de 2025</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                             <div class="testimonial-card">
+                                 <div class="testimonial-avatar">
+                                     <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                 </div>
+                                 <div class="testimonial-content">
+                                     <p class="testimonial-text">"Eu estava em crise de ansiedade, e em 50 minutos ela me escutou e me deu melhores direcionamentos, Obrigada!"</p>
+                                     <div class="testimonial-author">
+                                         <h4 class="testimonial-name">Eduarda</h4>
+                                         <p class="testimonial-role">19 de junho de 2025</p>
+                                     </div>
+                                 </div>
+                             </div>
                         </div>
-
-                        <!-- Depoimento 4 -->
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "A Luciana é uma profissional maravilhosa.
-                                            Atenciosa, acolhedora e captou com maestria tudo que eu estava sentido e
-                                            soube falar as palavras certas na hora certa. Gratidão imensa!"
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Francy</h4>
-                                            <p class="text-sm text-gray-500">28 de junho de 2025</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="testimonial-slide">
+                             <div class="testimonial-card">
+                                 <div class="testimonial-avatar">
+                                     <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                 </div>
+                                 <div class="testimonial-content">
+                                     <p class="testimonial-text">"A Luciana é uma profissional maravilhosa. Atenciosa, acolhedora e captou com maestria tudo que eu estava sentido e soube falar as palavras certas na hora certa. Gratidão imensa!"</p>
+                                     <div class="testimonial-author">
+                                         <h4 class="testimonial-name">Francy</h4>
+                                         <p class="testimonial-role">28 de junho de 2025</p>
+                                     </div>
+                                 </div>
+                             </div>
                         </div>
-                        <!-- Depoimento 5 -->
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Excelente atendimento, muito querida e compreensiva, me deixou mais calma."
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Monalisa</h4>
-                                            <p class="text-sm text-gray-500">01 de junho de 2025</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="testimonial-slide">
+                             <div class="testimonial-card">
+                                 <div class="testimonial-avatar">
+                                     <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                 </div>
+                                 <div class="testimonial-content">
+                                     <p class="testimonial-text">"Excelente atendimento, muito querida e compreensiva, me deixou mais calma."</p>
+                                     <div class="testimonial-author">
+                                         <h4 class="testimonial-name">Monalisa</h4>
+                                         <p class="testimonial-role">01 de julho de 2025</p>
+                                     </div>
+                                 </div>
+                             </div>
                         </div>
-                        <!-- Depoimento 6 -->
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "A Luciana com muita sabedoria e gentileza me ouviu por mais de uma hora,
-                                            nesse momento de total desespero e dificuldade de vida.. me ajudou a
-                                            compreender melhor minhas atitudes e trabalhou questões que precisam de
-                                            atenção. Muito feliz mesmo em ter a encontrado. Só tenho gratidão."
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Marina</h4>
-                                            <p class="text-sm text-gray-500">12 de julho de 2025</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="testimonial-slide">
+                             <div class="testimonial-card">
+                                 <div class="testimonial-avatar">
+                                     <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                 </div>
+                                 <div class="testimonial-content">
+                                     <p class="testimonial-text">"A Luciana com muita sabedoria e gentileza me ouviu por mais de uma hora, nesse momento de total desespero e dificuldade de vida.. me ajudou a compreender melhor minhas atitudes e trabalhou questões que precisam de atenção. Muito feliz mesmo em ter a encontrado. Só tenho gratidão."</p>
+                                     <div class="testimonial-author">
+                                         <h4 class="testimonial-name">Marina</h4>
+                                         <p class="testimonial-role">12 de julho de 2025</p>
+                                     </div>
+                                 </div>
+                             </div>
                         </div>
-                        <!-- Depoimento 7 -->
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Estava querendo evitar uma coisa ruim, e com forma como ela conduziu a
-                                            conversa me deu segurança e confiança para falar sobre o que estou
-                                            sentindo."
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Juliana</h4>
-                                            <p class="text-sm text-gray-500">15 de julho de 2025</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          <div class="testimonial-slide">
+                             <div class="testimonial-card">
+                                 <div class="testimonial-avatar">
+                                     <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                 </div>
+                                 <div class="testimonial-content">
+                                     <p class="testimonial-text">"Estava querendo evitar uma coisa ruim, e com forma como ela conduziu a conversa me deu segurança e confiança para falar sobre o que estou sentindo."</p>
+                                     <div class="testimonial-author">
+                                         <h4 class="testimonial-name">Juliana</h4>
+                                         <p class="testimonial-role">15 de julho de 2025</p>
+                                     </div>
+                                 </div>
+                             </div>
                         </div>
-                        <!-- Depoimento 8 -->
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Foi bom ter falado com Luciana para ver as coisas de outra forma ...."
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Carlos</h4>
-                                            <p class="text-sm text-gray-500">23 de julho de 2025</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="testimonial-slide">
+                             <div class="testimonial-card">
+                                 <div class="testimonial-avatar">
+                                     <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                 </div>
+                                 <div class="testimonial-content">
+                                     <p class="testimonial-text">"Foi bom ter falado com Luciana para ver as coisas de outra forma ...."</p>
+                                     <div class="testimonial-author">
+                                         <h4 class="testimonial-name">Carlos</h4>
+                                         <p class="testimonial-role">23 de julho de 2025</p>
+                                     </div>
+                                 </div>
+                             </div>
                         </div>
-                        <!-- Depoimento 9 -->
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Amei a sessão com Luciana, profissional muito competente, sai outra
-                                            pessoa., conseguindo enxergar soluções onde só haviam problemas. Muito
-                                            empática e atenciosa, excelente profissional."
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Adriana</h4>
-                                            <p class="text-sm text-gray-500">26 de julho de 2025</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="testimonial-slide">
+                             <div class="testimonial-card">
+                                 <div class="testimonial-avatar">
+                                     <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                 </div>
+                                 <div class="testimonial-content">
+                                     <p class="testimonial-text">"Amei a sessão com Luciana, profissional muito competente, sai outra pessoa., conseguindo enxergar soluções onde só haviam problemas. Muito empática e atenciosa, excelente profissional."</p>
+                                     <div class="testimonial-author">
+                                         <h4 class="testimonial-name">Adriana</h4>
+                                         <p class="testimonial-role">26 de julho de 2025</p>
+                                     </div>
+                                 </div>
+                             </div>
                         </div>
-                        <!-- Depoimento 10 -->
-                        <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="flex flex-col md:flex-row gap-6 items-center">
-                                    <div class="testimonial-avatar flex-shrink-0 flex items-center justify-center"
-                                        style="width:200px; height:200px;">
-                                        <img src="./imagens/logo - padrão.png" alt="Foto de Maressa"
-                                            class="w-full h-full rounded-full object-cover shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105"
-                                            loading="lazy">
-                                    </div>
-
-                                    <div class="flex-1 text-center md:text-left">
-                                        <div class="flex justify-center md:justify-start mb-4"
-                                            style="color: var(--terracota)">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <p class="text-gray-600 mb-4 leading-relaxed italic">
-                                            "Estava procurando uma terapeuta de casais e Luciana, com muita sabedoria me
-                                            direcionou para detalhes essências, tanto para a vida pessoal quanto
-                                            conjugal. Recomendo demais!"
-                                        </p>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800">Maila</h4>
-                                            <p class="text-sm text-gray-500">10 de julho de 2025</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          <div class="testimonial-slide">
+                             <div class="testimonial-card">
+                                 <div class="testimonial-avatar">
+                                     <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
+                                 </div>
+                                 <div class="testimonial-content">
+                                     <p class="testimonial-text">"Estava procurando uma terapeuta de casais e Luciana, com muita sabedoria me direcionou para detalhes essências, tanto para a vida pessoal quanto conjugal. Recomendo demais!"</p>
+                                     <div class="testimonial-author">
+                                         <h4 class="testimonial-name">Maila</h4>
+                                         <p class="testimonial-role">10 de agosto de 2025</p>
+                                     </div>
+                                 </div>
+                             </div>
                         </div>
-
-
-                    </div>
-
-                    <!-- Botões de navegação reposicionados para não cobrir as imagens -->
+                        </div>
                     <button class="carousel-nav-btn prev" id="prevBtn" aria-label="Depoimento anterior">
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <button class="carousel-nav-btn next" id="nextBtn" aria-label="Próximo depoimento">
                         <i class="fas fa-chevron-right"></i>
                     </button>
+                </div>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
 
-                    <!-- Indicadores -->
-                    <div class="carousel-indicators" id="carouselIndicators">
-                        <div class="carousel-dot active" data-slide="0" aria-label="Ir para depoimento 1"></div>
-                        <div class="carousel-dot" data-slide="1" aria-label="Ir para depoimento 2"></div>
-                        <div class="carousel-dot" data-slide="2" aria-label="Ir para depoimento 3"></div>
-                        <div class="carousel-dot" data-slide="3" aria-label="Ir para depoimento 4"></div>
-                        <div class="carousel-dot" data-slide="4" aria-label="Ir para depoimento 5"></div>
-                        <div class="carousel-dot" data-slide="5" aria-label="Ir para depoimento 6"></div>
-                        <div class="carousel-dot" data-slide="6" aria-label="Ir para depoimento 7"></div>
-                        <div class="carousel-dot" data-slide="7" aria-label="Ir para depoimento 8"></div>
-                        <div class="carousel-dot" data-slide="8" aria-label="Ir para depoimento 9"></div>
-                        <div class="carousel-dot" data-slide="9" aria-label="Ir para depoimento 10"></div>
-
-                    </div>
+                <div class="mt-16 text-center">
+                    <a href="#contato" class="btn-primary text-lg">
+                        <i class="fas fa-calendar-plus"></i>
+                        Agende sua sessão
+                    </a>
                 </div>
             </div>
         </div>
-
-        <div class="mt-10 text-center">
-            <a href="#contato" class="btn-primary text-lg">
-                <i class="fas fa-calendar-plus"></i>
-                Agende sua sessão
-            </a>
-        </div>
     </section>
 
-    <!-- Modal para Depoimentos - SIMPLIFICADO E CONSISTENTE -->
     <div id="testimonial-modal" class="testimonial-modal">
         <div class="testimonial-modal-content">
             <img id="testimonial-modal-image" src="/placeholder.svg" alt="Depoimento ampliado">
@@ -3053,8 +2747,8 @@
                         Edifício Empresarial Premium Office
                     </div>
                 </div>
-                <div class="carousel-container fade-in mb-32">
-                    <div class="carousel-track" id="carousel-track">
+                <div class="carousel-container fade-in mb-16">
+                    <div class="carousel-track" id="office-carousel-track">
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
                                 <img src="./imagens/Consultorio1.jpeg" alt="Sala de espera aconchegante">
@@ -3062,7 +2756,7 @@
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Sala de Espera</h3>
                                 <p class="text-base">Um ambiente acolhedor e tranquilo para você se preparar para nossa
-                                    sessão, com decoração cuidadosa que promove relaxamento e bem-estar.</p>
+                                    sessão.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
@@ -3071,8 +2765,8 @@
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Consultório Principal</h3>
-                                <p class="text-base">Espaço privativo e confortável, projetado para facilitar o diálogo
-                                    profundo e a reflexão, com iluminação natural e ambiente acolhedor.</p>
+                                <p class="text-base">Espaço privativo e confortável, projetado para facilitar o diálogo.
+                                </p>
                             </div>
                         </div>
                         <div class="carousel-slide">
@@ -3080,95 +2774,71 @@
                                 <img src="./imagens/Consultorio3.jpeg" alt="Área de relaxamento">
                             </div>
                             <div class="carousel-overlay">
-                                <h3 class="text-2xl font-serif font-semibold mb-3">Área de Relaxamento</h3>
-                                <p class="text-base">No coração dos Jardins, com fácil acesso, estacionamento disponível
-                                    e proximidade ao transporte público.</p>
+                                <h3 class="text-2xl font-serif font-semibold mb-3">Ambiente Acolhedor</h3>
+                                <p class="text-base">Com fácil acesso e estacionamento disponível.</p>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-nav prev" id="prev-btn">
+                    <button class="carousel-nav prev" id="office-prev-btn">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button class="carousel-nav next" id="next-btn">
+                    <button class="carousel-nav next" id="office-next-btn">
                         <i class="fas fa-chevron-right"></i>
                     </button>
-                    <div class="carousel-indicators" id="carousel-indicators">
-                        <div class="carousel-dot active" data-slide="0"></div>
-                        <div class="carousel-dot" data-slide="1"></div>
-                        <div class="carousel-dot" data-slide="2"></div>
-                    </div>
+                    <div class="carousel-indicators" id="office-carousel-indicators"></div>
                 </div>
             </div>
         </div>
-
-
     </section>
 
-
     <section id="entrevistas"
-        class="py-24 bg-gradient-to-br from-rosa-claro-light to-rosa-claro relative overflow-hidden">
-        <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+        class="py-24 bg-gradient-to-br from-off-white via-rosa-claro-light to-rosa-claro relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh-gradient opacity-30"></div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-6xl mx-auto">
-                <!-- Título da Seção -->
                 <div class="text-center mb-16 fade-in">
                     <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
-                        Seção de <span class="gradient-text">Entrevistas</span>
+                        Entrevistas e <span class="gradient-text">Bate-papos</span>
                     </h2>
                     <div
                         class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
                     </div>
                     <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
-                        Momentos de partilha e inspiração com profissionais e convidados especiais
+                        Compartilhando insights e reflexões sobre saúde emocional e relacionamentos.
                     </p>
                 </div>
-
-                <!-- Entrevista -->
                 <div class="entrevista-wrapper fade-in">
-                    <!-- Vídeo -->
                     <div class="video-container">
-                        <iframe class="video-player" src="https://www.youtube.com/embed/Id8wWNQ-614" title="Entrevista"
-                            frameborder="0"
+                        <iframe class="video-player" src="https://www.youtube.com/embed/Id8wWNQ-614"
+                            title="Entrevista Luciana Magalhães"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
                     </div>
-
-                    <!-- Conteúdo lateral -->
-                    <div class="entrevista-conteudo text-center lg:text-left">
-                        <h3 class="text-2xl font-serif font-semibold text-cinza-escuro mb-4">
-                            Entrevista Exclusiva
+                    <div class="entrevista-conteudo text-center lg:text-left mt-8 lg:mt-0">
+                        <h3 class="text-3xl lg:text-4xl font-serif font-bold text-cinza-escuro mb-4">
+                            Conversas que Curam
                         </h3>
-                        <p class="text-lg text-cinza-medio leading-relaxed mb-6">
-                            Nesta entrevista especial, exploramos temas essenciais para o crescimento pessoal e
-                            profissional. Uma conversa profunda, que abre espaço para novas perspectivas e reflexões
-                            valiosas.
+                        <p class="text-lg text-cinza-medio leading-relaxed mb-8 font-sans">
+                            Nesta entrevista especial, mergulhamos em temas essenciais para o crescimento pessoal e a
+                            saúde dos relacionamentos. Uma conversa que abre espaço para novas perspectivas e
+                            reflexões valiosas sobre como viver de forma mais consciente e conectada.
                         </p>
-                        <div class="flex justify-center lg:justify-start">
-                            <a href="#contato" class="btn-primary text-lg inline-flex items-center gap-2">
-                                <i class="fas fa-calendar-plus"></i>
-                                Agende sua sessão
-                            </a>
-                        </div>
+                        <a href="#contato" class="btn-primary text-lg inline-block">
+                            <i class="fas fa-calendar-check mr-2"></i>
+                            Agende sua Sessão
+                        </a>
                     </div>
-                </div>
-
-                <!-- Futuras entrevistas -->
-                <div class="mt-12 text-center text-cinza-medio text-lg">
-                    Em breve, novas entrevistas estarão disponíveis.
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Localização e Contato -->
     <section id="contato" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center mb-16 fade-in">
-                    <!-- Melhorando responsividade do título -->
                     <h2
                         class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold gradient-text mb-6 enhanced-heading">
                         Vamos Conversar?
@@ -3176,23 +2846,16 @@
                     <div
                         class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
                     </div>
-                    <!-- Melhorando responsividade do subtítulo -->
                     <p class="text-lg sm:text-xl text-cinza-medio font-light px-4">
                         Entre em contato e dê o primeiro passo para seu bem-estar
                     </p>
                 </div>
-                <!-- Melhorando responsividade do grid com breakpoints mais granulares -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
                     <div class="slide-in-left">
                         <div class="card">
-                            <!-- Melhorando responsividade do título da seção -->
                             <h3 class="text-xl sm:text-2xl font-serif font-bold gradient-text mb-6 sm:mb-8">Informações
                                 de Contato</h3>
                             <div class="space-y-6">
-                                <div class="flex items-start gap-4 sm:gap-5">
-                                    <!-- Ajustando tamanho dos ícones para mobile -->
-
-                                </div>
                                 <div class="flex items-start gap-4 sm:gap-5">
                                     <div
                                         class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center flex-shrink-0 animate-pulse-soft">
@@ -3201,19 +2864,13 @@
                                     <div class="min-w-0 flex-1">
                                         <h4 class="font-semibold text-cinza-escuro mb-1 text-base sm:text-lg">E-mail
                                         </h4>
-                                        <!-- Melhorando quebra de linha do email -->
                                         <p class="text-cinza-medio text-sm sm:text-base break-all sm:break-normal">
                                             contato@lucianamagalhaes.com.br</p>
                                         <p class="text-xs sm:text-sm text-cinza-medio">Resposta em até 24 horas</p>
                                     </div>
                                 </div>
-                                <div class="flex items-start gap-4 sm:gap-5">
-
-
-                                </div>
                             </div>
-                            <!-- Melhorando responsividade da seção de agendamento -->
-                            <div class="mt-8 sm:mt-10 pt-6 border-t border-cinza-claro">
+                            <div class="mt-8 sm:mt-10 pt-6 border-t border-gray-100">
                                 <h4 class="font-semibold text-cinza-escuro mb-4 sm:mb-5 text-base sm:text-lg">Agende
                                     Agora</h4>
                                 <div class="flex flex-col gap-4">
@@ -3228,23 +2885,16 @@
                     </div>
                     <div class="slide-in-right">
                         <div class="card">
-                            <!-- Melhorando responsividade do título da localização -->
                             <h3 class="text-xl sm:text-2xl font-serif font-bold gradient-text mb-6 sm:mb-8">Localização
                             </h3>
-                            <!-- Ajustando altura do mapa para diferentes telas -->
-                            <div class="h-64 sm:h-80 rounded-3xl relative overflow-hidden mb-6">
+                            <div class="h-64 sm:h-80 rounded-3xl relative overflow-hidden mb-6 shadow-lg">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.425438196246!2d-35.71164640000001!3d-9.6446413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7014509fa5f240f%3A0x70d87744e9ddea4e!2sEmpresarial%20Premium%20Office!5e0!3m2!1spt-BR!2sbr!4v1752776633321!5m2!1spt-BR!2sbr"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.399580438135!2d-37.04938918881775!3d-10.933887019253412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab3d36894b469%3A0x1d384f23b248a473!2sPremium%20Office!5e0!3m2!1spt-BR!2sbr!4v1727756195705!5m2!1spt-BR!2sbr"
                                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                <div
-                                    class="absolute left-1/2 top-8 z-10 -translate-x-1/2 flex flex-col items-center pointer-events-none">
-                                    <div class="bg-white rounded-full shadow-lg p-3 mb-2 animate-pulse-soft">
-                                    </div>
-                                </div>
                             </div>
                             <p class="text-cinza-medio text-center text-base">
-                                Estamos ansiosos para recebê-lo em nosso consultório acolhedor!
+                                Av. Hermes Fontes, 1155 - Suissa, Aracaju - SE, 49052-000
                             </p>
                         </div>
                     </div>
@@ -3253,7 +2903,6 @@
         </div>
     </section>
 
-    <!-- Footer with Wave -->
     <footer class="wave-footer py-14 relative">
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-5xl mx-auto">
@@ -3301,577 +2950,196 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-lg font-semibold text-off-white mb-5">Rede Social</h4>
+                        <h4 class="text-lg font-semibold text-off-white mb-5">Redes Sociais</h4>
                         <div class="flex space-x-3">
                             <a href="https://www.instagram.com/psicologa.lucianamagalhaes/"
                                 class="w-10 h-10 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white transition-transform duration-300 hover:scale-110"
-                                target="_blank" rel="noopener">
-                                <i class="fab fa-instagram text-xl mx-auto"></i>
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram text-xl"></i>
                             </a>
                             <a href="https://www.facebook.com/psicologa.lucianamagalhaes/"
                                 class="w-10 h-10 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white transition-transform duration-300 hover:scale-110"
-                                target="_blank" rel="noopener">
-                                <i class="fab fa-facebook-f text-xl mx-auto"></i>
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f text-xl"></i>
                             </a>
                             <a href="https://www.linkedin.com/in/luciana-magalhaes-psicologa/"
                                 class="w-10 h-10 bg-gradient-to-br from-terracota to-terracota-light rounded-full flex items-center justify-center text-white transition-transform duration-300 hover:scale-110"
-                                target="_blank" rel="noopener">
-                                <i class="fab fa-linkedin-in text-xl mx-auto"></i>
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin-in text-xl"></i>
                             </a>
                         </div>
-                    </div>
-                    <div class="mt-1">
-                        <h5 class="text-base font-semibold text-off-white mb-3">Contato</h5>
-                        <p class="text-gray-300 text-sm">contato@lucianamagalhaes.com.br</p>
+                        <div class="mt-4">
+                            <h5 class="text-base font-semibold text-off-white mb-2">Contato</h5>
+                            <p class="text-gray-300 text-sm">contato@lucianamagalhaes.com.br</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-600 pt-7">
-                <div class="flex flex-col md:flex-row justify-center items-center">
-                    <p class="text-gray-300 text-sm text-center">
-                        &copy; 2025 Luciana Magalhães - Todos os direitos reservados.
-                    </p>
-                </div>
+                <p class="text-gray-300 text-sm text-center">
+                    © 2025 Luciana Magalhães - Todos os direitos reservados.
+                </p>
             </div>
-
-        </div>
         </div>
     </footer>
 
     <script>
-
-
         // Enhanced Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+            let isMenuOpen = false;
 
-        // Estado do menu
-        let isMenuOpen = false;
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                document.body.classList.toggle('mobile-menu-open', isMenuOpen);
+                mobileMenu.classList.toggle('active', isMenuOpen);
+                mobileMenuOverlay.classList.toggle('active', isMenuOpen);
+                document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+            };
 
-        function openMobileMenu() {
-            if (isMenuOpen) return; // Prevenir múltiplas ativações
-            isMenuOpen = true;
-            document.body.classList.add('mobile-menu-open');
-            mobileMenu.classList.add('active');
-            mobileMenuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-
-            // Prevenir scroll e gestos indesejados
-            document.addEventListener('touchmove', preventScroll, { passive: false });
-            document.addEventListener('wheel', preventScroll, { passive: false });
-        }
-
-        function closeMobileMenu() {
-            if (!isMenuOpen) return; // Prevenir múltiplas desativações
-            isMenuOpen = false;
-            document.body.classList.remove('mobile-menu-open');
-            mobileMenu.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-
-            // Remover prevenção de scroll
-            document.removeEventListener('touchmove', preventScroll);
-            document.removeEventListener('wheel', preventScroll);
-        }
-
-        // Função para prevenir scroll quando menu está aberto
-        function preventScroll(e) {
-            if (isMenuOpen) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-            }
-        }
-
-        // Event listeners
-        mobileMenuBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            if (isMenuOpen) {
-                closeMobileMenu();
-            } else {
-                openMobileMenu();
-            }
-        });
-
-        mobileMenuClose.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            closeMobileMenu();
-        });
-
-        mobileMenuOverlay.addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeMobileMenu();
-            }
-        });
-
-        // Close menu when clicking on menu items
-        mobileMenuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                setTimeout(closeMobileMenu, 300); // Small delay for smooth transition
-            });
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && isMenuOpen) {
-                closeMobileMenu();
-            }
-        });
-
-        // PREVENÇÃO CONTRA GESTOS DE SWIPE INDESEJADOS
-        let startX = 0;
-        let startY = 0;
-
-        // Prevenir gestos de swipe que possam interferir com o menu
-        document.addEventListener('touchstart', function (e) {
-            if (!isMenuOpen) {
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-            }
-        }, { passive: true });
-
-        document.addEventListener('touchmove', function (e) {
-            if (!isMenuOpen) {
-                const currentX = e.touches[0].clientX;
-                const currentY = e.touches[0].clientY;
-                const diffX = startX - currentX;
-                const diffY = startY - currentY;
-
-                // Se for um swipe horizontal da direita para esquerda próximo à borda
-                if (Math.abs(diffX) > Math.abs(diffY) && diffX > 50 && startX > window.innerWidth - 50) {
-                    e.preventDefault();
-                }
-            }
-        }, { passive: false });
-
-        // Garantir que o menu esteja sempre fechado no carregamento da página
-        document.addEventListener('DOMContentLoaded', function () {
-            closeMobileMenu();
-        });
-
-        // Fechar menu ao redimensionar a tela
-        window.addEventListener('resize', function () {
-            if (window.innerWidth >= 1024 && isMenuOpen) {
-                closeMobileMenu();
-            }
-        });
-
-        // Testimonial Modal Functions
-        function openTestimonialModal(imageSrc) {
-            const modal = document.getElementById('testimonial-modal');
-            const modalImage = document.getElementById('testimonial-modal-image');
-            modalImage.src = imageSrc;
-            modal.classList.remove('opacity-0', 'invisible');
-            modal.classList.add('opacity-100', 'visible');
-            modal.querySelector('.relative').classList.remove('scale-90');
-            modal.querySelector('.relative').classList.add('scale-100');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeTestimonialModal() {
-            const modal = document.getElementById('testimonial-modal');
-            modal.classList.add('opacity-0', 'invisible');
-            modal.classList.remove('opacity-100', 'visible');
-            modal.querySelector('.relative').classList.add('scale-90');
-            modal.querySelector('.relative').classList.remove('scale-100');
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('testimonial-modal').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeTestimonialModal();
-            }
-        });
-
-        // Close modal on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeTestimonialModal();
-            }
-        });
-
-        // Enhanced Carousel Functionality
-        const carouselTrack = document.getElementById('carousel-track');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const carouselIndicators = document.getElementById('carousel-indicators');
-        const slides = Array.from(carouselTrack.children);
-        let currentSlide = 0;
-        let isTransitioning = false;
-
-        function updateCarousel() {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            const slideWidth = slides[0].offsetWidth;
-            carouselTrack.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
-
-            const dots = Array.from(carouselIndicators.children);
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            mobileMenuClose.addEventListener('click', toggleMenu);
+            mobileMenuOverlay.addEventListener('click', toggleMenu);
+            mobileMenuItems.forEach(item => item.addEventListener('click', () => {
+                if (isMenuOpen) setTimeout(toggleMenu, 300);
+            }));
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isMenuOpen) toggleMenu();
             });
 
-            setTimeout(() => {
-                isTransitioning = false;
-            }, 800);
-        }
+            // General Carousel Handler
+            const createCarousel = (carouselId) => {
+                const track = document.querySelector(`#${carouselId} .carousel-track`);
+                if (!track) return;
+                const slides = Array.from(track.children);
+                const nextButton = document.querySelector(`#${carouselId} .next`);
+                const prevButton = document.querySelector(`#${carouselId} .prev`);
+                const indicatorsContainer = document.querySelector(`#${carouselId} .carousel-indicators`);
+                if (slides.length === 0) return;
 
-        function moveToSlide(slideIndex) {
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
-            } else if (slideIndex < 0) {
-                slideIndex = slides.length - 1;
-            }
-            currentSlide = slideIndex;
-            updateCarousel();
-        }
+                let currentIndex = 0;
+                const slideWidth = slides[0].getBoundingClientRect().width;
 
-        prevBtn.addEventListener('click', () => {
-            moveToSlide(currentSlide - 1);
-        });
+                const moveToSlide = (index) => {
+                    track.style.transform = `translateX(-${slideWidth * index}px)`;
+                    currentIndex = index;
+                    updateIndicators();
+                };
 
-        nextBtn.addEventListener('click', () => {
-            moveToSlide(currentSlide + 1);
-        });
-
-        carouselIndicators.addEventListener('click', (e) => {
-            if (e.target.classList.contains('carousel-dot')) {
-                const slide = parseInt(e.target.dataset.slide);
-                moveToSlide(slide);
-            }
-        });
-
-        // Enhanced Intersection Observer for Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -100px 0px"
-        };
-
-        const appearOnScroll = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    const siblings = Array.from(entry.target.parentNode.children);
-                    const index = siblings.indexOf(entry.target);
-                    entry.target.style.animationDelay = `${index * 0.1}s`;
-
-                    const textReveals = entry.target.querySelectorAll('.text-reveal');
-                    textReveals.forEach((element, i) => {
-                        setTimeout(() => {
-                            element.style.opacity = '1';
-                            element.style.animation = 'textReveal 1.5s ease-out forwards';
-                        }, i * 200);
+                const updateIndicators = () => {
+                    indicatorsContainer.childNodes.forEach((dot, index) => {
+                         dot.classList.toggle('active', index === currentIndex);
                     });
+                };
+                
+                slides.forEach((_, index) => {
+                    const button = document.createElement('button');
+                    button.classList.add('carousel-dot');
+                    if (index === 0) button.classList.add('active');
+                    button.addEventListener('click', () => moveToSlide(index));
+                    indicatorsContainer.appendChild(button);
+                });
 
-                    const words = entry.target.querySelectorAll('.word-animate');
-                    words.forEach((word, i) => {
-                        setTimeout(() => {
-                            word.style.animation = `wordSlide 0.8s ease-out ${i * 0.1}s forwards`;
-                        }, 100);
-                    });
-                }
-            });
-        }, observerOptions);
+                nextButton.addEventListener('click', () => moveToSlide((currentIndex + 1) % slides.length));
+                prevButton.addEventListener('click', () => moveToSlide((currentIndex - 1 + slides.length) % slides.length));
+                
+                window.addEventListener('resize', () => {
+                    const newSlideWidth = slides[0].getBoundingClientRect().width;
+                    moveToSlide(currentIndex);
+                });
+            };
 
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-            appearOnScroll.observe(el);
-        });
+            createCarousel('office-carousel');
 
-        // Parallax Effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.parallax');
-            parallaxElements.forEach(element => {
-                const speed = element.dataset.speed || 0.5;
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
+            // Testimonials Carousel
+            const testimonialsTrack = document.getElementById('testimonialsTrack');
+            const testimonialsSlides = Array.from(testimonialsTrack.children);
+            const testimonialsPrevBtn = document.getElementById('prevBtn');
+            const testimonialsNextBtn = document.getElementById('nextBtn');
+            const testimonialsIndicatorsContainer = document.getElementById('carouselIndicators');
+            let testimonialsCurrentIndex = 0;
 
-        // Enhanced Header Behavior
-        const header = document.getElementById('header');
-        let lastScrollTop = 0;
-        let ticking = false;
+            const setupTestimonials = () => {
+                const slideWidth = testimonialsTrack.parentElement.offsetWidth;
+                testimonialsSlides.forEach(slide => slide.style.minWidth = `${slideWidth}px`);
+                testimonialsTrack.style.width = `${slideWidth * testimonialsSlides.length}px`;
 
-        function updateHeader() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > 100) {
-                header.classList.add('shadow-strong');
-            } else {
-                header.classList.remove('shadow-strong');
-            }
+                // Create indicators
+                testimonialsIndicatorsContainer.innerHTML = '';
+                testimonialsSlides.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('carousel-dot');
+                    dot.addEventListener('click', () => moveTestimonialsTo(index));
+                    testimonialsIndicatorsContainer.appendChild(dot);
+                });
+                updateTestimonialsUI();
+            };
 
-            if (scrollTop > lastScrollTop && scrollTop > 200) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
-            }
+            const moveTestimonialsTo = (index) => {
+                const slideWidth = testimonialsTrack.parentElement.offsetWidth;
+                testimonialsTrack.style.transform = `translateX(-${index * slideWidth}px)`;
+                testimonialsCurrentIndex = index;
+                updateTestimonialsUI();
+            };
 
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-            ticking = false;
-        }
+            const updateTestimonialsUI = () => {
+                Array.from(testimonialsIndicatorsContainer.children).forEach((dot, index) => {
+                    dot.classList.toggle('active', index === testimonialsCurrentIndex);
+                });
+            };
 
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateHeader);
-                ticking = true;
-            }
-        });
+            testimonialsNextBtn.addEventListener('click', () => moveTestimonialsTo((testimonialsCurrentIndex + 1) % testimonialsSlides.length));
+            testimonialsPrevBtn.addEventListener('click', () => moveTestimonialsTo((testimonialsCurrentIndex - 1 + testimonialsSlides.length) % testimonialsSlides.length));
+            
+            window.addEventListener('resize', setupTestimonials);
+            setupTestimonials();
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerHeight = header.offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight - 20;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    closeMobileMenu();
-                }
-            });
-        });
 
-        // Initialize carousel
-        updateCarousel();
-
-        // Text animation on scroll
-        function animateTextOnScroll() {
-            const textContainers = document.querySelectorAll('.text-container');
-            textContainers.forEach(container => {
-                const rect = container.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-                if (isVisible && !container.classList.contains('animated')) {
-                    container.classList.add('animated');
-                    const paragraphs = container.querySelectorAll('.luxury-paragraph');
-                    paragraphs.forEach((p, index) => {
-                        setTimeout(() => {
-                            p.style.opacity = '1';
-                            p.style.transform = 'translateY(0)';
-                        }, index * 300);
-                    });
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateTextOnScroll);
-        window.addEventListener('load', animateTextOnScroll);
-
-        // DEPOIMENTOS - Carrossel (SEM AUTOPLAY)
-        document.addEventListener("DOMContentLoaded", () => {
-            const carousel = document.getElementById("testimonialsCarousel")
-            const track = document.getElementById("testimonialsTrack")
-            const slides = Array.from(track.querySelectorAll(".testimonial-slide"))
-            const prevBtn = document.getElementById("prevBtn")
-            const nextBtn = document.getElementById("nextBtn")
-            const indicators = Array.from(document.querySelectorAll("#carouselIndicators .carousel-dot"))
-
-            if (!carousel || !track || slides.length === 0) return
-
-            let currentIndex = 0
-            let slideWidth = 0
-            let isTransitioning = false
-            let isTouching = false
-            let touchStartTime = 0
-
-            const TRANSITION_TIME = 800 // ms
-            const TRANSITION_CSS = `transform ${TRANSITION_TIME / 1000}s cubic-bezier(0.25,0.46,0.45,0.94)`
-
-            function setSizes() {
-                slideWidth = carousel.offsetWidth
-                track.style.width = `${slideWidth * slides.length}px`
-                slides.forEach((slide) => {
-                    slide.style.width = `${slideWidth}px`
-                })
-                moveTo(currentIndex, false)
-            }
-
-            function updateIndicators(index) {
-                indicators.forEach((dot, i) => dot.classList.toggle("active", i === index))
-            }
-
-            function moveTo(index, animate = true) {
-                if (isTransitioning) return
-                index = (index + slides.length) % slides.length
-                isTransitioning = true
-
-                track.style.transition = animate ? TRANSITION_CSS : "none"
-                track.style.transform = `translateX(-${index * slideWidth}px)`
-
-                updateIndicators(index)
-                currentIndex = index
-
-                if (!animate) {
-                    requestAnimationFrame(() => {
-                        requestAnimationFrame(() => {
-                            track.style.transition = TRANSITION_CSS
-                            isTransitioning = false
-                        })
-                    })
-                    return
-                }
-
-                const onEnd = () => {
-                    isTransitioning = false
-                    track.removeEventListener("transitionend", onEnd)
-                }
-                track.addEventListener("transitionend", onEnd)
-
-                setTimeout(() => {
-                    if (isTransitioning) {
-                        isTransitioning = false
-                        track.removeEventListener("transitionend", onEnd)
+            // Intersection Observer for Animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
-                }, TRANSITION_TIME + 100)
-            }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-            function addButtonListeners() {
-                // Prevent default touch behavior on buttons
-                ;[prevBtn, nextBtn].forEach((btn) => {
-                    if (!btn) return
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => observer.observe(el));
 
-                    // Add touch-action CSS property
-                    btn.style.touchAction = "manipulation"
-                    btn.style.userSelect = "none"
+            // Header Scroll Behavior
+            const header = document.getElementById('header');
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                header.classList.toggle('shadow-strong', scrollTop > 50);
+                header.style.transform = (scrollTop > lastScrollTop && scrollTop > 200) ? 'translateY(-100%)' : 'translateY(0)';
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
 
-                    // Handle both click and touch events
-                    btn.addEventListener("click", (e) => {
-                        e.preventDefault()
-                        e.stopPropagation()
+              // Smooth scrolling
+                  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                      anchor.addEventListener('click', function (e) {
+                          e.preventDefault();
+                          const targetId = this.getAttribute('href');
+                          const targetElement = document.querySelector(targetId);
+                          if(targetElement) {
+                              const headerOffset = document.getElementById('header').offsetHeight;
+                              const elementPosition = targetElement.getBoundingClientRect().top;
+                              const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20;
 
-                        // Don't trigger if we're in the middle of a swipe
-                        if (isTouching || isTransitioning) return
-
-                        const direction = btn === prevBtn ? -1 : 1
-                        moveTo(currentIndex + direction)
-                    })
-
-                    // Add touch events for better mobile responsiveness
-                    btn.addEventListener(
-                        "touchstart",
-                        (e) => {
-                            e.stopPropagation()
-                            btn.style.opacity = "0.7"
-                        },
-                        { passive: false },
-                    )
-
-                    btn.addEventListener(
-                        "touchend",
-                        (e) => {
-                            e.preventDefault()
-                            e.stopPropagation()
-                            btn.style.opacity = "1"
-
-                            // Don't trigger if we're swiping
-                            if (isTouching) return
-
-                            const direction = btn === prevBtn ? -1 : 1
-                            moveTo(currentIndex + direction)
-                        },
-                        { passive: false },
-                    )
-                })
-            }
-
-            function addIndicatorListeners() {
-                indicators.forEach((dot) => {
-                    dot.style.touchAction = "manipulation"
-                    dot.style.userSelect = "none"
-
-                    dot.addEventListener("click", (e) => {
-                        e.preventDefault()
-                        e.stopPropagation()
-                        if (isTouching || isTransitioning) return
-                        moveTo(Number.parseInt(dot.dataset.slide, 10))
-                    })
-
-                    dot.addEventListener(
-                        "touchend",
-                        (e) => {
-                            e.preventDefault()
-                            e.stopPropagation()
-                            if (isTouching) return
-                            moveTo(Number.parseInt(dot.dataset.slide, 10))
-                        },
-                        { passive: false },
-                    )
-                })
-            }
-
-            let startX = 0,
-                deltaX = 0
-
-            carousel.addEventListener(
-                "touchstart",
-                (e) => {
-                    // Check if touch started on a button or indicator
-                    const target = e.target.closest("button, .carousel-dot")
-                    if (target) {
-                        isTouching = false
-                        return
-                    }
-
-                    isTouching = true
-                    touchStartTime = Date.now()
-                    startX = e.touches[0].clientX
-                    deltaX = 0
-                    track.style.transition = "none"
-                },
-                { passive: true },
-            )
-
-            carousel.addEventListener(
-                "touchmove",
-                (e) => {
-                    if (!isTouching || e.touches.length > 1) return
-
-                    deltaX = e.touches[0].clientX - startX
-
-                    // Only start moving if we've moved more than 10px (prevents accidental swipes)
-                    if (Math.abs(deltaX) > 10) {
-                        track.style.transform = `translateX(${-currentIndex * slideWidth + deltaX}px)`
-                    }
-                },
-                { passive: true },
-            )
-
-            carousel.addEventListener("touchend", (e) => {
-                if (!isTouching) return
-
-                const touchDuration = Date.now() - touchStartTime
-                isTouching = false
-
-                track.style.transition = TRANSITION_CSS
-
-                // Only swipe if touch was long enough and moved far enough
-                if (touchDuration > 100 && Math.abs(deltaX) > 50) {
-                    deltaX < 0 ? moveTo(currentIndex + 1) : moveTo(currentIndex - 1)
-                } else {
-                    moveTo(currentIndex)
-                }
-            })
-
-            addButtonListeners()
-            addIndicatorListeners()
-
-            // Resize com debounce
-            let resizeTimer
-            window.addEventListener("resize", () => {
-                clearTimeout(resizeTimer)
-                resizeTimer = setTimeout(setSizes, 120)
-            })
-
-            setSizes()
-            updateIndicators(currentIndex)
-        })
-
+                              window.scrollTo({
+                                  top: offsetPosition,
+                                  behavior: "smooth"
+                              });
+                          }
+                      });
+                  });
+        });
     </script>
 </body>
 
