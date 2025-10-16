@@ -79,6 +79,10 @@
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23D98C6A'/%3E%3Cpath d='M32 12v40M20 24c0 8 4 16 12 16s12-8 12-16' stroke='%23fff' stroke-width='3' fill='none'/%3E%3Cpath d='M24 20a8 8 0 1 1 16 0' stroke='%23fff' stroke-width='3' fill='none'/%3E%3C/svg%3E">
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         /* Advanced Animations */
         @keyframes fadeIn {
             from {
@@ -1415,6 +1419,27 @@
             box-shadow: 0 12px 35px rgba(217, 140, 106, 0.6);
         }
 
+        .testimonials-carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            /* cada slide ocupa 100% do container */
+            display: flex;
+            justify-content: center;
+            padding: 0 10px;
+            /* espaçamento interno */
+        }
+
+
         /* ===== MELHORIAS PARA SEÇÃO "NO QUE EU ACREDITO" ===== */
 
         /* Container de imagem melhorado - responsivo */
@@ -1681,7 +1706,6 @@
         }
 
 
-        
 
         /* Fade animations */
         .fade-in {
@@ -1796,7 +1820,6 @@
             width: 100%;
             max-width: 1000px;
             margin: 0 auto;
-            overflow: hidden;
             position: relative;
         }
 
@@ -1809,7 +1832,6 @@
         .testimonial-slide {
             flex-shrink: 0;
             width: 100%;
-            box-sizing: border-box;
             padding: 1rem;
             display: flex;
             justify-content: center;
@@ -1920,25 +1942,23 @@
             box-shadow: 0 12px 35px rgba(217, 140, 106, 0.4);
         }
 
-        .carousel-nav-btn.prev {
-            left: 8px;
-            /* mais para dentro */
+        #testimonialsCarousel .carousel-nav-btn.prev {
+            left: -20px;
         }
 
-        .carousel-nav-btn.next {
-            right: 8px;
-            /* mais para dentro */
+        #testimonialsCarousel .carousel-nav-btn.next {
+            right: -20px;
         }
-
+        
         /* Indicadores */
-        .carousel-indicators {
+        #testimonialsCarousel .carousel-indicators {
             display: flex;
             justify-content: center;
             gap: 12px;
             margin-top: 30px;
         }
 
-        .carousel-dot {
+        #testimonialsCarousel .carousel-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
@@ -1947,7 +1967,7 @@
             transition: all 0.3s ease;
         }
 
-        .carousel-dot.active {
+        #testimonialsCarousel .carousel-dot.active {
             background: var(--terracota);
             transform: scale(1.2);
         }
@@ -1995,8 +2015,8 @@
                 font-size: 0.85rem;
             }
 
-            .carousel-indicators {
-                margin-top: 60px;
+            #testimonialsCarousel .carousel-indicators {
+                margin-top: 20px;
                 padding-bottom: 20px;
             }
 
@@ -2005,15 +2025,12 @@
                 height: 42px;
                 font-size: 14px;
             }
-
-            .carousel-nav-btn.prev {
-                left: 6px;
-                /* mais para dentro */
+             #testimonialsCarousel .carousel-nav-btn.prev {
+                left: 0px;
             }
 
-            .carousel-nav-btn.next {
-                right: 6px;
-                /* mais para dentro */
+            #testimonialsCarousel .carousel-nav-btn.next {
+                right: 0px;
             }
         }
 
@@ -2028,11 +2045,6 @@
                 width: 40px;
                 height: 40px;
                 font-size: 13px;
-            }
-
-            .carousel-nav-btn.prev {
-                left: 5px;
-                /* mais para dentro */
             }
         }
 
@@ -2294,7 +2306,7 @@
                             <div class="my-8 flex justify-center">
                                 <img src="./imagens/cubo.jpg" alt="Trabalho voluntário e escuta atenta"
                                      class="w-full max-w-3xl h-auto rounded-2xl object-contain shadow-dreamy">
-                           </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2557,159 +2569,105 @@
                 </p>
             </div>
             
-            <!-- Carrossel de Depoimentos Corrigido -->
-            <div class="testimonials-carousel fade-in" id="testimonialsCarousel">
-                <div class="testimonials-track" id="testimonialsTrack">
-                    <!-- Depoimentos ordenados do mais longo para o mais curto -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"A Luciana com muita sabedoria e gentileza me ouviu por mais de uma hora, nesse momento de total desespero e dificuldade de vida.. me ajudou a compreender melhor minhas atitudes e trabalhou questões que precisam de atenção. Muito feliz mesmo em ter a encontrado. Só tenho gratidão."</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Marina</h4>
-                                    <p class="testimonial-role">12 de julho de 2025</p>
+            <div id="testimonialsCarousel" class="fade-in relative max-w-4xl mx-auto" data-carousel>
+                <div class="overflow-hidden">
+                    <div class="testimonials-track" data-carousel-track>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"A Luciana com muita sabedoria e gentileza me ouviu por mais de uma hora... me ajudou a compreender melhor minhas atitudes... Só tenho gratidão."</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Marina</h4><p class="testimonial-role">12 de julho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"A Luciana é uma profissional maravilhosa. Atenciosa, acolhedora e captou com maestria tudo que eu estava sentido e soube falar as palavras certas na hora certa. Gratidão imensa!"</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Francy</h4>
-                                    <p class="testimonial-role">28 de junho de 2025</p>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"A Luciana é uma profissional maravilhosa. Atenciosa, acolhedora e captou com maestria tudo que eu estava sentido e soube falar as palavras certas na hora certa. Gratidão imensa!"</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Francy</h4><p class="testimonial-role">28 de junho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"Amei a sessão com Luciana, profissional muito competente, sai outra pessoa., conseguindo enxergar soluções onde só haviam problemas. Muito empática e atenciosa, excelente profissional."</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Adriana</h4>
-                                    <p class="testimonial-role">26 de julho de 2025</p>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Amei a sessão com Luciana, profissional muito competente, sai outra pessoa., conseguindo enxergar soluções onde só haviam problemas. Muito empática e atenciosa, excelente profissional."</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Adriana</h4><p class="testimonial-role">26 de julho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"Muito acolhedora, ouve atentamente faz perguntas precisas dá o direcionamento com muito cuidado, nos levar a pensar em outro nível! Obrigada DR!! Excelente"</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Tatyanne</h4>
-                                    <p class="testimonial-role">10 de junho de 2025</p>
+                         <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar do paciente"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Muito acolhedora, ouve atentamente faz perguntas precisas dá o direcionamento com muito cuidado, nos levar a pensar em outro nível! Obrigada DR!! Excelente"</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Tatyanne</h4><p class="testimonial-role">10 de junho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"Estava procurando uma terapeuta de casais e Luciana, com muita sabedoria me direcionou para detalhes essências, tanto para a vida pessoal quanto conjugal. Recomendo demais!"</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Maila</h4>
-                                    <p class="testimonial-role">10 de agosto de 2025</p>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar do paciente"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Estava procurando uma terapeuta de casais e Luciana, com muita sabedoria me direcionou para detalhes essências, tanto para a vida pessoal quanto conjugal. Recomendo demais!"</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Maila</h4><p class="testimonial-role">10 de agosto de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"Estava querendo evitar uma coisa ruim, e com forma como ela conduziu a conversa me deu segurança e confiança para falar sobre o que estou sentindo."</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Juliana</h4>
-                                    <p class="testimonial-role">15 de julho de 2025</p>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar do paciente"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Estava querendo evitar uma coisa ruim, e com forma como ela conduziu a conversa me deu segurança e confiança para falar sobre o que estou sentindo."</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Juliana</h4><p class="testimonial-role">15 de julho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"Eu estava em crise de ansiedade, e em 50 minutos ela me escutou e me deu melhores direcionamentos, Obrigada!"</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Eduarda</h4>
-                                    <p class="testimonial-role">19 de junho de 2025</p>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar do paciente"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Eu estava em crise de ansiedade, e em 50 minutos ela me escutou e me deu melhores direcionamentos, Obrigada!"</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Eduarda</h4><p class="testimonial-role">19 de junho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"Excelente atendimento, muito querida e compreensiva, me deixou mais calma."</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Monalisa</h4>
-                                    <p class="testimonial-role">01 de julho de 2025</p>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar do paciente"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Excelente atendimento, muito querida e compreensiva, me deixou mais calma."</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Monalisa</h4><p class="testimonial-role">01 de julho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"Foi bom ter falado com Luciana para ver as coisas de outra forma ...."</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Carlos</h4>
-                                    <p class="testimonial-role">23 de julho de 2025</p>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar do paciente"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Foi bom ter falado com Luciana para ver as coisas de outra forma ...."</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Carlos</h4><p class="testimonial-role">23 de julho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-avatar">
-                                <img src="./imagens/logo - padrão.png" alt="Avatar do paciente">
-                            </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">"Adorei. Foi muito interessante e envolvente a terapia. Obrigada."</p>
-                                <div class="testimonial-author">
-                                    <h4 class="testimonial-name">Maressa</h4>
-                                    <p class="testimonial-role">06 de junho de 2025</p>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar"><img src="./imagens/logo - padrão.png" alt="Avatar do paciente"></div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Adorei. Foi muito interessante e envolvente a terapia. Obrigada."</p>
+                                    <div class="testimonial-author"><h4 class="testimonial-name">Maressa</h4><p class="testimonial-role">06 de junho de 2025</p></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-nav-btn prev" id="prevBtn" aria-label="Depoimento anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-nav-btn next" id="nextBtn" aria-label="Próximo depoimento">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                <button class="carousel-nav-btn prev" data-carousel-prev aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-nav-btn next" data-carousel-next aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-indicators" data-carousel-indicators></div>
             </div>
-            <div class="carousel-indicators" id="carouselIndicators"></div>
 
             <div class="mt-16 text-center">
                 <a href="#contato" class="btn-primary text-lg">
@@ -2720,6 +2678,7 @@
         </div>
     </div>
 </section>
+
     <div id="testimonial-modal" class="testimonial-modal">
         <div class="testimonial-modal-content">
             <img id="testimonial-modal-image" src="/placeholder.svg" alt="Depoimento ampliado">
@@ -2748,8 +2707,8 @@
                         Edifício Empresarial Premium Office
                     </div>
                 </div>
-                <div class="carousel-container fade-in mb-32">
-                    <div class="carousel-track" id="carousel-track">
+                <div class="carousel-container fade-in mb-16" data-carousel>
+                    <div class="carousel-track" data-carousel-track>
                         <div class="carousel-slide">
                             <div class="aspect-ratio-container">
                                 <img src="./imagens/Consultorio1.jpeg" alt="Sala de espera aconchegante">
@@ -2757,7 +2716,7 @@
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Sala de Espera</h3>
                                 <p class="text-base">Um ambiente acolhedor e tranquilo para você se preparar para nossa
-                                    sessão, com decoração cuidadosa que promove relaxamento e bem-estar.</p>
+                                    sessão.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
@@ -2766,8 +2725,7 @@
                             </div>
                             <div class="carousel-overlay">
                                 <h3 class="text-2xl font-serif font-semibold mb-3">Consultório Principal</h3>
-                                <p class="text-base">Espaço privativo e confortável, projetado para facilitar o diálogo
-                                    profundo e a reflexão, com iluminação natural e ambiente acolhedor.</p>
+                                <p class="text-base">Espaço privativo e confortável, projetado para facilitar o diálogo.</p>
                             </div>
                         </div>
                         <div class="carousel-slide">
@@ -2775,29 +2733,21 @@
                                 <img src="./imagens/Consultorio3.jpeg" alt="Área de relaxamento">
                             </div>
                             <div class="carousel-overlay">
-                                <h3 class="text-2xl font-serif font-semibold mb-3">Área de Relaxamento</h3>
-                                <p class="text-base">No coração dos Jardins, com fácil acesso, estacionamento disponível
-                                    e proximidade ao transporte público.</p>
+                                <h3 class="text-2xl font-serif font-semibold mb-3">Localização Privilegiada</h3>
+                                <p class="text-base">Com fácil acesso e estacionamento disponível.</p>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-nav prev" id="prev-btn">
+                    <button class="carousel-nav prev" data-carousel-prev>
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button class="carousel-nav next" id="next-btn">
+                    <button class="carousel-nav next" data-carousel-next>
                         <i class="fas fa-chevron-right"></i>
                     </button>
-                    <div class="carousel-indicators" id="carousel-indicators">
-                        <div class="carousel-dot active" data-slide="0"></div>
-                        <div class="carousel-dot" data-slide="1"></div>
-                        <div class="carousel-dot" data-slide="2"></div>
-                    </div>
+                    <div class="carousel-indicators" data-carousel-indicators></div>
                 </div>
             </div>
         </div>
-
-        
-
     </section>
 
    <section id="entrevistas"
@@ -2849,7 +2799,6 @@
     <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-5xl mx-auto">
-            <!-- Título -->
             <div class="text-center mb-12 fade-in">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold gradient-text mb-4 enhanced-heading">
                     Vamos Conversar?
@@ -2860,9 +2809,7 @@
                 </p>
             </div>
 
-            <!-- Conteúdo -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12">
-                <!-- Card de Contato -->
                 <div class="slide-in-left">
                     <div class="card p-6 bg-white rounded-2xl shadow-md flex flex-col h-full justify-between">
                         <div class="space-y-6">
@@ -2879,7 +2826,7 @@
                                 </div>
                             </div>
 
-                           
+                            
                         </div>
 
                         <div class="mt-6 sm:mt-8 pt-4 border-t border-gray-100">
@@ -2892,7 +2839,6 @@
                     </div>
                 </div>
 
-                <!-- Card de Localização -->
                 <div class="slide-in-right">
                     <div class="card p-6 bg-white rounded-2xl shadow-md flex flex-col h-full">
                         <h3 class="text-lg sm:text-xl font-serif font-bold gradient-text mb-4 sm:mb-6">Localização</h3>
@@ -2999,8 +2945,8 @@
     </footer>
 
     <script>
-        // Enhanced Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', () => {
+            // Enhanced Mobile Menu Toggle
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
@@ -3026,93 +2972,68 @@
                 if (e.key === 'Escape' && isMenuOpen) toggleMenu();
             });
 
-            // General Carousel Handler
-            const createCarousel = (carouselId) => {
-                const track = document.querySelector(`#${carouselId} .carousel-track`);
-                if (!track) return;
+            // --- UNIFIED CAROUSEL SCRIPT ---
+            const initializeCarousel = (carouselEl) => {
+                const track = carouselEl.querySelector('[data-carousel-track]');
                 const slides = Array.from(track.children);
-                const nextButton = document.querySelector(`#${carouselId} .next`);
-                const prevButton = document.querySelector(`#${carouselId} .prev`);
-                const indicatorsContainer = document.querySelector(`#${carouselId} .carousel-indicators`);
-                if (slides.length === 0) return;
+                const nextButton = carouselEl.querySelector('[data-carousel-next]');
+                const prevButton = carouselEl.querySelector('[data-carousel-prev]');
+                const indicatorsContainer = carouselEl.querySelector('[data-carousel-indicators]');
+
+                if (!track || slides.length === 0) return;
 
                 let currentIndex = 0;
-                const slideWidth = slides[0].getBoundingClientRect().width;
-
-                const moveToSlide = (index) => {
-                    track.style.transform = `translateX(-${slideWidth * index}px)`;
-                    currentIndex = index;
+                
+                const updateCarousel = () => {
+                    const slideWidth = track.offsetWidth;
+                    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
                     updateIndicators();
                 };
 
                 const updateIndicators = () => {
-                    indicatorsContainer.childNodes.forEach((dot, index) => {
-                         dot.classList.toggle('active', index === currentIndex);
-                    });
+                    if (indicatorsContainer) {
+                         Array.from(indicatorsContainer.children).forEach((dot, index) => {
+                            dot.classList.toggle('active', index === currentIndex);
+                        });
+                    }
                 };
+
+                if (indicatorsContainer) {
+                    indicatorsContainer.innerHTML = ''; // Clear existing
+                    slides.forEach((_, index) => {
+                        const dot = document.createElement('div');
+                        dot.classList.add('carousel-dot');
+                        dot.addEventListener('click', () => {
+                            currentIndex = index;
+                            updateCarousel();
+                        });
+                        indicatorsContainer.appendChild(dot);
+                    });
+                }
                 
-                slides.forEach((_, index) => {
-                    const button = document.createElement('button');
-                    button.classList.add('carousel-dot');
-                    if (index === 0) button.classList.add('active');
-                    button.addEventListener('click', () => moveToSlide(index));
-                    indicatorsContainer.appendChild(button);
-                });
-
-                nextButton.addEventListener('click', () => moveToSlide((currentIndex + 1) % slides.length));
-                prevButton.addEventListener('click', () => moveToSlide((currentIndex - 1 + slides.length) % slides.length));
+                if(nextButton){
+                   nextButton.addEventListener('click', () => {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        updateCarousel();
+                    }); 
+                }
                 
-                window.addEventListener('resize', () => {
-                    const newSlideWidth = slides[0].getBoundingClientRect().width;
-                    moveToSlide(currentIndex);
-                });
+                if(prevButton){
+                    prevButton.addEventListener('click', () => {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        updateCarousel();
+                    });
+                }
+                
+                // Recalculate on resize
+                window.addEventListener('resize', updateCarousel);
+                
+                // Initial setup
+                updateCarousel();
             };
 
-            createCarousel('office-carousel');
-
-            // Testimonials Carousel
-            const testimonialsTrack = document.getElementById('testimonialsTrack');
-            const testimonialsSlides = Array.from(testimonialsTrack.children);
-            const testimonialsPrevBtn = document.getElementById('prevBtn');
-            const testimonialsNextBtn = document.getElementById('nextBtn');
-            const testimonialsIndicatorsContainer = document.getElementById('carouselIndicators');
-            let testimonialsCurrentIndex = 0;
-
-            const setupTestimonials = () => {
-                const slideWidth = testimonialsTrack.parentElement.offsetWidth;
-                testimonialsSlides.forEach(slide => slide.style.minWidth = `${slideWidth}px`);
-                testimonialsTrack.style.width = `${slideWidth * testimonialsSlides.length}px`;
-
-                // Create indicators
-                testimonialsIndicatorsContainer.innerHTML = '';
-                testimonialsSlides.forEach((_, index) => {
-                    const dot = document.createElement('div');
-                    dot.classList.add('carousel-dot');
-                    dot.addEventListener('click', () => moveTestimonialsTo(index));
-                    testimonialsIndicatorsContainer.appendChild(dot);
-                });
-                updateTestimonialsUI();
-            };
-
-            const moveTestimonialsTo = (index) => {
-                const slideWidth = testimonialsTrack.parentElement.offsetWidth;
-                testimonialsTrack.style.transform = `translateX(-${index * slideWidth}px)`;
-                testimonialsCurrentIndex = index;
-                updateTestimonialsUI();
-            };
-
-            const updateTestimonialsUI = () => {
-                Array.from(testimonialsIndicatorsContainer.children).forEach((dot, index) => {
-                    dot.classList.toggle('active', index === testimonialsCurrentIndex);
-                });
-            };
-
-            testimonialsNextBtn.addEventListener('click', () => moveTestimonialsTo((testimonialsCurrentIndex + 1) % testimonialsSlides.length));
-            testimonialsPrevBtn.addEventListener('click', () => moveTestimonialsTo((testimonialsCurrentIndex - 1 + testimonialsSlides.length) % testimonialsSlides.length));
-            
-            window.addEventListener('resize', setupTestimonials);
-            setupTestimonials();
-
+            // Initialize all carousels on the page
+            document.querySelectorAll('[data-carousel]').forEach(initializeCarousel);
 
             // Intersection Observer for Animations
             const observer = new IntersectionObserver((entries) => {
@@ -3136,98 +3057,56 @@
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             });
 
-              // Smooth scrolling
-                  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                      anchor.addEventListener('click', function (e) {
-                          e.preventDefault();
-                          const targetId = this.getAttribute('href');
-                          const targetElement = document.querySelector(targetId);
-                          if(targetElement) {
-                              const headerOffset = document.getElementById('header').offsetHeight;
-                              const elementPosition = targetElement.getBoundingClientRect().top;
-                              const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20;
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        const headerOffset = document.getElementById('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20;
 
-                              window.scrollTo({
-                                  top: offsetPosition,
-                                  behavior: "smooth"
-                              });
-                          }
-                      });
-                  });
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // Suporte a clique/toque nas imagens da seção "Além da Psicologia"
+            document.querySelectorAll('.relative.w-full.max-w-lg.h-full.aspect-square > div').forEach(imgContainer => {
+                imgContainer.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    const isActive = imgContainer.classList.contains('active-photo');
+                    
+                    document.querySelectorAll('.relative.w-full.max-w-lg.h-full.aspect-square > div').forEach(other => {
+                        other.classList.remove('active-photo');
+                        other.style.transform = ''; 
+                        other.style.zIndex = '';
+                    });
+
+                    if (!isActive) {
+                        imgContainer.classList.add('active-photo');
+                        imgContainer.style.transform = 'scale(1.1) rotate(0deg)';
+                        imgContainer.style.zIndex = '50';
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const photoArea = document.querySelector('.relative.w-full.max-w-lg.h-full.aspect-square');
+                if (photoArea && !photoArea.contains(e.target)) {
+                    document.querySelectorAll('.relative.w-full.max-w-lg.h-full.aspect-square > div.active-photo').forEach(activePhoto => {
+                        activePhoto.classList.remove('active-photo');
+                        activePhoto.style.transform = '';
+                        activePhoto.style.zIndex = '';
+                    });
+                }
+            });
         });
-
-
-        // Suporte a clique/toque nas imagens da seção "Além da Psicologia"
-document.querySelectorAll('.relative.w-full.max-w-lg.h-full.aspect-square > div').forEach(imgContainer => {
-    imgContainer.addEventListener('click', () => {
-        // Remove transformações de outros containers
-        document.querySelectorAll('.relative.w-full.max-w-lg.h-full.aspect-square > div').forEach(other => {
-            if (other !== imgContainer) {
-                other.style.transform = 'none';
-                other.style.zIndex = '10';
-            }
-        });
-        // Aplica transformação ao container clicado
-        imgContainer.style.transform = 'scale(1.1) rotate(0deg)';
-        imgContainer.style.zIndex = '50';
-    });
-
-    // Reset ao clicar fora
-    document.addEventListener('click', (e) => {
-        if (!imgContainer.contains(e.target)) {
-            imgContainer.style.transform = imgContainer.classList.contains('top-5') ? '-rotate-12' : 
-                                         imgContainer.classList.contains('bottom-5') ? 'rotate-12' : 
-                                         '-translate-x-1/2 -translate-y-1/2';
-            imgContainer.style.zIndex = imgContainer.classList.contains('z-30') ? '30' : '10';
-        }
-    });
-});
-
-
-
-
-// Testimonials Carousel
-const testimonialsTrack = document.getElementById('testimonialsTrack');
-const testimonialsSlides = Array.from(testimonialsTrack.children);
-const testimonialsPrevBtn = document.getElementById('prevBtn');
-const testimonialsNextBtn = document.getElementById('nextBtn');
-const testimonialsIndicatorsContainer = document.getElementById('carouselIndicators');
-let testimonialsCurrentIndex = 0;
-
-const setupTestimonials = () => {
-    const slideWidth = testimonialsTrack.parentElement.offsetWidth;
-    testimonialsSlides.forEach(slide => slide.style.minWidth = `${slideWidth}px`);
-    testimonialsTrack.style.width = `${slideWidth * testimonialsSlides.length}px`;
-
-    // Create indicators
-    testimonialsIndicatorsContainer.innerHTML = '';
-    testimonialsSlides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('carousel-dot');
-        dot.addEventListener('click', () => moveTestimonialsTo(index));
-        testimonialsIndicatorsContainer.appendChild(dot);
-    });
-    updateTestimonialsUI();
-};
-
-const moveTestimonialsTo = (index) => {
-    const slideWidth = testimonialsTrack.parentElement.offsetWidth;
-    testimonialsTrack.style.transform = `translateX(-${index * slideWidth}px)`;
-    testimonialsCurrentIndex = index;
-    updateTestimonialsUI();
-};
-
-const updateTestimonialsUI = () => {
-    Array.from(testimonialsIndicatorsContainer.children).forEach((dot, index) => {
-        dot.classList.toggle('active', index === testimonialsCurrentIndex);
-    });
-};
-
-testimonialsNextBtn.addEventListener('click', () => moveTestimonialsTo((testimonialsCurrentIndex + 1) % testimonialsSlides.length));
-testimonialsPrevBtn.addEventListener('click', () => moveTestimonialsTo((testimonialsCurrentIndex - 1 + testimonialsSlides.length) % testimonialsSlides.length));
-
-window.addEventListener('resize', setupTestimonials);
-setupTestimonials();
     </script>
 </body>
 
