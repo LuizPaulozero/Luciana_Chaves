@@ -2048,7 +2048,7 @@
             }
         }
 
-        /* NEW STYLES FOR INTERVIEW SECTION */
+        /* NEW STYLES FOR INTERVIEW SECTION - CORRIGIDO */
         #entrevistas .video-container {
             border-radius: 24px;
             overflow: hidden;
@@ -2057,6 +2057,7 @@
             aspect-ratio: 16 / 9;
             width: 100%;
             background-color: #f2e4dd;
+            position: relative;
         }
 
         #entrevistas .video-container:hover {
@@ -2068,15 +2069,47 @@
             width: 100%;
             height: 100%;
             border: none;
+            border-radius: 24px;
+        }
+
+        #entrevistas .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
         @media (min-width: 1024px) {
-            #entrevistas .entrevista-wrapper {
-                display: grid;
-                grid-template-columns: 3fr 2fr;
-                gap: 3rem;
-                align-items: center;
+            #entrevistas .video-grid {
+                grid-template-columns: 1fr 1fr;
             }
+        }
+
+        #entrevistas .video-info {
+            padding: 1.5rem 0;
+        }
+
+        #entrevistas .video-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #5C5C5C;
+            margin-bottom: 1rem;
+        }
+
+        #entrevistas .video-info p {
+            color: #8A8A8A;
+            line-height: 1.6;
+        }
+
+        #entrevistas .video-time {
+            display: inline-block;
+            background: rgba(217, 140, 106, 0.1);
+            color: #D98C6A;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -2750,50 +2783,267 @@
         </div>
     </section>
 
-   <section id="entrevistas"
-    class="py-24 bg-gradient-to-br from-off-white via-rosa-claro-light to-rosa-claro relative overflow-hidden">
-    <div class="absolute inset-0 bg-mesh-gradient opacity-30"></div>
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
-                    Entrevistas e <span class="gradient-text">Bate-papos</span>
-                </h2>
-                <div
-                    class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
-                </div>
-                <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
-                    Compartilhando insights e reflexões sobre saúde emocional e relacionamentos.
-                </p>
-            </div>
-            <div class="entrevista-wrapper fade-in">
-                <div class="video-container">
-                    <iframe class="video-player"
-                        src="https://www.youtube.com/embed/Id8wWNQ-614?start=1401&end=1524&controls=0"
-                        title="Entrevista Luciana Magalhães"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="entrevista-conteudo text-center lg:text-left mt-8 lg:mt-0">
-                    <h3 class="text-3xl lg:text-4xl font-serif font-bold text-cinza-escuro mb-4">
-                        Conversas que Curam
-                    </h3>
-                    <p class="text-lg text-cinza-medio leading-relaxed mb-8 font-sans">
-                        Nesta entrevista especial, mergulhamos em temas essenciais para o crescimento pessoal e a
-                        saúde dos relacionamentos. Uma conversa que abre espaço para novas perspectivas e
-                        reflexões valiosas sobre como viver de forma mais consciente e conectada.
-                    </p>
-                    <a href="#contato" class="btn-primary text-lg inline-block">
-                        <i class="fas fa-calendar-check mr-2"></i>
-                        Agende sua Sessão
+<section id="entrevistas"
+ class="py-24 bg-gradient-to-br from-off-white via-rosa-claro-light to-rosa-claro relative overflow-hidden">
+ <div class="absolute inset-0 bg-mesh-gradient opacity-30"></div>
+ <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+           <h2 class="text-5xl lg:text-6xl font-serif font-bold text-cinza-escuro mb-6 enhanced-heading">
+              Entrevistas e <span class="gradient-text">Bate-papos</span>
+           </h2>
+           <div
+              class="w-24 h-2 bg-gradient-to-r from-terracota via-terracota-light to-terracota mx-auto rounded-full mb-6">
+           </div>
+           <p class="text-xl text-cinza-medio font-light max-w-3xl mx-auto">
+              Compartilhando insights e reflexões sobre saúde emocional e relacionamentos.
+           </p>
+        </div>
+        
+        <div class="video-grid fade-in">
+           <!-- Vídeo 1 -->
+           <div class="video-item">
+              <div class="video-wrapper">
+                 <div class="video-container" data-video-loaded="false">
+                    <div class="video-poster" 
+                         data-video-id="Id8wWNQ-614" 
+                         data-start="1400"
+                         data-end="1524"
+                         style="background-image: url('https://img.youtube.com/vi/Id8wWNQ-614/maxresdefault.jpg');">
+                       <button class="video-play-btn" aria-label="Reproduzir vídeo Conversas que Curam">
+                          <i class="fas fa-play"></i>
+                       </button>
+                    </div>
+                 </div>
+              </div>
+              <div class="video-info">
+                 <h3 class="text-xl font-serif font-semibold text-cinza-escuro">Conversas que Curam</h3>
+                 <p class="text-cinza-medio mt-2">
+                    Nesta entrevista especial, mergulhamos em temas essenciais para o crescimento pessoal e a
+                    saúde dos relacionamentos. Uma conversa que abre espaço para novas perspectivas e
+                    reflexões valiosas sobre como viver de forma mais consciente e conectada.
+                 </p>
+                 <span class="video-time">
+                    <i class="fas fa-clock mr-1"></i>
+                    Minuto 23:20 até 25:24
+                 </span>
+                 <div class="video-fallback text-sm mt-2">
+                    <a href="https://www.youtube.com/watch?v=Id8wWNQ-614&t=1400s" target="_blank" rel="noopener noreferrer" class="text-terracota underline hover:text-terracota-dark">
+       Problemas ao carregar o vídeo? Clique aqui para acessar o conteúdo.                    </a>
+                 </div>
+              </div>
+           </div>
+           
+           <!-- Vídeo 2 -->
+           <div class="video-item">
+              <div class="video-wrapper">
+                 <div class="video-container" data-video-loaded="false">
+                    <div class="video-poster" 
+                         data-video-id="NIwUp1S0e1U" 
+                         data-start="556"
+                         data-end="1135"
+                         style="background-image: url('https://img.youtube.com/vi/NIwUp1S0e1U/maxresdefault.jpg');">
+                       <button class="video-play-btn" aria-label="Reproduzir vídeo Reflexões sobre Relacionamentos">
+                          <i class="fas fa-play"></i>
+                       </button>
+                    </div>
+                 </div>
+              </div>
+              <div class="video-info">
+                 <h3 class="text-xl font-serif font-semibold text-cinza-escuro">Reflexões sobre Relacionamentos</h3>
+                 <p class="text-cinza-medio mt-2">
+                    Um bate-papo profundo sobre os desafios e oportunidades nos relacionamentos contemporâneos.
+                    Discutimos comunicação, limites saudáveis e o autoconhecimento como base para vínculos
+                    mais significativos.
+                 </p>
+                 <span class="video-time">
+                    <i class="fas fa-clock mr-1"></i>
+                    Minuto 09:16 até 18:55
+                 </span>
+                 <div class="video-fallback text-sm mt-2">
+                    <a href="https://www.youtube.com/watch?v=NIwUp1S0e1U&t=556s" target="_blank" rel="noopener noreferrer" class="text-terracota underline hover:text-terracota-dark">
+                        Problemas ao carregar o vídeo? Clique aqui para acessar o conteúdo.
                     </a>
-                </div>
-            </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+
+        <div class="mt-16 text-center">
+           <a href="#contato" class="btn-primary text-lg">
+              <i class="fas fa-calendar-check mr-2"></i>
+              Agende sua Sessão
+           </a>
         </div>
     </div>
-</section>
+ </div>
 
+ <style>
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    .video-container { 
+        aspect-ratio: 16/9; 
+        overflow: hidden; 
+        border-radius: 24px;
+        background: #000;
+        position: relative;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+    
+    .video-poster {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+    }
+    
+    .video-poster::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.3);
+        transition: background 0.3s ease;
+    }
+    
+    .video-poster:hover::before {
+        background: rgba(0,0,0,0.4);
+    }
+    
+    .video-poster:hover { 
+        transform: scale(1.01);
+    }
+    
+    .video-play-btn {
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        background: rgba(217,140,106,0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 28px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 3;
+    }
+    
+    .video-poster:hover .video-play-btn {
+        background: rgba(217,140,106,1);
+        transform: scale(1.15);
+        box-shadow: 0 12px 40px rgba(217,140,106,0.4);
+    }
+    
+    .video-play-btn i { 
+        margin-left: 6px;
+    }
+    
+    .video-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 24px;
+        z-index: 1;
+    }
+    
+    .video-container[data-video-loaded="true"] .video-poster {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .video-fallback a { 
+        word-break: break-word;
+        transition: color 0.2s ease;
+    }
+    
+    .video-time {
+        display: inline-block;
+        color: #888;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+ </style>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const posters = document.querySelectorAll('.video-poster');
+        
+        posters.forEach(function(poster) {
+            poster.addEventListener('click', function() {
+                const videoId = this.getAttribute('data-video-id');
+                const startTime = this.getAttribute('data-start');
+                const endTime = this.getAttribute('data-end');
+                const container = this.closest('.video-container');
+                
+                if (!videoId) {
+                    console.error('ID do vídeo não encontrado');
+                    return;
+                }
+                
+                // Criar iframe com os parâmetros corretos
+                const iframe = document.createElement('iframe');
+                iframe.className = 'video-iframe';
+                iframe.width = '560';
+                iframe.height = '315';
+                
+                // Construir URL com parâmetros de tempo
+                let iframeSrc = 'https://www.youtube.com/embed/' + videoId + '?';
+                const params = new URLSearchParams({
+                    autoplay: '1',
+                    start: startTime,
+                    end: endTime,
+                    rel: '0',
+                    modestbranding: '1'
+                });
+                
+                iframe.src = iframeSrc + params.toString();
+                iframe.title = 'YouTube video player';
+                iframe.frameBorder = '0';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                iframe.allowFullscreen = true;
+                
+                // Adicionar iframe ao container
+                container.appendChild(iframe);
+                
+                // Marcar como carregado
+                container.setAttribute('data-video-loaded', 'true');
+                
+                console.log('Vídeo carregado:', videoId, 'Início:', startTime, 'Fim:', endTime);
+            });
+            
+            // Suporte para teclado
+            poster.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+            
+            // Tornar focável
+            poster.setAttribute('tabindex', '0');
+        });
+    });
+ </script>
+</section>
 
  <section id="contato" class="py-20 bg-white relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-transparent to-rosa-claro-light opacity-30"></div>
